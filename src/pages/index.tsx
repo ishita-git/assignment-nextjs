@@ -5,12 +5,9 @@ export default function Home() {
     const theme = useTheme()
 
     return (
-        <Box sx={{ background: '#EFF6FF' }}>
+        <Box sx={{ background: '#EFF6FF', position: 'relative' }}>
             <Box sx={{ mx: theme.spacing(4), my: theme.spacing(2.5) }}>
-                <Container maxWidth="lg">
-                    {/* <Navabar/> */}
-                    {/* <HeroText/> */}
-                </Container>
+                <Container maxWidth="xl"></Container>
             </Box>
         </Box>
     )
