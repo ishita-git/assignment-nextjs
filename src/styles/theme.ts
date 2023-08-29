@@ -1,4 +1,4 @@
-import { createTheme, Theme } from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles'
 import { nunito, inter, oswald } from './fonts'
 
 const theme = createTheme({
@@ -18,7 +18,7 @@ const theme = createTheme({
         },
         background: {
             default: '#EFF6FF',
-            paper: '#003A9B',
+            // paper: '#003A9B',
         },
     },
 
@@ -28,7 +28,7 @@ const theme = createTheme({
 
         h1: {
             fontFamily: oswald.style.fontFamily,
-            fontSize: '6rem',
+            fontSize: '5.8rem',
             fontWeight: '600',
             lineHeight: '8.875rem',
             textAlign: 'center',
@@ -49,48 +49,71 @@ const theme = createTheme({
             color: '#FFFFFF',
         },
         h4: {
-            fontFamily: inter.style.fontFamily,
             fontSize: '1.5rem',
+            lineHeight: '2rem',
+            textAlign: 'center',
+            color: '#FFFFFF',
+        },
+        h5: {
+            fontFamily: inter.style.fontFamily,
+            fontSize: '1.375rem',
             fontWeight: '600',
             lineHeight: '1.875rem',
             color: '#FFFFFF',
         },
-        h5: {
-            fontSize: '1.5rem',
-            lineHeight: '2rem',
-            textAlign: 'center',
-            color: '#FFFFFF',
-        },
         h6: {
-            fontSize: '1.25rem',
-            lineHeight: '1.75rem',
-            color: '#003A9B',
-        },
-        body1: {
-            fontSize: '1.25rem',
-            lineHeight: '1.75rem',
-            color: '#03122580',
-        },
-        body2: {
-            fontSize: '1.25rem',
-            lineHeight: '1.75rem',
-            color: '#031225B3',
-            textAlign: 'center',
-        },
-        overline: {
-            fontSize: '1.5rem',
-            lineHeight: '2rem',
-            color: '#031225CC',
-        },
-        subtitle1: {
-            fontSize: '1.25rem',
-            lineHeight: '1.75rem',
-            color: '#FFFFFF',
-        },
-        subtitle2: {
             fontSize: '1.125rem',
             lineHeight: '1.75rem',
             color: '#FFFFFF',
+        },
+        body1: {
+            fontSize: '1rem',
+            lineHeight: '1.25rem',
+            color: '#031225B3',
+            textAlign: 'center',
+        },
+        // body2: {
+        //     fontSize: '1.25rem',
+        //     lineHeight: '1.75rem',
+        //     color: '#031225B3',
+        //     textAlign: 'center',
+        // },
+        // overline: {
+        //     fontSize: '1.5rem',
+        //     lineHeight: '2rem',
+        //     color: '#031225CC',
+        // },
+        // subtitle1: {
+        //     fontSize: '1.125rem',
+        //     lineHeight: '1.75rem',
+        //     color: '#FFFFFF',
+        // },
+        // subtitle2: {
+        //     fontSize: '1.125rem',
+        //     lineHeight: '1.75rem',
+        //     color: '#FFFFFF',
+        // },
+    },
+
+    breakpoints: {
+        values: {
+            xs: 0,
+            sm: 600,
+            md: 1000,
+            lg: 1400,
+            xl: 1800,
+        },
+    },
+
+    components: {
+        MuiInputLabel: {
+            defaultProps: {
+                style: {
+                    color: '#003A9B',
+                    marginBottom: '4px',
+                    textAlign: 'start',
+                },
+            },
         },
     },
 })
