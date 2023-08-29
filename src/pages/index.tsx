@@ -1,8 +1,10 @@
 import { Box } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import HeaderSection from '../components/HeaderSection'
-import ShipmentTracker from '../components/ShipmentTracker'
-import ServicesSection from '../components/ServicesSection'
+import HeaderSection from '../sections/HeaderSection'
+import ShipmentTracker from '../sections/ShipmentTracker'
+import ServicesSection from '../sections/ServicesSection'
+import ShippingSection from '../sections/ShippingSection'
+import BusinessPresenceSection from '../sections/BusinessPresenceSection'
 import cargo from '../assets/images/cargo-ship-1.png'
 
 export default function Home() {
@@ -16,9 +18,21 @@ export default function Home() {
                 subtitle="Muskan Group Makes it Simple"
             />
 
-            <Box>
-                <ShipmentTracker />
+            <Box
+                sx={{
+                    position: 'relative',
+                    display: 'flex',
+                    justifyContent: 'center',
+                }}
+            >
+                <Box sx={{ position: 'absolute', top: '-20vh' }}>
+                    <ShipmentTracker />
+                </Box>
             </Box>
+
+            <ServicesSection />
+            <ShippingSection />
+            <BusinessPresenceSection />
         </Box>
     )
 }
