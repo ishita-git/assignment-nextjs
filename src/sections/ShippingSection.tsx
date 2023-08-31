@@ -44,7 +44,11 @@ const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
             <Typography variant="h3" sx={{ mt: theme.spacing(1.25) }}>
                 {text}
             </Typography>
-            <Typography variant="h6" sx={{ maxWidth: '14rem' }}>
+            <Typography
+                variant="h6"
+                textAlign="center"
+                sx={{ maxWidth: '14rem' }}
+            >
                 {subtitle}
             </Typography>
         </Box>
@@ -74,7 +78,7 @@ export default function ShippingSection() {
             />
 
             <Container
-                maxWidth="md"
+                maxWidth="lg"
                 disableGutters
                 sx={{ position: 'relative', my: 'auto' }}
             >

@@ -1,11 +1,75 @@
-import { Box, Typography } from '@mui/material'
+import React from 'react'
+import { Box, Container, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
+import { servicesData } from '../data/static-data'
+import CarouselCard from '../components/CaraousalCard'
+// swiper
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Autoplay, Keyboard, Navigation, Pagination } from 'swiper/modules'
 
 export default function ServicesSection() {
     const theme = useTheme()
+
     return (
-        <Box sx={{ mt: theme.spacing(18), mb: theme.spacing(8) }}>
-            <Typography variant="h2">Our Services</Typography>
+        <Box sx={{ mt: theme.spacing(18), px: theme.spacing(4) }}>
+            <Container disableGutters maxWidth="xl">
+                <Typography variant="h2">Our Services</Typography>
+
+                <Box
+                    sx={{
+                        cursor: 'pointer',
+                        my: theme.spacing(6),
+                        display: 'flex',
+                        overflow: 'hidden',
+                    }}
+                >
+                    <Swiper
+                        slidesPerView={1}
+                        spaceBetween={0}
+                        loop={true}
+                        // autoplay={{
+                        //     delay: 2500,
+                        //     disableOnInteraction: false,
+                        // }}
+                        keyboard={{
+                            enabled: true,
+                        }}
+                        pagination={{
+                            dynamicBullets: true,
+                            clickable: true,
+                        }}
+                        breakpoints={{
+                            200: { slidesPerView: 1 },
+                            550: { slidesPerView: 2 },
+                            750: { slidesPerView: 3 },
+                            1000: { slidesPerView: 4 },
+                        }}
+                        navigation={true}
+                        modules={[Autoplay, Keyboard, Navigation, Pagination]}
+                    >
+                        {servicesData.map((item) => (
+                            <SwiperSlide key={item.id}>
+                                <Box
+                                    sx={{
+                                        width: '100%',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                    }}
+                                >
+                                    <CarouselCard
+                                        coverImage={item.coverImage}
+                                        footerImage={item.footerImage}
+                                        title={item.title}
+                                        subtitle={item.subtitle}
+                                    />
+                                </Box>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </Box>
+            </Container>
         </Box>
     )
 }

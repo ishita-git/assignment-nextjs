@@ -63,7 +63,7 @@ const theme = createTheme({
         },
         h6: {
             fontSize: '1.125rem',
-            lineHeight: '1.75rem',
+            lineHeight: '1.25rem',
             color: '#FFFFFF',
             textAlign: 'start',
         },
@@ -75,7 +75,7 @@ const theme = createTheme({
         },
         body2: {
             fontSize: '1rem',
-            lineHeight: '1.25rem',
+            lineHeight: '1.125rem',
             color: '#FFFFFF',
             textAlign: 'justify',
             fontWeight: 300,

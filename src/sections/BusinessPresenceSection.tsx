@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Grid, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
 import map from '../assets/images/map.png'
@@ -56,6 +56,7 @@ const CompanyCard = ({ text }: { text: string }) => {
                 width: '14rem',
                 height: '6rem',
                 px: theme.spacing(1),
+                mx: 'auto',
             }}
         >
             <Typography
@@ -72,31 +73,45 @@ export default function BusinessPresenceSection() {
     const theme = useTheme()
 
     return (
-        <Box sx={{ my: theme.spacing(6) }}>
+        <Box sx={{ my: theme.spacing(6), mx: theme.spacing(4) }}>
             <Container maxWidth="md" disableGutters>
                 <Typography variant="h2">Our Companies</Typography>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'space-around',
-                        mt: theme.spacing(3.25),
-                    }}
-                >
-                    <CompanyCard text="Muskan Containers line Pvt. Ltd." />
-                    <CompanyCard text="Muskan Logistic" />
-                    <CompanyCard text="Muskan Shipping PTE Ltd." />
-                </Box>
-
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'space-around',
-                        mt: theme.spacing(3),
-                        mx: theme.spacing(6),
-                    }}
-                >
-                    <CompanyCard text="Muskaan Shipping SDN BHD" />
-                    <CompanyCard text="Muskaan Shipping LLC" />
+                <Box sx={{ mt: theme.spacing(3) }}>
+                    <Grid container spacing={2}>
+                        <Grid item sm={4} xs={6}>
+                            <CompanyCard text="Muskan Containers line Pvt. Ltd." />
+                        </Grid>
+                        <Grid item sm={4} xs={6}>
+                            <CompanyCard text="Muskan Logistic" />
+                        </Grid>
+                        <Grid item sm={4} xs={12}>
+                            <CompanyCard text="Muskan Shipping PTE Ltd." />
+                        </Grid>
+                        <Grid item xs={6}>
+                            <Box
+                                sx={{
+                                    pl: {
+                                        md: theme.spacing(12),
+                                        xl: theme.spacing(8),
+                                    },
+                                }}
+                            >
+                                <CompanyCard text="Muskaan Shipping SDN BHD" />
+                            </Box>
+                        </Grid>
+                        <Grid item xs={6}>
+                            <Box
+                                sx={{
+                                    pr: {
+                                        md: theme.spacing(12),
+                                        xl: theme.spacing(8),
+                                    },
+                                }}
+                            >
+                                <CompanyCard text="Muskaan Shipping LLC" />
+                            </Box>
+                        </Grid>
+                    </Grid>
                 </Box>
             </Container>
 
@@ -104,7 +119,6 @@ export default function BusinessPresenceSection() {
                 maxWidth="xl"
                 disableGutters
                 sx={{
-                    px: theme.spacing(4),
                     mt: theme.spacing(8),
                     position: 'relative',
                 }}

@@ -1,5 +1,4 @@
 import { Box } from '@mui/material'
-import { useTheme } from '@mui/material/styles'
 import HeaderSection from '../sections/HeaderSection'
 import ShipmentTracker from '../sections/ShipmentTracker'
 import ServicesSection from '../sections/ServicesSection'
@@ -8,8 +7,6 @@ import BusinessPresenceSection from '../sections/BusinessPresenceSection'
 import cargo from '../assets/images/cargo-ship-1.png'
 
 export default function Home() {
-    const theme = useTheme()
-
     return (
         <Box sx={{ background: '#EFF6FF', width: '100vw' }}>
             <HeaderSection
