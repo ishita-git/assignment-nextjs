@@ -29,10 +29,11 @@ export default function ServicesSection() {
                         slidesPerView={1}
                         spaceBetween={0}
                         loop={true}
-                        // autoplay={{
-                        //     delay: 2500,
-                        //     disableOnInteraction: false,
-                        // }}
+                        speed={1200}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
                         keyboard={{
                             enabled: true,
                         }}

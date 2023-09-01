@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Box, Container, Divider, Grid, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
 import map from '../assets/images/map.png'
@@ -7,18 +7,21 @@ import description from '../assets/images/map-description.png'
 
 const MapDescription = () => {
     const theme = useTheme()
+
     return (
         <Box sx={{ display: 'flex', position: 'relative' }}>
             <Image
                 src={description}
                 alt="map description"
-                style={{ width: '24rem', height: 'auto' }}
+                style={{ width: '26.5vw', height: 'auto' }}
             />
             <Box sx={{ position: 'absolute', padding: theme.spacing(1) }}>
                 <Typography variant="h6">India</Typography>
+                <Divider sx={{ mt: theme.spacing(0.25) }} />
+
                 <Typography
                     variant="body2"
-                    sx={{ mt: theme.spacing(1.25), fontWeight: 400 }}
+                    sx={{ mt: theme.spacing(1), fontWeight: 400 }}
                 >
                     New Delhi
                 </Typography>
@@ -138,9 +141,8 @@ export default function BusinessPresenceSection() {
                 <Box
                     sx={{
                         position: 'absolute',
-                        top: theme.spacing(5),
-                        right: 0,
-                        transform: 'translate(-68%, 4%)',
+                        right: '15vw',
+                        top: '8vw',
                     }}
                 >
                     <MapDescription />

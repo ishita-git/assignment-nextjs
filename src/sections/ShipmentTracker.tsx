@@ -32,7 +32,7 @@ export default function ShipmentTracker() {
 
                     <Grid item xs={12} sm={6}>
                         <ShipmentCard
-                            cardTitle="Track Shipment"
+                            cardTitle="Track Schedules"
                             submitButton="Track"
                             datePicker={
                                 <DatePicker

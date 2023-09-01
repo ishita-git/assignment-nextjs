@@ -77,12 +77,12 @@ export default function CarouselCard({
                             left: 0,
                         }}
                     >
-                        <Typography variant="h6" sx={{ width: '88%' }}>
+                        <Typography variant="h6" sx={{ width: '90%' }}>
                             {title}
                         </Typography>
                         <Typography
                             variant="body2"
-                            sx={{ my: theme.spacing(1) }}
+                            sx={{ mt: theme.spacing(1.125) }}
                         >
                             {subtitle}
                         </Typography>

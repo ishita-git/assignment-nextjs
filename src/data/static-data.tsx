@@ -24,15 +24,15 @@ export const servicesData = [
         footerImage: footer1,
         title: 'EMPTY CONTAINER DEPOTS',
         subtitle:
-            'Muskan Container Lines is dealing with depots in Nhava Sheva, Chennai, Dadri, Ludhiana, Hyderabad, Mundra, Ahmedabad , Kolkata exclusively for 24 X 7 best in class services....',
+            'Muskan Container Lines operates exclusive 24/7 depots in key locations like Nhava Sheva and Chennai, offering top-notch services with modern facilities.',
     },
     {
         id: 2,
         coverImage: cover2,
         footerImage: footer2,
-        title: 'NVOCC (NON Vessel Operating Common Carrier)',
+        title: 'NVOCC (Non Vessel Operating Common Carrier)',
         subtitle:
-            'Muskan Container Lines is a Premier NVOCC services in India, Middle East, Far East, and South East Asia. Fleet of 1000+ TEUS, expanding to CIS countries. Expert team, strong global alliances, seamless supply chain solutions.',
+            'Muskan Container Lines is a Premier NVOCC operator in India, Middle East, Far East, and South East Asia, with a Fleet of 1000+ TEUS, expanding to CIS countries.',
     },
     {
         id: 3,
@@ -40,7 +40,7 @@ export const servicesData = [
         footerImage: footer3,
         title: 'TRANSPORTATION',
         subtitle:
-            'A full range of trucking and Inter modal services are available with us. Our clients can rely on our proficient transportation services and remain assured of on time and safe delivery....',
+            'Our integrated intermodal truckage solutions ensure secure and punctual delivery. We offer seamless transporation, door-to-door convenience and streamlined management.',
     },
     {
         id: 4,
@@ -48,7 +48,7 @@ export const servicesData = [
         footerImage: footer4,
         title: 'AIR FREIGHT',
         subtitle:
-            'Muskan Container Lines Pvt Limited is involved in airfreight service in view of the growing demand from its customers. We continue to be the market leader in providing innovative air–freight....',
+            'Muskan Container Lines excels in innovative airfreight solutions to meet the global demand. With a worldwide network, we ensure economical and punctualy delivery of diverse shipments',
     },
     {
         id: 5,
@@ -56,14 +56,15 @@ export const servicesData = [
         footerImage: footer5,
         title: 'MULTIMODEL – TRANSPORTATION',
         subtitle:
-            'Multimodal Transport services at Muskan Container Lines Pvt. Ltd. is an effective chain that interconnects different links or modes of transport —  air, sea, and land into one....',
+            'Muskan Container Lines seamlessly connects land, sea, and air. Our multimodal transport network ensures faster, economical and efficient logistics, with  reduced risk.',
     },
     {
         id: 6,
         coverImage: cover6,
         footerImage: footer6,
         title: 'OVER DIMENSION CARGO',
-        subtitle: `There has recently been high–velocity growth in the Group's commitment towards carriage of over–dimension cargo. This growth is perceptible, considering the steep increase in the....`,
+        subtitle:
+            'The Muskan Group is quickly expanding its utlisation of over-dimension cargo. We use specialized equipment worldwide, including Asia, Africa, ISC ports and CIS locations.',
     },
     {
         id: 7,
@@ -71,7 +72,7 @@ export const servicesData = [
         footerImage: footer7,
         title: 'PROJECT CARGO',
         subtitle:
-            'For over a decade, the Group has carried out Project Cargo Logistics through a dedicated company – Muskan Logistics, now called Muskan Container Lines Private Limited....',
+            'Muskan Container Lines Pvt Ltd, formerly Muskan Logistics, has excelled in Project Cargo Logistics for over a decade, offering custom solutions for reliable and timely project deliveries to global clients.',
     },
     {
         id: 8,
@@ -79,14 +80,14 @@ export const servicesData = [
         footerImage: footer8,
         title: 'CUSTOM CLEARANCE',
         subtitle:
-            'Import customs Clearance – HSN classification, duty determination, and preparation of bills of entry, processing the customs clearance, assessment, customs examination and....',
+            'We manage custom clearance at import and export, including duty determination, processing, and out-of-charge procedures. Our Logi-Sys software ensures swift, efficient and economical data exchange.',
     },
     {
         id: 9,
         coverImage: cover9,
         footerImage: footer9,
-        title: 'LCL CONSOLIDATIN SERVICES',
+        title: 'LCL CONSOLIDATION SERVICES',
         subtitle:
-            'For quite a while, this activity has been vigorously pursued from various Indian load ports and ICDs. Invariably shipments to various Asian locations through hub ports at Jebel Ali....',
+            'We consistently prioritize Asian shipments through key hub ports from Indian load ports and ICDs. We actively seek expansion through our proprietary liner company.',
     },
 ]

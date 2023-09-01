@@ -82,34 +82,36 @@ export default function ShippingSection() {
                 disableGutters
                 sx={{ position: 'relative', my: 'auto' }}
             >
-                <Typography variant="h3">
-                    Seamless Logistics, Worldwide Shipping
-                </Typography>
-                <Typography variant="h3">
-                    Your Gateway to Effortless Trade
-                </Typography>
-                <Box
-                    sx={{
-                        display: 'flex',
-                        justifyContent: 'space-around',
-                        mt: theme.spacing(2),
-                    }}
-                >
-                    <ShippingDataCard
-                        icon={ship}
-                        text="1000+"
-                        subtitle="TEU Fleet Size"
-                    />
-                    <ShippingDataCard
-                        icon={anchor}
-                        text="244+"
-                        subtitle="Port calls around the world as of July 2023"
-                    />
-                    <ShippingDataCard
-                        icon={loop}
-                        text="165+"
-                        subtitle="weekly service loops"
-                    />
+                <Box sx={{ px: theme.spacing(4) }}>
+                    <Typography variant="h3">
+                        Seamless Logistics, Worldwide Shipping
+                    </Typography>
+                    <Typography variant="h3">
+                        Your Gateway to Effortless Trade
+                    </Typography>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            justifyContent: 'space-around',
+                            mt: theme.spacing(2),
+                        }}
+                    >
+                        <ShippingDataCard
+                            icon={ship}
+                            text="1000+"
+                            subtitle="TEU Fleet Size"
+                        />
+                        <ShippingDataCard
+                            icon={anchor}
+                            text="244+"
+                            subtitle="Port calls around the world as of July 2023"
+                        />
+                        <ShippingDataCard
+                            icon={loop}
+                            text="165+"
+                            subtitle="weekly service loops"
+                        />
+                    </Box>
                 </Box>
             </Container>
         </Box>
