@@ -80,21 +80,12 @@ const theme = createTheme({
             textAlign: 'justify',
             fontWeight: 300,
         },
-        // overline: {
-        //     fontSize: '1.5rem',
-        //     lineHeight: '2rem',
-        //     color: '#031225CC',
-        // },
-        // subtitle1: {
-        //     fontSize: '1.125rem',
-        //     lineHeight: '1.75rem',
-        //     color: '#FFFFFF',
-        // },
-        // subtitle2: {
-        //     fontSize: '1.125rem',
-        //     lineHeight: '1.75rem',
-        //     color: '#FFFFFF',
-        // },
+        subtitle1: {
+            fontSize: '1.375rem',
+            color: '#FFFFFF',
+            textAlign: 'start',
+        },
+        // subtitle2: {},
     },
 
     breakpoints: {

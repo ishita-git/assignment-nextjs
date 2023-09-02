@@ -17,7 +17,9 @@ const MapDescription = () => {
             />
             <Box sx={{ position: 'absolute', padding: theme.spacing(1) }}>
                 <Typography variant="h6">India</Typography>
-                <Divider sx={{ mt: theme.spacing(0.25) }} />
+                <Divider
+                    sx={{ mt: theme.spacing(0.25), borderColor: '#FFFFFF80' }}
+                />
 
                 <Typography
                     variant="body2"
