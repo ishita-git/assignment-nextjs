@@ -21,10 +21,10 @@ export default function ContactSection() {
                     position: 'absolute',
                     bottom: 0,
                     right: 0,
-                    width: '60%',
+                    width: '56%',
                     height: '100%',
                     py: theme.spacing(2),
-                    px: theme.spacing(6),
+                    px: theme.spacing(4),
                 }}
             >
                 <Typography variant="h3" textAlign="start">
