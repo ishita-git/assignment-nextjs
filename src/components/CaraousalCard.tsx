@@ -1,0 +1,112 @@
+import React, { useState } from 'react'
+import Image from 'next/image'
+import type { StaticImageData } from 'next/image'
+import { Box, Fade, Typography } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
+import cardBackground from '../assets/carousel/card-background.png'
+
+declare type CarouselCardProps = {
+    coverImage: string | StaticImageData
+    title?: string
+    subtitle?: string
+    footerImage: string | StaticImageData
+}
+
+export default function CarouselCard({
+    coverImage,
+    title,
+    subtitle,
+    footerImage,
+}: CarouselCardProps) {
+    const theme = useTheme()
+    const [coverCardVisible, setCoverCardVisible] = useState(true)
+
+    const onMouseEnter = () => {
+        setCoverCardVisible(false)
+    }
+
+    const onMouseOut = () => {
+        setCoverCardVisible(true)
+    }
+
+    return (
+        <Box sx={{ height: '24rem', width: '18rem' }}>
+            <Fade in={coverCardVisible} timeout={500}>
+                <Box sx={{ position: 'relative' }} onMouseEnter={onMouseEnter}>
+                    <Image
+                        src={coverImage}
+                        alt="card background"
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                        }}
+                    />
+                    <Typography
+                        variant="h6"
+                        sx={{ p: theme.spacing(1), position: 'absolute' }}
+                    >
+                        {title}
+                    </Typography>
+                </Box>
+            </Fade>
+
+            <Fade in={!coverCardVisible} timeout={500}>
+                <Box
+                    sx={{ position: 'relative', height: '22rem' }}
+                    onMouseOut={onMouseOut}
+                >
+                    <Image
+                        src={cardBackground}
+                        alt="card background"
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                        }}
+                    />
+                    <Box
+                        sx={{
+                            p: theme.spacing(1),
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                        }}
+                    >
+                        <Typography variant="h6" sx={{ width: '90%' }}>
+                            {title}
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            sx={{ mt: theme.spacing(1.125) }}
+                        >
+                            {subtitle}
+                        </Typography>
+                    </Box>
+
+                    <Box
+                        sx={{
+                            p: theme.spacing(1),
+                            position: 'absolute',
+                            bottom: 0,
+                            left: 0,
+                        }}
+                    >
+                        <Image
+                            src={footerImage}
+                            alt="footer image"
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                            }}
+                        />
+                    </Box>
+                </Box>
+            </Fade>
+        </Box>
+    )
+}

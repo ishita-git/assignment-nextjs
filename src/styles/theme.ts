@@ -28,23 +28,23 @@ const theme = createTheme({
 
         h1: {
             fontFamily: oswald.style.fontFamily,
-            fontSize: '5.8rem',
+            fontSize: '5.4rem',
             fontWeight: '600',
-            lineHeight: '8.875rem',
+            lineHeight: '7.2rem',
             textAlign: 'center',
             color: '#FFFFFF',
         },
         h2: {
-            fontSize: '4rem',
+            fontSize: '3.4rem',
             fontWeight: '600',
-            lineHeight: '6rem',
+            lineHeight: '4.5rem',
             textAlign: 'center',
             color: '#031225',
         },
         h3: {
-            fontSize: '3rem',
+            fontSize: '2.4rem',
             fontWeight: '600',
-            lineHeight: '4rem',
+            lineHeight: '3.2rem',
             textAlign: 'center',
             color: '#FFFFFF',
         },
@@ -63,8 +63,9 @@ const theme = createTheme({
         },
         h6: {
             fontSize: '1.125rem',
-            lineHeight: '1.75rem',
+            lineHeight: '1.25rem',
             color: '#FFFFFF',
+            textAlign: 'start',
         },
         body1: {
             fontSize: '1rem',
@@ -72,27 +73,19 @@ const theme = createTheme({
             color: '#031225B3',
             textAlign: 'center',
         },
-        // body2: {
-        //     fontSize: '1.25rem',
-        //     lineHeight: '1.75rem',
-        //     color: '#031225B3',
-        //     textAlign: 'center',
-        // },
-        // overline: {
-        //     fontSize: '1.5rem',
-        //     lineHeight: '2rem',
-        //     color: '#031225CC',
-        // },
-        // subtitle1: {
-        //     fontSize: '1.125rem',
-        //     lineHeight: '1.75rem',
-        //     color: '#FFFFFF',
-        // },
-        // subtitle2: {
-        //     fontSize: '1.125rem',
-        //     lineHeight: '1.75rem',
-        //     color: '#FFFFFF',
-        // },
+        body2: {
+            fontSize: '1rem',
+            lineHeight: '1.125rem',
+            color: '#FFFFFF',
+            textAlign: 'justify',
+            fontWeight: 300,
+        },
+        subtitle1: {
+            fontSize: '1.375rem',
+            color: '#FFFFFF',
+            textAlign: 'start',
+        },
+        // subtitle2: {},
     },
 
     breakpoints: {
