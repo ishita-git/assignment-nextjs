@@ -1,5 +1,8 @@
 import React from 'react'
-import { Box, Container, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Tab, Tabs } from '@mui/material'
+import AboutTab from '../../components/about/AboutTab'
+import CompaniesTab from '../../components/about/CompaniesTab'
+import MissionAndVisionTab from '../../components/about/MissionAndVisionTab'
 import Layout from '../Layout'
 import aboutBackground from '../../assets/about/about-backgroud.png'
 
@@ -80,13 +83,13 @@ export default function Home() {
             </Tabs>
 
             <TabPanel value={value} index={0}>
-                Content for Tab 1
+                <AboutTab />
             </TabPanel>
             <TabPanel value={value} index={1}>
-                Content for Tab 2
+                <CompaniesTab />
             </TabPanel>
             <TabPanel value={value} index={2}>
-                Content for Tab 3
+                <MissionAndVisionTab />
             </TabPanel>
         </Layout>
     )
