@@ -151,7 +151,7 @@ export default function FooterSection() {
                                 Quick Links
                             </Typography>
 
-                            <Link href="/">
+                            <Link href="/about">
                                 <Box
                                     sx={{
                                         display: 'flex',
@@ -173,7 +173,7 @@ export default function FooterSection() {
                                 </Box>
                             </Link>
 
-                            <Link href="/">
+                            <Link href="/career">
                                 <Box
                                     sx={{
                                         display: 'flex',
@@ -196,7 +196,7 @@ export default function FooterSection() {
                                 </Box>
                             </Link>
 
-                            <Link href="/">
+                            <Link href="/contact">
                                 <Box
                                     sx={{
                                         display: 'flex',
@@ -219,7 +219,7 @@ export default function FooterSection() {
                                 </Box>
                             </Link>
 
-                            <Link href="/">
+                            <Link href="/servies">
                                 <Box
                                     sx={{
                                         display: 'flex',
@@ -242,7 +242,7 @@ export default function FooterSection() {
                                 </Box>
                             </Link>
 
-                            <Link href="/">
+                            <Link href="/downloads">
                                 <Box
                                     sx={{
                                         display: 'flex',

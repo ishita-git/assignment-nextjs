@@ -55,13 +55,23 @@ export default function Navbar() {
                         />
                     </Typography>
 
-                    <Typography variant="h6" sx={{ ml: theme.spacing(1.5) }}>
-                        Services
-                    </Typography>
+                    <Link href="/services">
+                        <Typography
+                            variant="h6"
+                            sx={{ ml: theme.spacing(1.5) }}
+                        >
+                            Services
+                        </Typography>
+                    </Link>
 
-                    <Typography variant="h6" sx={{ ml: theme.spacing(1.5) }}>
-                        About Us
-                    </Typography>
+                    <Link href="/about">
+                        <Typography
+                            variant="h6"
+                            sx={{ ml: theme.spacing(1.5) }}
+                        >
+                            About Us
+                        </Typography>
+                    </Link>
 
                     <Link href="/contact">
                         <Typography
