@@ -40,7 +40,7 @@ export default function ShipmentCard({
                 sx={{
                     backgroundColor: '#EFF6FF',
                     height: '16.8rem',
-                    minWidth: '24rem',
+                    minWidth: '26rem',
                     borderRadius: '0px 16px 16px 16px',
                     boxShadow: '0px 2px 8px 0px #00000033',
                     padding: theme.spacing(1),

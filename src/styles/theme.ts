@@ -112,6 +112,13 @@ const theme = createTheme({
                 },
             },
         },
+        MuiLink: {
+            defaultProps: {
+                style: {
+                    textDecoration: 'none',
+                },
+            },
+        },
     },
 })
 

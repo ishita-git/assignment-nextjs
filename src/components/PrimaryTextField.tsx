@@ -50,11 +50,10 @@ export default function PrimaryTextField({
                         style: {
                             padding: '0.5rem',
                             height: '1.6rem',
-                            color: '#121417',
-                            fontSize: '1rem',
                         },
                     }}
                     fullWidth
+                    sx={{ input: { color: '#031225', fontWeight: 600 } }}
                 />
             </Box>
             <Typography variant="body1" sx={{ mt: '0.5rem' }}>

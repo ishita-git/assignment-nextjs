@@ -63,13 +63,23 @@ export default function Navbar() {
                         About Us
                     </Typography>
 
-                    <Typography variant="h6" sx={{ ml: theme.spacing(1.5) }}>
-                        Contact Us
-                    </Typography>
+                    <Link href="/contact">
+                        <Typography
+                            variant="h6"
+                            sx={{ ml: theme.spacing(1.5) }}
+                        >
+                            Contact Us
+                        </Typography>
+                    </Link>
 
-                    <Typography variant="h6" sx={{ ml: theme.spacing(1.5) }}>
-                        Career
-                    </Typography>
+                    <Link href="/career">
+                        <Typography
+                            variant="h6"
+                            sx={{ ml: theme.spacing(1.5) }}
+                        >
+                            Career
+                        </Typography>
+                    </Link>
 
                     <Typography
                         variant="h6"

@@ -23,14 +23,14 @@ export default function ContactSection() {
                     right: 0,
                     width: '56%',
                     height: '100%',
-                    py: theme.spacing(2),
+                    py: theme.spacing(1.5),
                     px: theme.spacing(4),
                 }}
             >
                 <Typography variant="h3" textAlign="start">
                     Get in touch
                 </Typography>
-                <Typography variant="subtitle1">
+                <Typography variant="body2" sx={{ mt: theme.spacing(0.5) }}>
                     Our team would love to hear from you
                 </Typography>
                 <Box sx={{ my: theme.spacing(1.5) }}>

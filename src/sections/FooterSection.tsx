@@ -1,8 +1,16 @@
 import Image from 'next/image'
-import { Box, Container, Divider, Grid, Link, Typography } from '@mui/material'
+import {
+    Box,
+    Button,
+    Container,
+    Divider,
+    Grid,
+    InputAdornment,
+    Link,
+    TextField,
+    Typography,
+} from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import PrimaryButton from '../components/PrimaryButton'
-import SecondaryTextField from '../components/SecondaryTextField'
 import logo from '../assets/logo.png'
 import facebook from '../assets/icons/facebook.png'
 import twitter from '../assets/icons/twitter.png'
@@ -11,13 +19,14 @@ import address from '../assets/icons/address.png'
 import email from '../assets/icons/email.png'
 import phone from '../assets/icons/phone.png'
 import arrowRight from '../assets/icons/arrow-right.png'
+import SecondaryTextField from '../components/SecondaryTextField'
 
 export default function FooterSection() {
     const theme = useTheme()
 
     return (
-        <Box sx={{ backgroundColor: '#003A9B', mt: theme.spacing(6) }}>
-            <Box sx={{ mx: theme.spacing(4) }}>
+        <Box sx={{ backgroundColor: '#003A9B', mt: theme.spacing(4) }}>
+            <Box sx={{ mx: theme.spacing(4), pt: theme.spacing(4) }}>
                 <Container maxWidth="xl" disableGutters>
                     <Grid container spacing={2}>
                         <Grid item md={3} sm={6} xs={12}>
@@ -265,18 +274,11 @@ export default function FooterSection() {
                                 Subscribe to our newsletter and never miss our
                                 latest news and promotions.
                             </Typography>
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'space-between',
-                                    my: '1rem',
-                                }}
-                            >
-                                <SecondaryTextField placeholder="Enter your mail id" />
-                                <Box sx={{ mb: '0.75rem' }}>
-                                    <PrimaryButton text="Submit" light />
-                                </Box>
+                            <Box sx={{ my: '1rem' }}>
+                                <SecondaryTextField
+                                    placeholder="Enter your mail id"
+                                    endButton
+                                />
                             </Box>
                             <Typography variant="body2">
                                 Privacy Policy
@@ -298,7 +300,7 @@ export default function FooterSection() {
                     <Typography
                         variant="body2"
                         textAlign="end"
-                        sx={{ py: theme.spacing(1) }}
+                        sx={{ py: theme.spacing(2) }}
                     >
                         © 2022 Copyright: Muskan-Group of Companies 200804
                     </Typography>
