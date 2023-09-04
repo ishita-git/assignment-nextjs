@@ -81,11 +81,15 @@ const theme = createTheme({
             fontWeight: 300,
         },
         subtitle1: {
-            fontSize: '1.375rem',
+            fontSize: '1.5rem',
             color: '#FFFFFF',
             textAlign: 'start',
         },
-        // subtitle2: {},
+        subtitle2: {
+            fontSize: '1rem',
+            color: '#031225',
+            textAlign: 'start',
+        },
     },
 
     breakpoints: {

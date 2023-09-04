@@ -4,7 +4,7 @@ import ShipmentTracker from '../sections/ShipmentTracker'
 import ServicesSection from '../sections/ServicesSection'
 import ShippingSection from '../sections/ShippingSection'
 import BusinessPresenceSection from '../sections/BusinessPresenceSection'
-import AppreciationSection from '../sections/AppreciationSection'
+import ClienteleSection from '../sections/ClienteleSection'
 import ContactSection from '../sections/ContactSection'
 import FooterSection from '../sections/FooterSection'
 import cargo from '../assets/images/cargo-ship-1.png'
@@ -33,7 +33,7 @@ export default function Home() {
             <ServicesSection />
             <ShippingSection />
             <BusinessPresenceSection />
-            {/* <AppreciationSection /> */}
+            <ClienteleSection />
             <ContactSection />
             <FooterSection />
         </Box>
