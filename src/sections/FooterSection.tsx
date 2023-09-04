@@ -219,7 +219,7 @@ export default function FooterSection() {
                                 </Box>
                             </Link>
 
-                            <Link href="/servies">
+                            <Link href="/services">
                                 <Box
                                     sx={{
                                         display: 'flex',
