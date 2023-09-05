@@ -119,6 +119,22 @@ const theme = createTheme({
                 },
             },
         },
+        MuiMenu: {
+            styleOverrides: {
+                paper: {
+                    backgroundColor: '#003A9B',
+                    borderRadius: '8px',
+                },
+            },
+        },
+        MuiMenuItem: {
+            defaultProps: {
+                style: {
+                    color: '#FFFFFF',
+                    fontWeight: 400,
+                },
+            },
+        },
     },
 })
 

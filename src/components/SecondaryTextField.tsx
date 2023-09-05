@@ -6,14 +6,15 @@ declare type TextFieldProps = {
     endButton?: boolean
 }
 
-function SecondaryTextField({
-    placeholder,
-    multiline,
-    endButton,
-}: TextFieldProps) {
+function SecondaryTextField({ placeholder, multiline, endButton }: TextFieldProps) {
     return (
         <Box sx={{ mb: '0.75rem' }}>
-            <Box sx={{ backgroundColor: '#FFFFFF33', borderRadius: '8px' }}>
+            <Box
+                sx={{
+                    backgroundColor: endButton ? '#FFFFFF' : '#FFFFFF33',
+                    borderRadius: '8px',
+                }}
+            >
                 <TextField
                     variant="standard"
                     placeholder={placeholder}
@@ -29,7 +30,7 @@ function SecondaryTextField({
                                         borderRadius: '6px',
                                         width: '6rem',
                                         height: '2rem',
-                                        backgroundColor: '#031225',
+                                        backgroundColor: '#003A9B',
                                     }}
                                 >
                                     Submit
@@ -41,8 +42,9 @@ function SecondaryTextField({
                     }}
                     inputProps={{
                         style: {
-                            color: '#FFFFFF',
+                            color: endButton ? '#003A9B' : '#FFFFFF',
                             fontSize: '1rem',
+                            fontWeight: endButton ? 700 : 400,
                         },
                     }}
                     fullWidth
