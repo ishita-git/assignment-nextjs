@@ -29,10 +29,10 @@ export default function Navbar() {
     const theme = useTheme()
 
     return (
-        <AppBar position="static" elevation={0} sx={{ background: 'transparent' }}>
+        <AppBar position='static' elevation={0} sx={{ background: 'transparent' }}>
             <Container
                 disableGutters
-                maxWidth="xl"
+                maxWidth='xl'
                 sx={{
                     display: 'flex',
                     justifyContent: 'space-between',
@@ -40,11 +40,11 @@ export default function Navbar() {
                 }}
             >
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Link href="/">
-                        <Image src={logo} alt="logo" style={{ height: '3rem', width: 'auto' }} />
+                    <Link href='/'>
+                        <Image src={logo} alt='logo' style={{ height: '3rem', width: 'auto' }} />
                     </Link>
 
-                    <Typography variant="h5" sx={{ mx: theme.spacing(1) }}>
+                    <Typography variant='h5' sx={{ mx: theme.spacing(1) }}>
                         Muskan Group of Companies
                     </Typography>
                 </Box>
@@ -52,7 +52,7 @@ export default function Navbar() {
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box>
                         <Typography
-                            variant="h6"
+                            variant='h6'
                             sx={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -64,7 +64,7 @@ export default function Navbar() {
                             Companies
                             <Image
                                 src={downArrow}
-                                alt="expand more"
+                                alt='expand more'
                                 style={{
                                     width: '1.25rem',
                                     height: 'auto',
@@ -73,52 +73,42 @@ export default function Navbar() {
                             />
                         </Typography>
 
-                        <Menu
-                            anchorEl={companiesMenu}
-                            open={openCompaniesMenu}
-                            onClose={closeCompaniesMenu}
-                        >
-                            <MenuItem onClick={closeCompaniesMenu}>
-                                Muskan Container line Pvt. Ltd.
-                            </MenuItem>
+                        <Menu anchorEl={companiesMenu} open={openCompaniesMenu} onClose={closeCompaniesMenu}>
+                            <MenuItem onClick={closeCompaniesMenu}>Muskan Container line Pvt. Ltd.</MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>Muskan Logistics</MenuItem>
-                            <MenuItem onClick={closeCompaniesMenu}>
-                                Muskaan Shipping PTE Ltd.
-                            </MenuItem>
-                            <MenuItem onClick={closeCompaniesMenu}>
-                                Muskaan Shipping SDN BHD
-                            </MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>Muskaan Shipping PTE Ltd.</MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>Muskaan Shipping SDN BHD</MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>Muskaan Shipping LLC</MenuItem>
                         </Menu>
                     </Box>
 
-                    <Link href="/services">
-                        <Typography variant="h6" sx={{ ml: theme.spacing(1.5) }}>
+                    <Link href='/services'>
+                        <Typography variant='h6' sx={{ ml: theme.spacing(1.5) }}>
                             Services
                         </Typography>
                     </Link>
 
-                    <Link href="/about">
-                        <Typography variant="h6" sx={{ ml: theme.spacing(1.5) }}>
+                    <Link href='/about'>
+                        <Typography variant='h6' sx={{ ml: theme.spacing(1.5) }}>
                             About Us
                         </Typography>
                     </Link>
 
-                    <Link href="/contact">
-                        <Typography variant="h6" sx={{ ml: theme.spacing(1.5) }}>
+                    <Link href='/contact'>
+                        <Typography variant='h6' sx={{ ml: theme.spacing(1.5) }}>
                             Contact Us
                         </Typography>
                     </Link>
 
-                    <Link href="/career">
-                        <Typography variant="h6" sx={{ ml: theme.spacing(1.5) }}>
+                    <Link href='/career'>
+                        <Typography variant='h6' sx={{ ml: theme.spacing(1.5) }}>
                             Career
                         </Typography>
                     </Link>
 
                     <Box>
                         <Typography
-                            variant="h6"
+                            variant='h6'
                             sx={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -131,7 +121,7 @@ export default function Navbar() {
                             Tools
                             <Image
                                 src={downArrow}
-                                alt="expand more"
+                                alt='expand more'
                                 style={{
                                     width: '1.25rem',
                                     height: 'auto',
@@ -149,7 +139,7 @@ export default function Navbar() {
                     </Box>
 
                     <Box sx={{ ml: theme.spacing(1.5) }}>
-                        <PrimaryButton text="Login" light />
+                        <PrimaryButton text='Login' light />
                     </Box>
                 </Box>
             </Container>

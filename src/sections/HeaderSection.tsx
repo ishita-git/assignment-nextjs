@@ -26,7 +26,7 @@ export default function HeaderSection({ image, title, subtitle }: HeaderProps) {
         >
             <Image
                 src={image}
-                alt="cargo"
+                alt='cargo'
                 style={{
                     width: '100%',
                     height: 'auto',
@@ -43,13 +43,13 @@ export default function HeaderSection({ image, title, subtitle }: HeaderProps) {
             >
                 <Navbar />
 
-                <Container maxWidth="xl" disableGutters>
-                    <Typography variant="h1" sx={{ mt: theme.spacing(4) }}>
+                <Container maxWidth='xl' disableGutters>
+                    <Typography variant='h1' sx={{ mt: theme.spacing(4) }}>
                         {title}
                     </Typography>
 
                     <Typography
-                        variant="h2"
+                        variant='h2'
                         sx={{
                             mt: theme.spacing(1.2),
                             fontFamily: oswald.style.fontFamily,

@@ -1,155 +1,99 @@
-import { Box, Grid, Typography, InputLabel, TextField, Button } from '@mui/material'
-import Layout from '../Layout'
 import Image from 'next/image'
+import { Box, Grid, Typography, IconButton, InputLabel, Button, Paper } from '@mui/material'
+import Layout from '../Layout'
 import contactBackground from '../../assets/contact/contact-background.png'
-import PrimaryTextField from '@/components/PrimaryTextField'
-import theme from '@/styles/theme'
-import reload from "../../assets/icons/loop.png";
-import map from "../../assets/contact/map_temp.png";
+import PrimaryTextField from '../../components/PrimaryTextField'
+import reload from '../../assets/icons/loop.png'
+import map from '../../assets/contact/address-map.png'
+import captcha from '../../assets/contact/captcha.png'
+import PrimaryButton from '../../components/PrimaryButton'
+
+function CompanyInfo({ title, body }: { title: String; body: String }) {
+    return (
+        <Box sx={{ mb: '1rem' }}>
+            <InputLabel>{title}</InputLabel>
+            <Typography variant='body2' sx={{ fontWeight: 400, color: '#1B1B1F' }}>
+                {body}
+            </Typography>
+        </Box>
+    )
+}
 
 export default function Home() {
     return (
-        <Layout title='We would love to deliver your goods' image={contactBackground} >
-
-            <Grid container spacing={2} sx={{ width: '100%', mb: "5rem" }}>
-                <Grid item xs>
-                    <Box >
-                        <Image src={map} alt="map" style={{
-                            height: "18.75rem", width: "32.75rem"
-                        }} />
-                    </Box>
+        <Layout title='We would love to deliver your goods' image={contactBackground}>
+            <Grid container spacing={4} alignItems='center'>
+                <Grid item xs={12} sm={6}>
+                    <Image
+                        src={map}
+                        alt='map'
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                        }}
+                    />
                 </Grid>
-                <Grid item xs>
-                    <Box justifyContent={"left"}>
-                        <Typography variant='h3' color={"#031225"} sx={{ mb: "1.5rem" }}>
+                <Grid item xs={12} sm={6}>
+                    <Box>
+                        <Typography variant='h3' textAlign='start' sx={{ mb: '1.5rem', color: '#1B1B1F' }}>
                             Muskaan group of Companies
                         </Typography>
-                        <Grid container item spacing={4} >
-                            <Grid item xs>
-                                {customTextFirst(" Registered Office", "Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor,NEW DELHI - 110078")}
-                                {customTextFirst("Telephone No.", "011 41587468/40687469")}
+
+                        <Grid container spacing={4}>
+                            <Grid item xs={8}>
+                                <CompanyInfo
+                                    title='Registered Office'
+                                    body='Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor,NEW DELHI - 110078'
+                                />
+                                <CompanyInfo title='Telephone No.' body='011 41587468/40687469' />
                             </Grid>
-                            <Grid item xs>
-                                {customTextFirst("Email ID", "info@mclpl.co.in")}
+                            <Grid item xs={4}>
+                                <CompanyInfo title='Email ID' body='info@mclpl.co.in' />
                             </Grid>
                         </Grid>
                     </Box>
                 </Grid>
             </Grid>
-            <Box mb={theme.spacing(2)}>
-                <Typography variant='h3' color={"#031225"} sx={{ mb: "0.85rem", textAlign: "left" }}>
+
+            <Box sx={{ mt: '4rem', mb: '2rem' }}>
+                <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
                     Write to Us
                 </Typography>
-                <Typography variant='body1' color={"#031225"} sx={{ textAlign: "left" }}>
+                <Typography variant='body1' textAlign='start' sx={{ color: '#031225' }}>
                     We'd love to hear from you
                 </Typography>
             </Box>
-            <Box sx={{ backgroundColor: "#FFFFFF", padding: theme.spacing(1), borderRadius: "1.25rem" }}>
+            <Paper sx={{ padding: '1rem', borderRadius: '16px' }}>
                 <Grid container spacing={2}>
-                    <Grid item xs>
+                    <Grid item sm={6} xs={12}>
+                        <PrimaryTextField label='Name' placeholder='Enter your name' />
+                        <PrimaryTextField label='Email' placeholder='Enter your email' />
+                        <PrimaryTextField label='Message' placeholder='Enter your message' multiline />
+                    </Grid>
+                    <Grid item sm={6} xs={12}>
+                        <PrimaryTextField label='Mobile Number' placeholder='Enter your contact number' />
+                        <PrimaryTextField label='Enquiry Type' placeholder='Please select an enquiry type' />
 
-                        <PrimaryTextField
-                            label="Name"
-                            placeholder="Enter your name"
-                        />
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <PrimaryTextField label='Captcha' placeholder='Enter Captcha' />
 
-                        <PrimaryTextField
-                            label="Email"
-                            placeholder="Enter your email"
-                        />
-                        <Box sx={{ mb: '1rem' }}>
-                            <InputLabel>{"Massage"}</InputLabel>
-                            <Box sx={{ backgroundColor: '#0312251A', borderRadius: '0.5rem' }}>
-                                <TextField
-                                    variant="standard"
-                                    placeholder={"Enter your massage"}
-                                    InputProps={{
-                                        disableUnderline: true,
-                                    }}
-                                    inputProps={{
-                                        style: {
-                                            padding: '0.5rem',
-                                            height: '3.6rem',
-                                        },
-                                    }}
-                                    fullWidth
-                                    multiline
-                                    sx={{ input: { color: '#031225', fontWeight: 600 } }}
+                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                <Image
+                                    src={captcha}
+                                    alt='reload'
+                                    style={{ height: '2rem', width: 'auto', marginRight: '0.5rem' }}
                                 />
+                                <IconButton>
+                                    <Image src={reload} alt='reload' style={{ height: '1.5rem', width: 'auto' }} />
+                                </IconButton>
                             </Box>
                         </Box>
                     </Grid>
-                    <Grid item xs>
-                        <PrimaryTextField
-                            label="Mobile Number"
-                            placeholder="Enter your contact number"
-                        />
-
-                        <PrimaryTextField
-                            label="Enquiry Type"
-                            placeholder="Please select an enquiry type"
-                        />
-
-                        <Box sx={{ mb: '1rem' }}>
-                            <InputLabel>{"Captcha"}</InputLabel>
-                            <Box sx={{ display: "flex", justifyContent: "space-between" }} >
-                                <Box sx={{ backgroundColor: '#0312251A', borderRadius: '8px', marginRight: "1rem", width: "60%" }}>
-                                    <TextField
-                                        variant="standard"
-                                        placeholder={"Enter Captcha"}
-                                        InputProps={{
-                                            disableUnderline: true,
-                                        }}
-                                        inputProps={{
-                                            style: {
-                                                padding: '0.5rem',
-                                                height: '1.6rem',
-                                            },
-                                        }}
-                                        fullWidth
-                                        sx={{ input: { color: '#031225', fontWeight: 600 } }}
-                                    />
-                                </Box>
-                                <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", backgroundColor: '#0312251A', borderRadius: '8px', paddingX: "1rem", width: "40%" }}>
-                                    <Typography sx={{ textAlign: "center" }}>456818</Typography>
-                                    <Image src={reload} alt='"' style={{
-                                        height: '1.5rem',
-                                        width: '1.5rem',
-                                        // margin: '1rem',
-                                    }} />
-                                </Box>
-                            </Box>
-                        </Box>
-                    </Grid>
-
                 </Grid>
-                <Box sx={{ display: "flex", justifyContent: "right", marginBottom: "1rem" }}>
-                    <Button
-                        variant="contained"
-                        size="large"
-                        sx={{
-                            textTransform: 'capitalize',
-                            borderRadius: '6px',
-                            width: '9.8rem',
-                            height: '2.8rem',
-                            backgroundColor: '#003A9B',
-                        }}
-                    >
-                        Submit
-                    </Button>
+                <Box sx={{ display: 'flex', justifyContent: 'end', marginBottom: '1rem' }}>
+                    <PrimaryButton text='Submit' />
                 </Box>
-            </Box>
+            </Paper>
         </Layout>
     )
 }
-
-function customTextFirst(label: String, body: String) {
-    return <Box mb={"1rem"}>
-        <Typography variant='body2' color={"#003A9B"} sx={{ mb: "0.5rem", fontWeight: "500" }}>
-            {label}                               </Typography>
-        <Typography variant='body2' color={"#1B1B1F"}>
-            {body}
-        </Typography>
-    </Box>
-}
-

@@ -8,6 +8,14 @@ import icon7 from '../assets/clients/jyothy.png'
 import icon8 from '../assets/clients/maruti-suzuki.png'
 import icon9 from '../assets/clients/srf.png'
 import icon10 from '../assets/clients/unilever.png'
+import icon11 from '../assets/clients/EMU.png'
+import icon12 from '../assets/clients/FSL.png'
+import icon13 from '../assets/clients/denso.png'
+import icon14 from '../assets/clients/globe-link.png'
+import icon15 from '../assets/clients/sea-sky.png'
+import icon16 from '../assets/clients/srf.png'
+import icon17 from '../assets/clients/synergy-steels.png'
+import icon18 from '../assets/clients/vanguard.png'
 import card1 from '../assets/clients/ambica-card.png'
 import card2 from '../assets/clients/coca-cola-card.png'
 import card3 from '../assets/clients/dabur-card.png'
@@ -18,6 +26,27 @@ import card7 from '../assets/clients/jyothy-card.png'
 import card8 from '../assets/clients/maruti-suzuki-card.png'
 import card9 from '../assets/clients/srf-card.png'
 import card10 from '../assets/clients/unilever-card.png'
+
+const clientIcons = [
+    icon1,
+    icon2,
+    icon3,
+    icon4,
+    icon5,
+    icon6,
+    icon7,
+    icon8,
+    icon9,
+    icon10,
+    icon11,
+    icon12,
+    icon13,
+    icon14,
+    icon15,
+    icon16,
+    icon17,
+    icon18,
+]
 
 export const clientsData = [
     {

@@ -1,11 +1,5 @@
 import Image from 'next/image'
-import {
-    Box,
-    InputAdornment,
-    InputLabel,
-    TextField,
-    Typography,
-} from '@mui/material'
+import { Box, InputAdornment, InputLabel, TextField, Typography } from '@mui/material'
 import searchIcon from '../assets/icons/search.png'
 
 declare type TextFieldProps = {
@@ -13,6 +7,7 @@ declare type TextFieldProps = {
     placeholder?: string
     startIcon?: boolean
     helperText?: string
+    multiline?: boolean
 }
 
 export default function PrimaryTextField({
@@ -20,23 +15,23 @@ export default function PrimaryTextField({
     placeholder,
     startIcon,
     helperText,
+    multiline,
 }: TextFieldProps) {
     return (
         <Box sx={{ mb: '1rem' }}>
             <InputLabel>{label}</InputLabel>
             <Box sx={{ backgroundColor: '#0312251A', borderRadius: '8px' }}>
                 <TextField
-                    variant="standard"
+                    variant='standard'
                     placeholder={placeholder}
                     InputProps={{
                         disableUnderline: true,
                         startAdornment: startIcon ? (
-                            <InputAdornment position="start">
+                            <InputAdornment position='start'>
                                 <Image
                                     src={searchIcon}
-                                    alt="seach icon"
+                                    alt='seach icon'
                                     style={{
-                                        height: '1rem',
                                         width: 'auto',
                                         marginLeft: '1rem',
                                     }}
@@ -49,14 +44,15 @@ export default function PrimaryTextField({
                     inputProps={{
                         style: {
                             padding: '0.5rem',
-                            height: '1.6rem',
+                            height: multiline ? '3.2rem' : '1.6rem',
                         },
                     }}
                     fullWidth
                     sx={{ input: { color: '#031225', fontWeight: 600 } }}
+                    multiline={multiline}
                 />
             </Box>
-            <Typography variant="body1" sx={{ mt: '0.5rem' }}>
+            <Typography variant='body1' sx={{ mt: '0.5rem' }}>
                 {helperText}
             </Typography>
         </Box>

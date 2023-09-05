@@ -18,7 +18,6 @@ const theme = createTheme({
         },
         background: {
             default: '#EFF6FF',
-            // paper: '#003A9B',
         },
     },
 
@@ -109,6 +108,7 @@ const theme = createTheme({
                     color: '#003A9B',
                     marginBottom: '4px',
                     textAlign: 'start',
+                    fontWeight: 500,
                 },
             },
         },
@@ -133,6 +133,11 @@ const theme = createTheme({
                     color: '#FFFFFF',
                     fontWeight: 400,
                 },
+            },
+        },
+        MuiPaper: {
+            defaultProps: {
+                elevation: 0,
             },
         },
     },

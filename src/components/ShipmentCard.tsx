@@ -12,12 +12,7 @@ declare type CardProps = {
     datePicker?: React.ReactNode
 }
 
-export default function ShipmentCard({
-    cardTitle,
-    children,
-    submitButton,
-    datePicker,
-}: CardProps) {
+export default function ShipmentCard({ cardTitle, children, submitButton, datePicker }: CardProps) {
     const theme = useTheme()
 
     return (
@@ -33,7 +28,7 @@ export default function ShipmentCard({
                     justifyContent: 'center',
                 }}
             >
-                <Typography variant="h4">{cardTitle}</Typography>
+                <Typography variant='h4'>{cardTitle}</Typography>
             </Box>
 
             <Box
@@ -57,10 +52,7 @@ export default function ShipmentCard({
                     }}
                 >
                     <InputLabel>{datePicker ? 'Date' : ''}</InputLabel>
-                    <LocalizationProvider
-                        dateAdapter={AdapterDayjs}
-                        adapterLocale="en-gb"
-                    >
+                    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='en-gb'>
                         {datePicker}
                     </LocalizationProvider>
                 </Box>
