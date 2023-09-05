@@ -12,19 +12,14 @@ declare type LayoutProps = {
     children: React.ReactNode
 }
 
-export default function Layout({
-    image,
-    title,
-    subtitle,
-    children,
-}: LayoutProps) {
+export default function Layout({ image, title, subtitle, children }: LayoutProps) {
     const theme = useTheme()
 
     return (
         <Box sx={{ backgroundColor: '#EFF6FF' }}>
             <HeaderSection image={image} title={title} subtitle={subtitle} />
             <Box sx={{ px: theme.spacing(4) }}>
-                <Container maxWidth="xl">{children}</Container>
+                <Container maxWidth='xl'>{children}</Container>
             </Box>
             <FooterSection />
         </Box>

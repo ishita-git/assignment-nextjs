@@ -128,16 +128,34 @@ const theme = createTheme({
             },
         },
         MuiMenuItem: {
-            defaultProps: {
-                style: {
-                    color: '#FFFFFF',
-                    fontWeight: 400,
-                },
-            },
+            defaultProps: { style: { color: '#FFFFFF', fontWeight: 400 } },
         },
         MuiPaper: {
-            defaultProps: {
-                elevation: 0,
+            defaultProps: { elevation: 0 },
+        },
+        MuiTabs: {
+            styleOverrides: { indicator: { display: 'none' } },
+        },
+        MuiTab: {
+            styleOverrides: {
+                root: {
+                    textTransform: 'capitalize',
+                    color: '#003A9B',
+                    fontSize: '1.25rem',
+                    borderTop: '2px solid #003A9B33',
+                    borderBottom: '2px solid #003A9B33',
+                    '&.Mui-selected': { color: '#FFFFFF', border: 0 },
+                    '&:first-child': {
+                        borderLeft: '2px solid #003A9B33',
+                        borderTopLeftRadius: '40px',
+                        borderBottomLeftRadius: '40px',
+                    },
+                    '&:last-child': {
+                        borderRight: '2px solid #003A9B33',
+                        borderTopRightRadius: '40px',
+                        borderBottomRightRadius: '40px',
+                    },
+                },
             },
         },
     },
