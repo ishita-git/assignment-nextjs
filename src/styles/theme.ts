@@ -163,6 +163,11 @@ const theme = createTheme({
                 },
             },
         },
+        MuiSelect: {
+            styleOverrides: {
+                root: { backgroundColor: '#0312251A', borderRadius: '8px', height: '2.6rem', color: '#031225' },
+            },
+        },
     },
 })
 

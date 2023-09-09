@@ -1,5 +1,18 @@
+import * as React from 'react'
 import Image from 'next/image'
-import { Box, Grid, Typography, IconButton, InputLabel, Button, Paper } from '@mui/material'
+import {
+    Box,
+    Grid,
+    Typography,
+    IconButton,
+    InputLabel,
+    Button,
+    Paper,
+    FormControl,
+    Select,
+    MenuItem,
+} from '@mui/material'
+import { SelectChangeEvent } from '@mui/material/Select'
 import Layout from '../Layout'
 import contactBackground from '../../assets/contact/contact-background.png'
 import PrimaryTextField from '../../components/PrimaryTextField'
@@ -20,6 +33,12 @@ function CompanyInfo({ title, body }: { title: String; body: String }) {
 }
 
 export default function Home() {
+    const [enquiryType, setEnquiryType] = React.useState('')
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setEnquiryType(event.target.value as string)
+    }
+
     return (
         <Layout title='We would love to deliver your goods' image={contactBackground}>
             <Grid container spacing={4} alignItems='center'>
@@ -72,7 +91,43 @@ export default function Home() {
                     </Grid>
                     <Grid item sm={6} xs={12}>
                         <PrimaryTextField label='Mobile Number' placeholder='Enter your contact number' />
-                        <PrimaryTextField label='Enquiry Type' placeholder='Please select an enquiry type' />
+
+                        <Box sx={{ mb: '1rem' }}>
+                            <InputLabel>Enquiry Type</InputLabel>
+                            <FormControl fullWidth>
+                                <Select
+                                    value={enquiryType}
+                                    onChange={handleChange}
+                                    displayEmpty
+                                    renderValue={
+                                        enquiryType !== ''
+                                            ? () => (
+                                                  <Typography
+                                                      textAlign='start'
+                                                      sx={{ color: '#03122580', fontWeight: 600, ml: '-0.25rem' }}
+                                                  >
+                                                      {enquiryType}
+                                                  </Typography>
+                                              )
+                                            : () => (
+                                                  <Typography
+                                                      textAlign='start'
+                                                      sx={{ color: '#03122580', fontWeight: 600, ml: '-0.25rem' }}
+                                                  >
+                                                      Please select an enquiry type
+                                                  </Typography>
+                                              )
+                                    }
+                                >
+                                    <MenuItem value=''>
+                                        <em>Please select an enquiry type</em>
+                                    </MenuItem>
+                                    <MenuItem value='General Enquiry'>General Enquiry</MenuItem>
+                                    <MenuItem value='Feedback'>Feedback</MenuItem>
+                                    <MenuItem value='Claims'>Claims</MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Box>
 
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <PrimaryTextField label='Captcha' placeholder='Enter Captcha' />
