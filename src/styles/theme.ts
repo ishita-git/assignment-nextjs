@@ -128,7 +128,12 @@ const theme = createTheme({
             },
         },
         MuiMenuItem: {
-            defaultProps: { style: { color: '#FFFFFF', fontWeight: 400 } },
+            defaultProps: {
+                style: {
+                    color: '#FFFFFF',
+                    fontWeight: 400,
+                },
+            },
         },
         MuiPaper: {
             defaultProps: { elevation: 0 },

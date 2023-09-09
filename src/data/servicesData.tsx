@@ -25,6 +25,7 @@ export const servicesData = [
         title: 'EMPTY CONTAINER DEPOTS',
         subtitle:
             'Muskan Container Lines operates exclusive 24/7 depots in key locations like Nhava Sheva and Chennai, offering top-notch services with modern facilities.',
+        link: '/services/container-depots',
     },
     {
         id: 2,
@@ -33,6 +34,7 @@ export const servicesData = [
         title: 'NVOCC (Non Vessel Operating Common Carrier)',
         subtitle:
             'Muskan Container Lines is a Premier NVOCC operator in India, Middle East, Far East, and South East Asia, with a Fleet of 1000+ TEUS, expanding to CIS countries.',
+        link: '/services/nvocc',
     },
     {
         id: 3,
@@ -41,6 +43,7 @@ export const servicesData = [
         title: 'TRANSPORTATION',
         subtitle:
             'Our integrated intermodal truckage solutions ensure secure and punctual delivery. We offer seamless transporation, door-to-door convenience and streamlined management.',
+        link: '/services/transportation',
     },
     {
         id: 4,
@@ -49,6 +52,7 @@ export const servicesData = [
         title: 'AIR FREIGHT',
         subtitle:
             'Muskan Container Lines excels in innovative airfreight solutions to meet the global demand. With a worldwide network, we ensure economical and punctualy delivery of diverse shipments',
+        link: '/services/air-freight',
     },
     {
         id: 5,
@@ -57,6 +61,7 @@ export const servicesData = [
         title: 'MULTIMODEL – TRANSPORTATION',
         subtitle:
             'Muskan Container Lines seamlessly connects land, sea, and air. Our multimodal transport network ensures faster, economical and efficient logistics, with  reduced risk.',
+        link: '/services/multimodel',
     },
     {
         id: 6,
@@ -65,6 +70,7 @@ export const servicesData = [
         title: 'OVER DIMENSION CARGO',
         subtitle:
             'The Muskan Group is quickly expanding its utlisation of over-dimension cargo. We use specialized equipment worldwide, including Asia, Africa, ISC ports and CIS locations.',
+        link: '/services/over-dimension',
     },
     {
         id: 7,
@@ -73,6 +79,7 @@ export const servicesData = [
         title: 'PROJECT CARGO',
         subtitle:
             'Muskan Container Lines Pvt Ltd, formerly Muskan Logistics, has excelled in Project Cargo Logistics for over a decade, offering custom solutions for reliable and timely project deliveries to global clients.',
+        link: '/services/project-cargo',
     },
     {
         id: 8,
@@ -81,6 +88,7 @@ export const servicesData = [
         title: 'CUSTOM CLEARANCE',
         subtitle:
             'We manage custom clearance at import and export, including duty determination, processing, and out-of-charge procedures. Our Logi-Sys software ensures swift, efficient and economical data exchange.',
+        link: '/services/custom-clearance',
     },
     {
         id: 9,
@@ -89,5 +97,6 @@ export const servicesData = [
         title: 'LCL CONSOLIDATION SERVICES',
         subtitle:
             'We consistently prioritize Asian shipments through key hub ports from Indian load ports and ICDs. We actively seek expansion through our proprietary liner company.',
+        link: '/services/lcl',
     },
 ]

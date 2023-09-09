@@ -1,7 +1,9 @@
 import * as React from 'react'
 import Image from 'next/image'
 import { useTheme } from '@mui/material/styles'
-import { AppBar, Box, Container, Link, Menu, MenuItem, Typography } from '@mui/material'
+import { AppBar, Box, Container, Fade, Link, Menu, MenuItem, Typography } from '@mui/material'
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded'
+import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded'
 
 import PrimaryButton from './PrimaryButton'
 import downArrow from '../assets/icons/arrow-down.png'
@@ -9,9 +11,11 @@ import logo from '../assets/logo.png'
 
 export default function Navbar() {
     const [companiesMenu, setCompaniesMenu] = React.useState<null | HTMLElement>(null)
+    const [servicesMenu, setServicesMenu] = React.useState<null | HTMLElement>(null)
     const [toolsMenu, setToolsMenu] = React.useState<null | HTMLElement>(null)
 
     const openCompaniesMenu = Boolean(companiesMenu)
+    const openServicesMenu = Boolean(servicesMenu)
     const openToolsMenu = Boolean(toolsMenu)
 
     const handleCompaniesMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -19,6 +23,12 @@ export default function Navbar() {
     }
     const closeCompaniesMenu = () => {
         setCompaniesMenu(null)
+    }
+    const handleServicesMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setServicesMenu(event.currentTarget)
+    }
+    const closeServicesMenu = () => {
+        setServicesMenu(null)
     }
     const handleToolsMenu = (event: React.MouseEvent<HTMLButtonElement>) => {
         setToolsMenu(event.currentTarget)
@@ -51,27 +61,16 @@ export default function Navbar() {
 
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Box>
-                        <Typography
-                            variant='h6'
-                            sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                cursor: 'pointer',
-                                lineHeight: '3rem',
-                            }}
-                            onClick={handleCompaniesMenu}
-                        >
-                            Companies
-                            <Image
-                                src={downArrow}
-                                alt='expand more'
-                                style={{
-                                    width: '1.25rem',
-                                    height: 'auto',
-                                    marginLeft: theme.spacing(0.25),
-                                }}
-                            />
-                        </Typography>
+                        <Box sx={{ cursor: 'pointer' }}>
+                            <Typography
+                                variant='h6'
+                                sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem' }}
+                                onClick={handleCompaniesMenu}
+                            >
+                                Companies
+                                {companiesMenu ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
+                            </Typography>
+                        </Box>
 
                         <Menu anchorEl={companiesMenu} open={openCompaniesMenu} onClose={closeCompaniesMenu}>
                             <MenuItem onClick={closeCompaniesMenu}>Muskan Container line Pvt. Ltd.</MenuItem>
@@ -82,11 +81,30 @@ export default function Navbar() {
                         </Menu>
                     </Box>
 
-                    <Link href='/services'>
-                        <Typography variant='h6' sx={{ ml: theme.spacing(1.5) }}>
-                            Services
-                        </Typography>
-                    </Link>
+                    <Box>
+                        <Box sx={{ cursor: 'pointer', ml: theme.spacing(1.5) }}>
+                            <Typography
+                                variant='h6'
+                                sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem' }}
+                                onClick={handleServicesMenu}
+                            >
+                                Services
+                                {servicesMenu ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
+                            </Typography>
+                        </Box>
+
+                        <Menu anchorEl={servicesMenu} open={openServicesMenu} onClose={closeServicesMenu}>
+                            <MenuItem onClick={closeServicesMenu}>Empty Container Depots</MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>NVOCC</MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>Transportation</MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>Air Freight</MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>Multimodel-Transportation</MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>Over Dimension Cargo</MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>Project Cargo</MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>Custom Clearance</MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>LCL Consolidation Services</MenuItem>
+                        </Menu>
+                    </Box>
 
                     <Link href='/about'>
                         <Typography variant='h6' sx={{ ml: theme.spacing(1.5) }}>
@@ -107,28 +125,16 @@ export default function Navbar() {
                     </Link>
 
                     <Box>
-                        <Typography
-                            variant='h6'
-                            sx={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                cursor: 'pointer',
-                                ml: theme.spacing(1.5),
-                                lineHeight: '3rem',
-                            }}
-                            onClick={handleToolsMenu}
-                        >
-                            Tools
-                            <Image
-                                src={downArrow}
-                                alt='expand more'
-                                style={{
-                                    width: '1.25rem',
-                                    height: 'auto',
-                                    marginLeft: theme.spacing(0.25),
-                                }}
-                            />
-                        </Typography>
+                        <Box sx={{ cursor: 'pointer', ml: theme.spacing(1.5) }}>
+                            <Typography
+                                variant='h6'
+                                sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem' }}
+                                onClick={handleToolsMenu}
+                            >
+                                Tools
+                                {toolsMenu ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
+                            </Typography>
+                        </Box>
 
                         <Menu anchorEl={toolsMenu} open={openToolsMenu} onClose={closeToolsMenu}>
                             <MenuItem onClick={closeToolsMenu}>Equipments</MenuItem>

@@ -10,21 +10,12 @@ declare type ClienteleCardProps = {
     subtitle?: string
 }
 
-export default function ClienteleCard({
-    cardImage,
-    cardIcon,
-    title,
-    subtitle,
-}: ClienteleCardProps) {
+export default function ClienteleCard({ cardImage, cardIcon, title, subtitle }: ClienteleCardProps) {
     const theme = useTheme()
 
     return (
-        <Box>
-            <Image
-                src={cardImage}
-                alt="card image"
-                style={{ width: '100%', height: 'auto' }}
-            />
+        <Box sx={{ cursor: 'pointer' }}>
+            <Image src={cardImage} alt='card image' style={{ width: '100%', height: 'auto' }} />
 
             <Box
                 sx={{
@@ -38,14 +29,10 @@ export default function ClienteleCard({
                 }}
             >
                 <Box sx={{ display: 'flex', my: theme.spacing(1.5) }}>
-                    <Image
-                        src={cardIcon}
-                        alt="card image"
-                        style={{ width: '4.5rem', height: 'auto' }}
-                    />
+                    <Image src={cardIcon} alt='card image' style={{ width: 'auto', height: '4.5rem' }} />
                 </Box>
                 <Typography
-                    variant="subtitle2"
+                    variant='subtitle2'
                     sx={{
                         fontWeight: 600,
                         fontSize: '2.5rem',
@@ -54,7 +41,7 @@ export default function ClienteleCard({
                 >
                     {title}
                 </Typography>
-                <Typography variant="subtitle2" textAlign="justify">
+                <Typography variant='subtitle2' textAlign='justify'>
                     {subtitle}
                 </Typography>
             </Box>

@@ -1,8 +1,7 @@
 import React from 'react'
 import { Box, Container, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import { servicesData } from '../data/servicesData'
-import CarouselCard from '../components/CaraousalCard'
+import { servicesData } from '../../data/servicesData'
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
@@ -13,11 +12,11 @@ export default function ServicesSection() {
     const theme = useTheme()
 
     return (
-        <Box sx={{ mt: theme.spacing(18), px: theme.spacing(4) }}>
+        <Box sx={{ mt: theme.spacing(8), mb: theme.spacing(4), px: theme.spacing(4) }}>
             <Container disableGutters maxWidth='xl'>
-                <Typography variant='h2'>Our Services</Typography>
+                <Typography variant='h2'>Other Services</Typography>
 
-                <Box sx={{ my: theme.spacing(6) }}>
+                <Box sx={{ cursor: 'pointer', my: theme.spacing(6) }}>
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={0}
@@ -53,13 +52,12 @@ export default function ServicesSection() {
                                         justifyContent: 'center',
                                     }}
                                 >
-                                    <CarouselCard
+                                    {/* <CarouselCard
                                         coverImage={item.coverImage}
                                         footerImage={item.footerImage}
                                         title={item.title}
                                         subtitle={item.subtitle}
-                                        href={item.link}
-                                    />
+                                    /> */}
                                 </Box>
                             </SwiperSlide>
                         ))}
