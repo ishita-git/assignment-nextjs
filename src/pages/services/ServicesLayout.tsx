@@ -4,6 +4,7 @@ import HeaderSection from '../../sections/HeaderSection'
 import FooterSection from '../../sections/FooterSection'
 import { Box, Container } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
+import ServicesCards from '../../components/services/ServicesCards'
 
 declare type ServicesLayoutProps = {
     image: string | StaticImageData
@@ -23,6 +24,7 @@ export default function ServicesLayout({ image, title, subtitle, children }: Ser
                     {children}
                 </Container>
             </Box>
+            <ServicesCards />
             <FooterSection />
         </Box>
     )

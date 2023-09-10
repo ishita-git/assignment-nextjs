@@ -13,7 +13,7 @@ export default function ServicesSection() {
     const theme = useTheme()
 
     return (
-        <Box sx={{ mt: theme.spacing(18), px: theme.spacing(4) }}>
+        <Box sx={{ mt: theme.spacing(18), px: theme.spacing(4) }} id='services'>
             <Container disableGutters maxWidth='xl'>
                 <Typography variant='h2'>Our Services</Typography>
 

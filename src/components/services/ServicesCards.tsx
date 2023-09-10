@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Link, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { servicesData } from '../../data/servicesData'
 // swiper
@@ -7,19 +7,22 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Autoplay, Keyboard, Navigation, Pagination } from 'swiper/modules'
+import Image from 'next/image'
 
-export default function ServicesSection() {
+export default function ServicesCards() {
     const theme = useTheme()
 
     return (
-        <Box sx={{ mt: theme.spacing(8), mb: theme.spacing(4), px: theme.spacing(4) }}>
+        <Box sx={{ px: theme.spacing(4) }}>
             <Container disableGutters maxWidth='xl'>
-                <Typography variant='h2'>Other Services</Typography>
+                <Typography variant='h2' textAlign='start'>
+                    Other Services
+                </Typography>
 
-                <Box sx={{ cursor: 'pointer', my: theme.spacing(6) }}>
+                <Box sx={{ cursor: 'pointer', mt: theme.spacing(2) }}>
                     <Swiper
                         slidesPerView={1}
-                        spaceBetween={0}
+                        spaceBetween={12}
                         loop={true}
                         speed={1200}
                         autoplay={{
@@ -45,20 +48,24 @@ export default function ServicesSection() {
                     >
                         {servicesData.map((item) => (
                             <SwiperSlide key={item.id}>
-                                <Box
-                                    sx={{
-                                        width: '100%',
-                                        display: 'flex',
-                                        justifyContent: 'center',
-                                    }}
-                                >
-                                    {/* <CarouselCard
-                                        coverImage={item.coverImage}
-                                        footerImage={item.footerImage}
-                                        title={item.title}
-                                        subtitle={item.subtitle}
-                                    /> */}
-                                </Box>
+                                <Link href={item.link}>
+                                    <Box sx={{ position: 'relative', height: '15rem' }}>
+                                        <Image
+                                            src={item.horizontalCard}
+                                            alt='card background'
+                                            style={{
+                                                width: '100%',
+                                                height: 'auto',
+                                                position: 'absolute',
+                                                top: 0,
+                                                left: 0,
+                                            }}
+                                        />
+                                        <Typography variant='h6' sx={{ p: theme.spacing(1), position: 'absolute' }}>
+                                            {item.title}
+                                        </Typography>
+                                    </Box>
+                                </Link>
                             </SwiperSlide>
                         ))}
                     </Swiper>

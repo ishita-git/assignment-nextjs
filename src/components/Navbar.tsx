@@ -94,15 +94,51 @@ export default function Navbar() {
                         </Box>
 
                         <Menu anchorEl={servicesMenu} open={openServicesMenu} onClose={closeServicesMenu}>
-                            <MenuItem onClick={closeServicesMenu}>Empty Container Depots</MenuItem>
-                            <MenuItem onClick={closeServicesMenu}>NVOCC</MenuItem>
-                            <MenuItem onClick={closeServicesMenu}>Transportation</MenuItem>
-                            <MenuItem onClick={closeServicesMenu}>Air Freight</MenuItem>
-                            <MenuItem onClick={closeServicesMenu}>Multimodel-Transportation</MenuItem>
-                            <MenuItem onClick={closeServicesMenu}>Over Dimension Cargo</MenuItem>
-                            <MenuItem onClick={closeServicesMenu}>Project Cargo</MenuItem>
-                            <MenuItem onClick={closeServicesMenu}>Custom Clearance</MenuItem>
-                            <MenuItem onClick={closeServicesMenu}>LCL Consolidation Services</MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/container-depots' sx={{ color: 'inherit' }}>
+                                    Empty Container Depots
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/nvocc' sx={{ color: 'inherit' }}>
+                                    NVOCC
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/transportation' sx={{ color: 'inherit' }}>
+                                    Transportation
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/air-freight' sx={{ color: 'inherit' }}>
+                                    Air Freight
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/multimodel' sx={{ color: 'inherit' }}>
+                                    Multimodel-Transportation
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/over-dimension' sx={{ color: 'inherit' }}>
+                                    Over Dimension Cargo
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/project-cargo' sx={{ color: 'inherit' }}>
+                                    Project Cargo
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/custom-clearance' sx={{ color: 'inherit' }}>
+                                    Custom Clearance
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/lcl' sx={{ color: 'inherit' }}>
+                                    LCL Consolidation Services
+                                </Link>
+                            </MenuItem>
                         </Menu>
                     </Box>
 
