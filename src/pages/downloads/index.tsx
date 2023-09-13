@@ -18,8 +18,8 @@ export default function Home() {
                 <Navbar />
             </Box>
             <Box sx={{ mx: theme.spacing(4) }}>
-                <Container maxWidth="xl" disableGutters>
-                    <Typography variant="h2">test</Typography>
+                <Container maxWidth='xl' disableGutters>
+                    <Typography variant='h2'>test</Typography>
                 </Container>
             </Box>
             <FooterSection />

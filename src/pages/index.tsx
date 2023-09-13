@@ -14,8 +14,8 @@ export default function Home() {
         <Box sx={{ background: '#EFF6FF', width: '100vw' }}>
             <HeaderSection
                 image={cargo}
-                title="Effortless Shipping and Logistics"
-                subtitle="Muskan Group Makes it Simple"
+                title='Effortless Shipping and Logistics'
+                subtitle='Muskan Group Makes it Simple'
             />
 
             <Box

@@ -13,9 +13,8 @@ import icon12 from '../assets/clients/FSL.png'
 import icon13 from '../assets/clients/denso.png'
 import icon14 from '../assets/clients/globe-link.png'
 import icon15 from '../assets/clients/sea-sky.png'
-import icon16 from '../assets/clients/srf.png'
-import icon17 from '../assets/clients/synergy-steels.png'
-import icon18 from '../assets/clients/vanguard.png'
+import icon16 from '../assets/clients/synergy-steels.png'
+import icon17 from '../assets/clients/vanguard.png'
 import card1 from '../assets/clients/ambica-card.png'
 import card2 from '../assets/clients/coca-cola-card.png'
 import card3 from '../assets/clients/dabur-card.png'
@@ -26,27 +25,13 @@ import card7 from '../assets/clients/jyothy-card.png'
 import card8 from '../assets/clients/maruti-suzuki-card.png'
 import card9 from '../assets/clients/srf-card.png'
 import card10 from '../assets/clients/unilever-card.png'
-
-const clientIcons = [
-    icon1,
-    icon2,
-    icon3,
-    icon4,
-    icon5,
-    icon6,
-    icon7,
-    icon8,
-    icon9,
-    icon10,
-    icon11,
-    icon12,
-    icon13,
-    icon14,
-    icon15,
-    icon16,
-    icon17,
-    icon18,
-]
+import card11 from '../assets/clients/EMU-card.png'
+import card12 from '../assets/clients/FSL-card.png'
+import card13 from '../assets/clients/denso-card.png'
+import card14 from '../assets/clients/globe-link-card.png'
+import card15 from '../assets/clients/sea-sky-card.png'
+import card16 from '../assets/clients/synergy-steels-card.png'
+import card17 from '../assets/clients/vanguard-card.png'
 
 export const clientsData = [
     {
@@ -128,5 +113,61 @@ export const clientsData = [
         title: 'Unilever',
         subtitle:
             "Unilever, a global consumer goods powerhouse, entrusts us with the intricate task of delivering their vast array of daily essentials to households worldwide. From personal care to food products, Unilever's commitment to quality and sustainability aligns seamlessly with our dedication to efficient, responsible logistics.",
+    },
+    {
+        id: 11,
+        cardImage: card11,
+        cardIcon: icon11,
+        title: 'EMU Lines',
+        subtitle:
+            'Pioneering Maritime Excellence: EMU Lines, a leader in maritime logistics, entrusts us with their international cargo transport. Our partnership ensures EMU Lines continues to deliver exceptional shipping solutions to clients worldwide, seamlessly connecting global trade routes and fostering logistical excellence.',
+    },
+    {
+        id: 12,
+        cardImage: card12,
+        cardIcon: icon12,
+        title: 'Freight Systems',
+        subtitle:
+            'Driving Global Logistics Excellence: Freight Systems, a global logistics and supply chain solutions provider, partners with us for seamless worldwide cargo movement. Our collaboration empowers Freight Systems to deliver reliable, efficient, and cost-effective logistics solutions to clients across the globe, optimizing their supply chains.',
+    },
+    {
+        id: 13,
+        cardImage: card13,
+        cardIcon: icon13,
+        title: 'Denso',
+        subtitle:
+            'Denso, a global leader in automotive technology, depends on our logistics expertise to transport their cutting-edge automotive components worldwide. With our partnership, Denso continues to drive innovation and deliver top-quality products to the automotive industry, meeting the demands of discerning customers with efficiency.',
+    },
+    {
+        id: 14,
+        cardImage: card14,
+        cardIcon: icon14,
+        title: 'Globelink WW India',
+        subtitle:
+            'Globelink WW India, a key player in international logistics and shipping, relies on our expertise to facilitate the smooth movement of goods across borders. With our partnership, Globelink WW India continues to expand its global reach, connecting businesses to new opportunities worldwide.',
+    },
+    {
+        id: 15,
+        cardImage: card15,
+        cardIcon: icon15,
+        title: 'SEASKY Shipping',
+        subtitle:
+            'Seasky Shipping, a distinguished player in the maritime domain, places its trust in our logistical expertise. Our collaboration empowers Seasky Shipping to sail the high seas efficiently, securing timely and seamless deliveries to destinations worldwide. With a shared commitment to excellence, we chart a course for success together.',
+    },
+    {
+        id: 16,
+        cardImage: card16,
+        cardIcon: icon16,
+        title: 'Synergy Steels Ltd.',
+        subtitle:
+            'Forging Excellence in Steel Production: Synergy Steels Ltd., a prominent player in the steel manufacturing industry, trusts our logistics capabilities to transport their high-quality steel products worldwide. With our support, Synergy Steels continues to excel in delivering steel solutions to diverse industries, ensuring efficient and reliable supply chains.',
+    },
+    {
+        id: 17,
+        cardImage: card17,
+        cardIcon: icon17,
+        title: 'Vanguard Logistic Services',
+        subtitle:
+            'Vanguard Logistic Services, a trusted name in international shipping and logistics, relies on our expertise to manage their diverse cargo needs worldwide. With our support, Vanguard efficiently connects businesses to global markets, ensuring their shipments reach destinations with precision and reliability.',
     },
 ]

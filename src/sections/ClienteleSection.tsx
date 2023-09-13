@@ -15,14 +15,8 @@ export default function ClienteleSection() {
 
     return (
         <Box sx={{ p: theme.spacing(4) }}>
-            <Typography variant="h2">
-                Appreciated by some of the best in industry
-            </Typography>
-            <Container
-                maxWidth="md"
-                disableGutters
-                sx={{ py: theme.spacing(2), position: 'relative' }}
-            >
+            <Typography variant='h2'>Appreciated by some of the best in industry</Typography>
+            <Container maxWidth='md' disableGutters sx={{ py: theme.spacing(2), position: 'relative' }}>
                 <Box sx={{ my: theme.spacing(2) }}>
                     <Swiper
                         slidesPerView={1}
@@ -38,7 +32,7 @@ export default function ClienteleSection() {
                         }}
                         navigation={true}
                         modules={[Autoplay, Keyboard, Navigation, Pagination]}
-                        className="mySwiper"
+                        className='mySwiper'
                     >
                         {clientsData.map((item) => (
                             <SwiperSlide key={item.id}>
@@ -87,7 +81,7 @@ export default function ClienteleSection() {
                         }}
                         navigation={true}
                         modules={[Autoplay, Keyboard, Navigation, Pagination]}
-                        className="mySwiper"
+                        className='mySwiper'
                     >
                         {clientsData.map((item) => (
                             <SwiperSlide key={item.id}>

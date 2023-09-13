@@ -10,13 +10,7 @@ declare type TextFieldProps = {
     multiline?: boolean
 }
 
-export default function PrimaryTextField({
-    label,
-    placeholder,
-    startIcon,
-    helperText,
-    multiline,
-}: TextFieldProps) {
+export default function PrimaryTextField({ label, placeholder, startIcon, helperText, multiline }: TextFieldProps) {
     return (
         <Box sx={{ mb: '1rem' }}>
             <InputLabel>{label}</InputLabel>
@@ -33,6 +27,7 @@ export default function PrimaryTextField({
                                     alt='seach icon'
                                     style={{
                                         width: 'auto',
+                                        height: '1rem',
                                         marginLeft: '1rem',
                                     }}
                                 />

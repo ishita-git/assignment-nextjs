@@ -128,7 +128,12 @@ const theme = createTheme({
             },
         },
         MuiMenuItem: {
-            defaultProps: { style: { color: '#FFFFFF', fontWeight: 400 } },
+            defaultProps: {
+                style: {
+                    color: '#FFFFFF',
+                    fontWeight: 400,
+                },
+            },
         },
         MuiPaper: {
             defaultProps: { elevation: 0 },
@@ -156,6 +161,11 @@ const theme = createTheme({
                         borderBottomRightRadius: '40px',
                     },
                 },
+            },
+        },
+        MuiSelect: {
+            styleOverrides: {
+                root: { backgroundColor: '#0312251A', borderRadius: '8px', height: '2.6rem', color: '#031225' },
             },
         },
     },
