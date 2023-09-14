@@ -3,10 +3,9 @@ import { Button } from '@mui/material'
 declare type ButtonProps = {
     text: string
     light?: boolean
-    noBackground?: boolean
 }
 
-export default function PrimaryButton({ text, light, noBackground }: ButtonProps) {
+export default function PrimaryButton({ text, light }: ButtonProps) {
     return (
         <Button
             variant="contained"
@@ -20,8 +19,8 @@ export default function PrimaryButton({ text, light, noBackground }: ButtonProps
                 fontSize: '1.25rem',
                 boxShadow: 0,
                 '&:hover': {
-                    backgroundColor: noBackground ? "#FFFFFF" : light ? '#B2C3E1' : '#4C75B9',
-                    boxShadow:  noBackground ?0:5,
+                    backgroundColor: light ? '#B2C3E1' : '#4C75B9',
+                    boxShadow: 5,
                 },
             }}
         >
