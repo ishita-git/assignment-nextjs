@@ -28,3 +28,4 @@ export default function PrimaryButton({ text, light }: ButtonProps) {
         </Button>
     )
 }
+
