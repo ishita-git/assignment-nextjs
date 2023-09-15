@@ -118,3 +118,63 @@ export const servicesData = [
         link: '/services/lcl',
     },
 ]
+export const TransportationData=[
+    {
+        id:1,
+        title: "Door-to-Door Delivery",
+        des:"Our services encompass the entire journey of your cargo, from the initial pick-up point to the final destination. We provide a hassle-free door-to-door delivery experience, streamlining the entire process for our clients.",
+    },
+    {
+        id:2,
+        title: "Reducing Cycle Time and Product Cost",
+        des:"By leveraging our efficient transportation services, clients can enjoy reduced cycle times and lower product landed prices. We prioritize efficiency at every stage of transportation, minimizing delays and cost inefficiencies.",
+    },
+    {
+        id:3,
+        title: "Effective Oversight of All Transportation Methods",
+        des:"Muskan Container Lines takes a proactive approach to managing all modes of transportation within our network. Whether it involves road transport, rail transport, or other modalities, we ensure seamless coordination to maintain the integrity of your cargo's journey.",
+    },
+    {
+        id:4,
+        title: "Creating a Centralized Contact Point",
+        des:"Our services simplify the logistics process by establishing a single point of contact for our clients. This reduces the complexity of dealing with multiple parties and enhances communication and accountability.",
+    },
+    {
+        id:5,
+        title: "Eases Documentation and Administrative Tasks",
+        des:"We understand that the paperwork and formalities associated with transportation can be overwhelming. Muskan Container Lines takes on the responsibility of handling documentation and other administrative tasks, allowing our clients to focus on their core business activities.",
+    },
+]
+
+export const AirFreightData=[
+    {
+        id:1,
+        title: "Comprehensive Solutions",
+        des:"Muskan Container Lines excels in providing end-to-end solutions for airfreight. Whether you have intricate project cargo or require transportation for small, delicate, or perishable items, we have the expertise to manage it effectively.",
+    },
+    {
+        id:2,
+        title: "Global Network",
+        des:"Our vast network of associate offices and global partners enables us to offer extensive coverage for air imports. This ensures that we can swiftly and efficiently handle shipments from any destination worldwide.",
+    },
+    {
+        id:3,
+        title: "Economical Services",
+        des:"We understand the importance of cost-saving measures in airfreight. Therefore, we provide economical service options that allow you to reduce your freight costs without compromising on quality and reliability.",
+    },
+    {
+        id:4,
+        title: "Carrier Choice",
+        des:"At Muskan Container Lines, we believe in offering our clients choices. You can select from a range of reputable carriers, allowing you to tailor your airfreight solution to your specific needs.",
+    },
+    {
+        id:5,
+        title: "On-Time Performance",
+        des:"Timeliness is critical in airfreight, and we take this aspect seriously. Our logistics team ensures that your cargo is collected and delivered on time, adhering to your schedules and commitments.",
+    },
+    {
+        id:6,
+        title: "Advanced Tracking",
+        des:"We have implemented a high-tech communication system to monitor the movement of shipments meticulously. From the moment your cargo departs until it reaches its final destination, you can rely on our advanced tracking capabilities to provide real-time updates.",
+    },
+]
