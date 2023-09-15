@@ -8,9 +8,17 @@ declare type TextFieldProps = {
     startIcon?: boolean
     helperText?: string
     multiline?: boolean
+    disabled?: boolean
 }
 
-export default function PrimaryTextField({ label, placeholder, startIcon, helperText, multiline }: TextFieldProps) {
+export default function PrimaryTextField({
+    label,
+    placeholder,
+    startIcon,
+    helperText,
+    multiline,
+    disabled,
+}: TextFieldProps) {
     return (
         <Box sx={{ mb: '1rem' }}>
             <InputLabel>{label}</InputLabel>
@@ -45,6 +53,7 @@ export default function PrimaryTextField({ label, placeholder, startIcon, helper
                     fullWidth
                     sx={{ input: { color: '#031225', fontWeight: 600 } }}
                     multiline={multiline}
+                    disabled={disabled}
                 />
             </Box>
             <Typography variant='body1' sx={{ mt: '0.5rem' }}>

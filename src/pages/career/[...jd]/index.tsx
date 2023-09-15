@@ -69,7 +69,7 @@ export default function Home() {
                         <PrimaryTextField label='Name' placeholder='Enter your name' />
                         <PrimaryTextField label='Email' placeholder='Enter your email' />
                         <PrimaryTextField label='Mobile Number' placeholder='Enter your contact number' />
-                        <PrimaryTextField label='Job Position' placeholder={data.title}/>
+                        <PrimaryTextField label='Job Position' placeholder={data.title} disabled />
                         <PrimaryTextField label='Company' placeholder='Choose Company'/>
                         <InputLabel> Upload CV</InputLabel>
                         <Box sx={{ display: "flex", alignItems: "center" }}>
