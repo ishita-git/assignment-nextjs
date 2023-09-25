@@ -42,9 +42,9 @@ function SecondaryTextField({ placeholder, multiline, endButton }: TextFieldProp
                     }}
                     inputProps={{
                         style: {
-                            color: endButton ? '#003A9B' : '#FFFFFF',
+                            color: endButton ? '#262626' : '#FFFFFF',
                             fontSize: '1rem',
-                            fontWeight: endButton ? 700 : 400,
+                            fontWeight: endButton ? 600 : 400,
                         },
                     }}
                     fullWidth

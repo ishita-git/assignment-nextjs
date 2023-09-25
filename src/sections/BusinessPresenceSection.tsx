@@ -5,48 +5,48 @@ import { oswald } from '../styles/fonts'
 import map from '../assets/images/map.png'
 import description from '../assets/images/map-description.png'
 
-const MapDescription = () => {
-    const theme = useTheme()
+// const MapDescription = () => {
+//     const theme = useTheme()
 
-    return (
-        <Box sx={{ display: 'flex', position: 'relative' }}>
-            <Image
-                src={description}
-                alt="map description"
-                style={{ width: '26.5vw', height: 'auto' }}
-            />
-            <Box sx={{ position: 'absolute', padding: theme.spacing(1) }}>
-                <Typography variant="h6">India</Typography>
-                <Divider
-                    sx={{ mt: theme.spacing(0.25), borderColor: '#FFFFFF80' }}
-                />
+//     return (
+//         <Box sx={{ display: 'flex', position: 'relative' }}>
+//             <Image
+//                 src={description}
+//                 alt="map description"
+//                 style={{ width: '26.5vw', height: 'auto' }}
+//             />
+//             <Box sx={{ position: 'absolute', padding: theme.spacing(1) }}>
+//                 <Typography variant="h6">India</Typography>
+//                 <Divider
+//                     sx={{ mt: theme.spacing(0.25), borderColor: '#FFFFFF80' }}
+//                 />
 
-                <Typography
-                    variant="body2"
-                    sx={{ mt: theme.spacing(1), fontWeight: 400 }}
-                >
-                    New Delhi
-                </Typography>
-                <Typography variant="body2" sx={{ mt: theme.spacing(0.5) }}>
-                    Muskan Container Lines Pvt. Ltd. Muskan Tower, Plot no.83,
-                    Old Palam Rd, Shiv Park, kakrola Mor, New Delhi, Delhi
-                    110078, India (T) +91 11 41587468/40687469
-                </Typography>
-                <Typography
-                    variant="body2"
-                    sx={{ mt: theme.spacing(1.25), fontWeight: 400 }}
-                >
-                    Chennai
-                </Typography>
-                <Typography variant="body2" sx={{ mt: theme.spacing(0.5) }}>
-                    Muskan Container Lines Pvt. Ltd. #72/1,first floor, shop# 3,
-                    Linghi Chetty street, Mannady Chennai - 600001 Land Line :
-                    +91-44 42642551
-                </Typography>
-            </Box>
-        </Box>
-    )
-}
+//                 <Typography
+//                     variant="body2"
+//                     sx={{ mt: theme.spacing(1), fontWeight: 400 }}
+//                 >
+//                     New Delhi
+//                 </Typography>
+//                 <Typography variant="body2" sx={{ mt: theme.spacing(0.5) }}>
+//                     Muskan Container Lines Pvt. Ltd. Muskan Tower, Plot no.83,
+//                     Old Palam Rd, Shiv Park, kakrola Mor, New Delhi, Delhi
+//                     110078, India (T) +91 11 41587468/40687469
+//                 </Typography>
+//                 <Typography
+//                     variant="body2"
+//                     sx={{ mt: theme.spacing(1.25), fontWeight: 400 }}
+//                 >
+//                     Chennai
+//                 </Typography>
+//                 <Typography variant="body2" sx={{ mt: theme.spacing(0.5) }}>
+//                     Muskan Container Lines Pvt. Ltd. #72/1,first floor, shop# 3,
+//                     Linghi Chetty street, Mannady Chennai - 600001 Land Line :
+//                     +91-44 42642551
+//                 </Typography>
+//             </Box>
+//         </Box>
+//     )
+// }
 
 const CompanyCard = ({ text }: { text: string }) => {
     const theme = useTheme()
@@ -128,7 +128,7 @@ export default function BusinessPresenceSection() {
                     position: 'relative',
                 }}
             >
-                <Typography variant="h2" sx={{ mb: theme.spacing(5) }}>
+                <Typography variant="h2" sx={{ mb: theme.spacing(4) }}>
                     Our Reach
                 </Typography>
                 <Image
@@ -140,7 +140,7 @@ export default function BusinessPresenceSection() {
                         position: 'relative',
                     }}
                 />
-                <Box
+                {/* <Box
                     sx={{
                         position: 'absolute',
                         right: '15vw',
@@ -148,7 +148,7 @@ export default function BusinessPresenceSection() {
                     }}
                 >
                     <MapDescription />
-                </Box>
+                </Box> */}
             </Container>
         </Box>
     )
