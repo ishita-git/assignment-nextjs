@@ -8,7 +8,7 @@ declare type ButtonProps = {
 export default function PrimaryButton({ text, light }: ButtonProps) {
     return (
         <Button
-            variant="contained"
+            variant='contained'
             sx={{
                 backgroundColor: light ? '#FFFFFF' : '#003A9B',
                 height: '2.4rem',

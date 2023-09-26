@@ -6,6 +6,7 @@ declare type TextFieldProps = {
     label?: string
     placeholder?: string
     startIcon?: boolean
+    startText?: boolean
     helperText?: string
     multiline?: boolean
     disabled?: boolean
@@ -15,6 +16,7 @@ export default function PrimaryTextField({
     label,
     placeholder,
     startIcon,
+    startText,
     helperText,
     multiline,
     disabled,
@@ -28,20 +30,23 @@ export default function PrimaryTextField({
                     placeholder={placeholder}
                     InputProps={{
                         disableUnderline: true,
-                        startAdornment: startIcon ? (
+                        startAdornment: (
                             <InputAdornment position='start'>
-                                <Image
-                                    src={searchIcon}
-                                    alt='seach icon'
-                                    style={{
-                                        width: 'auto',
-                                        height: '1rem',
-                                        marginLeft: '1rem',
-                                    }}
-                                />
+                                {startIcon ? (
+                                    <Image
+                                        src={searchIcon}
+                                        alt='seach icon'
+                                        style={{
+                                            width: 'auto',
+                                            height: '1rem',
+                                            marginLeft: '1rem',
+                                        }}
+                                    />
+                                ) : (
+                                    <></>
+                                )}
+                                {startText ? <Box sx={{ ml: '0.75rem' }}>+91</Box> : <></>}
                             </InputAdornment>
-                        ) : (
-                            <></>
                         ),
                     }}
                     inputProps={{

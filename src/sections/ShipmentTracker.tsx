@@ -14,17 +14,14 @@ export default function ShipmentTracker() {
 
     return (
         <Box sx={{ mx: theme.spacing(4) }}>
-            <Container maxWidth="lg">
+            <Container maxWidth='lg'>
                 <Grid container spacing={2} sx={{ width: '100%' }}>
                     <Grid item xs={12} sm={6}>
-                        <ShipmentCard
-                            cardTitle="Track Shipment"
-                            submitButton="Track"
-                        >
+                        <ShipmentCard cardTitle='Track Shipment' submitButton='Track'>
                             <PrimaryTextField
-                                label="Search"
-                                placeholder="Enter Reference No. / Bill No. / container No."
-                                helperText=" Input multiple numbers, separated by spaces and commas."
+                                label='Search'
+                                placeholder='Enter Reference No. / Bill No. / container No.'
+                                helperText=' Input multiple numbers, separated by spaces and commas.'
                                 startIcon
                             />
                         </ShipmentCard>
@@ -32,8 +29,8 @@ export default function ShipmentTracker() {
 
                     <Grid item xs={12} sm={6}>
                         <ShipmentCard
-                            cardTitle="Track Schedules"
-                            submitButton="Track"
+                            cardTitle='Track Schedules'
+                            submitButton='Track'
                             datePicker={
                                 <DatePicker
                                     defaultValue={dayjs(currentDate)}
@@ -48,7 +45,7 @@ export default function ShipmentTracker() {
                                             color: '#6D7987',
                                         },
                                     }}
-                                    format="DD-MM-YYYY"
+                                    format='DD-MM-YYYY'
                                     // slotProps={{
                                     //     textField: {
                                     //         variant: 'outlined',
@@ -57,14 +54,8 @@ export default function ShipmentTracker() {
                                 />
                             }
                         >
-                            <PrimaryTextField
-                                label="Origin"
-                                placeholder="Enter Origin Point"
-                            />
-                            <PrimaryTextField
-                                label="Destination"
-                                placeholder="Enter Destination Point"
-                            />
+                            <PrimaryTextField label='Origin' placeholder='Enter Origin Point' />
+                            <PrimaryTextField label='Destination' placeholder='Enter Destination Point' />
                         </ShipmentCard>
                     </Grid>
                 </Grid>

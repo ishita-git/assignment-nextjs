@@ -1,17 +1,6 @@
 import * as React from 'react'
 import Image from 'next/image'
-import {
-    Box,
-    Grid,
-    Typography,
-    IconButton,
-    InputLabel,
-    Button,
-    Paper,
-    FormControl,
-    Select,
-    MenuItem,
-} from '@mui/material'
+import { Box, Grid, Typography, IconButton, InputLabel, Paper, FormControl, Select, MenuItem } from '@mui/material'
 import { SelectChangeEvent } from '@mui/material/Select'
 import Layout from '../Layout'
 import contactBackground from '../../assets/contact/contact-background.png'
