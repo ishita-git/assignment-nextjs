@@ -18,7 +18,7 @@ import contactBackground from '../../assets/contact/contact-background.png'
 import PrimaryTextField from '../../components/PrimaryTextField'
 import reload from '../../assets/icons/loop.png'
 import map from '../../assets/contact/address-map.png'
-import captcha from '../../assets/contact/captcha.png'
+import captcha from '../../assets/images/captcha.png'
 import PrimaryButton from '../../components/PrimaryButton'
 
 function CompanyInfo({ title, body }: { title: String; body: String }) {
