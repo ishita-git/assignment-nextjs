@@ -150,7 +150,7 @@ const theme = createTheme({
                     borderTop: '2px solid #003A9B33',
                     borderBottom: '2px solid #003A9B33',
                     '&.Mui-selected': { color: '#FFFFFF', border: 0 },
-                    '&:first-child': {
+                    '&:first-of-type': {
                         borderLeft: '2px solid #003A9B33',
                         borderTopLeftRadius: '40px',
                         borderBottomLeftRadius: '40px',

@@ -7,8 +7,10 @@ import contactBackground from '../../assets/contact/contact-background.png'
 import PrimaryTextField from '../../components/PrimaryTextField'
 import reload from '../../assets/icons/loop.png'
 import map from '../../assets/contact/address-map.png'
+import directionImg from '../../assets/contact/direction.png'
 import captcha from '../../assets/images/captcha.png'
 import PrimaryButton from '../../components/PrimaryButton'
+import StarIcon from '@mui/icons-material/Star'
 
 function CompanyInfo({ title, body }: { title: String; body: String }) {
     return (
@@ -29,9 +31,9 @@ export default function Home() {
     }
 
     return (
-        <Layout title='We would love to deliver your goods' image={contactBackground}>
+        <Layout image={contactBackground} title="Let's Talk" subtitle='We would love to deliver your goods'>
             <Grid container spacing={4} alignItems='center'>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} sx={{ position: 'relative' }}>
                     <Image
                         src={map}
                         alt='map'
@@ -40,6 +42,48 @@ export default function Home() {
                             height: 'auto',
                         }}
                     />
+
+                    <Paper
+                        sx={{ position: 'absolute', bottom: '1rem', right: '1rem', p: '0.5rem', borderRadius: '8px' }}
+                    >
+                        <Grid container spacing={2} sx={{ width: '24rem' }}>
+                            <Grid item xs={9}>
+                                <Typography variant='subtitle2' sx={{ fontWeight: 600 }}>
+                                    Muskan Container Lines Pvt. Ltd.
+                                </Typography>
+                                <Typography
+                                    variant='subtitle2'
+                                    textAlign='justify'
+                                    sx={{ opacity: 0.8, fontSize: '0.8rem', my: '0.5rem' }}
+                                >
+                                    Eros Metro Mall, SF-18, Sec.14, near Metro Station, Dwarka, New Delhi, Delhi 110075.
+                                </Typography>
+
+                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                    <Typography variant='subtitle2' sx={{ fontWeight: 600, opacity: 0.8 }}>
+                                        4.3
+                                    </Typography>
+                                    <StarIcon sx={{ color: '#E47700', mx: '0.25rem' }} />
+
+                                    <Typography sx={{ color: '#003A9B', fontSize: '0.8rem', ml: '0.5rem' }}>
+                                        9 Reviews
+                                    </Typography>
+                                </Box>
+                            </Grid>
+                            <Grid item xs={3}>
+                                <Box sx={{ mx: 'auto' }}>
+                                    <Image
+                                        src={directionImg}
+                                        alt='Direction'
+                                        style={{ height: '1.25rem', width: '1.25rem' }}
+                                    />
+                                </Box>
+                                <Typography sx={{ color: '#003A9B', fontSize: '0.8rem', ml: '0.5rem' }}>
+                                    Direction
+                                </Typography>
+                            </Grid>
+                        </Grid>
+                    </Paper>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <Box>
