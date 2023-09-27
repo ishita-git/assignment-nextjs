@@ -73,11 +73,31 @@ export default function Navbar() {
                         </Box>
 
                         <Menu anchorEl={companiesMenu} open={openCompaniesMenu} onClose={closeCompaniesMenu}>
-                            <MenuItem onClick={closeCompaniesMenu}>Muskan Container line Pvt. Ltd.</MenuItem>
-                            <MenuItem onClick={closeCompaniesMenu}>Muskan Logistics</MenuItem>
-                            <MenuItem onClick={closeCompaniesMenu}>Muskaan Shipping PTE Ltd.</MenuItem>
-                            <MenuItem onClick={closeCompaniesMenu}>Muskaan Shipping SDN BHD</MenuItem>
-                            <MenuItem onClick={closeCompaniesMenu}>Muskaan Shipping LLC</MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/container-lines' sx={{ color: 'inherit' }}>
+                                    Muskan Container lines Pvt. Ltd.
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/logistics' sx={{ color: 'inherit' }}>
+                                    Muskan Logistics
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/shipping-pte' sx={{ color: 'inherit' }}>
+                                    Muskaan Shipping PTE Ltd.
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/shipping-sdn-bhd' sx={{ color: 'inherit' }}>
+                                    Muskaan Shipping SDN BHD
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/shipping-llc' sx={{ color: 'inherit' }}>
+                                    Muskaan Shipping PTE LLC
+                                </Link>
+                            </MenuItem>
                         </Menu>
                     </Box>
 

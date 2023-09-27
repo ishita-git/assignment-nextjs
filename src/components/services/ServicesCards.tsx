@@ -9,15 +9,21 @@ import 'swiper/css/pagination'
 import { Autoplay, Keyboard, Navigation, Pagination } from 'swiper/modules'
 import Image from 'next/image'
 
-export default function ServicesCards() {
+export default function ServicesCards({ companiesPage }: { companiesPage?: boolean }) {
     const theme = useTheme()
 
     return (
         <Box sx={{ px: theme.spacing(4) }}>
             <Container disableGutters maxWidth='xl'>
-                <Typography variant='h2' textAlign='start'>
-                    Other Services
-                </Typography>
+                {companiesPage ? (
+                    <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
+                        Our Services
+                    </Typography>
+                ) : (
+                    <Typography variant='h2' textAlign='start'>
+                        Other Services
+                    </Typography>
+                )}
 
                 <Box sx={{ cursor: 'pointer', mt: theme.spacing(2) }}>
                     <Swiper
