@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { Box, Grid, Typography, IconButton, InputLabel, Paper, FormControl, Select, MenuItem } from '@mui/material'
 import { SelectChangeEvent } from '@mui/material/Select'

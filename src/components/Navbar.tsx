@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { useTheme } from '@mui/material/styles'
 import { AppBar, Box, Container, Fade, Link, Menu, MenuItem, Typography } from '@mui/material'
