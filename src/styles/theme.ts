@@ -168,6 +168,13 @@ const theme = createTheme({
                 root: { backgroundColor: '#0312251A', borderRadius: '8px', height: '2.6rem', color: '#031225' },
             },
         },
+        MuiTableCell: {
+            styleOverrides: {
+                root: {
+                    borderBottom: 'none',
+                },
+            },
+        },
     },
 })
 

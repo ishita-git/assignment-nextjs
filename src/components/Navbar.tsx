@@ -4,7 +4,6 @@ import { useTheme } from '@mui/material/styles'
 import { AppBar, Box, Container, Fade, Link, Menu, MenuItem, Typography } from '@mui/material'
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded'
 import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded'
-
 import PrimaryButton from './PrimaryButton'
 import downArrow from '../assets/icons/arrow-down.png'
 import logo from '../assets/logo.png'
@@ -193,12 +192,24 @@ export default function Navbar() {
                         </Box>
 
                         <Menu anchorEl={toolsMenu} open={openToolsMenu} onClose={closeToolsMenu}>
-                            <MenuItem onClick={closeToolsMenu}>Equipments</MenuItem>
+                            <MenuItem onClick={closeToolsMenu}>
+                                <Link href='/equipments' sx={{ color: 'inherit' }}>
+                                    Equipments
+                                </Link>
+                            </MenuItem>
+
                             <MenuItem onClick={closeToolsMenu}>Track</MenuItem>
                             <MenuItem onClick={closeToolsMenu}>Vessel Schedule</MenuItem>
-                            <MenuItem onClick={closeToolsMenu}>Quote</MenuItem>
+
+                            <MenuItem onClick={closeToolsMenu}>
+                                <Link href='/quote' sx={{ color: 'inherit' }}>
+                                    Quote
+                                </Link>
+                            </MenuItem>
                         </Menu>
                     </Box>
+
+                    {/* equipments */}
 
                     <Box sx={{ ml: theme.spacing(1.5) }}>
                         <PrimaryButton text='Login' light />
