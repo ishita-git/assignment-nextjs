@@ -3,9 +3,10 @@ import { Button } from '@mui/material'
 declare type ButtonProps = {
     text: string
     light?: boolean
+    onClick?: () => void
 }
 
-export default function PrimaryButton({ text, light }: ButtonProps) {
+export default function PrimaryButton({ text, light, onClick }: ButtonProps) {
     return (
         <Button
             variant='contained'
@@ -23,6 +24,7 @@ export default function PrimaryButton({ text, light }: ButtonProps) {
                     boxShadow: 5,
                 },
             }}
+            onClick={onClick}
         >
             {text}
         </Button>

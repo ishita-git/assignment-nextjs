@@ -1,0 +1,378 @@
+import React from 'react'
+import {
+    Box,
+    Container,
+    FormControl,
+    FormControlLabel,
+    Grid,
+    IconButton,
+    InputLabel,
+    MenuItem,
+    Paper,
+    Radio,
+    RadioGroup,
+    Select,
+    Slide,
+    Snackbar,
+    TextField,
+    Typography,
+} from '@mui/material'
+import { SelectChangeEvent } from '@mui/material/Select'
+import { useTheme } from '@mui/material/styles'
+import Navbar from '../../components/Navbar'
+import FooterSection from '../../sections/FooterSection'
+import PrimaryTextField from '../../components/PrimaryTextField'
+import RemoveIcon from '@mui/icons-material/Remove'
+import AddIcon from '@mui/icons-material/Add'
+import DeleteIcon from '@mui/icons-material/Delete'
+import CloseIcon from '@mui/icons-material/Close'
+
+// date -picker
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
+import dayjs from 'dayjs'
+import 'dayjs/locale/en-gb'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import PrimaryButton from '@/components/PrimaryButton'
+
+let currentDate = new Date()
+
+export default function Home() {
+    const theme = useTheme()
+
+    const [containerType, setContainerType] = React.useState('')
+    const [weightType, setWeightType] = React.useState('')
+    const [containerCount, setContainerCount] = React.useState(0)
+
+    const handleChange = (event: SelectChangeEvent) => {
+        setContainerType(event.target.value as string)
+    }
+    const handleSetWeight = (event: SelectChangeEvent) => {
+        setWeightType(event.target.value as string)
+    }
+
+    const increaseCount = () => {
+        setContainerCount(containerCount + 1)
+    }
+    const decreaseCount = () => {
+        if (containerCount > 0) {
+            setContainerCount(containerCount - 1)
+        }
+    }
+    const resetCount = () => {
+        setContainerCount(0)
+    }
+    const onClick = () => {
+        setOpen(true)
+    }
+
+    const [open, setOpen] = React.useState(false)
+
+    const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
+        if (reason === 'clickaway') {
+            return
+        }
+        setOpen(false)
+    }
+
+    return (
+        <Box>
+            <Box
+                sx={{
+                    px: theme.spacing(4),
+                    py: theme.spacing(2),
+                    backgroundColor: '#003A9B',
+                }}
+            >
+                <Navbar />
+            </Box>
+            <Box sx={{ mx: theme.spacing(4) }}>
+                <Container maxWidth='xl' disableGutters>
+                    <Typography variant='h3' textAlign='start' sx={{ color: '#262626', my: theme.spacing(4) }}>
+                        Booking Details
+                    </Typography>
+                    <Paper sx={{ borderRadius: '16px', p: theme.spacing(1) }}>
+                        <Typography variant='h4' textAlign='start' sx={{ color: '#262626', fontWeight: 600 }}>
+                            Location Information
+                        </Typography>
+
+                        <Box sx={{ my: theme.spacing(1) }}>
+                            <Grid container spacing={2}>
+                                <Grid item xs={12} sm={6}>
+                                    <PrimaryTextField label='Origin' placeholder='Enter origin city' />
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <PrimaryTextField label='Destination' placeholder='Enter destination city' />
+                                </Grid>
+                            </Grid>
+                        </Box>
+
+                        <Typography variant='h4' textAlign='start' sx={{ color: '#262626', fontWeight: 600 }}>
+                            Container
+                        </Typography>
+
+                        <Box sx={{ my: theme.spacing(1) }}>
+                            <Grid container spacing={2}>
+                                <Grid item xs={12} sm={6}>
+                                    <Box sx={{ mb: theme.spacing(1) }}>
+                                        <InputLabel>Container Type</InputLabel>
+                                        <FormControl fullWidth>
+                                            <Select
+                                                value={containerType}
+                                                onChange={handleChange}
+                                                displayEmpty
+                                                renderValue={
+                                                    containerType !== ''
+                                                        ? () => (
+                                                              <Typography
+                                                                  textAlign='start'
+                                                                  sx={{
+                                                                      color: '#03122580',
+                                                                      fontWeight: 600,
+                                                                      ml: '-0.25rem',
+                                                                  }}
+                                                              >
+                                                                  {containerType}
+                                                              </Typography>
+                                                          )
+                                                        : () => (
+                                                              <Typography
+                                                                  textAlign='start'
+                                                                  sx={{
+                                                                      color: '#03122580',
+                                                                      fontWeight: 600,
+                                                                      ml: '-0.25rem',
+                                                                  }}
+                                                              >
+                                                                  Select Container Type
+                                                              </Typography>
+                                                          )
+                                                }
+                                            >
+                                                <MenuItem value=''>
+                                                    <em>Select Container Type</em>
+                                                </MenuItem>
+                                                <MenuItem value='20 GP High Cube'>20 GP High Cube</MenuItem>
+                                                <MenuItem value='40 GP High Cube'>40 GP High Cube</MenuItem>
+                                                <MenuItem value='40 HC High Cube'>40 HC High Cube</MenuItem>
+                                                <MenuItem value='20 RH Reeger'>20 RH Reeger</MenuItem>
+                                                <MenuItem value='40 RH Reeger'>40 RH Reeger</MenuItem>
+                                                <MenuItem value='20 OH Open Top'>20 OH Open Top</MenuItem>
+                                                <MenuItem value='20 OT Open Top'>20 OT Open Top</MenuItem>
+                                                <MenuItem value='40 OT Open Top'>40 OT Open Top</MenuItem>
+                                                <MenuItem value='20 FR Flat Rock'>20 FR Flat Rock</MenuItem>
+                                                <MenuItem value='40 FR Flat Rock'>40 FR Flat Rock</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </Box>
+                                </Grid>
+                                <Grid item xs={6} sm={3}>
+                                    <InputLabel>Container Quantity</InputLabel>
+                                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                                        <Box
+                                            sx={{
+                                                display: 'flex',
+                                                justifyContent: 'space-between',
+                                                alignItems: 'center',
+                                                backgroundColor: '#E5E7E9',
+                                                borderRadius: '8px',
+                                                height: '2.6rem',
+                                                pt: '0.1rem',
+                                                width: '85%',
+                                                px: theme.spacing(0.5),
+                                            }}
+                                        >
+                                            <IconButton onClick={decreaseCount}>
+                                                <RemoveIcon />
+                                            </IconButton>
+                                            <Typography sx={{ color: '#03122580', fontWeight: 600 }}>
+                                                {containerCount}
+                                            </Typography>
+                                            <IconButton onClick={increaseCount}>
+                                                <AddIcon />
+                                            </IconButton>
+                                        </Box>
+
+                                        <IconButton onClick={resetCount}>
+                                            <DeleteIcon />
+                                        </IconButton>
+                                    </Box>
+                                </Grid>
+                                <Grid item xs={6} sm={3}>
+                                    <InputLabel>Weight per Container</InputLabel>
+                                    <Box
+                                        sx={{
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            alignItems: 'center',
+                                        }}
+                                    >
+                                        <Box sx={{ backgroundColor: '#0312251A', borderRadius: '8px', width: '35%' }}>
+                                            <TextField
+                                                variant='standard'
+                                                placeholder='Weight'
+                                                InputProps={{ disableUnderline: true }}
+                                                inputProps={{
+                                                    style: {
+                                                        padding: '0.5rem',
+                                                        textAlign: 'center',
+                                                    },
+                                                }}
+                                                sx={{ input: { color: '#031225', fontWeight: 600 } }}
+                                            />
+                                        </Box>
+
+                                        <FormControl sx={{ width: '10rem' }}>
+                                            <Select
+                                                value={weightType}
+                                                onChange={handleSetWeight}
+                                                displayEmpty
+                                                renderValue={
+                                                    weightType !== ''
+                                                        ? () => (
+                                                              <Typography
+                                                                  textAlign='start'
+                                                                  sx={{
+                                                                      color: '#03122580',
+                                                                      fontWeight: 600,
+                                                                      ml: '-0.25rem',
+                                                                  }}
+                                                              >
+                                                                  {weightType}
+                                                              </Typography>
+                                                          )
+                                                        : () => (
+                                                              <Typography
+                                                                  textAlign='start'
+                                                                  sx={{
+                                                                      color: '#03122580',
+                                                                      fontWeight: 600,
+                                                                      ml: '-0.25rem',
+                                                                  }}
+                                                              >
+                                                                  Select kg/lbs
+                                                              </Typography>
+                                                          )
+                                                }
+                                            >
+                                                <MenuItem value=''>
+                                                    <em>Select Weight Type</em>
+                                                </MenuItem>
+                                                <MenuItem value='kg'>kg</MenuItem>
+                                                <MenuItem value='lbs'>lbs</MenuItem>
+                                            </Select>
+                                        </FormControl>
+                                    </Box>
+                                </Grid>
+                            </Grid>
+                        </Box>
+
+                        <Typography variant='h4' textAlign='start' sx={{ color: '#262626', fontWeight: 600 }}>
+                            Customer Status
+                        </Typography>
+
+                        <Box sx={{ display: 'flex', justifyContent: 'flex-start', my: theme.spacing(1) }}>
+                            <FormControl>
+                                <RadioGroup row>
+                                    <FormControlLabel
+                                        value='Price Ownere'
+                                        control={<Radio />}
+                                        label={
+                                            <>
+                                                <Typography variant='h6' sx={{ color: '#003A9B' }}>
+                                                    Price Owner
+                                                </Typography>
+                                                <Typography variant='body2' sx={{ color: '#031225' }}>
+                                                    Booking as the price owner
+                                                </Typography>
+                                            </>
+                                        }
+                                    />
+                                    <FormControlLabel
+                                        value='Agent'
+                                        control={<Radio />}
+                                        label={
+                                            <>
+                                                <Typography variant='h6' sx={{ color: '#003A9B' }}>
+                                                    Agent
+                                                </Typography>
+                                                <Typography variant='body2' sx={{ color: '#031225' }}>
+                                                    Booking on behalf of the price owner
+                                                </Typography>
+                                            </>
+                                        }
+                                        sx={{ ml: theme.spacing(1) }}
+                                    />
+                                </RadioGroup>
+                            </FormControl>
+                        </Box>
+
+                        <Box sx={{ mt: theme.spacing(2) }}>
+                            <Grid container spacing={2}>
+                                <Grid item xs={12} sm={6}>
+                                    <Typography
+                                        variant='h4'
+                                        textAlign='start'
+                                        sx={{ color: '#262626', fontWeight: 600 }}
+                                    >
+                                        Cargo Type
+                                    </Typography>
+                                    <Box sx={{ mt: theme.spacing(0.5) }}>
+                                        <PrimaryTextField />
+                                    </Box>
+                                </Grid>
+                                <Grid item xs={12} sm={6}>
+                                    <Typography
+                                        variant='h4'
+                                        textAlign='start'
+                                        sx={{ color: '#262626', fontWeight: 600 }}
+                                    >
+                                        Date
+                                    </Typography>
+                                    <Box
+                                        sx={{ display: 'flex', justifyContent: 'flex-start', mt: theme.spacing(0.75) }}
+                                    >
+                                        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='en-gb'>
+                                            <DatePicker
+                                                defaultValue={dayjs(currentDate)}
+                                                closeOnSelect
+                                                sx={{
+                                                    '& .MuiInputBase-root': {
+                                                        height: '2.4rem',
+                                                        width: '12rem',
+                                                        backgroundColor: '#0312251A',
+                                                        borderRadius: '8px',
+                                                        fontSize: '1rem',
+                                                        color: '#6D7987',
+                                                    },
+                                                }}
+                                                format='DD-MM-YYYY'
+                                            />
+                                        </LocalizationProvider>
+                                    </Box>
+                                </Grid>
+                            </Grid>
+                        </Box>
+
+                        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: theme.spacing(1) }}>
+                            <PrimaryButton text='Get Quote' onClick={onClick} />
+                            <Snackbar
+                                open={open}
+                                autoHideDuration={4000}
+                                onClose={handleClose}
+                                message='Quotation successfully Submitted'
+                                action={
+                                    <IconButton size='small' color='inherit' onClick={handleClose}>
+                                        <CloseIcon fontSize='small' />
+                                    </IconButton>
+                                }
+                                TransitionComponent={(props) => <Slide {...props} direction='right' />}
+                            />
+                        </Box>
+                    </Paper>
+                </Container>
+            </Box>
+            <FooterSection />
+        </Box>
+    )
+}
