@@ -2,10 +2,12 @@ import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
 import { Box, Container, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import stern from '../assets/images/stern.png'
 import anchor from '../assets/icons/anchor.png'
+import container from '../assets/icons/container.png'
+import equipement from '../assets/icons/equipement.png'
 import ship from '../assets/icons/ship.png'
-import loop from '../assets/icons/loop.png'
+import person from '../assets/icons/person.png'
+import stern from '../assets/images/stern.png'
 
 declare type ShippingProps = {
     icon: string | StaticImageData
@@ -35,20 +37,12 @@ const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
                     justifyContent: 'center',
                 }}
             >
-                <Image
-                    src={icon}
-                    alt="card icon"
-                    style={{ height: '3.25rem', width: 'auto' }}
-                />
+                <Image src={icon} alt='card icon' style={{ height: '3.25rem', width: 'auto' }} />
             </Box>
-            <Typography variant="h3" sx={{ mt: theme.spacing(1.25) }}>
+            <Typography variant='h3' sx={{ mt: theme.spacing(1.25) }}>
                 {text}
             </Typography>
-            <Typography
-                variant="h6"
-                textAlign="center"
-                sx={{ maxWidth: '14rem' }}
-            >
+            <Typography variant='h6' textAlign='center' sx={{ maxWidth: '14rem' }}>
                 {subtitle}
             </Typography>
         </Box>
@@ -69,7 +63,7 @@ export default function ShippingSection() {
         >
             <Image
                 src={stern}
-                alt="stern"
+                alt='stern'
                 style={{
                     width: '100%',
                     height: 'auto',
@@ -77,18 +71,10 @@ export default function ShippingSection() {
                 }}
             />
 
-            <Container
-                maxWidth="lg"
-                disableGutters
-                sx={{ position: 'relative', my: 'auto' }}
-            >
+            <Container maxWidth='lg' disableGutters sx={{ position: 'relative', my: 'auto' }}>
                 <Box sx={{ px: theme.spacing(4) }}>
-                    <Typography variant="h3">
-                        Seamless Logistics, Worldwide Shipping
-                    </Typography>
-                    <Typography variant="h3">
-                        Your Gateway to Effortless Trade
-                    </Typography>
+                    <Typography variant='h3'>Seamless Logistics, Worldwide Shipping</Typography>
+                    <Typography variant='h3'>Your Gateway to Effortless Trade</Typography>
                     <Box
                         sx={{
                             display: 'flex',
@@ -96,21 +82,11 @@ export default function ShippingSection() {
                             mt: theme.spacing(2),
                         }}
                     >
-                        <ShippingDataCard
-                            icon={ship}
-                            text="1000+"
-                            subtitle="TEU Fleet Size"
-                        />
-                        <ShippingDataCard
-                            icon={anchor}
-                            text="244+"
-                            subtitle="Port calls around the world as of July 2023"
-                        />
-                        <ShippingDataCard
-                            icon={loop}
-                            text="165+"
-                            subtitle="weekly service loops"
-                        />
+                        <ShippingDataCard icon={anchor} text='47+' subtitle='Serving Ports' />
+                        <ShippingDataCard icon={container} text='3000+' subtitle='Equipment' />
+                        <ShippingDataCard icon={equipement} text='150+' subtitle='Special Equipment' />
+                        <ShippingDataCard icon={ship} text='35+' subtitle='Serving Countries' />
+                        <ShippingDataCard icon={person} text='500+' subtitle='Happy Customers' />
                     </Box>
                 </Box>
             </Container>
