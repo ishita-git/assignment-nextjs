@@ -94,7 +94,7 @@ export default function Navbar() {
                             </MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>
                                 <Link href='/companies/shipping-llc' sx={{ color: 'inherit' }}>
-                                    Muskaan Shipping PTE LLC
+                                    Muskaan Shipping LLC
                                 </Link>
                             </MenuItem>
                         </Menu>
