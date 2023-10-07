@@ -198,8 +198,16 @@ export default function Navbar() {
                                 </Link>
                             </MenuItem>
 
-                            <MenuItem onClick={closeToolsMenu}>Track</MenuItem>
-                            <MenuItem onClick={closeToolsMenu}>Vessel Schedule</MenuItem>
+                            <MenuItem onClick={closeToolsMenu}>
+                                <Link href='/track' sx={{ color: 'inherit' }}>
+                                    Track
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeToolsMenu}>
+                                <Link href='/vessel-schedule' sx={{ color: 'inherit' }}>
+                                    Vessel Schedule
+                                </Link>
+                            </MenuItem>
 
                             <MenuItem onClick={closeToolsMenu}>
                                 <Link href='/quote' sx={{ color: 'inherit' }}>
