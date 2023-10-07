@@ -14,7 +14,7 @@ export default function Home() {
         <Box sx={{ background: '#EFF6FF', width: '100vw' }}>
             <HeaderSection
                 // image={cargo}
-                video
+                containerVideo
                 title='Effortless Shipping and Logistics'
                 subtitle='Muskan Group Makes it Simple'
             />

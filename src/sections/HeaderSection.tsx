@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
 import { Box, Container, Typography } from '@mui/material'
@@ -9,12 +10,11 @@ declare type HeaderProps = {
     image?: string | StaticImageData
     title?: string
     subtitle?: string
-    video?: boolean
+    containerVideo?: boolean
 }
 
-export default function HeaderSection({ image, title, subtitle, video }: HeaderProps) {
+export default function HeaderSection({ image, title, subtitle, containerVideo }: HeaderProps) {
     const theme = useTheme()
-
     return (
         <Box
             sx={{
@@ -25,6 +25,24 @@ export default function HeaderSection({ image, title, subtitle, video }: HeaderP
                 flexDirection: 'column',
             }}
         >
+            {containerVideo ? (
+                <video
+                    // controls
+                    // width='100%'
+                    // height='auto'
+                    // style={{ position: 'absolute' }}
+                    autoPlay
+                    loop
+                    src='../assets/container-terminal-2.mp4'
+                    // src='https://player.vimeo.com/video/332257750'
+                    // container-terminal.webm
+                >
+                    <source src='../assets/container-terminal-2.mp4' type='video/mp4'></source>
+                </video>
+            ) : (
+                <></>
+            )}
+
             {image && (
                 <Image
                     src={image}
@@ -35,21 +53,6 @@ export default function HeaderSection({ image, title, subtitle, video }: HeaderP
                         position: 'absolute',
                     }}
                 />
-            )}
-            {video ? (
-                <video
-                    controls
-                    width='100%'
-                    height='auto'
-                    style={{ position: 'absolute' }}
-                    autoPlay
-                    loop
-                    src='../assets/container-terminal-2.mp4'
-                    // https://player.vimeo.com/video/332257750
-                    // container-terminal.webm
-                />
-            ) : (
-                <></>
             )}
 
             <Box
