@@ -33,11 +33,11 @@ export default function HeaderSection({ image, title, subtitle, containerVideo }
                     // style={{ position: 'absolute' }}
                     autoPlay
                     loop
-                    src='../assets/container-terminal-2.mp4'
+                    src='../assets/container-terminal.webm'
                     // src='https://player.vimeo.com/video/332257750'
                     // container-terminal.webm
                 >
-                    <source src='../assets/container-terminal-2.mp4' type='video/mp4'></source>
+                    <source src='../assets/container-terminal.webm' type='video/webm'></source>
                 </video>
             ) : (
                 <></>
