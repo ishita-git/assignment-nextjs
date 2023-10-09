@@ -12,11 +12,7 @@ import containerTerminal from '../assets/container-terminal.gif'
 export default function Home() {
     return (
         <Box sx={{ background: '#EFF6FF', width: '100vw' }}>
-            <HeaderSection
-                image={containerTerminal}
-                title='Effortless Shipping and Logistics'
-                subtitle='Muskan Group Makes it Simple'
-            />
+            <HeaderSection video title='Effortless Shipping and Logistics' subtitle='Muskan Group Makes it Simple' />
 
             <Box
                 sx={{
