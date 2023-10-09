@@ -7,13 +7,12 @@ import Navbar from '../components/Navbar'
 import { oswald } from '../styles/fonts'
 
 declare type HeaderProps = {
-    image?: string | StaticImageData
+    image: string | StaticImageData
     title?: string
     subtitle?: string
-    containerVideo?: boolean
 }
 
-export default function HeaderSection({ image, title, subtitle, containerVideo }: HeaderProps) {
+export default function HeaderSection({ image, title, subtitle }: HeaderProps) {
     const theme = useTheme()
     return (
         <Box
@@ -25,35 +24,15 @@ export default function HeaderSection({ image, title, subtitle, containerVideo }
                 flexDirection: 'column',
             }}
         >
-            {containerVideo ? (
-                <video
-                    // controls
-                    // width='100%'
-                    // height='auto'
-                    // style={{ position: 'absolute' }}
-                    autoPlay
-                    loop
-                    src='../assets/container-terminal.webm'
-                    // src='https://player.vimeo.com/video/332257750'
-                    // container-terminal.webm
-                >
-                    <source src='../assets/container-terminal.webm' type='video/webm'></source>
-                </video>
-            ) : (
-                <></>
-            )}
-
-            {image && (
-                <Image
-                    src={image}
-                    alt='cargo'
-                    style={{
-                        width: '100%',
-                        height: 'auto',
-                        position: 'absolute',
-                    }}
-                />
-            )}
+            <Image
+                src={image}
+                alt='cargo'
+                style={{
+                    width: '100%',
+                    height: 'auto',
+                    position: 'absolute',
+                }}
+            />
 
             <Box
                 sx={{

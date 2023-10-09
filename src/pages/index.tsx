@@ -7,14 +7,13 @@ import BusinessPresenceSection from '../sections/BusinessPresenceSection'
 import ClienteleSection from '../sections/ClienteleSection'
 import ContactSection from '../sections/ContactSection'
 import FooterSection from '../sections/FooterSection'
-import cargo from '../assets/images/cargo-ship-1.png'
+import containerTerminal from '../assets/container-terminal.gif'
 
 export default function Home() {
     return (
         <Box sx={{ background: '#EFF6FF', width: '100vw' }}>
             <HeaderSection
-                image={cargo}
-                // containerVideo
+                image={containerTerminal}
                 title='Effortless Shipping and Logistics'
                 subtitle='Muskan Group Makes it Simple'
             />
