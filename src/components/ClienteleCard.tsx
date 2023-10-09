@@ -24,12 +24,11 @@ export default function ClienteleCard({ cardImage, cardIcon, title, subtitle }: 
                     right: 0,
                     width: '64%',
                     height: '100%',
-                    px: theme.spacing(6),
-                    py: theme.spacing(8),
+                    p: theme.spacing(6),
                 }}
             >
                 <Box sx={{ display: 'flex', my: theme.spacing(1.5) }}>
-                    <Image src={cardIcon} alt='card image' style={{ width: 'auto', height: '4.5rem' }} />
+                    <Image src={cardIcon} alt='card image' style={{ width: 'auto', height: '4rem' }} />
                 </Box>
                 <Typography
                     variant='subtitle2'
