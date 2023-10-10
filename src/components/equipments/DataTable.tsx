@@ -1,6 +1,6 @@
 import React from 'react'
 import { Paper, Typography, Table, TableRow, TableCell } from '@mui/material'
-import useTheme from '@mui/material/styles/useTheme'
+import { useTheme } from '@mui/material/styles'
 
 declare type DataTableProps = {
     small?: boolean

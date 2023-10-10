@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography, Table, TableRow, TableCell } from '@mui/material'
-import useTheme from '@mui/material/styles/useTheme'
+import { useTheme } from '@mui/material/styles'
 
 export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
     const theme = useTheme()

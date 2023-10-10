@@ -4,7 +4,7 @@ import { Box } from '@mui/material'
 import highCube from '../../assets/equipments/high-cube.png'
 import DataTableHead from './DataTableHead'
 import DataTable from './DataTable'
-import { equipmentsData } from '../../data/equipmentsData'
+import { equipmentsData } from '@/data/equipmentsData'
 
 export default function HighCubeTab() {
     return (
