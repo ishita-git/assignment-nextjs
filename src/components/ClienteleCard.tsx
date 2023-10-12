@@ -23,8 +23,8 @@ export default function ClienteleCard({ cardImage, cardIcon, title, subtitle }: 
                     bottom: 0,
                     right: 0,
                     width: '64%',
-                    height: '100%',
-                    p: theme.spacing(6),
+                    height: '80%',
+                    px: theme.spacing(6),
                 }}
             >
                 <Box sx={{ display: 'flex', my: theme.spacing(1.5) }}>
