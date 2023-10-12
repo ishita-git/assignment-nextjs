@@ -22,7 +22,7 @@ export default function ClienteleCard({ cardImage, cardIcon, title, subtitle }: 
                     position: 'absolute',
                     bottom: 0,
                     right: 0,
-                    width: '56%',
+                    width: '52%',
                     height: '80%',
                     px: theme.spacing(6),
                 }}
