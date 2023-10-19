@@ -1,8 +1,21 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
-import { Box, Typography, Grid, Paper, IconButton, InputLabel, FormControl, Select, MenuItem } from '@mui/material'
+import {
+    Box,
+    Typography,
+    Grid,
+    Paper,
+    IconButton,
+    InputLabel,
+    FormControl,
+    Select,
+    Slide,
+    Snackbar,
+    MenuItem,
+} from '@mui/material'
+import MuiAlert from '@mui/material/Alert'
 import { SelectChangeEvent } from '@mui/material/Select'
 import { useTheme } from '@mui/material/styles'
 import Layout from '../Layout'
@@ -12,65 +25,97 @@ import reload from '../../assets/icons/loop.png'
 import PrimaryButton from '../../components/PrimaryButton'
 import SecondaryButton from '../../components/SecondaryButton'
 import careerBackground from '../../assets/career/career-background.png'
+import careerBanner from '../../assets/career/marketing_lg.png'
 import { fetchDataFromApi, postDataToApi } from '../../api/api'
 
-type careerDataType = {
+interface JobType {
     id: number
+    image: string | StaticImageData
     title: string
-    info: string
-    banner: string | StaticImageData
-    responsibilities: string[]
-    qualifications: string[]
+    company: string
+    location: string
+    description: string
+    qualification: string
+    requirements: string
 }
 
-interface JobDetailProps {
-    job: careerDataType | undefined
-}
-
-const careerData: careerDataType[] = []
-
-export default function JobDetail({ job }: JobDetailProps) {
+export default function JobDetail() {
     const theme = useTheme()
     const router = useRouter()
-    const { id } = router.query
-    const [enquiryType, setEnquiryType] = React.useState('')
 
-    const handleChange = (event: SelectChangeEvent) => {
-        setEnquiryType(event.target.value as string)
+    const { id } = router.query
+
+    const [careerData, setCareerData] = useState<JobType[] | null>(null)
+
+    useEffect(() => {
+        async function fetchCareerData() {
+            try {
+                const response = await fetchDataFromApi('api/job-list/')
+                setCareerData(response)
+            } catch (error) {
+                console.error('Error in fetching job data: ', error)
+            }
+        }
+        fetchCareerData()
+    }, [id])
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        current_salary: '',
+        expected_salary: '',
+        notice_period: '',
+        reason: '',
+        jobLocation: '',
+    })
+
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = event.target
+        setFormData({ ...formData, [name]: value })
+    }
+    const handleSelect = (event: SelectChangeEvent) => {
+        setFormData({ ...formData, jobLocation: event.target.value })
+    }
+
+    const [snackbarOpen, setSnackbarOpen] = useState(false)
+    const [snackbarMessage, setSnackbarMessage] = useState('')
+
+    const openSnackbar = (message: string) => {
+        setSnackbarMessage(message)
+        setSnackbarOpen(true)
+    }
+    const handleSnackbarClose = () => {
+        setSnackbarOpen(false)
     }
 
     const handleFormSubmit = async () => {
-        const formData = {
-            name: 'John Doe',
-            phone: '+91-8010180777',
-            email: 'johndoe@example.com',
-            current_salary: '$60,000',
-            expected_salary: '$70,000',
-            notice_period: '2 weeks',
-            reason: 'I am interested in this position',
-        }
         try {
             const response = await postDataToApi('api/job-create/', formData)
             console.log('Form submitted successfully:', response)
+            openSnackbar('Form submitted successfully')
         } catch (error) {
             console.error('Error submitting the form:', error)
+            openSnackbar('Form Submission Unsuccessful')
         }
     }
 
+    const jobData = careerData ? careerData[id] : null
+
     return (
         <Layout image={careerBackground} title='Join Muskaan' subtitle='Unlock a World of Career Possibilities'>
-            <Typography variant='h2' align='left'>
-                {job?.title}
+            <Typography variant='h2' align='left' sx={{ mb: '2rem' }}>
+                {jobData?.title}
             </Typography>
             <Grid container spacing={4} alignItems='center'>
                 <Grid item xs={12} sm={6}>
-                    <Typography variant='h6' sx={{ color: '#000000', lineHeight: '1.5rem' }}>
-                        {job?.info}
+                    <Typography variant='h6' sx={{ color: '#000000', lineHeight: '1.5rem', ml: '1.25rem' }}>
+                        <div dangerouslySetInnerHTML={{ __html: jobData?.requirements }} />
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <Image
-                        src={job?.banner ?? '../../assets/career/bl_officer_lg.png'}
+                        src={jobData?.image || careerBanner}
                         alt='banner'
                         style={{ height: 'auto', width: '100%' }}
                     />
@@ -79,49 +124,19 @@ export default function JobDetail({ job }: JobDetailProps) {
             <Box sx={{ my: theme.spacing(3) }}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
-                        <Typography textAlign='start' variant='h3' sx={{ color: '#031225', marginBottom: '1rem' }}>
+                        <Typography textAlign='start' variant='h3' sx={{ color: '#031225', mb: '1rem' }}>
                             Key Responsibilities
                         </Typography>
-                        <Typography
-                            component='ul'
-                            textAlign='start'
-                            variant='body1'
-                            sx={{ color: '#031225', ml: '1.25rem' }}
-                        >
-                            {job?.responsibilities.map((item, index) => (
-                                <Typography
-                                    component='li'
-                                    textAlign='start'
-                                    variant='body1'
-                                    sx={{ color: '#031225', mb: '1rem' }}
-                                    key={index}
-                                >
-                                    {item}
-                                </Typography>
-                            ))}
+                        <Typography variant='h6' sx={{ color: '#031225', ml: '1.25rem', lineHeight: '1.5rem' }}>
+                            <div dangerouslySetInnerHTML={{ __html: jobData?.requirements }} />
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={6}>
-                        <Typography textAlign='start' variant='h3' sx={{ color: '#031225', marginBottom: '1rem' }}>
+                        <Typography textAlign='start' variant='h3' sx={{ color: '#031225', mb: '1rem' }}>
                             Qualifications
                         </Typography>
-                        <Typography
-                            component='ul'
-                            textAlign='start'
-                            variant='body1'
-                            sx={{ color: '#031225', ml: '1.25rem' }}
-                        >
-                            {job?.qualifications.map((item, index) => (
-                                <Typography
-                                    component='li'
-                                    textAlign='start'
-                                    variant='body1'
-                                    sx={{ color: '#031225', mb: '1rem' }}
-                                    key={index}
-                                >
-                                    {item}
-                                </Typography>
-                            ))}
+                        <Typography variant='h6' sx={{ color: '#031225', ml: '1.25rem', lineHeight: '1.5rem' }}>
+                            <div dangerouslySetInnerHTML={{ __html: jobData?.qualification }} />
                         </Typography>
                     </Grid>
                 </Grid>
@@ -134,26 +149,45 @@ export default function JobDetail({ job }: JobDetailProps) {
             <Paper sx={{ padding: '1rem', borderRadius: '16px' }}>
                 <Grid container spacing={2}>
                     <Grid item sm={6} xs={12}>
-                        <PrimaryTextField label='Name' placeholder='Enter your name' />
-                        <PrimaryTextField label='Email' placeholder='Enter your email' />
-                        <PrimaryTextField label='Mobile Number' placeholder='Enter your contact number' startText />
-                        <PrimaryTextField label='Job Position' placeholder='Job Position' disabled />
+                        <PrimaryTextField
+                            label='Name'
+                            placeholder='Enter your name'
+                            name='name'
+                            value={formData.name}
+                            onChange={handleInputChange}
+                        />
+                        <PrimaryTextField
+                            label='Email'
+                            placeholder='Enter your email'
+                            name='email'
+                            value={formData.email}
+                            onChange={handleInputChange}
+                        />
+                        <PrimaryTextField
+                            label='Mobile Number'
+                            placeholder='Enter your contact number'
+                            name='phone'
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            startText
+                        />
+                        <PrimaryTextField label='Job Position' placeholder={jobData?.title} disabled />
 
                         <Box sx={{ mb: '1rem' }}>
                             <InputLabel>Job Location</InputLabel>
                             <FormControl fullWidth>
                                 <Select
-                                    value={enquiryType}
-                                    onChange={handleChange}
+                                    value={formData.jobLocation}
+                                    onChange={handleSelect}
                                     displayEmpty
                                     renderValue={
-                                        enquiryType !== ''
+                                        formData.jobLocation !== ''
                                             ? () => (
                                                   <Typography
                                                       textAlign='start'
                                                       sx={{ color: '#03122580', fontWeight: 600, ml: '-0.25rem' }}
                                                   >
-                                                      {enquiryType}
+                                                      {formData.jobLocation}
                                                   </Typography>
                                               )
                                             : () => (
@@ -169,23 +203,45 @@ export default function JobDetail({ job }: JobDetailProps) {
                                     <MenuItem value=''>
                                         <em>Select Location</em>
                                     </MenuItem>
-                                    <MenuItem value='delhi'>Delhi</MenuItem>
-                                    <MenuItem value='gujrat'>Gujrat</MenuItem>
-                                    <MenuItem value='mumbai'>Mumbai</MenuItem>
-                                    <MenuItem value='chennai'>Chennai</MenuItem>
-                                    <MenuItem value='kolkata'>kolkata</MenuItem>
+                                    <MenuItem value='Delhi'>Delhi</MenuItem>
+                                    <MenuItem value='Gujrat'>Gujrat</MenuItem>
+                                    <MenuItem value='Mumbai'>Mumbai</MenuItem>
+                                    <MenuItem value='Chennai'>Chennai</MenuItem>
+                                    <MenuItem value='Kolkata'>kolkata</MenuItem>
                                 </Select>
                             </FormControl>
                         </Box>
                     </Grid>
                     <Grid item sm={6} xs={12}>
-                        <PrimaryTextField label='Current Salary (Monthly)' placeholder='Enter Current Salary' />
-                        <PrimaryTextField label='Expected Salary (Monthly)' placeholder='Enter Expected Salary' />
+                        <PrimaryTextField
+                            label='Current Salary (Monthly)'
+                            placeholder='Enter Current Salary'
+                            name='current_salary'
+                            value={formData.current_salary}
+                            onChange={handleInputChange}
+                        />
+                        <PrimaryTextField
+                            label='Expected Salary (Monthly)'
+                            placeholder='Enter Expected Salary'
+                            name='expected_salary'
+                            value={formData.expected_salary}
+                            onChange={handleInputChange}
+                        />
                         <PrimaryTextField
                             label='Availability / Notice Period'
                             placeholder='Enter Current Notice Period'
+                            name='notice_period'
+                            value={formData.notice_period}
+                            onChange={handleInputChange}
                         />
-                        <PrimaryTextField label='Reason for leaving' placeholder='Enter your reason' multiline />
+                        <PrimaryTextField
+                            label='Reason for leaving current employment'
+                            placeholder='Enter your reason'
+                            name='reason'
+                            value={formData.reason}
+                            onChange={handleInputChange}
+                            multiline
+                        />
                     </Grid>
                 </Grid>
 
@@ -193,7 +249,12 @@ export default function JobDetail({ job }: JobDetailProps) {
                     <Grid item sm={6} xs={12}>
                         <InputLabel> Upload CV</InputLabel>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <PrimaryButton text='Choose File' />
+                            <PrimaryButton
+                                text='Choose File'
+                                onClick={() => {
+                                    console.log('File Uploaded')
+                                }}
+                            />
                             <Typography sx={{ marginLeft: '1rem' }}>No File Choosen</Typography>
                         </Box>
                     </Grid>
@@ -220,6 +281,17 @@ export default function JobDetail({ job }: JobDetailProps) {
                     <PrimaryButton text='Submit' onClick={handleFormSubmit} />
                 </Box>
             </Paper>
+            <Snackbar
+                open={snackbarOpen}
+                autoHideDuration={4000}
+                onClose={handleSnackbarClose}
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                TransitionComponent={(props) => <Slide {...props} direction='right' />}
+            >
+                <MuiAlert elevation={6} variant='filled' severity='success'>
+                    {snackbarMessage}
+                </MuiAlert>
+            </Snackbar>
         </Layout>
     )
 }

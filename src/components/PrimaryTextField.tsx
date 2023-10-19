@@ -10,6 +10,9 @@ declare type TextFieldProps = {
     helperText?: string
     multiline?: boolean
     disabled?: boolean
+    value?: string
+    name?: string
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export default function PrimaryTextField({
@@ -20,6 +23,9 @@ export default function PrimaryTextField({
     helperText,
     multiline,
     disabled,
+    value,
+    name,
+    onChange,
 }: TextFieldProps) {
     return (
         <Box sx={{ mb: '1rem' }}>
@@ -28,6 +34,9 @@ export default function PrimaryTextField({
                 <TextField
                     variant='standard'
                     placeholder={placeholder}
+                    onChange={onChange}
+                    name={name}
+                    value={value}
                     InputProps={{
                         disableUnderline: true,
                         startAdornment: (
