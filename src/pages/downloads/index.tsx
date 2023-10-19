@@ -1,13 +1,34 @@
+import React, { useState, useEffect } from 'react'
 import { Box, Container, Grid, Link, Typography } from '@mui/material'
+import Image from 'next/image'
 import Navbar from '../../components/Navbar'
 import FooterSection from '../../sections/FooterSection'
 import { useTheme } from '@mui/material/styles'
-import { usefulDownloads } from '../../data/downloadData'
 import downloadIcon from '../../assets/icons/download.png'
-import Image from 'next/image'
+import { fetchDataFromApi } from '../../api/api'
+
+type DownloadDataType = {
+    id: number
+    title: string
+    description: string
+    file: string
+}
 
 export default function Home() {
     const theme = useTheme()
+    const [downloadData, setDowloadData] = useState<DownloadDataType[]>([])
+
+    useEffect(() => {
+        async function fetchdDownloadData() {
+            try {
+                const response = await fetchDataFromApi('api/useful-downloads/')
+                setDowloadData(response)
+            } catch (error) {
+                console.error('Error in fetching job data: ', error)
+            }
+        }
+        fetchdDownloadData()
+    }, [])
 
     return (
         <Box>
@@ -33,8 +54,8 @@ export default function Home() {
                     </Box>
 
                     <Grid container spacing={2} wrap='wrap'>
-                        {usefulDownloads.map((item, index) => (
-                            <Grid item xs={12} sm={4} key={index}>
+                        {downloadData.map((item) => (
+                            <Grid item xs={12} sm={4} key={item.id}>
                                 <Box
                                     sx={{ bgcolor: '#ffffff', padding: '1rem', borderRadius: '1.1rem', height: '100%' }}
                                 >
@@ -45,9 +66,10 @@ export default function Home() {
                                         variant='body1'
                                         sx={{ color: ' rgba(49, 49, 49, 0.80)', textAlign: 'start', mb: '0.5rem' }}
                                     >
-                                        {item.description}
+                                        {item.description ||
+                                            'Manuals explaining different shipping options, carriers, and rates'}
                                     </Typography>
-                                    <Link href='/'>
+                                    <Link href={item.file}>
                                         <Box
                                             sx={{
                                                 display: 'flex',
