@@ -205,7 +205,7 @@ export default function Navbar() {
                             </MenuItem>
                             <MenuItem onClick={closeToolsMenu}>
                                 <Link href='/vessel-schedule' sx={{ color: 'inherit' }}>
-                                    Vessel Schedule
+                                    Vessel Schedules
                                 </Link>
                             </MenuItem>
 

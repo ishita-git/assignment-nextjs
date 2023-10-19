@@ -2,18 +2,14 @@ import React from 'react'
 import { Box, InputLabel, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import PrimaryButton from './PrimaryButton'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import PrimaryTextField from './PrimaryTextField'
 
-declare type CardProps = {
-    cardTitle: string
-    submitButton: string
-    children: React.ReactNode
-    datePicker?: React.ReactNode
-}
-
-export default function ShipmentCard({ cardTitle, children, submitButton, datePicker }: CardProps) {
+export default function TrackShipmentCard() {
     const theme = useTheme()
+
+    const onSubmit = () => {
+        console.log('submit')
+    }
 
     return (
         <Box>
@@ -28,7 +24,7 @@ export default function ShipmentCard({ cardTitle, children, submitButton, datePi
                     justifyContent: 'center',
                 }}
             >
-                <Typography variant='h4'>{cardTitle}</Typography>
+                <Typography variant='h4'>Track Shipment</Typography>
             </Box>
 
             <Box
@@ -42,20 +38,12 @@ export default function ShipmentCard({ cardTitle, children, submitButton, datePi
                     position: 'relative',
                 }}
             >
-                {children}
-
-                <Box
-                    sx={{
-                        position: 'absolute',
-                        bottom: theme.spacing(1),
-                        left: theme.spacing(1),
-                    }}
-                >
-                    <InputLabel>{datePicker ? 'Date' : ''}</InputLabel>
-                    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='en-gb'>
-                        {datePicker}
-                    </LocalizationProvider>
-                </Box>
+                <PrimaryTextField
+                    label='Search'
+                    placeholder='Enter Reference No. / Bill No. / container No.'
+                    helperText=' Input multiple numbers, separated by spaces and commas.'
+                    startIcon
+                />
 
                 <Box
                     sx={{
@@ -64,7 +52,7 @@ export default function ShipmentCard({ cardTitle, children, submitButton, datePi
                         right: theme.spacing(1),
                     }}
                 >
-                    <PrimaryButton text={submitButton} />
+                    <PrimaryButton text='Track' onClick={onSubmit} />
                 </Box>
             </Box>
         </Box>

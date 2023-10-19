@@ -1,5 +1,6 @@
-import React from 'react'
-import Image, { StaticImageData } from 'next/image'
+import React, { useState, useEffect } from 'react'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
 import {
     Box,
     Collapse,
@@ -18,8 +19,8 @@ import titleImg from '../../assets/images/cargo-ship-1.png'
 import shipIcon from '../../assets/icons/icons_cargo_ship.png'
 import arraowRight from '../../assets/icons/arrow-right-big.png'
 import switchIcon from '../../assets/icons/switch.png'
-import leftArrowIcon from '../../assets/icons/ep_back.png'
-import rightArrowIcon from '../../assets/icons/ep_back_right.png'
+// import leftArrowIcon from '../../assets/icons/ep_back.png'
+// import rightArrowIcon from '../../assets/icons/ep_back_right.png'
 import downArrowIcon from '../../assets/icons/arrow_down_circle.png'
 import PrimaryTextField from '@/components/PrimaryTextField'
 import FooterSection from '@/sections/FooterSection'
@@ -35,6 +36,22 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import PrimaryButton from '@/components/PrimaryButton'
 import SecondaryButton from '@/components/SecondaryButton'
+import { fetchDataFromApi } from '@/api/api'
+
+interface VesselData {
+    id: number
+    port_of_loading: string
+    port_of_discharge: string
+    transit_days: string
+    vessel_voyage: string
+    docs_cut_off: string
+    vgm_cut_off: string
+    port_cargo_cutoff: string
+    eta_pol: string
+    etd_pol: string
+    eta_pod: string
+    is_direct: boolean
+}
 
 interface ExpandMoreProps extends IconButtonProps {
     expand: boolean
@@ -49,15 +66,33 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
         duration: theme.transitions.duration.shortest,
     }),
 }))
+
 let currentDate = new Date()
+
 export default function Home() {
     const theme = useTheme()
+    const router = useRouter()
+    const { pol, pod, dateValue } = router.query
 
     const [expanded, setExpanded] = React.useState(false)
 
     const handleExpandClick = () => {
         setExpanded(!expanded)
     }
+
+    const [vesselData, setVesselData] = useState<VesselData[]>([])
+
+    useEffect(() => {
+        async function fetchVesselData() {
+            try {
+                const response = await fetchDataFromApi(`api/vessel/?pol=${pol}&pod=${pod}&date=${dateValue}`)
+                setVesselData(response)
+            } catch (error) {
+                console.error('Error in fetching vessel data: ', error)
+            }
+        }
+        fetchVesselData()
+    }, [])
 
     return (
         <Box sx={{ backgroundColor: '#EFF6FF' }}>
@@ -121,135 +156,150 @@ export default function Home() {
             </Box>
 
             <Box sx={{ mt: theme.spacing(10), p: theme.spacing(4) }}>
-                <Container maxWidth='xl'>
-                    <Box sx={{ display: 'flex', mb: '1.25rem', alignItems: 'center' }}>
-                        <Typography variant='h3' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            Mundra,India
-                        </Typography>
-                        <Image
-                            src={arraowRight}
-                            alt=''
-                            style={{ height: 'auto', width: '5rem', margin: '0rem 4rem' }}
-                        />
-                        <Typography variant='h3' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            Jebel Ali, United Arab Emirates
-                        </Typography>
-                    </Box>
+                {vesselData?.map((item) => (
+                    <Container maxWidth='xl' key={item.id}>
+                        <Box sx={{ display: 'flex', mb: '1.25rem', alignItems: 'center' }}>
+                            <Typography variant='h3' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
+                                {item?.port_of_loading}
+                            </Typography>
+                            <Image
+                                src={arraowRight}
+                                alt=''
+                                style={{ height: 'auto', width: '5rem', margin: '0rem 4rem' }}
+                            />
+                            <Typography variant='h3' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
+                                {item?.port_of_discharge}
+                            </Typography>
+                        </Box>
 
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: '1.25rem', alignItems: 'center' }}>
-                        <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            Total: {'02'} Results
-                        </Typography>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <Image src={leftArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
-                            <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F', mx: '1.25rem' }}>
-                                Previous Page
+                        {/* <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                mb: '1.25rem',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
+                                Total: {'02'} Results
                             </Typography>
-                            <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F', mx: '1.25rem' }}>
-                                Next Page
-                            </Typography>
-                            <Image src={rightArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
-                        </Box>
-                    </Box>
-                    <Box
-                        sx={{
-                            position: 'relative',
-                            bgcolor: '#FFFFFF',
-                            borderRadius: '1.25rem',
-                            p: '1.25rem',
-                            my: '2rem',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <Box sx={{ position: 'absolute', right: '1.25rem', top: '1.25rem' }}>
-                            <PrimaryButton text='Book Now' />
-                        </Box>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <Box sx={{ width: '100%' }}>
+                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                <Image src={leftArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
                                 <Typography
                                     variant='body1'
-                                    sx={{ textAlign: 'center', mb: '1.25rem', color: '#003A9B' }}
+                                    sx={{ textAlign: 'start', color: '#1B1B1F', mx: '1.25rem' }}
                                 >
-                                    20 Days
+                                    Previous Page
                                 </Typography>
-                                <Box
-                                    sx={{
-                                        mr: '1.25rem',
-                                        display: 'flex',
-                                        justifyContent: 'space-between',
-                                        width: '100%',
-                                    }}
+                                <Typography
+                                    variant='body1'
+                                    sx={{ textAlign: 'start', color: '#1B1B1F', mx: '1.25rem' }}
                                 >
-                                    <LocationOnIcon />
-                                    <CustomText title='Port of Loading' subtitle='Mundra' />
-                                    <Divider component='div' sx={{ margin: 'auto' }}>
-                                        <Image src={shipIcon} alt='' style={{ height: 'auto', width: '75%' }} />
-                                    </Divider>
-                                    <SportsScoreIcon />
-                                    <CustomText title='Port Of Discharge' subtitle='Jebel Ali' />
-                                </Box>
-                                <Box
-                                    sx={{
-                                        bgcolor: '#003A9B33',
-                                        borderRadius: '1.25rem',
-                                        p: '0.25rem',
-                                        margin: 'auto',
-                                        width: '5rem',
-                                        alignSelf: 'center',
-                                    }}
-                                >
-                                    <Typography variant='body1' sx={{ textAlign: 'center', color: '#003A9B' }}>
-                                        Direct
-                                    </Typography>
-                                </Box>
+                                    Next Page
+                                </Typography>
+                                <Image src={rightArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
                             </Box>
-                            <Divider orientation='vertical' flexItem sx={{ mx: '1.25rem' }} />
-                            <Grid container spacing={1} sx={{}}>
-                                <Grid item sm={4}>
-                                    <CustomText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
+                        </Box> */}
+                        <Box
+                            sx={{
+                                position: 'relative',
+                                bgcolor: '#FFFFFF',
+                                borderRadius: '1.25rem',
+                                p: '1.25rem',
+                                my: '2rem',
+                                alignItems: 'center',
+                            }}
+                        >
+                            <Box sx={{ position: 'absolute', right: '1.25rem', top: '1.25rem' }}>
+                                <PrimaryButton text='Book Now' />
+                            </Box>
+                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <Box sx={{ width: '100%' }}>
+                                    <Typography
+                                        variant='body1'
+                                        sx={{ textAlign: 'center', mb: '1.25rem', color: '#003A9B' }}
+                                    >
+                                        {item?.transit_days} Days
+                                    </Typography>
+                                    <Box
+                                        sx={{
+                                            mr: '1.25rem',
+                                            display: 'flex',
+                                            justifyContent: 'space-between',
+                                            width: '100%',
+                                        }}
+                                    >
+                                        <LocationOnIcon />
+                                        <CustomText title='Port of Loading' subtitle={item?.port_of_loading} />
+                                        <Divider component='div' sx={{ margin: 'auto' }}>
+                                            <Image src={shipIcon} alt='' style={{ height: 'auto', width: '75%' }} />
+                                        </Divider>
+                                        <SportsScoreIcon />
+                                        <CustomText title='Port Of Discharge' subtitle={item?.port_of_discharge} />
+                                    </Box>
+                                    <Box
+                                        sx={{
+                                            bgcolor: '#003A9B33',
+                                            borderRadius: '1.25rem',
+                                            p: '0.25rem',
+                                            margin: 'auto',
+                                            width: '5rem',
+                                            alignSelf: 'center',
+                                        }}
+                                    >
+                                        <Typography variant='body1' sx={{ textAlign: 'center', color: '#003A9B' }}>
+                                            {item?.is_direct == true ? 'Direct' : 'Indirect'}
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                                <Divider orientation='vertical' flexItem sx={{ mx: '1.25rem' }} />
+                                <Grid container spacing={1} sx={{}}>
+                                    <Grid item sm={4}>
+                                        <CustomText title='Vessel/Voyage' subtitle={item?.vessel_voyage} />
+                                    </Grid>
+                                    <Grid item sm={4}>
+                                        <CustomText title='Service Lane' subtitle='NCI' />
+                                    </Grid>
                                 </Grid>
-                                <Grid item sm={4}>
-                                    <CustomText title='Service Lane' subtitle='NCI' />
-                                </Grid>
-                            </Grid>
+                            </Box>
+                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                <Typography sx={{ marginLeft: 'auto', mr: '0.5rem' }}>View Detail</Typography>
+                                <ExpandMore
+                                    expand={expanded}
+                                    onClick={handleExpandClick}
+                                    aria-expanded={expanded}
+                                    aria-label='show more'
+                                >
+                                    <Image src={downArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
+                                </ExpandMore>
+                            </Box>
+                            <Collapse in={expanded} timeout='auto' unmountOnExit>
+                                <Divider sx={{ my: '2rem' }} />
+                                <DocLocation
+                                    docTime={item?.eta_pol}
+                                    pol='ETD at POL'
+                                    portName={item?.port_of_loading}
+                                    address=' Adani Ports and SEZ'
+                                />
+                                <ShipLocation
+                                    lane='IGS (Service Lane)'
+                                    shipName={item?.vessel_voyage}
+                                    duration='11 Days 19 Hours'
+                                    doc={item?.docs_cut_off}
+                                    port={item?.port_cargo_cutoff}
+                                    inland='28-08-2023 00:00'
+                                    vgm={item?.vgm_cut_off}
+                                />
+                                <DocLocation
+                                    docTime={item?.eta_pod}
+                                    pol=' ETD at POL'
+                                    portName={item?.port_of_discharge}
+                                    address=' Adani Ports and SEZ'
+                                />
+                            </Collapse>
                         </Box>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <Typography sx={{ marginLeft: 'auto', mr: '0.5rem' }}>View Detail</Typography>
-                            <ExpandMore
-                                expand={expanded}
-                                onClick={handleExpandClick}
-                                aria-expanded={expanded}
-                                aria-label='show more'
-                            >
-                                <Image src={downArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
-                            </ExpandMore>
-                        </Box>
-                        <Collapse in={expanded} timeout='auto' unmountOnExit>
-                            <Divider sx={{ my: '2rem' }} />
-                            <DocLocation
-                                docTime='29-08-2023 23:00'
-                                pol=' ETD at POL'
-                                portName='Mundra'
-                                address=' Adani Ports and SEZ'
-                            />
-                            <ShipLocation
-                                lane='IGS (Service Lane)'
-                                shipName='Shimin 015E'
-                                duration='11 Days 19 Hours'
-                                doc='28-08-2023 00:00'
-                                port='28-08-2023 00:00'
-                                inland='28-08-2023 00:00'
-                                vgm='28-08-2023 00:00'
-                            />
-                            <DocLocation
-                                docTime='29-08-2023 23:00'
-                                pol=' ETD at POL'
-                                portName='Mundra'
-                                address=' Adani Ports and SEZ'
-                            />
-                        </Collapse>
-                    </Box>
-                </Container>
+                    </Container>
+                ))}
             </Box>
             <FooterSection />
         </Box>
