@@ -10,6 +10,7 @@ import PrimaryTextField from '../components/PrimaryTextField'
 import { fetchDataFromApi } from '../api/api'
 
 let currentDate = new Date()
+let dateValue = new Date('2023-09-10')
 
 interface Port {
     id: number
@@ -19,44 +20,41 @@ interface Port {
 export default function ShipmentTracker() {
     const theme = useTheme()
 
-    const [originType, setOriginType] = useState('')
-    const [destinationType, setDestinationType] = useState('')
+    const [originLocation, setOriginLocation] = useState('')
+    const [destinationLocation, setDestinationLocation] = useState('')
     const [portList, setPortList] = useState<Port[]>([])
     const [vesselData, setVesselData] = useState([])
 
     const handleSetOrigin = (event: SelectChangeEvent) => {
-        setOriginType(event.target.value as string)
+        setOriginLocation(event.target.value as string)
     }
 
     const handleSetDestination = (event: SelectChangeEvent) => {
-        setDestinationType(event.target.value as string)
+        setDestinationLocation(event.target.value as string)
     }
 
-    const endpoint = 'api/port-list'
-
     useEffect(() => {
-        fetchDataFromApi(endpoint)
-            .then((data) => {
-                console.log('API Data:', data)
-                setPortList(data)
-            })
-            .catch((error) => {
-                console.error('Error fetching port list:', error)
-            })
-    }, [])
+        async function fetchPortList() {
+            try {
+                const response = await fetchDataFromApi('api/port-list/')
+                setPortList(response)
+            } catch (error) {
+                console.error('Error in fetching Port data: ', error)
+            }
+        }
+        fetchPortList()
 
-    useEffect(() => {
-        const secondEndpoint = 'api/vessel/?pol=1&pod=3&date=2023-09-10'
-
-        fetchDataFromApi(secondEndpoint)
-            .then((data) => {
-                console.log('Second API Data:', data)
-                setVesselData(data)
-            })
-            .catch((error) => {
-                console.error('Error fetching vessel data:', error)
-            })
-    }, [])
+        async function fetchVesselData() {
+            try {
+                const apiUrl = `test.muskan-group.com/api/vessel/?pol=${originLocation}&pod=${destinationLocation}&date=${dateValue}`
+                const response = await fetchDataFromApi(apiUrl)
+                setVesselData(response)
+            } catch (error) {
+                console.error('Error in fetching Vessel data: ', error)
+            }
+        }
+        fetchVesselData()
+    }, [originLocation, destinationLocation])
 
     return (
         <Box sx={{ mx: theme.spacing(4) }}>
@@ -99,17 +97,17 @@ export default function ShipmentTracker() {
                                 <InputLabel>Origin</InputLabel>
                                 <FormControl fullWidth>
                                     <Select
-                                        value={originType}
+                                        value={originLocation}
                                         onChange={handleSetOrigin}
                                         displayEmpty
                                         renderValue={
-                                            originType !== ''
+                                            originLocation !== ''
                                                 ? () => (
                                                       <Typography
                                                           textAlign='start'
                                                           sx={{ color: '#03122580', fontWeight: 600, ml: '-0.25rem' }}
                                                       >
-                                                          {originType}
+                                                          {originLocation}
                                                       </Typography>
                                                   )
                                                 : () => (
@@ -137,17 +135,17 @@ export default function ShipmentTracker() {
                                 <InputLabel>Destination</InputLabel>
                                 <FormControl fullWidth>
                                     <Select
-                                        value={destinationType}
+                                        value={destinationLocation}
                                         onChange={handleSetDestination}
                                         displayEmpty
                                         renderValue={
-                                            originType !== ''
+                                            originLocation !== ''
                                                 ? () => (
                                                       <Typography
                                                           textAlign='start'
                                                           sx={{ color: '#03122580', fontWeight: 600, ml: '-0.25rem' }}
                                                       >
-                                                          {destinationType}
+                                                          {destinationLocation}
                                                       </Typography>
                                                   )
                                                 : () => (
@@ -163,11 +161,6 @@ export default function ShipmentTracker() {
                                         <MenuItem value=''>
                                             <em>Select Location</em>
                                         </MenuItem>
-                                        {portList.map((port) => (
-                                            <MenuItem key={port.id} value={port.name}>
-                                                {port.name}
-                                            </MenuItem>
-                                        ))}
                                     </Select>
                                 </FormControl>
                             </Box>

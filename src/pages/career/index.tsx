@@ -31,12 +31,6 @@ export default function Home() {
         fetchCareerData()
     }, [])
 
-    const stripHTMLTags = (html: string) => {
-        const temp = document.createElement('div')
-        temp.innerHTML = html
-        return temp.textContent || temp.innerText
-    }
-
     const ellipsisStyles: React.CSSProperties = {
         overflow: 'hidden',
         display: '-webkit-box',
@@ -70,7 +64,7 @@ export default function Home() {
                                 </Typography>
                                 <div style={ellipsisStyles}>
                                     <Typography variant='body1' sx={{ color: 'rgba(49, 49, 49, 0.80)', my: '1rem' }}>
-                                        {stripHTMLTags(job.description)}
+                                        <div dangerouslySetInnerHTML={{ __html: job?.description }} />
                                     </Typography>
                                 </div>
                             </Box>

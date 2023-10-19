@@ -19,7 +19,7 @@ export default function Home() {
     const [downloadData, setDowloadData] = useState<DownloadDataType[]>([])
 
     useEffect(() => {
-        async function fetchdDownloadData() {
+        async function fetchDownloadData() {
             try {
                 const response = await fetchDataFromApi('api/useful-downloads/')
                 setDowloadData(response)
@@ -27,7 +27,7 @@ export default function Home() {
                 console.error('Error in fetching job data: ', error)
             }
         }
-        fetchdDownloadData()
+        fetchDownloadData()
     }, [])
 
     return (
