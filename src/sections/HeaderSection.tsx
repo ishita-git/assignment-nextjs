@@ -3,7 +3,6 @@ import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
 import { Box, Container, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import Navbar from '../components/Navbar'
 import { oswald } from '../styles/fonts'
 
 declare type HeaderProps = {
@@ -62,17 +61,15 @@ export default function HeaderSection({ image, title, subtitle, video }: HeaderP
                     mx: theme.spacing(4),
                 }}
             >
-                <Navbar />
-
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h1' sx={{ mt: theme.spacing(4) }}>
+                    <Typography variant='h1' sx={{ mt: theme.spacing(8) }}>
                         {title}
                     </Typography>
 
                     <Typography
                         variant='h2'
                         sx={{
-                            mt: theme.spacing(1.2),
+                            mt: theme.spacing(1.25),
                             fontFamily: oswald.style.fontFamily,
                             color: 'common.white',
                             fontWeight: 400,

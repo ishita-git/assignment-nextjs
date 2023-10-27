@@ -25,7 +25,8 @@ export default function ServicesSection() {
                         speed={1200}
                         autoplay={{
                             delay: 2000,
-                            disableOnInteraction: false,
+                            disableOnInteraction: true,
+                            pauseOnMouseEnter: true,
                         }}
                         keyboard={{
                             enabled: true,
