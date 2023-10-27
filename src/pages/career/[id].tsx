@@ -44,6 +44,8 @@ export default function JobDetail() {
     const router = useRouter()
 
     const { id } = router.query
+    // const jobId = id ? (Array.isArray(id) ? id[0] : id) : ''
+    const jobId = id ? (Array.isArray(id) ? parseInt(id[0], 10) : parseInt(id, 10)) : 0
 
     const [careerData, setCareerData] = useState<JobType[] | null>(null)
 
@@ -100,7 +102,7 @@ export default function JobDetail() {
         }
     }
 
-    const jobData = careerData ? careerData[id] : null
+    const jobData = careerData?.[jobId]
 
     return (
         <Layout image={careerBackground} title='Join Muskaan' subtitle='Unlock a World of Career Possibilities'>
@@ -110,7 +112,7 @@ export default function JobDetail() {
             <Grid container spacing={4} alignItems='center'>
                 <Grid item xs={12} sm={6}>
                     <Typography variant='h6' sx={{ color: '#000000', lineHeight: '1.5rem', ml: '1.25rem' }}>
-                        <div dangerouslySetInnerHTML={{ __html: jobData?.requirements }} />
+                        <div dangerouslySetInnerHTML={{ __html: jobData?.requirements || '' }} />
                     </Typography>
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -128,7 +130,7 @@ export default function JobDetail() {
                             Key Responsibilities
                         </Typography>
                         <Typography variant='h6' sx={{ color: '#031225', ml: '1.25rem', lineHeight: '1.5rem' }}>
-                            <div dangerouslySetInnerHTML={{ __html: jobData?.requirements }} />
+                            <div dangerouslySetInnerHTML={{ __html: jobData?.requirements || '' }} />
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -136,7 +138,7 @@ export default function JobDetail() {
                             Qualifications
                         </Typography>
                         <Typography variant='h6' sx={{ color: '#031225', ml: '1.25rem', lineHeight: '1.5rem' }}>
-                            <div dangerouslySetInnerHTML={{ __html: jobData?.qualification }} />
+                            <div dangerouslySetInnerHTML={{ __html: jobData?.requirements || '' }} />
                         </Typography>
                     </Grid>
                 </Grid>
