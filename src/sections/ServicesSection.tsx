@@ -21,11 +21,11 @@ export default function ServicesSection() {
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={0}
-                        // loop={true}
+                        loop={true}
                         speed={1200}
                         autoplay={{
                             delay: 2000,
-                            disableOnInteraction: true,
+                            disableOnInteraction: false,
                             pauseOnMouseEnter: true,
                         }}
                         keyboard={{

@@ -1,3 +1,4 @@
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import { Box, Container, Grid, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
@@ -6,12 +7,16 @@ import ClienteleCard from '../components/ClienteleCard'
 import ClientIconCard from '../components/ClientIconCard'
 // swiper
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, Keyboard, FreeMode, Navigation, Thumbs, Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Autoplay, Keyboard, Navigation, Pagination } from 'swiper/modules'
+import 'swiper/css/free-mode'
+import 'swiper/css/navigation'
+import 'swiper/css/thumbs'
 
 export default function ClienteleSection() {
     const theme = useTheme()
+    const [thumbsSwiper, setThumbsSwiper] = useState<Swiper | null>(null)
 
     return (
         <Box sx={{ p: theme.spacing(4) }}>
@@ -19,20 +24,12 @@ export default function ClienteleSection() {
             <Container maxWidth='md' disableGutters sx={{ py: theme.spacing(2), position: 'relative' }}>
                 <Box sx={{ my: theme.spacing(2) }}>
                     <Swiper
-                        slidesPerView={1}
-                        spaceBetween={80}
                         loop={true}
-                        speed={1200}
-                        autoplay={{
-                            delay: 2000,
-                            disableOnInteraction: false,
-                        }}
-                        keyboard={{
-                            enabled: true,
-                        }}
+                        spaceBetween={10}
                         navigation={true}
-                        modules={[Autoplay, Keyboard, Navigation, Pagination]}
-                        className='mySwiper'
+                        thumbs={{ swiper: thumbsSwiper }}
+                        modules={[FreeMode, Navigation, Thumbs]}
+                        className='mySwiper2'
                     >
                         {clientsData.map((item) => (
                             <SwiperSlide key={item.id}>
@@ -53,34 +50,14 @@ export default function ClienteleSection() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
-                </Box>
-
-                <Box sx={{ py: theme.spacing(2) }}>
                     <Swiper
-                        slidesPerView={1}
-                        spaceBetween={0}
+                        onSwiper={setThumbsSwiper}
                         loop={true}
-                        speed={1200}
-                        autoplay={{
-                            delay: 2000,
-                            disableOnInteraction: false,
-                        }}
-                        keyboard={{
-                            enabled: true,
-                        }}
-                        breakpoints={{
-                            200: { slidesPerView: 1 },
-                            400: { slidesPerView: 2 },
-                            600: { slidesPerView: 3 },
-                            800: { slidesPerView: 4 },
-                            1000: { slidesPerView: 5 },
-                            1200: { slidesPerView: 6 },
-                            1400: { slidesPerView: 7 },
-                            1600: { slidesPerView: 8 },
-                            1800: { slidesPerView: 9 },
-                        }}
-                        navigation={true}
-                        modules={[Autoplay, Keyboard, Navigation, Pagination]}
+                        spaceBetween={10}
+                        slidesPerView={4}
+                        freeMode={true}
+                        watchSlidesProgress={true}
+                        modules={[FreeMode, Thumbs]}
                         className='mySwiper'
                     >
                         {clientsData.map((item) => (

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Box, Container, Divider, Grid, Typography } from '@mui/material'
+import { Box, Container, Divider, Grid, Link, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
 import map from '../assets/images/map.png'
@@ -48,7 +48,7 @@ import map from '../assets/images/map.png'
 //     )
 // }
 
-const CompanyCard = ({ text }: { text: string }) => {
+const CompanyCard = ({ text, href }: { text: string; href: string }) => {
     const theme = useTheme()
     return (
         <Box
@@ -62,11 +62,16 @@ const CompanyCard = ({ text }: { text: string }) => {
                 height: '6rem',
                 px: theme.spacing(1),
                 mx: 'auto',
+                transition: 'box-shadow 0.4s',
+                '&:hover': { boxShadow: 5 },
+                cursor: 'pointer',
             }}
         >
-            <Typography variant='h4' sx={{ fontFamily: oswald.style.fontFamily }}>
-                {text}
-            </Typography>
+            <Link href={href}>
+                <Typography variant='h4' sx={{ fontFamily: oswald.style.fontFamily }}>
+                    {text}
+                </Typography>
+            </Link>
         </Box>
     )
 }
@@ -81,13 +86,13 @@ export default function BusinessPresenceSection() {
                 <Box sx={{ mt: theme.spacing(3) }}>
                     <Grid container spacing={2}>
                         <Grid item sm={4} xs={6}>
-                            <CompanyCard text='Muskan Containers line Pvt. Ltd.' />
+                            <CompanyCard text='Muskan Containers line Pvt. Ltd.' href='/companies/container-lines' />
                         </Grid>
                         <Grid item sm={4} xs={6}>
-                            <CompanyCard text='Muskan Logistic' />
+                            <CompanyCard text='Muskan Logistics' href='/companies/logistics' />
                         </Grid>
                         <Grid item sm={4} xs={12}>
-                            <CompanyCard text='Muskan Shipping PTE Ltd.' />
+                            <CompanyCard text='Muskan Shipping PTE Ltd.' href='/companies/shipping-pte' />
                         </Grid>
                         <Grid item xs={6}>
                             <Box
@@ -98,7 +103,7 @@ export default function BusinessPresenceSection() {
                                     },
                                 }}
                             >
-                                <CompanyCard text='Muskaan Shipping SDN BHD' />
+                                <CompanyCard text='Muskaan Shipping SDN BHD' href='/companies/shipping-sdn-bhd' />
                             </Box>
                         </Grid>
                         <Grid item xs={6}>
@@ -110,7 +115,7 @@ export default function BusinessPresenceSection() {
                                     },
                                 }}
                             >
-                                <CompanyCard text='Muskaan Shipping LLC' />
+                                <CompanyCard text='Muskaan Shipping LLC' href='/companies/shipping-llc' />
                             </Box>
                         </Grid>
                     </Grid>

@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { useTheme } from '@mui/material/styles'
-import { AppBar, Box, Toolbar, Typography, useScrollTrigger } from '@mui/material'
+import { AppBar, Box, Container, Grid, Toolbar, Typography, useScrollTrigger } from '@mui/material'
 import HeaderSection from '../sections/HeaderSection'
-import ShipmentTracker from '../sections/ShipmentTracker'
+import TrackShipmentCard from '../components/TrackShipmentCard'
+import TrackVesselSchedulesCard from '../components/TrackVesselSchedulesCard'
 import ServicesSection from '../sections/ServicesSection'
 import ShippingSection from '../sections/ShippingSection'
 import BusinessPresenceSection from '../sections/BusinessPresenceSection'
@@ -46,8 +47,26 @@ export default function ElevateAppBar(props: Props) {
                     subtitle='Muskan Group Makes it Simple'
                 />
 
-                <Box sx={{ position: 'relative', display: 'flex', justifyContent: 'center', top: '-20vh' }}>
-                    <ShipmentTracker />
+                <Box
+                    sx={{
+                        position: 'relative',
+                        top: '-20vh',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        mx: theme.spacing(2),
+                    }}
+                >
+                    <Container maxWidth='md' sx={{ position: 'absolute' }}>
+                        <Grid container spacing={2} sx={{ width: '100%' }}>
+                            <Grid item xs={12} sm={6}>
+                                <TrackShipmentCard />
+                            </Grid>
+
+                            <Grid item xs={12} sm={6}>
+                                <TrackVesselSchedulesCard />
+                            </Grid>
+                        </Grid>
+                    </Container>
                 </Box>
 
                 <ServicesSection />

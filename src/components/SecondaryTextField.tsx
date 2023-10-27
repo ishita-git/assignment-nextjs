@@ -11,20 +11,20 @@ function SecondaryTextField({ placeholder, multiline, endButton }: TextFieldProp
         <Box sx={{ mb: '0.75rem' }}>
             <Box
                 sx={{
-                    backgroundColor: endButton ? '#FFFFFF' : '#FFFFFF33',
+                    backgroundColor: endButton ? '#FFFFFF' : '#3361AE',
                     borderRadius: '8px',
                 }}
             >
                 <TextField
-                    variant="standard"
+                    variant='standard'
                     placeholder={placeholder}
                     InputProps={{
                         disableUnderline: true,
                         endAdornment: endButton ? (
-                            <InputAdornment position="end">
+                            <InputAdornment position='end'>
                                 <Button
-                                    variant="contained"
-                                    size="large"
+                                    variant='contained'
+                                    size='large'
                                     sx={{
                                         textTransform: 'capitalize',
                                         borderRadius: '6px',
