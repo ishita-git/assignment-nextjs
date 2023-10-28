@@ -274,7 +274,14 @@ export const clientsData = [
         subtitle:
             'Team Global Logistics, a trusted partner in logistics solutions, relies on our expertise to facilitate the seamless movement of goods worldwide. Through our collaborative efforts, we enable Team Global Logistics to meet their shipping needs efficiently, showcasing our commitment to delivering top-notch logistics services.',
     },
-
+    {
+        id: 28,
+        cardImage: card28,
+        cardIcon: icon28,
+        title: 'Tiger Beer',
+        subtitle:
+            'Tiger Beer, a renowned brand in the beverage industry, trusts our logistics expertise to manage the global transportation of their products. With our support, Tiger Beer ensures that their distinctive beverages are delivered efficiently and promptly to consumers around the world, maintaining their reputation for quality and taste.',
+    },
     {
         id: 29,
         cardImage: card29,
