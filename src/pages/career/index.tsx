@@ -41,12 +41,15 @@ export default function Home() {
 
     return (
         <Layout image={careerBackground} title='Join Muskaan' subtitle='Unlock a World of Career Possibilities'>
-            <Box sx={{ my: theme.spacing(3) }}>
-                <Typography variant='h2' gutterBottom>
-                    Interested? We are Hiring
+            <Typography variant='h2' gutterBottom>
+                Interested? We are Hiring
+            </Typography>
+            <Box sx={{ mb: theme.spacing(6) }}>
+                <Typography variant='h6' sx={{ color: '#031225', textAlign: 'center' }}>
+                    We're looking for amazing people to join our team.
                 </Typography>
                 <Typography variant='h6' sx={{ color: '#031225', textAlign: 'center' }}>
-                    We're looking for amazing people to join our team. Check out our current job openings
+                    Check out our current job openings.
                 </Typography>
             </Box>
             <Grid container spacing={2} wrap='wrap'>
