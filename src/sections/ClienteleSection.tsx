@@ -80,7 +80,7 @@
 //     )
 // }
 
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { Box, Container, Fade, IconButton, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
