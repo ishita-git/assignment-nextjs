@@ -31,24 +31,16 @@ export default function Home() {
                             sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
                         >
                             For a significant duration, we have been actively engaged in this endeavor across various
-                            Indian load ports and Inland Container Depots (ICDs).
+                            Indian load ports and Inland Container Depots (ICDs). Our expertise lies in efficiently
+                            handling shipments to a range of Asian destinations, making strategic use of hub ports such
+                            as Jebel Ali, Singapore, and Port Klang.
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Image src={titleImg} alt='' style={{ width: '100%', height: 'auto' }} />
                     </Grid>
                 </Grid>
-                <Typography
-                    paragraph
-                    variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
-                >
-                    Our expertise lies in efficiently handling shipments to a range of Asian destinations, making
-                    strategic use of hub ports such as Jebel Ali, Singapore, and Port Klang. Our commitment to expanding
-                    in this business segment remains steadfast, and our distinctive approach is characterized by its
-                    systematic nature, underpinned by the presence of our in-house liner company and strong insurance
-                    coverage.
-                </Typography>
+
                 <Typography
                     paragraph
                     variant='subtitle2'

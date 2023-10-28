@@ -10,9 +10,13 @@ export default function MissionAndVisionTab() {
     const theme = useTheme()
 
     return (
-        <Box>
+        <Box sx={{ mx: theme.spacing(5) }}>
             <Box sx={{ mb: theme.spacing(4) }}>
-                <Typography variant='h2' textAlign='start' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
+                <Typography
+                    variant='h2'
+                    textAlign='start'
+                    sx={{ mt: theme.spacing(4), mb: theme.spacing(2), fontSize: '3rem' }}
+                >
                     Looking into Future
                 </Typography>
                 <AboutFuture body="We hold firm to the conviction that our values form the bedrock of our future endeavors. Our unwavering commitment to customers has not only propelled our success thus far but also steers our path as we venture into uncharted territories and services to meet evolving demands. Our core focus remains steadfastly on shipping, particularly within the well-trodden intra-Asia routes we've faithfully served over time. Our deep-rooted connections in this region continue to be a cornerstone upon which we build our future strategies." />
@@ -20,24 +24,31 @@ export default function MissionAndVisionTab() {
                 <AboutFuture body="While navigating the intricacies of the Chinese market presents its challenges, Muskan is well-equipped with expertise, robust partnerships, and an intricate grasp of local business practices. These factors enable us to replicate successes across the continent. Just as in the Gulf and Far East, and across all our endeavors, Muskan's unified vision and adaptability in new and distinct working landscapes allow us to translate our aspirations into tangible achievements." />
             </Box>
             <Box>
-                <Typography variant='h2' textAlign='start' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
+                <Typography
+                    variant='h2'
+                    textAlign='start'
+                    sx={{ mt: theme.spacing(6), mb: theme.spacing(6), fontSize: '3rem' }}
+                >
                     Our Mission & Vision
                 </Typography>
-                <Grid container spacing={4} alignItems='center'>
+                <Grid container spacing={2} alignItems='center'>
                     <Grid item xs={12} sm={6} justifyContent='left'>
                         <Box sx={{ textAlign: 'start' }}>
                             <Image
                                 src={targetImage}
                                 alt='Target Image'
-                                style={{ height: 'auto', width: '25%', marginBottom: '2rem' }}
+                                style={{ height: 'auto', width: '15%', marginBottom: '2rem' }}
                             />
-                            <Typography variant='h3' sx={{ mb: '1.5rem', color: '#1B1B1F', textAlign: 'start' }}>
+                            <Typography
+                                variant='h3'
+                                sx={{ mb: '1.5rem', color: '#1B1B1F', textAlign: 'start', fontSize: '2.8rem' }}
+                            >
                                 Our Mission
                             </Typography>
                             <Typography
                                 paragraph
                                 variant='body1'
-                                sx={{ fontWeight: 400, color: '#1B1B1F', textAlign: 'start' }}
+                                sx={{ fontWeight: 400, color: '#1B1B1F', textAlign: 'start', lineHeight: '1.5rem' }}
                             >
                                 Our aim is to cater to our global clientele in the logistics and transportation sphere
                                 through innovative and economical supply chain solutions that consistently surpass their
@@ -60,7 +71,7 @@ export default function MissionAndVisionTab() {
                         />
                     </Grid>
                 </Grid>
-                <Grid container spacing={4} alignItems='center' sx={{ marginTop: '2rem' }}>
+                <Grid container spacing={2} alignItems='center' sx={{ marginTop: '2rem' }}>
                     <Grid item xs={12} sm={6}>
                         <Image
                             src={shipImage}
@@ -76,15 +87,18 @@ export default function MissionAndVisionTab() {
                             <Image
                                 src={visionImage}
                                 alt='Vision Image'
-                                style={{ height: 'auto', width: '25%', marginBottom: '2rem' }}
+                                style={{ height: 'auto', width: '15%', marginBottom: '2rem' }}
                             />
-                            <Typography variant='h3' sx={{ mb: '1.5rem', color: '#1B1B1F', textAlign: 'start' }}>
+                            <Typography
+                                variant='h2'
+                                sx={{ mb: '1.5rem', color: '#1B1B1F', textAlign: 'start', fontSize: '2.8rem' }}
+                            >
                                 Our Vision
                             </Typography>
                             <Typography
                                 paragraph
                                 variant='body1'
-                                sx={{ fontWeight: 400, color: '#1B1B1F', textAlign: 'start' }}
+                                sx={{ fontWeight: 400, color: '#1B1B1F', textAlign: 'start', lineHeight: '1.5rem' }}
                             >
                                 Our pursuit of excellence centers on delivering world-class logistics services. We are
                                 consistently prepared to cater to our customers' requirements around the clock. Our
@@ -104,7 +118,11 @@ export default function MissionAndVisionTab() {
 
 function AboutFuture({ body }: { body: String }) {
     return (
-        <Typography variant='body2' sx={{ fontWeight: 400, color: '#031225', marginBottom: '1rem' }} paragraph>
+        <Typography
+            variant='body2'
+            sx={{ fontWeight: 400, color: '#031225', marginBottom: '1rem', lineHeight: '1.5rem' }}
+            paragraph
+        >
             {body}
         </Typography>
     )

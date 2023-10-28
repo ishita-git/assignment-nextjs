@@ -7,7 +7,7 @@ export default function CompaniesTab() {
     const theme = useTheme()
 
     return (
-        <Box>
+        <Box sx={{ mx: theme.spacing(5) }}>
             <Box>
                 <Typography variant='h2' textAlign='start' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
                     India
@@ -21,7 +21,7 @@ export default function CompaniesTab() {
                 )}
             </Box>
             <Box>
-                <Typography variant='h2' textAlign='start' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
+                <Typography variant='h2' textAlign='start' sx={{ mt: theme.spacing(8), mb: theme.spacing(2) }}>
                     Overseas
                 </Typography>
                 {companiesTabData.map((item, index) =>

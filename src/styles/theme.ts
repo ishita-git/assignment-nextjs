@@ -41,7 +41,7 @@ const theme = createTheme({
             color: '#031225',
         },
         h3: {
-            fontSize: '2.4rem',
+            fontSize: '2rem',
             fontWeight: '600',
             lineHeight: '3.2rem',
             textAlign: 'center',
