@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Box } from '@mui/material'
+import { Box, Table } from '@mui/material'
 import reefer from '../../assets/equipments/reefer.png'
 import DataTableHead from './DataTableHead'
 import DataTable from './DataTable'
@@ -24,6 +24,7 @@ export default function ReeferTab() {
                 <DataTableHead />
                 <DataTable column={equipmentsData.reefer.rh20} />
                 <DataTable column={equipmentsData.reefer.rh40} />
+                <Table></Table>
             </Box>
         </Box>
     )

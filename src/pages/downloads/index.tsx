@@ -41,15 +41,18 @@ export default function Home() {
             >
                 <Navbar />
             </Box>
-            <Box sx={{ mx: theme.spacing(4) }}>
+            <Box sx={{ mx: theme.spacing(6) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Box sx={{ my: '4rem' }}>
-                        <Typography variant='h2' sx={{ color: '#003A9B' }}>
+                    <Box sx={{ my: '5rem' }}>
+                        <Typography variant='h2' sx={{ color: '#003A9B',
+                         textDecoration: 'underline',
+                          textDecorationColor: "#339966", 
+                          textUnderlineOffset: "1.25rem", 
+                          textDecorationThickness:"0.25rem" }}>
                             Useful Downloads
                         </Typography>
-                        <Typography variant='body1' sx={{ color: '#313131', mx: '5rem' }}>
-                            Explore a curated collection of resources that empower your decisions and enrich your
-                            understanding. From expert insights to informative guides, your journey of discovery awaits
+                        <Typography variant='h4' sx={{ color: '#313131',mt:"1.5rem" ,mx: '5rem', whiteSpace: 'pre-line' }}>
+                           {"Explore a curated collection of resources that empower your decisions\nand enrich your understanding. From expert insights to informative\n guides, your journey of discovery awaits"}
                         </Typography>
                     </Box>
 
@@ -59,12 +62,12 @@ export default function Home() {
                                 <Box
                                     sx={{ bgcolor: '#ffffff', padding: '1rem', borderRadius: '1.1rem', height: '100%' }}
                                 >
-                                    <Typography variant='h6' sx={{ color: '#313131', mb: '1rem' }}>
+                                    <Typography variant='h6' sx={{ color: '#313131', mb: '0.5rem' , textAlign: 'start',fontWeight:600}}>
                                         {item.title}
                                     </Typography>
                                     <Typography
                                         variant='body1'
-                                        sx={{ color: ' rgba(49, 49, 49, 0.80)', textAlign: 'start', mb: '0.5rem' }}
+                                        sx={{ color: ' rgba(49, 49, 49, 0.80)', textAlign: 'start', mb: '1.5rem',width:"80%" }}
                                     >
                                         {item.description ||
                                             'Manuals explaining different shipping options, carriers, and rates'}
@@ -76,13 +79,13 @@ export default function Home() {
                                                 alignItems: 'center',
                                             }}
                                         >
-                                            <Typography variant='h6' sx={{ color: '#313131' }}>
+                                            <Typography variant='h6' sx={{ color: '#313131' ,fontWeight:600}}>
                                                 Downloads
                                             </Typography>
                                             <Image
                                                 src={downloadIcon}
                                                 alt=''
-                                                style={{ width: '1.25rem', height: 'auto', marginLeft: '0.25rem' }}
+                                                style={{ width: '1.25rem', height: 'auto', marginLeft: '0.75rem' }}
                                             />
                                         </Box>
                                     </Link>

@@ -26,25 +26,25 @@ function ProcessSection() {
                 <Typography variant='h3' sx={{ my: '3rem' }}>
                     Process
                 </Typography>
-                <Box sx={{display:"flex"}}>
-                {ProcessData.map((item, index) => (
-                <Box key={index} sx={{ height: '20rem', bgcolor: "#FFFFFF", borderRadius: "1rem", padding: '1.25rem' ,mx:"1rem"}}>
-                    <Image
-                        src={item.image}
-                        alt='card background'
-                        style={{
-                            width: '25%',
-                            height: 'auto',
-                        }}
-                    />
-                    <Typography variant='h6' textAlign={'center'} sx={{ fontWeight: "bold", color: '#031225', my: '1rem' }}>
-                        {item.title}
-                    </Typography>
-                    <Typography variant='body1' textAlign={'center'} sx={{ color: '#031225', marginBottom: '1rem' }}>
-                        {item.desc}
-                    </Typography>
-                </Box>
-        ))}
+                <Box sx={{ display: "flex" }}>
+                    {ProcessData.map((item, index) => (
+                        <Box key={index} sx={{ height: '20rem', bgcolor: "#FFFFFF", borderRadius: "1rem", padding: '1.25rem', mx: "1rem" }}>
+                            <Image
+                                src={item.image}
+                                alt='card background'
+                                style={{
+                                    width: '25%',
+                                    height: 'auto',
+                                }}
+                            />
+                            <Typography variant='h6' textAlign={'center'} sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}>
+                                {item.title}
+                            </Typography>
+                            <Typography variant='body1' textAlign={'center'} sx={{ color: '#031225', marginBottom: '1rem',fontWeight:300 }}>
+                                {item.desc}
+                            </Typography>
+                        </Box>
+                    ))}
                 </Box>
             </Box>
         </Box>
@@ -55,30 +55,30 @@ export default function Home() {
     const theme = useTheme()
 
     return (
-        <CompaniesLayout image={containerLinesBg} title='Muskan Container Lines Pvt Ltd.'>
-            <Box sx={{ px: theme.spacing(4) }}>
+        <CompaniesLayout image={containerLinesBg} title={'Muskan Container Lines\nPvt Ltd.'}>
+            <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h2' sx={{ textAlign: 'start', my: "1rem" }}>
                         About Us
                     </Typography>
                     <CustomText text="Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations." />
-                    <Grid container spacing={2} sx={{ mb: "2rem" }}>
+                    <Grid container spacing={2} sx={{ mb: "1rem", mt: "0.5rem" }}>
                         <Grid item xs={12} sm={6}>
-                            <Typography textAlign={'start'} variant='h4' sx={{ fontWeight:"bold",color: '#031225', marginBottom: '1rem' }}>
+                            <Typography textAlign={'start'} variant='h5' sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}>
                                 Offices in India
                             </Typography>
                             <Typography
                                 component={'ul'}
                                 textAlign={'start'}
-                                variant='body1'
+                                variant='subtitle2'
                                 sx={{ color: '#031225', ml: '1.25rem' }}
                             >
                                 {OfficeLoactionIndia.map((item, index) => (
                                     <Typography
                                         component={'li'}
                                         textAlign={'start'}
-                                        variant='body1'
-                                        sx={{ color: '#031225', mb: '1rem' }}
+                                        variant='subtitle2'
+                                        sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
                                         key={index}
                                     >
                                         {item}
@@ -87,21 +87,21 @@ export default function Home() {
                             </Typography>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <Typography textAlign={'start'} variant='h4' sx={{fontWeight:"bold", color: '#031225', marginBottom: '1rem' }}>
+                            <Typography textAlign={'start'} variant='h5' sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}>
                                 International offices
                             </Typography>
                             <Typography
                                 component={'ul'}
                                 textAlign={'start'}
-                                variant='body1'
+                                variant='subtitle2'
                                 sx={{ color: '#031225', ml: '1.25rem' }}
                             >
                                 {OfficeLoactionInternational.map((item, index) => (
                                     <Typography
                                         component={'li'}
                                         textAlign={'start'}
-                                        variant='body1'
-                                        sx={{ color: '#031225', mb: '1rem' }}
+                                        variant='subtitle2'
+                                        sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
                                         key={index}
                                     >
                                         {item}
@@ -110,8 +110,11 @@ export default function Home() {
                             </Typography>
                         </Grid>
                     </Grid>
-                    <CustomText text="Shipping cargo often requires specialized containers to ensure safe and efficient transportation. Our company provides a variety of specialized containers tailored to different cargo needs. These include:" />
-                    <Grid container spacing={1} sx={{ my: "1.5rem" }}>
+                    <Typography
+                        paragraph
+                        variant='subtitle2'
+                        sx={{ color: '#031225', fontWeight: '300', textAlign: 'start' }}
+                    >Shipping cargo often requires specialized containers to ensure safe and efficient transportation. Our company provides a variety of specialized containers tailored to different cargo needs. These include: </Typography>                    <Grid container spacing={1} sx={{ my: "4rem" }}>
                         <Grid item xs={12} sm={6}>
                             <ContainerType title="Insulated Containers" desc="Ideal for perishable goods, these containers maintain precise temperatures, keeping your cargo fresh." image={insulatedContainer} />
                             <ContainerType title="Bulk Containers" desc="Perfect for transporting large quantities of loose cargo, such as grains or minerals." image={bulkContainer} />
@@ -121,7 +124,7 @@ export default function Home() {
                             <ContainerType title="Tank Containers" desc="Specifically designed for liquid and chemical cargo, ensuring safe containment and transport." image={tankContainer} />
                         </Grid>
                     </Grid>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mt:"4rem",mb: '2rem', color: '#1B1B1F' }}>
+                    <Typography variant='h3' sx={{ textAlign: 'start', mb: '2rem', color: '#1B1B1F' }}>
                         Statistics
                     </Typography>
                     <StatisticsCard exporterRank="16" importerRank="10" tradeBalanceRank="136" totalTradeAmtList={totalTradeAmtList} />
@@ -130,7 +133,7 @@ export default function Home() {
 
             <ProcessSection />
             <ServicesCards companiesPage />
-            <Box sx={{ px: theme.spacing(4) }}>
+            <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '2rem', color: '#1B1B1F' }}>
                         Our Branches
@@ -147,13 +150,13 @@ function ContainerType({ image, title, desc }: { image: string | StaticImageData
     return <Box sx={{ mb: "2rem" }}>
         <Grid container alignItems="center" >
             <Grid item xs={4}>
-                <Image src={image} alt="" style={{ height: 'auto', width: "50%", }} />
+                <Image src={image} alt="" style={{ height: 'auto', width: "75%", }} />
             </Grid>
             <Grid item xs={8}>
-                <Typography variant='h6' textAlign={'start'} sx={{ fontWeight: "bold", color: '#031225', marginBottom: '1rem' }}>
+                <Typography variant='h4' textAlign={'start'} sx={{ fontWeight: 600, color: '#031225', marginBottom: '0.5rem' }}>
                     {title}
                 </Typography>
-                <Typography variant='body1' textAlign={'start'} sx={{ color: '#031225', marginBottom: '1rem' }}>
+                <Typography variant='subtitle2' textAlign={'start'} sx={{ color: '#031225', marginBottom: '1rem',fontWeight:300 }}>
                     {desc}
                 </Typography>
             </Grid>

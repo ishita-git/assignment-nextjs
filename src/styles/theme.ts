@@ -54,7 +54,6 @@ const theme = createTheme({
             color: '#FFFFFF',
         },
         h5: {
-            fontFamily: inter.style.fontFamily,
             fontSize: '1.375rem',
             fontWeight: '600',
             lineHeight: '1.875rem',

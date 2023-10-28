@@ -63,7 +63,7 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
         <Table component={Paper} sx={{ maxWidth: small ? 250 : 400, borderRadius: '24px', mr: theme.spacing(0.5) }}>
             <TableRow>
                 <TableCell colSpan={2}>
-                    <Typography variant='h3' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         {column?.label}
                     </Typography>
                 </TableCell>
@@ -72,12 +72,12 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
             <TableRow>
                 <TableCell>
                     <Typography
-                        variant='h4'
+                        variant='subtitle2'
                         sx={{
                             color: '#000000',
                             backgroundColor: '#EFF6FF',
                             p: theme.spacing(0.75),
-                            borderRadius: '40px',
+                            borderRadius: '40px',textAlign: 'center', 
                         }}
                     >
                         mm
@@ -85,12 +85,12 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
                 </TableCell>
                 <TableCell>
                     <Typography
-                        variant='h4'
+                        variant='subtitle2'
                         sx={{
                             color: '#000000',
                             backgroundColor: '#EFF6FF',
                             p: theme.spacing(0.75),
-                            borderRadius: '40px',
+                            borderRadius: '40px',textAlign: 'center', 
                         }}
                     >
                         ft
@@ -99,36 +99,36 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         {column?.l?.mm}
                     </Typography>
                 </TableCell>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center', }}>
                         {column?.l?.ft}
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         {column?.w?.mm}
                     </Typography>
                 </TableCell>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         {column?.w?.ft}
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                         {column?.h?.mm}
                     </Typography>
                 </TableCell>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                         {column?.h?.ft}
                     </Typography>
                 </TableCell>
@@ -141,12 +141,12 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
                     <TableRow>
                         <TableCell>
                             <Typography
-                                variant='h4'
+                                variant='subtitle2'
                                 sx={{
                                     color: '#000000',
                                     backgroundColor: '#EFF6FF',
                                     p: theme.spacing(0.75),
-                                    borderRadius: '40px',
+                                    borderRadius: '40px',textAlign: 'center', 
                                 }}
                             >
                                 mm
@@ -154,12 +154,12 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
                         </TableCell>
                         <TableCell>
                             <Typography
-                                variant='h4'
+                                variant='subtitle2'
                                 sx={{
                                     color: '#000000',
                                     backgroundColor: '#EFF6FF',
                                     p: theme.spacing(0.75),
-                                    borderRadius: '40px',
+                                    borderRadius: '40px',textAlign: 'center', 
                                 }}
                             >
                                 ft
@@ -169,24 +169,24 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
 
                     <TableRow>
                         <TableCell>
-                            <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                            <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                                 {column?.doorWidth?.mm}
                             </Typography>
                         </TableCell>
                         <TableCell>
-                            <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                            <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                                 {column?.doorWidth?.ft}
                             </Typography>
                         </TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>
-                            <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                            <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                                 {column?.doorHeight?.ft}
                             </Typography>
                         </TableCell>
                         <TableCell>
-                            <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                            <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                                 {column?.doorHeight?.ft}
                             </Typography>
                         </TableCell>
@@ -197,12 +197,12 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
             <TableRow>
                 <TableCell>
                     <Typography
-                        variant='h4'
+                        variant='subtitle2'
                         sx={{
                             color: '#000000',
                             backgroundColor: '#EFF6FF',
                             p: theme.spacing(0.75),
-                            borderRadius: '40px',
+                            borderRadius: '40px',textAlign: 'center',
                         }}
                     >
                         kg
@@ -210,8 +210,9 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
                 </TableCell>
                 <TableCell>
                     <Typography
-                        variant='h4'
+                        variant='subtitle2'
                         sx={{
+                            textAlign: 'center',
                             color: '#000000',
                             backgroundColor: '#EFF6FF',
                             p: theme.spacing(0.75),
@@ -224,48 +225,48 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center', }}>
                         {column?.weight?.gross?.kg}
                     </Typography>
                 </TableCell>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center', }}>
                         {column?.weight?.gross?.lbs}
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                         {column?.weight?.twe?.kg}
                     </Typography>
                 </TableCell>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                         {column?.weight?.twe?.lbs}
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                         {column?.weight?.twi?.kg}
                     </Typography>
                 </TableCell>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                         {column?.weight?.twi?.lbs}
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         {column?.weight?.maxPayload?.kg}
                     </Typography>
                 </TableCell>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         {column?.weight?.maxPayload?.lbs}
                     </Typography>
                 </TableCell>
@@ -274,13 +275,13 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
             <TableRow>
                 <TableCell>
                     <Typography
-                        variant='h4'
+                        variant='subtitle2'
                         sx={{
                             color: '#000000',
                             backgroundColor: '#EFF6FF',
                             p: theme.spacing(0.75),
                             borderRadius: '40px',
-                            lineHeight: '1.55rem',
+                            lineHeight: '1.55rem',textAlign: 'center', 
                         }}
                     >
                         T/m<sup>2</sup>
@@ -288,13 +289,13 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
                 </TableCell>
                 <TableCell>
                     <Typography
-                        variant='h4'
+                        variant='subtitle2'
                         sx={{
                             color: '#000000',
                             backgroundColor: '#EFF6FF',
                             p: theme.spacing(0.75),
                             borderRadius: '40px',
-                            lineHeight: '1.55rem',
+                            lineHeight: '1.55rem',textAlign: 'center', 
                         }}
                     >
                         lbs/ft<sup>2</sup>
@@ -303,12 +304,12 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
             </TableRow>
             <TableRow>
                 <TableCell sx={{ height: theme.spacing(3) }}>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                         {column?.maxLoad?.t}
                     </Typography>
                 </TableCell>
                 <TableCell sx={{ height: theme.spacing(3) }}>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         {column?.maxLoad?.lbs}
                     </Typography>
                 </TableCell>
@@ -321,13 +322,13 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
                     <TableRow>
                         <TableCell>
                             <Typography
-                                variant='h4'
+                                variant='subtitle2'
                                 sx={{
                                     color: '#000000',
                                     backgroundColor: '#EFF6FF',
                                     p: theme.spacing(0.75),
                                     borderRadius: '40px',
-                                    lineHeight: '1.55rem',
+                                    lineHeight: '1.55rem',textAlign: 'center', 
                                 }}
                             >
                                 m<sup>3</sup>
@@ -335,13 +336,13 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
                         </TableCell>
                         <TableCell>
                             <Typography
-                                variant='h4'
+                                variant='subtitle2'
                                 sx={{
                                     color: '#000000',
                                     backgroundColor: '#EFF6FF',
                                     p: theme.spacing(0.75),
                                     borderRadius: '40px',
-                                    lineHeight: '1.55rem',
+                                    lineHeight: '1.55rem',textAlign: 'center', 
                                 }}
                             >
                                 ft<sup>3</sup>
@@ -350,12 +351,12 @@ export default function DataTable({ small, column, lessRows }: DataTableProps) {
                     </TableRow>
                     <TableRow>
                         <TableCell>
-                            <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                            <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                                 {column?.capacity?.m}
                             </Typography>
                         </TableCell>
                         <TableCell>
-                            <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                            <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                                 {column?.capacity?.ft}
                             </Typography>
                         </TableCell>

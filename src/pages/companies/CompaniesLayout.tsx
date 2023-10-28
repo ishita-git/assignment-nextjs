@@ -24,7 +24,7 @@ export default function CompaniesLayout({ image, title, subtitle, children }: Co
                 {children}
             </Container>
 
-            <Box sx={{ px: theme.spacing(4) }}>
+            <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '3rem', color: '#1B1B1F' }}>
                         Contact Us

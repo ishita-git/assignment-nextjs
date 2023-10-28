@@ -62,7 +62,7 @@ export default function HeaderSection({ image, title, subtitle, video }: HeaderP
                 }}
             >
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h1' sx={{ mt: theme.spacing(8) }}>
+                    <Typography variant='h1' sx={{ mt: theme.spacing(8) ,fontSize:"4.5rem",whiteSpace: 'pre-line'}}>
                         {title}
                     </Typography>
 
@@ -73,6 +73,8 @@ export default function HeaderSection({ image, title, subtitle, video }: HeaderP
                             fontFamily: oswald.style.fontFamily,
                             color: 'common.white',
                             fontWeight: 400,
+                            fontSize:"3rem",
+                            whiteSpace: 'pre-line'
                         }}
                     >
                         {subtitle}

@@ -9,7 +9,7 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
         <Table sx={{ maxWidth: 400 }}>
             <TableRow>
                 <TableCell colSpan={2}>
-                    <Typography variant='h3' sx={{ color: '#000000', fontWeight: 600, visibility: 'hidden' }}>
+                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600, visibility: 'hidden' ,textAlign: 'center', }}>
                         Head
                     </Typography>
                 </TableCell>
@@ -18,13 +18,13 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
             <TableRow>
                 <TableCell>
                     <Typography
-                        variant='h4'
+                        variant='subtitle2'
                         sx={{
                             color: '#003A9B',
                             fontWeight: 600,
                             backgroundColor: '#FFFFFF',
-                            p: theme.spacing(0.75),
-                            borderRadius: '40px',
+                            py: theme.spacing(0.75),
+                            borderRadius: '40px',textAlign: 'center', 
                         }}
                     >
                         Internal Dimensions
@@ -33,21 +33,21 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         Length
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                         Width
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                         Height
                     </Typography>
                 </TableCell>
@@ -60,13 +60,13 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
                     <TableRow>
                         <TableCell>
                             <Typography
-                                variant='h4'
+                                variant='subtitle2'
                                 sx={{
                                     color: '#003A9B',
                                     fontWeight: 600,
                                     backgroundColor: '#FFFFFF',
                                     p: theme.spacing(0.75),
-                                    borderRadius: '40px',
+                                    borderRadius: '40px',textAlign: 'center', 
                                 }}
                             >
                                 Door Opening
@@ -75,14 +75,14 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
                     </TableRow>
                     <TableRow>
                         <TableCell>
-                            <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                            <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center',  }}>
                                 Width
                             </Typography>
                         </TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>
-                            <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                            <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                                 Height
                             </Typography>
                         </TableCell>
@@ -93,13 +93,13 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
             <TableRow>
                 <TableCell>
                     <Typography
-                        variant='h4'
+                        variant='subtitle2'
                         sx={{
                             color: '#003A9B',
                             fontWeight: 600,
                             backgroundColor: '#FFFFFF',
                             p: theme.spacing(0.75),
-                            borderRadius: '40px',
+                            borderRadius: '40px',textAlign: 'center', 
                         }}
                     >
                         Weight
@@ -108,28 +108,28 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         Max Gross
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         Tare Weight (excl. machinery)
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600 ,textAlign: 'center', }}>
                         Tare Weight (incl. machinery)
                     </Typography>
                 </TableCell>
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600 }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600,textAlign: 'center', }}>
                         Max Payload
                     </Typography>
                 </TableCell>
@@ -138,13 +138,13 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
             <TableRow>
                 <TableCell>
                     <Typography
-                        variant='h4'
+                        variant='subtitle2'
                         sx={{
                             color: '#003A9B',
                             fontWeight: 600,
                             backgroundColor: '#FFFFFF',
                             p: theme.spacing(0.75),
-                            borderRadius: '40px',
+                            borderRadius: '40px',textAlign: 'center', 
                         }}
                     >
                         Max Point of Load
@@ -153,7 +153,7 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
             </TableRow>
             <TableRow>
                 <TableCell>
-                    <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600, visibility: 'hidden' }}>
+                    <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600, visibility: 'hidden',textAlign: 'center',  }}>
                         values
                     </Typography>
                 </TableCell>
@@ -166,13 +166,13 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
                     <TableRow>
                         <TableCell>
                             <Typography
-                                variant='h4'
+                                variant='subtitle2'
                                 sx={{
                                     color: '#003A9B',
                                     fontWeight: 600,
                                     backgroundColor: '#FFFFFF',
                                     p: theme.spacing(0.75),
-                                    borderRadius: '40px',
+                                    borderRadius: '40px',textAlign: 'center', 
                                 }}
                             >
                                 Internal Capacity
@@ -181,7 +181,7 @@ export default function DataTableHead({ lessRows }: { lessRows?: boolean }) {
                     </TableRow>
                     <TableRow>
                         <TableCell>
-                            <Typography variant='h4' sx={{ color: '#000000', fontWeight: 600, visibility: 'hidden' }}>
+                            <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 600, visibility: 'hidden',textAlign: 'center',  }}>
                                 values
                             </Typography>
                         </TableCell>

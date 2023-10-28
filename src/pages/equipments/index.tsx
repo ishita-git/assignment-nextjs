@@ -28,7 +28,7 @@ export default function Home() {
         <Layout
             image={equipmentsBg}
             title='Our Equipment'
-            subtitle='Range of container types tailored to your shipping needs'
+            subtitle={"Range of container types tailored\n to your shipping needs"}
         >
             <Tabs value={value} onChange={handleChange} variant='fullWidth'>
                 <Tab label='High Cube' sx={{ bgcolor: value === 0 ? '#003A9B' : 'transparent' }} />

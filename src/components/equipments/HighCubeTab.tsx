@@ -17,7 +17,7 @@ export default function HighCubeTab() {
                 position: 'relative',
             }}
         >
-            <Image src={highCube} alt='Reefer' style={{ height: '24rem', width: 'auto' }} />
+            <Image src={highCube} alt='Reefer' style={{ height: '24rem',width:"auto"  }} />
 
             <Box sx={{ mt: '-6rem', display: 'flex' }}>
                 <DataTableHead />
