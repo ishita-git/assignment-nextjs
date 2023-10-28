@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { useTheme } from '@mui/material/styles'
 import { AppBar, Box, Container, Grid, Toolbar, Typography, useScrollTrigger } from '@mui/material'
 import HeaderSection from '../sections/HeaderSection'
