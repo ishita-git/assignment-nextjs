@@ -2,30 +2,57 @@ import React from 'react'
 import type { StaticImageData } from 'next/image'
 import HeaderSection from '../../sections/HeaderSection'
 import FooterSection from '../../sections/FooterSection'
-import { Box, Container } from '@mui/material'
+import { AppBar, Box, Container, useScrollTrigger } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import ServicesCards from '../../components/services/ServicesCards'
+import Navbar from '../../components/Navbar'
+
+interface Props {
+    window?: () => Window
+    children: React.ReactElement
+}
+
+function ElevationScroll(props: Props) {
+    const { children, window } = props
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+        target: window ? window() : undefined,
+    })
+
+    return React.cloneElement(children, {
+        elevation: trigger ? 4 : 0,
+    })
+}
 
 declare type ServicesLayoutProps = {
     image: string | StaticImageData
     title?: string
     subtitle?: string
     children: React.ReactNode
+    props?: Props
 }
 
-export default function ServicesLayout({ image, title, subtitle, children }: ServicesLayoutProps) {
+export default function ServicesLayout({ image, title, subtitle, children, props }: ServicesLayoutProps) {
     const theme = useTheme()
 
     return (
-        <Box sx={{ backgroundColor: '#EFF6FF' }}>
-            <HeaderSection image={image} title={title} subtitle={subtitle} />
-            <Box sx={{ px: theme.spacing(4) }}>
-                <Container maxWidth='xl' disableGutters>
-                    {children}
-                </Container>
+        <React.Fragment>
+            <ElevationScroll {...props}>
+                <AppBar>
+                    <Navbar />
+                </AppBar>
+            </ElevationScroll>
+            <Box sx={{ backgroundColor: '#EFF6FF' }}>
+                <HeaderSection image={image} title={title} subtitle={subtitle} />
+                <Box sx={{ px: theme.spacing(12) }}>
+                    <Container maxWidth='xl' disableGutters>
+                        {children}
+                    </Container>
+                </Box>
+                <ServicesCards />
+                <FooterSection />
             </Box>
-            <ServicesCards />
-            <FooterSection />
-        </Box>
+        </React.Fragment>
     )
 }

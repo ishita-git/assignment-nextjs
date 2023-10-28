@@ -13,7 +13,7 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
     const theme = useTheme()
 
     return (
-        <Box sx={{ px: theme.spacing(4) }}>
+        <Box sx={{ px: theme.spacing(12), pt: theme.spacing(4) }}>
             <Container disableGutters maxWidth='xl'>
                 {companiesPage ? (
                     <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
@@ -34,6 +34,7 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
                         autoplay={{
                             delay: 2000,
                             disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
                         }}
                         keyboard={{
                             enabled: true,
