@@ -45,14 +45,6 @@ export default function Home() {
                     variant='subtitle2'
                     sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
                 >
-                    The Group's dedication to accommodating oversized cargo has thus taken on a global dimension, with a
-                    growing presence in diverse geographical areas.
-                </Typography>
-                <Typography
-                    paragraph
-                    variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
-                >
                     To efficiently and professionally oversee the entire fleet dedicated to this specialized cargo
                     transport, the Group companies have come together to pool all relevant equipment. This strategic
                     consolidation has paved the way for the establishment of a dedicated global commercial management

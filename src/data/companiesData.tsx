@@ -27,12 +27,12 @@ export const ContainerType = [
     {
         image: flatRack,
         title: 'Flat Racks',
-        desc: 'Deployed for the transportation of large and heavy cargo, including building materials and machinery.',
+        desc: 'Deployed for the transportation of large and heavy cargo, including building materials, large equipments and machinery.',
     },
     {
         image: openTops,
         title: 'Open Tops',
-        desc: 'Utilized for the transportation of bulky and over-sized cargo, including marble slabs, construction materials, and heavy machinery.',
+        desc: 'Utilized for the transportation of bulky and over-sized cargo, including construction materials and heavy machinery.',
     },
     {
         image: insulatedContainer,
@@ -42,7 +42,7 @@ export const ContainerType = [
     {
         image: tankContainer,
         title: 'Tank Containers',
-        desc: 'Used to transport large quantities of liquid products, especially chemicals.',
+        desc: 'Used to transport large quantities of liquid products, especially industrial chemicals, commercial fuels and oils.',
     },
 ]
 export const ChooseUsData = [
