@@ -7,7 +7,7 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
             <Grid container spacing={2} sx={{ mb: "2rem" }}>
                 <Grid item xs={12} sm={4}>
                     <Box sx={{ bgcolor: "#EFF6FF", borderRadius: "1.5rem", p: "1.25rem", }} >
-                        <Typography variant="h4" sx={{ color: '#031225', textAlign: "start" }}>
+                        <Typography variant="h6" sx={{ color: '#031225', textAlign: "start" }}>
                             Exporter Rank
                         </Typography >
                         <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "center" }}>
@@ -18,7 +18,7 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <Box sx={{ bgcolor: "#EFF6FF", borderRadius: "1.5rem", p: "1.25rem", }} >
-                        <Typography variant="h4" sx={{ color: '#031225', textAlign: "start" }}>
+                        <Typography variant="h6" sx={{ color: '#031225', textAlign: "start" }}>
                             Importer Rank
                         </Typography >
                         <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "center" }}>
@@ -29,7 +29,7 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <Box sx={{ bgcolor: "#EFF6FF", borderRadius: "1.5rem", p: "1.25rem", }} >
-                        <Typography variant="h4" sx={{ color: '#031225', textAlign: "start" }}>
+                        <Typography variant="h6" sx={{ color: '#031225', textAlign: "start" }}>
                             Trade Balance Rank
                         </Typography >
                         <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "center" }}>

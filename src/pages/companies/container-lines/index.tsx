@@ -33,8 +33,8 @@ function ProcessSection() {
                                 src={item.image}
                                 alt='card background'
                                 style={{
-                                    width: '25%',
-                                    height: 'auto',
+                                    width: 'auto',
+                                    height: '4rem',
                                 }}
                             />
                             <Typography variant='h6' textAlign={'center'} sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}>
@@ -58,7 +58,7 @@ export default function Home() {
         <CompaniesLayout image={containerLinesBg} title={'Muskan Container Lines\nPvt Ltd.'}>
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h2' sx={{ textAlign: 'start', my: "1rem" }}>
+                    <Typography variant='h2' sx={{ textAlign: 'start', mb: "1rem" }}>
                         About Us
                     </Typography>
                     <CustomText text="Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations." />

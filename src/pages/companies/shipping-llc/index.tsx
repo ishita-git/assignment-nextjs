@@ -16,12 +16,12 @@ import { CoreValuesData } from '@/data/companiesData'
 import StatisticsCard from '@/components/companies/StatisticsCard'
 
 function ValuesBox({ image, title, desc }: { image: string | StaticImageData, title: String, desc: String }) {
-    return <Box sx={{ bgcolor: "#FFFFFF", borderRadius: "1rem", p: "1.25rem", height: "15rem" }}>
+    return <Box sx={{ bgcolor: "#FFFFFF", borderRadius: "1rem", p: "1.25rem", height: "16rem" }}>
         <Image src={image} alt="" style={{ height: "auto", width: "25%" }} />
         <Typography variant='h6' sx={{ textAlign: 'center', my: '1rem', color: '#1B1B1F' }}>
             {title}
         </Typography>
-        <Typography variant='body1' sx={{ mb: '1rem', color: '#1B1B1F' }}>
+        <Typography variant='body1' sx={{ mb: '1rem', color: '#1B1B1F', fontWeight: 300 }}>
             {desc}
         </Typography>
     </Box>
@@ -31,12 +31,12 @@ export default function Home() {
 
     return (
         <CompaniesLayout image={shippingBg} title='Muskaan Shipping LLC'>
-            <Box sx={{ px: theme.spacing(4) }}>
+            <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h2' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
                         About Us
                     </Typography>
-                    <Grid container spacing={2} alignItems='center' sx={{ mb: '1rem' }}>
+                    <Grid container spacing={2} alignItems='center' >
                         <Grid item xs={12} sm={6}>
                             <CustomText text="Muskaan Shipping LLC, based in the vibrant city of Dubai, is committed to excellence in the shipping and logistics industry. Our seasoned team brings decades of experience and expertise, ensuring the highest level of service quality and customer satisfaction. We have strategically invested in expanding our business reach, fostering trade growth, and harnessing cutting-edge technology to provide innovative solutions to our clients. With a strong global presence and strategic partnerships in North America, South America, Europe, the USA, Far East, North East Asia, South East Asia, CIS, East Africa, West Africa, and the Middle East, we are well-positioned to meet the diverse needs of our clients on a global scale. Muskaan Shipping LLC is dedicated to creating a customer-oriented environment and delivering top-notch services worldwide." />
                         </Grid>
@@ -44,7 +44,7 @@ export default function Home() {
                             <Image src={titleImg} alt='' style={{ width: '100%', height: 'auto' }} />
                         </Grid>
                     </Grid>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mt: "4rem", mb: '2rem', color: '#1B1B1F' }}>
+                    <Typography variant='h3' sx={{ textAlign: 'start', mt: "4rem", color: '#1B1B1F' }}>
                         Core Values
                     </Typography>
                     <Box sx={{ my: theme.spacing(3), mx: theme.spacing(4) }}>
@@ -93,19 +93,19 @@ export default function Home() {
                     <StatisticsCard exporterRank="15" importerRank="17" tradeBalanceRank="06" totalTradeAmtList={totalTradeAmtList} />
                 </Container>
             </Box>
-            <Box sx={{ position: "relative", mt: "4rem" }}>
+            <Box sx={{ display: 'flex', position: 'relavtive', flexDirection: "column", justifyContent: "center" }}>
                 <Image src={visionBg} alt="" style={{ height: 'auto', width: "100%", }} />
-                <Box sx={{ textAlign: 'start', position: "absolute", left: "0", top: "0", p: "4rem 8rem" }}>
+                <Box sx={{ textAlign: 'start', position: "absolute", px: "12rem", width: '60%', }}>
                     <Image src={visionIcon} alt="" style={{ height: 'auto', width: "12.5%", }} />
-                    <Typography variant='h3' sx={{ textAlign: 'start', my: '2rem', color: '#FFFFFF', fontWeight: 'bold' }}>
+                    <Typography variant='h3' sx={{ textAlign: 'start', mt: '2rem', mb: "1rem", color: '#FFFFFF', fontWeight: 600 }}>
                         Our Vision
                     </Typography>
-                    <Typography variant='body1' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 'bold' }}>
+                    <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
                         We aim to achieve what multinational forwarders cannot: meeting our customers' Critical Success Factors. Our ambition is entirely customer-centric, recognizing that our customers have the freedom to choose their service provider.
                     </Typography>
                 </Box>
             </Box>
-            <Box sx={{ px: theme.spacing(4) }}>
+            <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h3' sx={{ textAlign: 'start', mt: "4rem", mb: '2rem', color: '#1B1B1F' }}>
                         Our Services
@@ -118,7 +118,7 @@ export default function Home() {
                         Freight Forwarding:
                     </Typography>
                     <CustomText text="Muskaan Shipping LLC, located in Dubai, U.A.E., is a dynamic and rapidly expanding NVOCC shipping agency and international freight forwarding company. Our global presence enables us to deliver international shipping and logistics solutions to clients worldwide. Our proficient team of seasoned management professionals, boasting decades of experience in the shipping and freight forwarding industry, oversees the company's operations. We are supported by substantial multimillion-dollar investments earmarked for business expansion, trade development, and cutting-edge technology implementation. With a corporate vision of becoming a preferred integrated global shipping company, we prioritize a customer-centric approach and foster an employee-friendly environment. Our dedicated team of professionals is committed to delivering top-quality services to both international and domestic clients. We have established a robust global network, with key offices and partners strategically located across North America, South America, Europe, the USA, Far East, North East Asia, South East Asia, CIS, East Africa, West Africa, and the Middle East." />
-                    <Grid container spacing={2} sx={{ my: "4rem" }}>
+                    <Grid container spacing={2} sx={{ my: "1rem" }}>
                         <Grid item xs={12} sm={4}>
                             <ServicesCard image={oceanFreightImg} title="Ocean Freight" desc="We offer reliable global ocean freight solutions to major seaports, utilizing our extensive network and carrier partnerships. Our expertise in handling time-sensitive cargo ensures efficient sea freight services for your shipments worldwide." />
                         </Grid>

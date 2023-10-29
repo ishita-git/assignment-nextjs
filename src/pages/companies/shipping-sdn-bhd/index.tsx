@@ -20,13 +20,13 @@ export default function Home() {
     const theme = useTheme()
 
     return (
-        <CompaniesLayout image={shippingBg} title='Muskaan Shipping SDN BHD'>
-            <Box sx={{ px: theme.spacing(4) }}>
+        <CompaniesLayout image={shippingBg} title={'Muskaan Shipping SDN\nBHD'}>
+            <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h2' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
                         About Us
                     </Typography>
-                    <Grid container spacing={2} alignItems='center' sx={{ mb: '1rem' }}>
+                    <Grid container spacing={2} alignItems='center'>
                         <Grid item xs={12} sm={6}>
                             <CustomText text="Muskaan Shipping Sdn. Bhd., established in 2008, began its presence at Peninsular Malaysian ports with regular vessel calls. Originally, the Muskaan Group operated through an agency network, delegating responsibilities to appointed agencies in the region. However, as the business expanded in tandem with Malaysia's robust economic growth and political stability, the need for a more focused approach became apparent." />
                             <CustomText text="In response to this challenge, Muskaan Shipping Sdn. Bhd. formed a joint venture partnership with local interests in 2010. Headquartered in Port Kelang and with branch offices at key base ports in Port Kelang, Penang, and Pasir Gudang, supported by a network of sub-agents in India, the Gulf, and Europe, Muskaan Shipping Sdn. Bhd. secured exclusive coverage of the Malaysian market for Muskaan Line." />
@@ -38,26 +38,26 @@ export default function Home() {
                     </Grid>
                     <CustomText text="Today, Muskaan Shipping Sdn. Bhd. boasts a dedicated team of 10 professionals across Peninsular Malaysia. To bolster its core Container and Car Carrier traffic services, the office automation networking system was enhanced to meet the growing demands of valued customers." />
                     <CustomText text={`Complementing its container services, Muskaan Line Own Container Fleet maintains an inventory of over 1000 units of various container types, easily recognizable as "Muskaan Box" on both roads and vessels. Regional Trade Management Offices in Malaysia provide comprehensive support for 'Muskaan' Line operations, optimizing efficiency through a global network that seamlessly coordinates day-to-day shipping requirements. In line with 'Muskaan' Line's philosophy and established global network, Muskaan Shipping Sdn. Bhd. stands fully prepared to meet the rising expectations of excellence from its valued customers.`} />
-                    <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h3' sx={{ textAlign: 'start',mt:"4rem" ,mb: '1rem', color: '#1B1B1F' }}>
                         Statistics
                     </Typography>
                     <Image src={statistics} alt="" style={{ width: "100%", height: "auto", padding: "2rem 6rem" }} />
-                    <Typography variant='h4' sx={{ textAlign: 'center', mb: '4rem', color: '#1B1B1F', fontWeight: 'bold' }}>
+                    <Typography variant='h4' sx={{ textAlign: 'center', mb: '4rem', color: '#1B1B1F', fontWeight: 600 }}>
                         Country Growth V/S World Growth V/S GDP Growth
                     </Typography>
                     <StatisticsCard exporterRank="23" importerRank="25" tradeBalanceRank="10" totalTradeAmtList={totalTradeAmtList}/>
                 </Container>
             </Box>
-            <Box sx={{ position: "relative", }}>
+            <Box sx={{ display: 'flex', position: 'relavtive', flexDirection:"column" ,justifyContent:"center"}}>
                 <Image src={visionBg} alt="" style={{ height: 'auto', width: "100%", }} />
-                <Grid container spacing={2} sx={{ position: "absolute", left: "0", top: "0", p: "4rem 8rem" }}>
+                <Grid container spacing={4} sx={{ position: "absolute",  px: "12rem" }}>
                     <Grid item xs={6} sm={6}>
                         <Box sx={{ textAlign: 'start' }}>
                             <Image src={visionIcon} alt="" style={{ height: 'auto', width: "12.5%", }} />
-                            <Typography variant='h3' sx={{ textAlign: 'start', my: '2rem', color: '#FFFFFF', fontWeight: 'bold' }}>
+                            <Typography variant='h3' sx={{ textAlign: 'start',  mt: '2rem',mb:"1rem", color: '#FFFFFF', fontWeight:600 }}>
                                 Our Vision
                             </Typography>
-                            <Typography variant='body1' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 'bold' }}>
+                            <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
                                 We aim to achieve what multinational forwarders cannot: meeting our customers' Critical Success Factors. Our ambition is entirely customer-centric, recognizing that our customers have the freedom to choose their service provider.
                             </Typography>
                         </Box>
@@ -65,10 +65,10 @@ export default function Home() {
                     <Grid item xs={6} sm={6}>
                         <Box sx={{ textAlign: 'start' }}>
                             <Image src={targetIcon} alt="" style={{ height: 'auto', width: "12.5%", }} />
-                            <Typography variant='h3' sx={{ textAlign: 'start', my: '2rem', color: '#FFFFFF', fontWeight: 'bold' }}>
+                            <Typography variant='h3' sx={{ textAlign: 'start', mt: '2rem',mb:"1rem", color: '#FFFFFF', fontWeight:600}}>
                                 Our Mission
                             </Typography>
-                            <Typography variant='body1' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 'bold' }}>
+                            <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
                                 We prioritize clear communication and adaptability to meet changing customer needs, striving to build enduring relationships. Our extensive transportation knowledge ensures top-quality service.
                             </Typography>
 
@@ -76,7 +76,7 @@ export default function Home() {
                     </Grid>
                 </Grid>
             </Box>
-            <Box sx={{ px: theme.spacing(4) }}>
+            <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h3' sx={{ textAlign: 'start', mt:"4rem" ,mb: '2rem', color: '#1B1B1F' }}>
                         Our Services
@@ -94,7 +94,7 @@ export default function Home() {
                     Navigational Safety and Environmental Responsibility:
                     </Typography>
                     <CustomText text="The paramount duty of a transportation carrier is to securely convey customers' cargo to its destination, maintaining its original condition. Beyond handling standard container freight, we offer technical assistance for the safe transport of hazardous materials and oversized items that cannot fit into containers, ensuring a seamless and secure marine and onshore journey. Furthermore, we are committed to environmental conservation, implementing practices like fuel-efficient cruising to mitigate ship-generated greenhouse gas emissions and employing shore power at our Long Beach, California terminal to eliminate ship fuel consumption." />
-                     <Grid container spacing={2} sx={{mt:"4rem"}}>
+                     <Grid container spacing={2} sx={{my:"4rem"}}>
                         <Grid item xs={12} sm={4}>
                             <ServicesCard image={ourCommitmentImg} title="Our Commitment" desc=" Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:" />
                         </Grid>

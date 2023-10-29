@@ -5,25 +5,25 @@ export default function ServicesCard({ title, desc, image }: { title: String, de
     return <Box sx={{ position: "relative" }}>
         <Image src={image} alt="" style={{ height: 'auto', width: "100%", }} />
         <Box sx={{ position: "absolute", top: '0', left: '0', p: "1.25rem" }}>
-            <Typography variant='h6' sx={{ textAlign: 'start', my: '1rem', color: '#FFFFFF', fontWeight: 'bold' }}>
+            <Typography variant='h6' sx={{ textAlign: 'start', my: '1rem', color: '#FFFFFF', fontWeight: 600 }}>
                 {title}
             </Typography>
-            <Typography variant='body2' sx={{ textAlign: 'start', color: '#FFFFFF' }}>
+            <Typography variant='body1' sx={{ textAlign: 'start', color: '#FFFFFF',fontWeight:300,fontSize:"0.75rem" }}>
                 {desc}
             </Typography>
             {title == 'Our Commitment' ?
                 <Typography
                     component={'ul'}
                     textAlign={'start'}
-                    variant='body2'
-                    sx={{ color: '#FFFFFF', ml: '1.25rem', mt: "2rem" }}
+                    variant='body1'
+                    sx={{ color: '#FFFFFF', ml: '1.25rem', mt: "1rem" }}
                 >
                     {ourCommitments.map((item, index) => (
                         <Typography
                             component={'li'}
                             textAlign={'start'}
-                            variant='body2'
-                            sx={{ color: '#FFFFFF', mb: '1rem' }}
+                            variant='body1'
+                            sx={{ color: '#FFFFFF', mb: '0.5rem',fontWeight:300,fontSize:"0.75rem" }}
                             key={index}
                         >
                             {item}
