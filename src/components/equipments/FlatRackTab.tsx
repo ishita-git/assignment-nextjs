@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Box, Table } from '@mui/material'
+import { Box } from '@mui/material'
 import flatRack from '../../assets/equipments/flat-rack.png'
 import DataTableHead from './DataTableHead'
 import DataTable from './DataTable'
