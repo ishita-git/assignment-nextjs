@@ -51,9 +51,15 @@ export default function Navbar() {
             <Link href='/' sx={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={logo} alt='logo' style={{ height: '3rem', width: 'auto' }} />
 
-                <Typography variant='h5' sx={{ mx: theme.spacing(1) }}>
-                    Muskan Group of Companies
-                </Typography>
+                <Box>
+                    <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: "1.5rem", color: "#FFFFFF" }}>
+                        Muskan Group
+                    </Typography>
+                    <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: "1rem", color: "#FFFFFF" }}>
+                        of Companies
+                    </Typography>
+
+                </Box>
             </Link>
 
             <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -213,7 +219,7 @@ export default function Navbar() {
                 {/* equipments */}
 
                 <Box sx={{ ml: theme.spacing(1.5) }}>
-                    <PrimaryButton text='Login' light />
+                    <PrimaryButton text='Login' light width="6rem" height="2rem"/>
                 </Box>
             </Box>
         </Container>
