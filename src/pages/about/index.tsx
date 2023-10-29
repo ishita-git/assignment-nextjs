@@ -24,12 +24,14 @@ export default function Home() {
     }
 
     return (
-        <Layout image={aboutBackground} title='Muskaan Group Of Companies'>
-            <Tabs value={value} onChange={handleChange} variant='fullWidth'>
-                <Tab label='About' sx={{ bgcolor: value === 0 ? '#003A9B' : 'transparent' }} />
-                <Tab label='Companies' sx={{ bgcolor: value === 1 ? '#003A9B' : 'transparent' }} />
-                <Tab label='Mission & Vision' sx={{ bgcolor: value === 2 ? '#003A9B' : 'transparent' }} />
-            </Tabs>
+        <Layout image={aboutBackground} title='Muskaan Group Of Companies' withTabs>
+            <Box sx={{ mt: '-5rem' }}>
+                <Tabs value={value} onChange={handleChange} variant='fullWidth'>
+                    <Tab label='About' sx={{ bgcolor: value === 0 ? '#003A9B' : '#FFFFFF' }} />
+                    <Tab label='Companies' sx={{ bgcolor: value === 1 ? '#003A9B' : '#FFFFFF' }} />
+                    <Tab label='Mission & Vision' sx={{ bgcolor: value === 2 ? '#003A9B' : '#FFFFFF' }} />
+                </Tabs>
+            </Box>
 
             <TabPanel value={value} index={0}>
                 <AboutTab />

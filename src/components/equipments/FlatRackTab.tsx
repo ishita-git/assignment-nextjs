@@ -12,20 +12,18 @@ export default function FlatRackTab() {
             sx={{
                 width: '100%',
                 display: 'flex',
-                justifyContent: 'center',
                 flexDirection: 'column',
-                position: 'relative',
+                justifyContent: 'center',
                 mt: '4rem',
+                mx: '4rem',
             }}
         >
-            
-            <Image src={flatRack} alt='Reefer' style={{ height: '24rem', width: 'auto' }} />
+            <Image src={flatRack} alt='Reefer' style={{ height: '24rem', width: '50rem', marginLeft: '14rem' }} />
 
             <Box sx={{ mt: '-6rem', display: 'flex' }}>
                 <DataTableHead lessRows />
                 <DataTable column={equipmentsData?.flatRack?.fr20} lessRows />
                 <DataTable column={equipmentsData?.flatRack?.fr40} lessRows />
-                <Table></Table>
             </Box>
         </Box>
     )

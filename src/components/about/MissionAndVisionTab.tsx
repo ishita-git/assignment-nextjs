@@ -10,7 +10,7 @@ export default function MissionAndVisionTab() {
     const theme = useTheme()
 
     return (
-        <Box sx={{ mx: theme.spacing(5) }}>
+        <Box sx={{ mx: theme.spacing(12), mb: theme.spacing(6) }}>
             <Box sx={{ mb: theme.spacing(4) }}>
                 <Typography
                     variant='h2'

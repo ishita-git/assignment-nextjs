@@ -28,11 +28,12 @@ declare type LayoutProps = {
     image: string | StaticImageData
     title?: string
     subtitle?: string
+    withTabs?: boolean
     children: React.ReactNode
     props?: Props
 }
 
-export default function Layout({ image, title, subtitle, children, props }: LayoutProps) {
+export default function Layout({ image, title, subtitle, withTabs, children, props }: LayoutProps) {
     const theme = useTheme()
 
     return (
@@ -44,8 +45,8 @@ export default function Layout({ image, title, subtitle, children, props }: Layo
             </ElevationScroll>
             <Box sx={{ backgroundColor: '#EFF6FF' }}>
                 <HeaderSection image={image} title={title} subtitle={subtitle} />
-                <Box sx={{ px: theme.spacing(4) }}>
-                    <Container maxWidth='xl'>{children}</Container>
+                <Box sx={{ px: theme.spacing(withTabs ? 0 : 4) }}>
+                    {withTabs ? <Box>{children}</Box> : <Container maxWidth='xl'>{children}</Container>}
                 </Box>
                 <FooterSection />
             </Box>
