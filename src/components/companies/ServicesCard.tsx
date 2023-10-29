@@ -1,5 +1,5 @@
-import { Box, Typography } from "@mui/material";
-import Image,{ StaticImageData } from "next/image";
+import { Box, Typography } from '@mui/material'
+import Image, { StaticImageData } from 'next/image'
 
 export default function ServicesCard({ title, desc, image }: { title: String, desc: String, image: string | StaticImageData }) {
     return <Box sx={{ position: "relative" }}>
@@ -8,7 +8,7 @@ export default function ServicesCard({ title, desc, image }: { title: String, de
             <Typography variant='h6' sx={{ textAlign: 'start', my: '1rem', color: '#FFFFFF', fontWeight: 600 }}>
                 {title}
             </Typography>
-            <Typography variant='body1' sx={{ textAlign: 'start', color: '#FFFFFF',fontWeight:300,fontSize:"0.75rem" }}>
+            <Typography variant='body1' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300, fontSize: "0.75rem" }}>
                 {desc}
             </Typography>
             {title == 'Our Commitment' ?
@@ -23,7 +23,7 @@ export default function ServicesCard({ title, desc, image }: { title: String, de
                             component={'li'}
                             textAlign={'start'}
                             variant='body1'
-                            sx={{ color: '#FFFFFF', mb: '0.5rem',fontWeight:300,fontSize:"0.75rem" }}
+                            sx={{ color: '#FFFFFF', mb: '0.5rem', fontWeight: 300, fontSize: "0.75rem" }}
                             key={index}
                         >
                             {item}
@@ -35,9 +35,8 @@ export default function ServicesCard({ title, desc, image }: { title: String, de
     </Box>
 }
 
-
 const ourCommitments = [
-    "Customer Loyalty Drives Success.",
-    " Understand Customer Needs.",
-    " Excellence in Quality and Service.",
-];
+    'Customer Loyalty Drives Success.',
+    ' Understand Customer Needs.',
+    ' Excellence in Quality and Service.',
+]

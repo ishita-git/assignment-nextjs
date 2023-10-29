@@ -18,7 +18,7 @@ export default function Home() {
                     <Typography variant='h2' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
                         About Us
                     </Typography>
-                    <Grid container spacing={2} alignItems='center' sx={{  }}>
+                    <Grid container spacing={2} >
                         <Grid item xs={12} sm={6}>
                             <CustomText text="We hold the prestigious position of being the world's largest lessor of intermodal containers, those standardized steel containers indispensable for the transportation of goods by sea, rail, or road. These intermodal containers are crucial for their efficiency in handling, serving as the primary method for shipping numerous goods and materials across international borders. Our operations in equipment leasing encompass a comprehensive range of activities, including the acquisition, leasing, re-leasing, and eventual sale of various types of intermodal transportation equipment. We also engage in the acquisition of containers from shipping line customers and other container sellers, subsequently reselling these containers to container retailers and users for purposes such as storage or one-way shipments." />
                         </Grid>
@@ -40,7 +40,8 @@ export default function Home() {
                                     bgcolor: '#FFFFFF',
                                     margin: '2rem 1rem',
                                     width: '30%',
-                                    p: '1.25rem',
+                                    px: theme.spacing(1.25),
+                                    pt: theme.spacing(1.5),
                                     borderRadius: '1rem',
                                     height: '25rem',
                                 }}
@@ -61,12 +62,12 @@ export default function Home() {
                                 <Image
                                     src={item.image}
                                     alt=''
-                                    style={{ height: 'auto', width: '90%', }}
+                                    style={{ height: '10rem', width: 'auto', marginTop: theme.spacing(1) }}
                                 />
                             </Box>
                         ))}
                     </Box>
-                    <Typography variant='h3' sx={{ textAlign: 'start', my: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h3' sx={{ textAlign: 'start', mt: theme.spacing(6), color: '#1B1B1F' }}>
                         Why Choose Us?
                     </Typography>
                     <CustomText text="Our containers are versatile and compliant with global standards, ideal for sea, truck, rail transportation, and secure storage."/>

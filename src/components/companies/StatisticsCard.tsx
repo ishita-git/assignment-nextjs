@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material"
+import { Box, Grid, Typography } from '@mui/material'
 
 
 export default function StatisticsCard({ exporterRank, importerRank, tradeBalanceRank, totalTradeAmtList }: { exporterRank: String, importerRank: String, tradeBalanceRank: String, totalTradeAmtList: string[] }) {
@@ -11,7 +11,7 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                             Exporter Rank
                         </Typography >
                         <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "center" }}>
-                            <Typography variant="h1" sx={{ color: '#031225',fontWeight:400 }}>{exporterRank}</Typography>
+                            <Typography variant="h1" sx={{ color: '#031225', fontWeight: 400 }}>{exporterRank}</Typography>
                             <Typography variant="body1" sx={{ color: '#031225' }}>/138</Typography>
                         </Box>
                     </Box>
@@ -22,7 +22,7 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                             Importer Rank
                         </Typography >
                         <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "center" }}>
-                            <Typography variant="h1" sx={{ color: '#031225',fontWeight:400  }}>{importerRank}</Typography>
+                            <Typography variant="h1" sx={{ color: '#031225', fontWeight: 400 }}>{importerRank}</Typography>
                             <Typography variant="body1" sx={{ color: '#031225' }}>/138</Typography>
                         </Box>
                     </Box>
@@ -33,7 +33,7 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                             Trade Balance Rank
                         </Typography >
                         <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "center" }}>
-                            <Typography variant="h1" sx={{ color: '#031225',fontWeight:400}}>{tradeBalanceRank}</Typography>
+                            <Typography variant="h1" sx={{ color: '#031225', fontWeight: 400 }}>{tradeBalanceRank}</Typography>
                             <Typography variant="body1" sx={{ color: '#031225' }}>/138</Typography>
                         </Box>
                     </Box>
@@ -43,17 +43,27 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                 Total Trade
             </Typography>
             <Box>
-                <Grid container spacing={1} justifyContent={"space-between"}>
+                <Grid container spacing={1} justifyContent={'space-between'}>
                     <Grid item>
                         {totalTradeList.map((item, index) => (
-                            <Typography key={index} variant="body1" textAlign={"start"} sx={{ color: '#031225', mb: "1rem" ,fontWeight:600}}>
+                            <Typography
+                                key={index}
+                                variant='body1'
+                                textAlign={'start'}
+                                sx={{ color: '#031225', mb: '1rem', fontWeight: 600 }}
+                            >
                                 {item}
                             </Typography>
                         ))}
                     </Grid>
                     <Grid item>
                         {totalTradeAmtList.map((item, index) => (
-                            <Typography key={index} variant="body1" textAlign={"end"} sx={{ color: '#031225', mb: "1rem" ,fontWeight:600}}>
+                            <Typography
+                                key={index}
+                                variant='body1'
+                                textAlign={'end'}
+                                sx={{ color: '#031225', mb: '1rem', fontWeight: 600 }}
+                            >
                                 {item}
                             </Typography>
                         ))}
@@ -61,17 +71,16 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                 </Grid>
             </Box>
         </Box>
-        <Typography variant='h3' sx={{fontWeight:600, mt: '2rem',mb:"4rem", color: '#1B1B1F' }}>
+        <Typography variant='h3' sx={{ fontWeight: 600, mt: '2rem', mb: '4rem', color: '#1B1B1F' }}>
             Trade Statistics
         </Typography>
-    </Box>
-
+    </Box >
 }
 
 const totalTradeList = [
-    "Total Exports (2021)",
-    "Total Imports (2021)",
-    "Total Balance (2021)",
-    "Exports of goods and services (2022)",
-    "Imports of goods and services (2022)",
+    'Total Exports (2021)',
+    'Total Imports (2021)',
+    'Total Balance (2021)',
+    'Exports of goods and services (2022)',
+    'Imports of goods and services (2022)',
 ]

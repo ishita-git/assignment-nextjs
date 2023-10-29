@@ -8,7 +8,7 @@ import { clientsData } from '../../data/clientsData'
 export default function AboutTab() {
     const theme = useTheme()
     return (
-        <Box sx={{ mx: theme.spacing(5) }}>
+        <Box sx={{ mx: theme.spacing(12) }}>
             <Typography
                 variant='h2'
                 textAlign='start'

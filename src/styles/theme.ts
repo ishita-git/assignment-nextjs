@@ -145,20 +145,9 @@ const theme = createTheme({
                 root: {
                     textTransform: 'capitalize',
                     color: '#003A9B',
+                    backgroundColor: '#FFFFFF',
                     fontSize: '1.25rem',
-                    borderTop: '2px solid #003A9B33',
-                    borderBottom: '2px solid #003A9B33',
                     '&.Mui-selected': { color: '#FFFFFF', border: 0 },
-                    '&:first-of-type': {
-                        borderLeft: '2px solid #003A9B33',
-                        borderTopLeftRadius: '40px',
-                        borderBottomLeftRadius: '40px',
-                    },
-                    '&:last-child': {
-                        borderRight: '2px solid #003A9B33',
-                        borderTopRightRadius: '40px',
-                        borderBottomRightRadius: '40px',
-                    },
                 },
             },
         },
