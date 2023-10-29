@@ -9,11 +9,9 @@ import WestRoundedIcon from '@mui/icons-material/WestRounded'
 
 export default function ClienteleSection() {
     const theme = useTheme()
-    const visibleIconSet = 4
-    const [visibleIcons, setVisibleIcons] = useState(visibleIconSet)
+    const visibleIcons = 4
     const [startIconIndex, setStartIconIndex] = useState(0)
     const [cardIndex, setCardIndex] = useState(startIconIndex)
-    const [checked, setChecked] = useState(false)
 
     const handlePrev = () => {
         if (startIconIndex > 0) {
@@ -33,31 +31,36 @@ export default function ClienteleSection() {
 
     const changeCard = (index: number) => {
         setCardIndex(startIconIndex + index)
-        setChecked((prev) => !prev)
     }
 
     return (
         <Box sx={{ p: theme.spacing(4) }}>
             <Typography variant='h2'>Appreciated by some of the best in industry</Typography>
-            <Container maxWidth='md' disableGutters sx={{ py: theme.spacing(2), position: 'relative' }}>
-                <Box
-                    sx={{
-                        width: '100%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                    }}
-                >
-                    <Fade in={checked} timeout={2000}>
-                        <div>
-                            <ClienteleCard
-                                cardImage={clientsData?.[cardIndex]?.cardImage}
-                                cardIcon={clientsData?.[cardIndex]?.cardIcon}
-                                title={clientsData?.[cardIndex]?.title}
-                                subtitle={clientsData?.[cardIndex]?.subtitle}
-                            />
-                        </div>
-                    </Fade>
-                </Box>
+            <Container
+                maxWidth='md'
+                disableGutters
+                sx={{ py: theme.spacing(2), position: 'relative', height: '34rem' }}
+            >
+                {clientsData.map((item, index) => (
+                    <Box
+                        key={index}
+                        sx={{
+                            opacity: cardIndex === startIconIndex + index ? 1 : 0,
+                            transition: 'opacity 0.5s',
+                            width: '100%',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            position: 'absolute',
+                        }}
+                    >
+                        <ClienteleCard
+                            cardImage={item.cardImage}
+                            cardIcon={item.cardIcon}
+                            title={item.title}
+                            subtitle={item.subtitle}
+                        />
+                    </Box>
+                ))}
             </Container>
             <Container maxWidth='lg' disableGutters sx={{ py: theme.spacing(2), position: 'relative' }}>
                 <Box
@@ -73,7 +76,7 @@ export default function ClienteleSection() {
                         <WestRoundedIcon fontSize='large' sx={{ color: theme.palette.primary.main }} />
                     </IconButton>
                     {clientsData.slice(startIconIndex, startIconIndex + visibleIcons).map((item, index) => (
-                        <Box sx={{ height: '4rem', display: 'flex' }} key={index} onClick={() => changeCard}>
+                        <Box sx={{ height: '4rem', display: 'flex' }} key={index} onClick={() => changeCard(index)}>
                             <Image
                                 src={item.cardIcon}
                                 alt='client icon'

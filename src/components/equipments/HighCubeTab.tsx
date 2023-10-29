@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Box } from '@mui/material'
+import { Box, Table } from '@mui/material'
 import highCube from '../../assets/equipments/high-cube.webp'
 import DataTableHead from './DataTableHead'
 import DataTable from './DataTable'
@@ -13,18 +13,16 @@ export default function HighCubeTab() {
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
-                position: 'relative',
-                mx: '6rem',
+                px: '11rem',
             }}
         >
-            <Image src={highCube} alt='Reefer' style={{ height: '25rem', width: '70rem' }} />
+            <Image src={highCube} alt='Reefer' style={{ height: 'auto', width: '100%' }} />
 
             <Box sx={{ mt: '-6rem', display: 'flex' }}>
                 <DataTableHead />
-                <DataTable small column={equipmentsData.highCube.gp20} />
-                <DataTable small column={equipmentsData.highCube.gp40} />
-                <DataTable small column={equipmentsData.highCube.hc40} />
+                <DataTable column={equipmentsData.highCube.gp20} />
+                <DataTable column={equipmentsData.highCube.gp40} />
+                <DataTable column={equipmentsData.highCube.hc40} />
             </Box>
         </Box>
     )

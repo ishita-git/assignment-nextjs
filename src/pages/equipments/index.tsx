@@ -29,16 +29,15 @@ export default function Home() {
             image={equipmentsBg}
             title='Our Equipment'
             subtitle={'Range of container types tailored\n to your shipping needs'}
+            customHeight='35vw'
             withTabs
         >
-            <Box sx={{ mt: '-5rem' }}>
-                <Tabs value={value} onChange={handleChange} variant='fullWidth'>
-                    <Tab label='High Cube' sx={{ bgcolor: value === 0 ? '#003A9B' : 'transparent' }} />
-                    <Tab label='Reefer' sx={{ bgcolor: value === 1 ? '#003A9B' : 'transparent' }} />
-                    <Tab label='Open Top' sx={{ bgcolor: value === 2 ? '#003A9B' : 'transparent' }} />
-                    <Tab label='Flat Rack' sx={{ bgcolor: value === 3 ? '#003A9B' : 'transparent' }} />
-                </Tabs>
-            </Box>
+            <Tabs value={value} onChange={handleChange} variant='fullWidth'>
+                <Tab label='High Cube' sx={{ bgcolor: value === 0 ? '#003A9B' : '#FFFFFF' }} />
+                <Tab label='Reefer' sx={{ bgcolor: value === 1 ? '#003A9B' : '#FFFFFF' }} />
+                <Tab label='Open Top' sx={{ bgcolor: value === 2 ? '#003A9B' : '#FFFFFF' }} />
+                <Tab label='Flat Rack' sx={{ bgcolor: value === 3 ? '#003A9B' : '#FFFFFF' }} />
+            </Tabs>
 
             <TabPanel value={value} index={0}>
                 <HighCubeTab />
