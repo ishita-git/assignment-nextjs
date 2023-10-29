@@ -37,6 +37,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import PrimaryButton from '@/components/PrimaryButton'
 import SecondaryButton from '@/components/SecondaryButton'
 import { fetchDataFromApi } from '@/api/api'
+import Layout from '../Layout'
 
 interface VesselData {
     id: number
@@ -95,8 +96,7 @@ export default function Home() {
     }, [])
 
     return (
-        <Box sx={{ backgroundColor: '#EFF6FF' }}>
-            <HeaderSection image={titleImg} title='Schedules' />
+        <Layout image={titleImg} title='Schedules'>
             <Box
                 sx={{
                     position: 'relative',
@@ -301,8 +301,7 @@ export default function Home() {
                     </Container>
                 ))}
             </Box>
-            <FooterSection />
-        </Box>
+        </Layout>
     )
 }
 

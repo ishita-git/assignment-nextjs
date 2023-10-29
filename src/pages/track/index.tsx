@@ -33,6 +33,7 @@ import FooterSection from '@/sections/FooterSection'
 import downArrowIcon from '../../assets/icons/arrow_down_circle.png'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import SportsScoreIcon from '@mui/icons-material/SportsScore'
+import Layout from '../Layout'
 
 interface ExpandMoreProps extends IconButtonProps {
     expand: boolean
@@ -71,66 +72,31 @@ export default function Home() {
     }
 
     return (
-        <Box sx={{ backgroundColor: '#EFF6FF' }}>
-            <Box
+        <Layout image={titleImg} title='Track Shipment'>
+            <Container
+                maxWidth='md'
                 sx={{
+                    bgcolor: '#FFFFFF',
+                    borderRadius: '1.25rem',
                     position: 'relative',
-                    overflow: 'hidden',
-                    height: '42vw',
-                    display: 'flex',
-                    flexDirection: 'column',
+                    bottom: '8rem',
                 }}
             >
-                <Image
-                    src={titleImg}
-                    alt='cargo'
-                    style={{
-                        width: '100%',
-                        height: 'auto',
-                        position: 'absolute',
-                    }}
-                />
+                <Grid container spacing={1} alignItems='end'>
+                    <Grid item xs={9}>
+                        <PrimaryTextField
+                            label='Search'
+                            placeholder='Enter Reference No. / Bill No. / container No.'
+                            startIcon
+                        />
+                    </Grid>
+                    <Grid item xs={3} sx={{ mb: '1.2rem' }}>
+                        <PrimaryButton text='Search' />
+                    </Grid>
+                </Grid>
+            </Container>
 
-                <Box
-                    sx={{
-                        position: 'relative',
-                        mt: theme.spacing(2),
-                        mx: theme.spacing(4),
-                    }}
-                >
-                    <Navbar />
-
-                    <Container maxWidth='xl' disableGutters>
-                        <Typography variant='h1' sx={{ mt: theme.spacing(4) }}>
-                            Track Shipment
-                        </Typography>
-
-                        <Box
-                            sx={{
-                                mx: '15rem',
-                                bgcolor: '#FFFFFF',
-                                mt: theme.spacing(3),
-                                p: '1.25rem 2rem',
-                                borderRadius: '1.25rem',
-                            }}
-                        >
-                            <Grid container spacing={1} alignItems='center'>
-                                <Grid item xs={9}>
-                                    <PrimaryTextField
-                                        label='Search'
-                                        placeholder='Enter Reference No. / Bill No. / container No.'
-                                        startIcon
-                                    />
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <PrimaryButton text='Search' />
-                                </Grid>
-                            </Grid>
-                        </Box>
-                    </Container>
-                </Box>
-            </Box>
-            <Box sx={{ px: theme.spacing(4), py: '4rem' }}>
+            <Box sx={{ px: theme.spacing(2), py: '4rem' }}>
                 <Container maxWidth='xl'>
                     <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
                         Container Number: {containerNumber}
@@ -238,8 +204,7 @@ export default function Home() {
                     </Box>
                 </Container>
             </Box>
-            <FooterSection />
-        </Box>
+        </Layout>
     )
 }
 

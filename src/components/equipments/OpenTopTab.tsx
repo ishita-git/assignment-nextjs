@@ -12,13 +12,13 @@ export default function OpenTopTab() {
             sx={{
                 width: '100%',
                 display: 'flex',
-                justifyContent: 'center',
                 flexDirection: 'column',
-                position: 'relative',
+                justifyContent: 'center',
                 mt: '2rem',
+                mx: '6rem',
             }}
         >
-            <Image src={openTop} alt='Reefer' style={{ height: '30rem', width: 'auto' }} />
+            <Image src={openTop} alt='Reefer' style={{ height: '30rem', width: '62rem', marginLeft: '6rem' }} />
 
             <Box sx={{ mt: '-6rem', display: 'flex' }}>
                 <DataTableHead />

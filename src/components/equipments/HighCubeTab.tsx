@@ -12,12 +12,13 @@ export default function HighCubeTab() {
             sx={{
                 width: '100%',
                 display: 'flex',
-                justifyContent: 'center',
                 flexDirection: 'column',
+                justifyContent: 'center',
                 position: 'relative',
+                mx: '6rem',
             }}
         >
-            <Image src={highCube} alt='Reefer' style={{ height: '24rem',width:"auto"  }} />
+            <Image src={highCube} alt='Reefer' style={{ height: '25rem', width: '70rem' }} />
 
             <Box sx={{ mt: '-6rem', display: 'flex' }}>
                 <DataTableHead />
