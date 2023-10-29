@@ -7,7 +7,7 @@ import container from '../assets/icons/container.png'
 import equipement from '../assets/icons/equipement.png'
 import ship from '../assets/icons/ship.png'
 import person from '../assets/icons/person.png'
-import stern from '../assets/images/stern.png'
+import stern from '../assets/images/stern.webp'
 
 declare type ShippingProps = {
     icon: string | StaticImageData

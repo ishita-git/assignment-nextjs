@@ -1,8 +1,8 @@
 import { Box, Grid, Typography } from '@mui/material'
 import ServicesLayout from '../ServicesLayout'
 import Image from 'next/image'
-import backgroundImg from '../../../assets/services/transport_bg.png'
-import titleImg from '../../../assets/services/transport_img.png'
+import backgroundImg from '../../../assets/services/transport_bg.webp'
+import titleImg from '../../../assets/services/transport_img.webp'
 import { TransportationData } from '../../../data/servicesData'
 import Benefits from '../../../components/services/Benefits'
 export default function Home() {

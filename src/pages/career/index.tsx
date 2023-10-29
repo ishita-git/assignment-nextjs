@@ -4,7 +4,7 @@ import Image, { StaticImageData } from 'next/image'
 import { Box, Typography, Grid } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import Layout from '../Layout'
-import careerBackground from '../../assets/career/career-background.png'
+import careerBackground from '../../assets/career/career-background.webp'
 import careerDefault from '../../assets/career/marketing.png'
 import { fetchDataFromApi } from '../../api/api'
 

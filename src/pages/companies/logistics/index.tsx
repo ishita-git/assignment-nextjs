@@ -4,7 +4,7 @@ import { Box, Container, Grid, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import CompaniesLayout from '../CompaniesLayout'
 import ServicesCards from '../../../components/services/ServicesCards'
-import logisticsBg from '../../../assets/companies/logistics-bg.png'
+import logisticsBg from '../../../assets/companies/logistics-bg.webp'
 import titleImg from '../../../assets/services/empty_container_img.png'
 import { ContainerType, ChooseUsData } from '../../../data/companiesData'
 export default function Home() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box, Table } from '@mui/material'
-import reefer from '../../assets/equipments/reefer.png'
+import reefer from '../../assets/equipments/reefer.webp'
 import DataTableHead from './DataTableHead'
 import DataTable from './DataTable'
 import { equipmentsData } from '../../data/equipmentsData'

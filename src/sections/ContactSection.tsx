@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Box, Container, Typography } from '@mui/material'
-import contactbackground from '../assets/images/contact-background.png'
+import contactbackground from '../assets/images/contact-background.webp'
 import { useTheme } from '@mui/material/styles'
 import SecondaryTextField from '../components/SecondaryTextField'
 import PrimaryButton from '../components/PrimaryButton'

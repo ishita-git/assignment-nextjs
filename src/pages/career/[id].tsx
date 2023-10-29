@@ -20,12 +20,12 @@ import { SelectChangeEvent } from '@mui/material/Select'
 import { useTheme } from '@mui/material/styles'
 import Layout from '../Layout'
 import PrimaryTextField from '../../components/PrimaryTextField'
-import captcha from '../../assets/images/captcha.png'
+// import captcha from '../../assets/images/captcha.png'
 import reload from '../../assets/icons/loop.png'
 import PrimaryButton from '../../components/PrimaryButton'
 import SecondaryButton from '../../components/SecondaryButton'
-import careerBackground from '../../assets/career/career-background.png'
-import careerBanner from '../../assets/career/marketing_lg.png'
+import careerBackground from '../../assets/career/career-background.webp'
+import careerBanner from '../../assets/career/marketing_lg.webp'
 import { fetchDataFromApi, postDataToApi } from '../../api/api'
 
 interface JobType {
@@ -265,11 +265,11 @@ export default function JobDetail() {
                             <PrimaryTextField label='Captcha' placeholder='Enter Captcha' />
 
                             <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                <Image
+                                {/* <Image
                                     src={captcha}
                                     alt='reload'
                                     style={{ height: '2rem', width: 'auto', marginRight: '0.5rem' }}
-                                />
+                                /> */}
                                 <IconButton>
                                     <Image src={reload} alt='reload' style={{ height: '1.5rem', width: 'auto' }} />
                                 </IconButton>

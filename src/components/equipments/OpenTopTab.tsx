@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Box } from '@mui/material'
-import openTop from '../../assets/equipments/open-tab.png'
+import openTop from '../../assets/equipments/open-tab.webp'
 import DataTableHead from './DataTableHead'
 import DataTable from './DataTable'
 import { equipmentsData } from '../../data/equipmentsData'

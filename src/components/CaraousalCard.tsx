@@ -27,7 +27,7 @@ export default function CarouselCard({ coverImage, title, subtitle, footerImage,
 
     return (
         <Link href={href}>
-            <Box sx={{ height: '24rem', width: '18rem', cursor: 'pointer' }}>
+            <Box sx={{ height: '24.5rem', width: '18.375rem', cursor: 'pointer' }}>
                 <Fade in={coverCardVisible} timeout={500}>
                     <Box sx={{ position: 'relative' }} onMouseEnter={onMouseEnter}>
                         <Image

@@ -21,7 +21,7 @@ import {
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import 'dayjs/locale/en-gb'
-import titleImg from '../../assets/images/cargo-ship-1.png'
+import titleImg from '../../assets/images/cargo-ship-1.webp'
 import shipIcon from '../../assets/icons/icons_cargo_ship.png'
 import circularShipIcon from '../../assets/icons/circular_ship_icon.png'
 import locationIcon from '../../assets/icons/location.png'
