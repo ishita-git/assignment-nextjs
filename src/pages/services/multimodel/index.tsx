@@ -1,8 +1,8 @@
 import { Box, Grid, Typography } from '@mui/material'
 import ServicesLayout from '../ServicesLayout'
 import Image from 'next/image'
-import backgroundImg from '../../../assets/services/multi_model_bg.png'
-import titleImg from '../../../assets/services/multi_model_img.png'
+import backgroundImg from '../../../assets/services/multi_model_bg.webp'
+import titleImg from '../../../assets/services/multi_model_img.webp'
 
 export default function Home() {
     return (

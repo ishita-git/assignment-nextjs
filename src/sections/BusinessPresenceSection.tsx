@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { Box, Container, Divider, Grid, Link, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
-import map from '../assets/images/map.png'
+import map from '../assets/images/map.webp'
 // import description from '../assets/images/map-description.png'
 
 // const MapDescription = () => {

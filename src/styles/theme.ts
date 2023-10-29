@@ -117,6 +117,11 @@ const theme = createTheme({
                     textDecoration: 'none',
                 },
             },
+            // styleOverrides: {
+            //     style: {
+            //         fontSize: '0.5rem',
+            //     },
+            // },
         },
         MuiMenu: {
             styleOverrides: {

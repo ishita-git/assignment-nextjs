@@ -66,8 +66,8 @@ export default function Navbar() {
                 <Box>
                     <Box sx={{ cursor: 'pointer' }}>
                         <Typography
-                            variant='h6'
-                            sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem' }}
+                            variant='subtitle2'
+                            sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem', color: '#FFFFFF' }}
                             onClick={handleCompaniesMenu}
                         >
                             Companies
@@ -107,8 +107,8 @@ export default function Navbar() {
                 <Box>
                     <Box sx={{ cursor: 'pointer', ml: theme.spacing(1.5) }}>
                         <Typography
-                            variant='h6'
-                            sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem' }}
+                            variant='subtitle2'
+                            sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem', color: '#FFFFFF' }}
                             onClick={handleServicesMenu}
                         >
                             Services
@@ -161,19 +161,19 @@ export default function Navbar() {
                 </Box>
 
                 <Link href='/about'>
-                    <Typography variant='h6' sx={{ ml: theme.spacing(1.5) }}>
+                    <Typography variant='subtitle2' sx={{ ml: theme.spacing(1.5), color: '#FFFFFF' }}>
                         About Us
                     </Typography>
                 </Link>
 
                 <Link href='/contact'>
-                    <Typography variant='h6' sx={{ ml: theme.spacing(1.5) }}>
+                    <Typography variant='subtitle2' sx={{ ml: theme.spacing(1.5), color: '#FFFFFF' }}>
                         Contact Us
                     </Typography>
                 </Link>
 
                 <Link href='/career'>
-                    <Typography variant='h6' sx={{ ml: theme.spacing(1.5) }}>
+                    <Typography variant='subtitle2' sx={{ ml: theme.spacing(1.5), color: '#FFFFFF' }}>
                         Career
                     </Typography>
                 </Link>
@@ -181,8 +181,8 @@ export default function Navbar() {
                 <Box>
                     <Box sx={{ cursor: 'pointer', ml: theme.spacing(1.5) }}>
                         <Typography
-                            variant='h6'
-                            sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem' }}
+                            variant='subtitle2'
+                            sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem', color: '#FFFFFF' }}
                             onClick={handleToolsMenu}
                         >
                             Tools

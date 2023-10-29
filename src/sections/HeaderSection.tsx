@@ -10,16 +10,17 @@ declare type HeaderProps = {
     title?: string
     subtitle?: string
     video?: boolean
+    customHeight?: string
 }
 
-export default function HeaderSection({ image, title, subtitle, video }: HeaderProps) {
+export default function HeaderSection({ image, title, subtitle, video, customHeight }: HeaderProps) {
     const theme = useTheme()
     return (
         <Box
             sx={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: '42vw',
+                height: customHeight ? customHeight : '42vw',
                 display: 'flex',
                 flexDirection: 'column',
             }}
@@ -39,17 +40,27 @@ export default function HeaderSection({ image, title, subtitle, video }: HeaderP
             )}
 
             {video ? (
-                <video
-                    src='/video/container_terminal.webm'
-                    muted
-                    autoPlay
-                    loop
-                    style={{
-                        width: '100%',
-                        height: 'auto',
-                        position: 'absolute',
-                    }}
-                />
+                <>
+                    <video
+                        src='/video/container_terminal.webm'
+                        muted
+                        autoPlay
+                        loop
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            position: 'absolute',
+                        }}
+                    />
+                    <div
+                        style={{
+                            position: 'absolute',
+                            width: '100%',
+                            height: '100%',
+                            background: 'rgba(0, 0, 0, 0.5)', // 25% black overlay
+                        }}
+                    />
+                </>
             ) : (
                 <></>
             )}
@@ -62,7 +73,7 @@ export default function HeaderSection({ image, title, subtitle, video }: HeaderP
                 }}
             >
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h1' sx={{ mt: theme.spacing(8) ,fontSize:"4.5rem",whiteSpace: 'pre-line'}}>
+                    <Typography variant='h1' sx={{ mt: theme.spacing(8), fontSize: '4.5rem', whiteSpace: 'pre-line' }}>
                         {title}
                     </Typography>
 
@@ -73,8 +84,8 @@ export default function HeaderSection({ image, title, subtitle, video }: HeaderP
                             fontFamily: oswald.style.fontFamily,
                             color: 'common.white',
                             fontWeight: 400,
-                            fontSize:"3rem",
-                            whiteSpace: 'pre-line'
+                            fontSize: '3rem',
+                            whiteSpace: 'pre-line',
                         }}
                     >
                         {subtitle}

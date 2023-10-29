@@ -3,10 +3,9 @@ import Image from 'next/image'
 import { Box, Grid, Typography, IconButton, InputLabel, Paper, FormControl, Select, MenuItem } from '@mui/material'
 import { SelectChangeEvent } from '@mui/material/Select'
 import Layout from '../Layout'
-import contactBackground from '../../assets/contact/contact-background.png'
+import contactBackground from '../../assets/contact/contact-background.webp'
 import PrimaryTextField from '../../components/PrimaryTextField'
 import reload from '../../assets/icons/loop.png'
-import captcha from '../../assets/images/captcha.png'
 import PrimaryButton from '../../components/PrimaryButton'
 import MuskaanGroupHq from '../../components/MuskaanGroupHq'
 
@@ -80,11 +79,11 @@ export default function Home() {
                                 <PrimaryTextField label='Captcha' placeholder='Enter Captcha' />
 
                                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                    <Image
+                                    {/* <Image
                                         src={captcha}
                                         alt='reload'
                                         style={{ height: '2rem', width: 'auto', marginRight: '0.5rem' }}
-                                    />
+                                    /> */}
                                     <IconButton>
                                         <Image src={reload} alt='reload' style={{ height: '1.5rem', width: 'auto' }} />
                                     </IconButton>

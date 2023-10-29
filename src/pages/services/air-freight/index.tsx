@@ -1,10 +1,11 @@
 import { Box, Grid, Typography } from '@mui/material'
 import ServicesLayout from '../ServicesLayout'
 import Image from 'next/image'
-import backgroundImg from '../../../assets/services/air_freight_bg.png'
-import titleImg from '../../../assets/services/air_freight_img.png'
+import backgroundImg from '../../../assets/services/air_freight_bg.webp'
+import titleImg from '../../../assets/services/air_freight_img.webp'
 import { AirFreightData } from '../../../data/servicesData'
 import Benefits from '../../../components/services/Benefits'
+
 export default function Home() {
     return (
         <ServicesLayout image={backgroundImg} title='Services'>
