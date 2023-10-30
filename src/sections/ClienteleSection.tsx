@@ -33,15 +33,19 @@ export default function ClienteleSection() {
         setCardIndex(startIconIndex + index)
     }
 
+    console.log(cardIndex)
+
     return (
         <Box sx={{ p: theme.spacing(4) }}>
-            <Typography variant='h2'>Appreciated by some of the best in industry</Typography>
+            <Typography variant='h2' sx={{ mb: theme.spacing(2) }}>
+                Appreciated by some of the best in industry
+            </Typography>
             <Container
                 maxWidth='md'
                 disableGutters
                 sx={{ py: theme.spacing(2), position: 'relative', height: '34rem' }}
             >
-                {clientsData.map((item, index) => (
+                {clientsData.slice(startIconIndex, startIconIndex + visibleIcons).map((item, index) => (
                     <Box
                         key={index}
                         sx={{
@@ -65,7 +69,7 @@ export default function ClienteleSection() {
             <Container maxWidth='lg' disableGutters sx={{ py: theme.spacing(2), position: 'relative' }}>
                 <Box
                     sx={{
-                        my: theme.spacing(2),
+                        my: theme.spacing(4),
                         width: '100%',
                         display: 'flex',
                         justifyContent: 'space-between',
