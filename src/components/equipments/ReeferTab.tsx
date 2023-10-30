@@ -13,14 +13,16 @@ export default function ReeferTab() {
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
-                mt: '2rem',
-                mx: '4rem',
+                px: '11rem',
             }}
         >
-            <Image src={reefer} alt='Reefer' style={{ height: '24rem', width: '50rem', marginLeft: '12rem' }} />
+            <Image
+                src={reefer}
+                alt='Reefer'
+                style={{ height: 'auto', width: '65%', marginTop: '2rem', marginLeft: '10rem' }}
+            />
 
-            <Box sx={{ mt: '-6rem', display: 'flex' }}>
+            <Box sx={{ mt: '-5rem', display: 'flex' }}>
                 <DataTableHead />
                 <DataTable column={equipmentsData.reefer.rh20} />
                 <DataTable column={equipmentsData.reefer.rh40} />

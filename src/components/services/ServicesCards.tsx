@@ -62,7 +62,11 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
                                                 left: 0,
                                             }}
                                         />
-                                        <Typography variant='h6' sx={{ p: theme.spacing(1),position: 'absolute',top:0,left:0,right:0, textAlign:"center" }}>
+                                        <Typography
+                                            variant='h6'
+                                            textAlign='center'
+                                            sx={{ p: theme.spacing(1), position: 'absolute', width: '86%' }}
+                                        >
                                             {item.title}
                                         </Typography>
                                     </Box>

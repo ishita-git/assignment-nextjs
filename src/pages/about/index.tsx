@@ -24,7 +24,7 @@ export default function Home() {
     }
 
     return (
-        <Layout image={aboutBackground} title='Muskaan Group Of Companies' withTabs customHeight='36vw'>
+        <Layout image={aboutBackground} title='Muskaan Group Of Companies' withTabs customHeight='35vw'>
             <Tabs value={value} onChange={handleChange} variant='fullWidth'>
                 <Tab label='About' sx={{ bgcolor: value === 0 ? '#003A9B' : '#FFFFFF' }} />
                 <Tab label='Companies' sx={{ bgcolor: value === 1 ? '#003A9B' : '#FFFFFF' }} />

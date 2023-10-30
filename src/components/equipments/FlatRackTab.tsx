@@ -13,12 +13,14 @@ export default function FlatRackTab() {
                 width: '100%',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center',
-                mt: '4rem',
-                mx: '4rem',
+                px: '11rem',
             }}
         >
-            <Image src={flatRack} alt='Reefer' style={{ height: '24rem', width: '50rem', marginLeft: '14rem' }} />
+            <Image
+                src={flatRack}
+                alt='Reefer'
+                style={{ height: 'auto', width: '68%', marginLeft: '14rem', marginTop: '2rem' }}
+            />
 
             <Box sx={{ mt: '-6rem', display: 'flex' }}>
                 <DataTableHead lessRows />
