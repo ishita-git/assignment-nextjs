@@ -1,8 +1,27 @@
 import { Box, Typography } from '@mui/material'
 import Image, { StaticImageData } from 'next/image'
+import React, { useState } from 'react';
 
 export default function ServicesCard({ title, desc, image }: { title: String, desc: String, image: string | StaticImageData }) {
-    return <Box sx={{ position: "relative" }}>
+
+    const [hovered, setHovered] = React.useState(false);
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
+
+    return <Box sx={{
+        position: "relative",
+        transition: 'transform 0.4s',
+        transform: hovered ? 'scale(1.1)' : 'scale(1)',
+    }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+    >
         <Image src={image} alt="" style={{ height: 'auto', width: "100%", }} />
         <Box sx={{ position: "absolute", top: '0', left: '0', p: "1.25rem" }}>
             <Typography variant='h6' sx={{ textAlign: 'start', my: '1rem', color: '#FFFFFF', fontWeight: 600 }}>

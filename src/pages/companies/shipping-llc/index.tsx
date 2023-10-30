@@ -137,14 +137,14 @@ export default function Home() {
             </Box>
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '2rem', color: '#1B1B1F' }}>
+                    <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '1rem', color: '#1B1B1F' }}>
                         Our Services
                     </Typography>
-                    <Typography variant='h5' sx={{ textAlign: 'start', my: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb:"0.5rem", color: '#1B1B1F' }}>
                         Shipping Liner Agency-NVOCC:
                     </Typography>
                     <CustomText text='Muskaan Shipping, headquartered in Dubai, is a prominent liner agency in the Middle East representing a diverse range of Non Vessel Operating Common Carriers (NVOCC) principals. Our service seamlessly spans across the Middle East, Upper Gulf, Far East, Europe, and the Indian Subcontinent, ensuring consistent excellence. Our container inventory caters to specific client needs, including Dry containers, Special equipment (Open tops, Flat Racks, Reefer), and ISO tanks. We provide weekly sailings to these destinations, offering creative, tailored shipping solutions at competitive rates. Committed to forging lasting relationships, we enhance value with value-added services for clients and international partners.' />
-                    <Typography variant='h5' sx={{ textAlign: 'start', my: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start',  mt: '2rem', mb:"0.5rem",color: '#1B1B1F' }}>
                         Freight Forwarding:
                     </Typography>
                     <CustomText text="Muskaan Shipping LLC, located in Dubai, U.A.E., is a dynamic and rapidly expanding NVOCC shipping agency and international freight forwarding company. Our global presence enables us to deliver international shipping and logistics solutions to clients worldwide. Our proficient team of seasoned management professionals, boasting decades of experience in the shipping and freight forwarding industry, oversees the company's operations. We are supported by substantial multimillion-dollar investments earmarked for business expansion, trade development, and cutting-edge technology implementation. With a corporate vision of becoming a preferred integrated global shipping company, we prioritize a customer-centric approach and foster an employee-friendly environment. Our dedicated team of professionals is committed to delivering top-quality services to both international and domestic clients. We have established a robust global network, with key offices and partners strategically located across North America, South America, Europe, the USA, Far East, North East Asia, South East Asia, CIS, East Africa, West Africa, and the Middle East." />
@@ -171,12 +171,12 @@ export default function Home() {
                             />
                         </Grid>
                     </Grid>
-                    <Typography variant='h5' sx={{ textAlign: 'start', my: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start',  mt: '2rem', mb:"0.5rem", color: '#1B1B1F' }}>
                         Project Logistics:
                     </Typography>
                     <CustomText text='In the complex world of project logistics, we excel in providing professional services for mobilizing and shipping project cargos. With our expertise, we meet HSC service standards, ensuring competitive pricing. Our specialized services encompass project logistics, heavy lifts, chartering, break bulk, Ro-Ro shipments, barge and tug shipments, heavy haul land transport, route surveys, rail service, and cargo insurance.' />
 
-                    <Typography variant='h5' sx={{ textAlign: 'start', my: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start',  mt: '2rem', mb:"0.5rem", color: '#1B1B1F' }}>
                         Customs Clearance:
                     </Typography>
                     <CustomText text='Our devoted team ensures swift customs clearance for your cargo at all UAE ports, airports, and land terminals. We offer a range of services including import duty assessment, temporary and permanent import/export procedures, various customs declarations, and multimodal and transit formalities such as ship-shore-ship, sea-air, and more.' />

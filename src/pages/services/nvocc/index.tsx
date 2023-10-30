@@ -6,13 +6,10 @@ import titleImg from '../../../assets/services/nvocc_img.webp'
 
 export default function Home() {
     return (
-        <ServicesLayout image={backgroundImg} title='Services'>
+        <ServicesLayout image={backgroundImg} title='Services' subtitle={"NVOCC (NON Vessel Operating Common Carrier)"}>
             <Box sx={{ mb: '2.5rem' }}>
                 <Typography variant='h3' sx={{ textAlign: 'start', color: '#031225', whiteSpace: 'pre-line' }}>
-                    NVOCC (NON Vessel
-                </Typography>
-                <Typography variant='h3' sx={{ textAlign: 'start', color: '#031225', marginBottom: '2.5rem' }}>
-                    Operating Common Carrier)
+                    {"NVOCC (NON Vessel\nOperating Common Carrier)"}
                 </Typography>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>

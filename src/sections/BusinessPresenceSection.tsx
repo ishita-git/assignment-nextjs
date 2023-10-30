@@ -3,6 +3,7 @@ import { Box, Container, Divider, Grid, Link, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
 import map from '../assets/images/map.webp'
+import React from 'react'
 // import description from '../assets/images/map-description.png'
 
 // const MapDescription = () => {
@@ -49,7 +50,17 @@ import map from '../assets/images/map.webp'
 // }
 
 const CompanyCard = ({ text, href }: { text: string; href: string }) => {
-    const theme = useTheme()
+    const theme = useTheme();
+    const [hovered, setHovered] = React.useState(false);
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
+
     return (
         <Box
             sx={{
@@ -62,10 +73,13 @@ const CompanyCard = ({ text, href }: { text: string; href: string }) => {
                 height: '6rem',
                 px: theme.spacing(1),
                 mx: 'auto',
-                transition: 'box-shadow 0.4s',
-                '&:hover': { boxShadow: 5 },
+                transition: 'box-shadow 0.4s, transform 0.2s', // Add a transition for transform
+                transform: hovered ? 'scale(1.1)' : 'scale(1)', // Scale the card on hover
+                boxShadow: hovered ? 5 : 0, // Add shadow on hover
                 cursor: 'pointer',
             }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
             <Link href={href}>
                 <Typography variant='h4' sx={{ fontFamily: oswald.style.fontFamily }}>
@@ -73,8 +87,8 @@ const CompanyCard = ({ text, href }: { text: string; href: string }) => {
                 </Typography>
             </Link>
         </Box>
-    )
-}
+    );
+};
 
 export default function BusinessPresenceSection() {
     const theme = useTheme()
@@ -82,7 +96,7 @@ export default function BusinessPresenceSection() {
     return (
         <Box sx={{ my: theme.spacing(6), mx: theme.spacing(4) }}>
             <Container maxWidth='md' disableGutters>
-                <Typography variant='h2'>Our Companies</Typography>
+                <Typography variant='h2'>Our agents</Typography>
                 <Box sx={{ mt: theme.spacing(3) }}>
                     <Grid container spacing={2}>
                         <Grid item sm={4} xs={6}>

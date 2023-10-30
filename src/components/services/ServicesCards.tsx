@@ -15,7 +15,7 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
     return (
         <Box sx={{ px: theme.spacing(12), pt: theme.spacing(companiesPage ? 1 : 4) }}>
             <Container disableGutters maxWidth='xl'>
-                <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
+                <Typography variant='h3' sx={{ textAlign: companiesPage?'start':'center', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
                     {companiesPage ? 'Our Services' : ' Other Services'}
                 </Typography>
 
@@ -62,7 +62,7 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
                                                 left: 0,
                                             }}
                                         />
-                                        <Typography variant='h6' sx={{ p: theme.spacing(1), position: 'absolute' }}>
+                                        <Typography variant='h6' sx={{ p: theme.spacing(1),position: 'absolute',top:0,left:0,right:0, textAlign:"center" }}>
                                             {item.title}
                                         </Typography>
                                     </Box>

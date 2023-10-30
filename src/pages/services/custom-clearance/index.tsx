@@ -6,7 +6,7 @@ import titleImg from '../../../assets/services/custom_clearence_img.webp'
 
 export default function Home() {
     return (
-        <ServicesLayout image={backgroundImg} title='Services'>
+        <ServicesLayout image={backgroundImg} title='Services' subtitle='Custom Clearance'>
             <Box sx={{ mb: '2.5rem' }}>
                 <Typography variant='h3' sx={{ textAlign: 'start', color: '#031225', marginBottom: '2.5rem' }}>
                     Custom Clearance

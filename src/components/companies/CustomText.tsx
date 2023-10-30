@@ -5,7 +5,7 @@ export default function CustomText({ text }: { text: String }) {
         <Typography
             paragraph
             variant='subtitle2'
-            sx={{ color: '#031225', fontWeight: '400', mb: '1rem', textAlign: 'start' }}
+            sx={{ color: '#031225', fontWeight: 400,  textAlign: 'start' }}
         >
             {text}
         </Typography>
