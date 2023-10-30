@@ -27,6 +27,7 @@
         "typescript": "5.2.2"
     },
     "devDependencies": {
-        "@types/swiper": "^6.0.0"
+        "@types/swiper": "^6.0.0",
+        "xml-loader": "^1.2.1"
     }
 }

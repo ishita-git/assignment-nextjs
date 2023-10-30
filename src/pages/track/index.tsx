@@ -72,146 +72,146 @@ export default function Home() {
     }
 
     return (
-        <Layout image={titleImg} title='Track Shipment'>
-            <Container
-                maxWidth='md'
+        <Layout image={titleImg} title='Track Shipment' withTabs>
+            <Box
                 sx={{
+                    mx: "20rem",
+                    pt:"0.5rem",
+                    px:"1.25rem",
                     bgcolor: '#FFFFFF',
-                    borderRadius: '1.25rem',
+                    borderRadius: '1rem',
                     position: 'relative',
-                    bottom: '8rem',
+                    bottom: "10rem",
+                    display: "flex",
+                    alignItems: "center"
                 }}
             >
-                <Grid container spacing={1} alignItems='end'>
-                    <Grid item xs={9}>
-                        <PrimaryTextField
-                            label='Search'
-                            placeholder='Enter Reference No. / Bill No. / container No.'
-                            startIcon
-                        />
-                    </Grid>
-                    <Grid item xs={3} sx={{ mb: '1.2rem' }}>
-                        <PrimaryButton text='Search' />
-                    </Grid>
-                </Grid>
-            </Container>
+                < Box sx={{ width: "100%", mr: "1.25rem", mb: "0.5rem" }}>
+                    <PrimaryTextField
+                        label='Search'
+                        placeholder='Enter Reference No. / Bill No. / container No.'
+                        startIcon
+                    />
+                </Box>
+                <Box sx={{}}>
 
-            <Box sx={{ px: theme.spacing(2), py: '4rem' }}>
-                <Container maxWidth='xl'>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
-                        Container Number: {containerNumber}
-                    </Typography>
-                    <Box sx={{ bgcolor: '#FFFFFF', borderRadius: '1.25rem', p: '1.25rem', my: '2rem' }}>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                            <Box sx={{ mr: '1rem', display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-                                <LocationOnIcon />
-                                <CustomText title='Port of Loading' subtitle='Mundra' />
-                                <Divider component='div' sx={{ margin: 'auto' }}>
-                                    <Image src={shipIcon} alt='' style={{ height: 'auto', width: '75%' }} />
-                                </Divider>
-                                <SportsScoreIcon />
-                                <CustomText title='Port Of Discharge' subtitle='Jebel Ali' />
-                            </Box>
-                            <Divider orientation='vertical' flexItem />
-                            <Grid container spacing={2} sx={{ ml: '1rem' }}>
-                                <Grid item xs={6} sm={4}>
-                                    <CustomText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
-                                </Grid>
-                                <Grid item xs={6} sm={4}>
-                                    <CustomText title='Cargo Type' subtitle='Consolidated Cargo' />
-                                </Grid>
-                                <Grid item xs={6} sm={4}>
-                                    <CustomText title='Current Location' subtitle='Singapore' />
-                                </Grid>
-                                <Grid item xs={6} sm={4}>
-                                    <CustomText title='Container Type' subtitle='40 GP Standard' />
-                                </Grid>
-                            </Grid>
-                        </Box>
+                    <PrimaryButton text='Search' />
+                </Box>
 
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <Typography sx={{ marginLeft: 'auto', mr: '0.5rem' }}>Status Detail</Typography>
-                            <ExpandMore
-                                expand={expanded}
-                                onClick={handleExpandClick}
-                                aria-expanded={expanded}
-                                aria-label='show more'
-                            >
-                                <Image src={downArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
-                            </ExpandMore>
-                        </Box>
-                        <Collapse in={expanded} timeout='auto' unmountOnExit>
-                            <Divider sx={{ my: '2rem' }} />
-                            <Paper sx={{ width: '100%', overflow: 'hidden', borderRadius: '1rem' }}>
-                                <TableContainer sx={{}}>
-                                    <Table stickyHeader aria-label='sticky table'>
-                                        <TableHead>
-                                            <TableRow>
-                                                {columns.map((column) => (
-                                                    <TableCell key={column.id} align='center' style={{}}>
-                                                        {column.label}
-                                                    </TableCell>
-                                                ))}
-                                            </TableRow>
-                                        </TableHead>
-                                        <TableBody>
-                                            {rows
-                                                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                                                .map((row, index) => {
-                                                    var rowColor = row.isDoc ? '#FFFFFF' : '#003A9B'
-                                                    var textColor = row.isDoc ? '#003A9B' : '#FFFFFF'
-                                                    return (
-                                                        <TableRow
-                                                            style={{
-                                                                backgroundColor: `${rowColor}`,
-                                                                borderRadius: '1rem',
-                                                            }}
-                                                            key={index}
-                                                        >
-                                                            <TableCell align='left'>
-                                                                <Image
-                                                                    src={row.icon}
-                                                                    alt=''
-                                                                    style={{ height: '2rem', width: '2rem' }}
-                                                                />
-                                                            </TableCell>
-                                                            <TableCell align='center' style={{ color: `${textColor}` }}>
-                                                                {row.location}
-                                                            </TableCell>
-                                                            <TableCell align='center' style={{ color: `${textColor}` }}>
-                                                                {row.date}
-                                                            </TableCell>
-                                                            <TableCell align='center' style={{ color: `${textColor}` }}>
-                                                                {row.status}
-                                                            </TableCell>
-                                                        </TableRow>
-                                                    )
-                                                })}
-                                        </TableBody>
-                                    </Table>
-                                </TableContainer>
-                                <TablePagination
-                                    rowsPerPageOptions={[10, 25, 100]}
-                                    component='div'
-                                    count={rows.length}
-                                    rowsPerPage={rowsPerPage}
-                                    page={page}
-                                    onPageChange={handleChangePage}
-                                    onRowsPerPageChange={handleChangeRowsPerPage}
-                                />
-                            </Paper>
-                        </Collapse>
-                    </Box>
-                </Container>
+
             </Box>
-        </Layout>
+            <Box sx={{ mx: theme.spacing(2) }}>
+
+                <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F', fontWeight: 600 }}>
+                    Container Number: {containerNumber}
+                </Typography>
+                <Box sx={{ bgcolor: '#FFFFFF', borderRadius: '1.25rem', p: '1.25rem',my: '2rem' }}>
+                    <Box sx={{ display: 'flex', }}>
+                        <Box sx={{ display: 'flex', width: "70%", px: "1rem", justifyContent: "space-evenly" }}>
+                            <LocationOnIcon />
+                            <CustomText title='Port of Loading' subtitle='Mundra' />
+                            <Divider component='div' sx={{ margin: 'auto' }}>
+                                <Image src={shipIcon} alt='' style={{ height: 'auto', width: '75%' }} />
+                            </Divider>
+                            <SportsScoreIcon />
+                            <CustomText title='Port Of Discharge' subtitle='Jebel Ali' />
+                        </Box>
+                        <Divider orientation='vertical' flexItem />
+
+                        <Box sx={{ display: 'flex', width: "100%", px: "1rem", wrap: "flex-wrap", justifyContent: "space-evenly" }}>
+
+                            <CustomText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
+
+                            <CustomText title='Cargo Type' subtitle='Consolidated Cargo' />
+
+                            <CustomText title='Current Location' subtitle='Singapore' />
+
+                            <CustomText title='Container Type' subtitle='40 GP Standard' />
+
+                        </Box>
+                    </Box>
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        <Typography sx={{ marginLeft: 'auto', mr: '0.5rem' }}>Status Detail</Typography>
+                        <ExpandMore
+                            expand={expanded}
+                            onClick={handleExpandClick}
+                            aria-expanded={expanded}
+                            aria-label='show more'
+                        >
+                            <Image src={downArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
+                        </ExpandMore>
+                    </Box>
+                    <Collapse in={expanded} timeout='auto' unmountOnExit>
+                        <Divider sx={{ my: '2rem' }} />
+                        <Paper sx={{ width: '100%', overflow: 'hidden', borderRadius: '1rem' }}>
+                            <TableContainer sx={{}}>
+                                <Table stickyHeader aria-label='sticky table'>
+                                    <TableHead>
+                                        <TableRow >
+                                            {columns.map((column) => (
+                                                <TableCell key={column.id} align='center' style={{}}>
+                                                    {column.label}
+                                                </TableCell>
+                                            ))}
+                                        </TableRow>
+                                    </TableHead>
+                                    <TableBody>
+                                        {rows
+                                            .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                                            .map((row, index) => {
+                                                var rowColor = row.isDoc ? '#FFFFFF' : '#003A9B'
+                                                var textColor = row.isDoc ? '#003A9B' : '#FFFFFF'
+                                                return (
+                                                    <TableRow
+                                                        style={{
+                                                            backgroundColor: `${rowColor}`,
+                                                            borderRadius: '1rem',
+                                                        }}
+                                                        key={index}
+                                                    >
+                                                        <TableCell align='left'>
+                                                            <Image
+                                                                src={row.icon}
+                                                                alt=''
+                                                                style={{ height: '2rem', width: '2rem' }}
+                                                            />
+                                                        </TableCell>
+                                                        <TableCell align='center' style={{ color: `${textColor}` }}>
+                                                            {row.location}
+                                                        </TableCell>
+                                                        <TableCell align='center' style={{ color: `${textColor}` }}>
+                                                            {row.date}
+                                                        </TableCell>
+                                                        <TableCell align='center' style={{ color: `${textColor}` }}>
+                                                            {row.status}
+                                                        </TableCell>
+                                                    </TableRow>
+                                                )
+                                            })}
+                                    </TableBody>
+                                </Table>
+                            </TableContainer>
+                            <TablePagination
+                                rowsPerPageOptions={[10, 25, 100]}
+                                component='div'
+                                count={rows.length}
+                                rowsPerPage={rowsPerPage}
+                                page={page}
+                                onPageChange={handleChangePage}
+                                onRowsPerPageChange={handleChangeRowsPerPage}
+                            />
+                        </Paper>
+                    </Collapse>
+                </Box>
+            </Box>
+        </Layout >
     )
 }
 
 function CustomText({ title, subtitle }: { title: String; subtitle: String }) {
     return (
-        <Box sx={{ mx: '0.5rem' }}>
-            <Typography variant='h6' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
+        <Box sx={{ mx: '1rem' }}>
+            <Typography variant='subtitle2' sx={{ textAlign: 'start', fontSize: "0.75rem", mb: '0.5rem', color: '#1B1B1F', fontWeight: 200 }}>
                 {title}
             </Typography>
             <Typography variant='body1' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>

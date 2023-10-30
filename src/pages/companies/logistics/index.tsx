@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import Image from 'next/image'
 import { Box, Container, Grid, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
@@ -10,6 +10,16 @@ import { ContainerType, ChooseUsData } from '../../../data/companiesData'
 import CustomText from '@/components/companies/CustomText'
 export default function Home() {
     const theme = useTheme()
+    const [hoveredImage, setHoveredImage] = useState(null);
+
+    const handleMouseEnter = (index: any) => {
+        setHoveredImage(index);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredImage(null);
+    };
+
 
     return (
         <CompaniesLayout image={logisticsBg} title='Muskan Logistics'>
@@ -39,6 +49,8 @@ export default function Home() {
                         {ContainerType.map((item, index) => (
                             <Box
                                 key={index}
+                                onMouseEnter={() => handleMouseEnter(index)}
+                                onMouseLeave={handleMouseLeave}
                                 sx={{
                                     bgcolor: '#FFFFFF',
                                     margin: '2rem 1rem',
@@ -65,7 +77,13 @@ export default function Home() {
                                 <Image
                                     src={item.image}
                                     alt=''
-                                    style={{ height: '10rem', width: 'auto', marginTop: theme.spacing(1) }}
+                                    style={{
+                                        height: '10rem',
+                                        width: 'auto',
+                                        marginTop: theme.spacing(1),
+                                        transition: 'transform 0.4s',
+                                        transform: hoveredImage === index ? 'scale(1.1)' : 'scale(1)',
+                                    }}
                                 />
                             </Box>
                         ))}

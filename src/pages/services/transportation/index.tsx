@@ -7,7 +7,7 @@ import { TransportationData } from '../../../data/servicesData'
 import Benefits from '../../../components/services/Benefits'
 export default function Home() {
     return (
-        <ServicesLayout image={backgroundImg} title='Services'>
+        <ServicesLayout image={backgroundImg} title='Services' subtitle='Transportation'>
             <Box sx={{ mb: '2.5rem' }}>
                 <Typography variant='h3' sx={{ textAlign: 'start', color: '#031225', marginBottom: '2.5rem' }}>
                     Transportation

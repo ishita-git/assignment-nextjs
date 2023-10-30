@@ -81,23 +81,23 @@ export default function Home() {
             </Box>
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '2rem', color: '#1B1B1F' }}>
+                    <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '1rem', color: '#1B1B1F' }}>
                         Our Services
                     </Typography>
-                    <Typography variant='h5' sx={{ textAlign: 'start', my: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start',mt: '2rem', mb:"0.5rem",color: '#1B1B1F' }}>
                         Core business of Muskaan Line:
                     </Typography>
                     <CustomText
                         text={`Our container shipping services play a pivotal role in transporting a wide array of products essential to people's daily lives, ranging from general consumer goods to crucial parts and raw materials. These services span the globe, with a strong presence in four key hubs: Japan, Asia, Europe, and North America, representing a central facet of "Muskaan" Line's core operations.`}
                     />
                     <CustomText text='We have forged robust international alliances with esteemed shipping companies hailing from Japan, Germany, and Taiwan. These collaborations enable us to operate major East-West routes, connecting Asia with North America, Asia with Europe, and Europe with North America. Furthermore, we extend our services to encompass intra-Asian routes that encompass the Middle East and the Indian subcontinent, as well as the South-North route that links South America, Australia, and Africa with various regions in Asia.' />
-                    <Typography variant='h5' sx={{ textAlign: 'start', my: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb:"0.5rem", color: '#1B1B1F' }}>
                         Elevating Customer Satisfaction through Exceptional Service Quality:
                     </Typography>
                     <CustomText
                         text={`Muskaan Line's container shipping services stand out for their consistent, frequent schedules and top-notch service quality. Our unwavering commitment to addressing diverse customer requirements has earned us a strong global reputation, with several leading companies recognizing us as Carrier of the Year. Additionally, "Muskaan" Line distinguishes itself through its integrated infrastructure, which includes container terminals in India, the U.S., and the Gulf, as well as specialized double-stack trains in India, enhancing our offerings in marine and land-based transportation.`}
                     />
-                    <Typography variant='h5' sx={{ textAlign: 'start', my: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb:"0.5rem",  color: '#1B1B1F' }}>
                         Navigational Safety and Environmental Responsibility:
                     </Typography>
                     <CustomText text="The paramount duty of a transportation carrier is to securely convey customers' cargo to its destination, maintaining its original condition. Beyond handling standard container freight, we offer technical assistance for the safe transport of hazardous materials and oversized items that cannot fit into containers, ensuring a seamless and secure marine and onshore journey. Furthermore, we are committed to environmental conservation, implementing practices like fuel-efficient cruising to mitigate ship-generated greenhouse gas emissions and employing shore power at our Long Beach, California terminal to eliminate ship fuel consumption." />
