@@ -14,7 +14,8 @@ import tankContainer from '../../../assets/companies/muskan_conatiners/tank-cont
 import { ProcessData, OfficeLoactionIndia, OfficeLoactionInternational } from '../../../data/companiesData'
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import CustomText from '@/components/companies/CustomText'
-
+import { stylesWithCssVar } from "@/components/motion";
+import { useScroll, useTransform, motion } from "framer-motion";
 function ProcessSection() {
     const [hoveredImage, setHoveredImage] = useState(null);
 
@@ -82,9 +83,51 @@ function ProcessSection() {
         </Box>
     )
 }
-
+const animationOrder = {
+    initial: 0,
+    fadeInEnd: 0.15,
+    showParagraphOne: 0.25,
+    hideParagraphOne: 0.3,
+    showParagraphTwoStart: 0.35,
+    showParagraphTwoEnd: 0.4,
+    hideParagraphTwo: 0.5,
+    showLoadingScreenStart: 0.53,
+    showLoadingScreenEnd: 0.58,
+    createBranchStart: 0.65,
+    createBranchEnd: 0.7,
+    createBranchFadeInStart: 0.78,
+    createBranchFadeInEnd: 0.85,
+    endTextFadeInStart: 0.95,
+    endTextFadeInEnd: 1,
+};
 export default function Home() {
     const theme = useTheme()
+    const targetRef = useRef<HTMLDivElement | null>(null);
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+        offset: ["start end", "end end"],
+    });
+    const paragraph1Opacity = useTransform(
+        scrollYProgress,
+        [
+            animationOrder.fadeInEnd + 0.02,
+            animationOrder.showParagraphOne,
+            animationOrder.hideParagraphOne,
+        ],
+        [0, 1, 0]
+    );
+    const paragraph1TranslateY = useTransform(
+        scrollYProgress,
+        [
+            animationOrder.fadeInEnd + 0.02,
+            animationOrder.showParagraphOne,
+            animationOrder.hideParagraphOne,
+        ],
+        ["4rem", "0rem", "-4rem"]
+    );
+    const position = useTransform(scrollYProgress, (pos) =>
+        pos >= 1 ? "relative" : "fixed"
+    );
     return (
         <CompaniesLayout image={containerLinesBg} title={'Muskan Container Lines\nPvt Ltd.'}>
             <Box sx={{ px: theme.spacing(12) }}>
@@ -92,63 +135,71 @@ export default function Home() {
                     <Typography variant='h2' sx={{ textAlign: 'start', mb: "1rem" }}>
                         About Us
                     </Typography>
+                    {/* <motion.div
+                        style={stylesWithCssVar({
+                            opacity: paragraph1Opacity,
+                            "--y": paragraph1TranslateY,
+                            position,
+                        })}> */}
                     <CustomText text='Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations.' />
-                        <Grid container spacing={2} sx={{ mb: '1rem', mt: '0.5rem' }}>
-                            <Grid item xs={12} sm={6}>
-                                <Typography
-                                    textAlign={'start'}
-                                    variant='h5'
-                                    sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
-                                >
-                                    Offices in India
-                                </Typography>
-                                <Typography
-                                    component={'ul'}
-                                    textAlign={'start'}
-                                    variant='subtitle2'
-                                    sx={{ color: '#031225', ml: '1.25rem' }}
-                                >
-                                    {OfficeLoactionIndia.map((item, index) => (
-                                        <Typography
-                                            component={'li'}
-                                            textAlign={'start'}
-                                            variant='subtitle2'
-                                            sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
-                                            key={index}
-                                        >
-                                            {item}
-                                        </Typography>
-                                    ))}
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12} sm={6}>
-                                <Typography
-                                    textAlign={'start'}
-                                    variant='h5'
-                                    sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
-                                >
-                                    International offices
-                                </Typography>
-                                <Typography
-                                    component={'ul'}
-                                    textAlign={'start'}
-                                    variant='subtitle2'
-                                    sx={{ color: '#031225', ml: '1.25rem' }}
-                                >
-                                    {OfficeLoactionInternational.map((item, index) => (
-                                        <Typography
-                                            component={'li'}
-                                            textAlign={'start'}
-                                            variant='subtitle2'
-                                            sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
-                                            key={index}
-                                        >
-                                            {item}
-                                        </Typography>
-                                    ))}
-                                </Typography>
-                            </Grid>
+
+                    {/* </motion.div> */}
+                    <Grid container spacing={2} sx={{ mb: '1rem', mt: '0.5rem' }}>
+                        <Grid item xs={12} sm={6}>
+                            <Typography
+                                textAlign={'start'}
+                                variant='h5'
+                                sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
+                            >
+                                Offices in India
+                            </Typography>
+                            <Typography
+                                component={'ul'}
+                                textAlign={'start'}
+                                variant='subtitle2'
+                                sx={{ color: '#031225', ml: '1.25rem' }}
+                            >
+                                {OfficeLoactionIndia.map((item, index) => (
+                                    <Typography
+                                        component={'li'}
+                                        textAlign={'start'}
+                                        variant='subtitle2'
+                                        sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
+                                        key={index}
+                                    >
+                                        {item}
+                                    </Typography>
+                                ))}
+                            </Typography>
                         </Grid>
+                        <Grid item xs={12} sm={6}>
+                            <Typography
+                                textAlign={'start'}
+                                variant='h5'
+                                sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
+                            >
+                                International offices
+                            </Typography>
+                            <Typography
+                                component={'ul'}
+                                textAlign={'start'}
+                                variant='subtitle2'
+                                sx={{ color: '#031225', ml: '1.25rem' }}
+                            >
+                                {OfficeLoactionInternational.map((item, index) => (
+                                    <Typography
+                                        component={'li'}
+                                        textAlign={'start'}
+                                        variant='subtitle2'
+                                        sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
+                                        key={index}
+                                    >
+                                        {item}
+                                    </Typography>
+                                ))}
+                            </Typography>
+                        </Grid>
+                    </Grid>
                     <Typography
                         paragraph
                         variant='subtitle2'
@@ -205,7 +256,7 @@ export default function Home() {
                     <Image src={branchesMap} alt='branches' style={{ width: '40rem', height: 'auto' }} />
                 </Container>
             </Box>
-        </CompaniesLayout>
+        </CompaniesLayout >
     )
 }
 

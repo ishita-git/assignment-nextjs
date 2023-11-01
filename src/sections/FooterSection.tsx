@@ -3,6 +3,7 @@ import { Box, Button, Container, Divider, Grid, InputAdornment, Link, TextField,
 import { useTheme } from '@mui/material/styles'
 import logo from '../assets/logo.png'
 import facebook from '../assets/icons/facebook.png'
+import linkedIn from '../assets/icons/linkedin.png'
 import twitter from '../assets/icons/twitter.png'
 import instagram from '../assets/icons/instagram.png'
 import address from '../assets/icons/address.png'
@@ -46,6 +47,17 @@ export default function FooterSection() {
                                     <Image
                                         src={facebook}
                                         alt='facebook'
+                                        style={{
+                                            height: '1.5rem',
+                                            width: 'auto',
+                                            margin: '1rem',
+                                        }}
+                                    />
+                                </Link>
+                                <Link href='https://www.linkedin.com/company/muskan-group-of-companies' target="_blank" rel="noopener noreferrer">
+                                    <Image
+                                        src={linkedIn}
+                                        alt='linkedin'
                                         style={{
                                             height: '1.5rem',
                                             width: 'auto',

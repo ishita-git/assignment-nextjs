@@ -55,9 +55,9 @@ export default function Navbar() {
                     <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1.5rem', color: '#FFFFFF' }}>
                         Muskan Group
                     </Typography>
-                    <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1rem', color: '#FFFFFF' }}>
+                    {/* <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1rem', color: '#FFFFFF' }}>
                         of Companies
-                    </Typography>
+                    </Typography> */}
                 </Box>
             </Link>
 

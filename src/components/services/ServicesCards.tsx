@@ -50,22 +50,19 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
                         {servicesData.map((item) => (
                             <SwiperSlide key={item.id}>
                                 <Link href={item.link}>
-                                    <Box sx={{ position: 'relative', height: '15rem' }}>
+                                    <Box sx={{  height: '15rem',display:'flex', flexDirection:'column',justifyContent:"center",alignItems:"center" }}>
                                         <Image
                                             src={item.horizontalCard}
                                             alt='card background'
                                             style={{
                                                 width: '100%',
                                                 height: 'auto',
-                                                position: 'absolute',
-                                                top: 0,
-                                                left: 0,
                                             }}
                                         />
                                         <Typography
                                             variant='h6'
                                             textAlign='center'
-                                            sx={{ p: theme.spacing(1), position: 'absolute', width: '86%' }}
+                                            sx={{ p: theme.spacing(1), position: 'absolute',fontWeight:600 }}
                                         >
                                             {item.title}
                                         </Typography>
