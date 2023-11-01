@@ -45,20 +45,20 @@ export default function Home() {
                         Overall Exports & Imports of Services (2014-18)
                     </Typography>
                     <StatisticsCard
-                        exporterRank='14'
-                        importerRank='15'
-                        tradeBalanceRank='13'
+                        exporterRank={14}
+                        importerRank={15}
+                        tradeBalanceRank={13}
                         totalTradeAmtList={totalTradeAmtList}
                     />
                 </Container>
             </Box>
-            <Box sx={{ display: 'flex', position: 'relavtive', flexDirection:"column" ,justifyContent:"center"}}>
+            <Box sx={{ display: 'flex', position: 'relavtive', flexDirection: 'column', justifyContent: 'center' }}>
                 <Image src={visionBg} alt='' style={{ height: 'auto', width: '100%' }} />
-                <Box sx={{ position: 'absolute', padding: '0rem 12rem', width: '60%', textAlign: 'start' ,}}>
+                <Box sx={{ position: 'absolute', padding: '0rem 12rem', width: '60%', textAlign: 'start' }}>
                     <Image src={visionIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
                     <Typography
                         variant='h3'
-                        sx={{ textAlign: 'start', mt: '2rem',mb:"1rem", color: '#FFFFFF', fontWeight: 600 }}
+                        sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
                     >
                         Our Vision
                     </Typography>
