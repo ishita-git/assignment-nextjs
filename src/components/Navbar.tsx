@@ -218,7 +218,9 @@ export default function Navbar() {
                 {/* equipments */}
 
                 <Box sx={{ ml: theme.spacing(1.5) }}>
+                    <Link href="http://app.muskan-group.com/">
                     <PrimaryButton text='Login' light width='6rem' height='2rem' />
+                    </Link>
                 </Box>
             </Box>
         </Container>

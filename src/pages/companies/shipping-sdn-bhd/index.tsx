@@ -45,9 +45,9 @@ export default function Home() {
                         Country Growth V/S World Growth V/S GDP Growth
                     </Typography>
                     <StatisticsCard
-                        exporterRank='23'
-                        importerRank='25'
-                        tradeBalanceRank='10'
+                        exporterRank={23}
+                        importerRank={25}
+                        tradeBalanceRank={10}
                         totalTradeAmtList={totalTradeAmtList}
                     />
                 </Container>

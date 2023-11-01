@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { Box, Container, Grid, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
@@ -11,13 +11,21 @@ import insulatedContainer from '../../../assets/companies/muskan_conatiners/insu
 import openTopContainer from '../../../assets/companies/muskan_conatiners/open_to_containers.png'
 import bulkContainer from '../../../assets/companies/muskan_conatiners/bult-containers.png'
 import tankContainer from '../../../assets/companies/muskan_conatiners/tank-containers.png'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Keyboard, Navigation, Pagination } from 'swiper/modules'
 import { ProcessData, OfficeLoactionIndia, OfficeLoactionInternational } from '../../../data/companiesData'
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import CustomText from '@/components/companies/CustomText'
 
 function ProcessSection() {
+    const [hoveredImage, setHoveredImage] = useState(null);
+
+    const handleMouseEnter = (index: any) => {
+        setHoveredImage(index);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredImage(null);
+    };
+
     return (
         <Box sx={{ position: 'relative' }}>
             <Image src={processBanner} alt='process banner' style={{ width: '100%', height: 'auto' }} />
@@ -25,7 +33,10 @@ function ProcessSection() {
                 <Typography variant='h3' sx={{ my: '3rem' }}>
                     Process
                 </Typography>
-                <Box sx={{ display: 'flex' }}>
+                <Box sx={{
+                    display: 'flex',
+                }}
+                >
                     {ProcessData.map((item, index) => (
                         <Box
                             key={index}
@@ -35,7 +46,11 @@ function ProcessSection() {
                                 borderRadius: '1rem',
                                 padding: '1.25rem',
                                 mx: '1rem',
+                                transition: 'transform 0.4s',
+                                transform: hoveredImage === index ? 'scale(1.1)' : 'scale(1)',
                             }}
+                            onMouseEnter={() => handleMouseEnter(index)}
+                            onMouseLeave={handleMouseLeave}
                         >
                             <Image
                                 src={item.image}
@@ -62,6 +77,7 @@ function ProcessSection() {
                         </Box>
                     ))}
                 </Box>
+
             </Box>
         </Box>
     )
@@ -69,7 +85,6 @@ function ProcessSection() {
 
 export default function Home() {
     const theme = useTheme()
-
     return (
         <CompaniesLayout image={containerLinesBg} title={'Muskan Container Lines\nPvt Ltd.'}>
             <Box sx={{ px: theme.spacing(12) }}>
@@ -78,62 +93,62 @@ export default function Home() {
                         About Us
                     </Typography>
                     <CustomText text='Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations.' />
-                    <Grid container spacing={2} sx={{ mb: '1rem', mt: '0.5rem' }}>
-                        <Grid item xs={12} sm={6}>
-                            <Typography
-                                textAlign={'start'}
-                                variant='h5'
-                                sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
-                            >
-                                Offices in India
-                            </Typography>
-                            <Typography
-                                component={'ul'}
-                                textAlign={'start'}
-                                variant='subtitle2'
-                                sx={{ color: '#031225', ml: '1.25rem' }}
-                            >
-                                {OfficeLoactionIndia.map((item, index) => (
-                                    <Typography
-                                        component={'li'}
-                                        textAlign={'start'}
-                                        variant='subtitle2'
-                                        sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
-                                        key={index}
-                                    >
-                                        {item}
-                                    </Typography>
-                                ))}
-                            </Typography>
+                        <Grid container spacing={2} sx={{ mb: '1rem', mt: '0.5rem' }}>
+                            <Grid item xs={12} sm={6}>
+                                <Typography
+                                    textAlign={'start'}
+                                    variant='h5'
+                                    sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
+                                >
+                                    Offices in India
+                                </Typography>
+                                <Typography
+                                    component={'ul'}
+                                    textAlign={'start'}
+                                    variant='subtitle2'
+                                    sx={{ color: '#031225', ml: '1.25rem' }}
+                                >
+                                    {OfficeLoactionIndia.map((item, index) => (
+                                        <Typography
+                                            component={'li'}
+                                            textAlign={'start'}
+                                            variant='subtitle2'
+                                            sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
+                                            key={index}
+                                        >
+                                            {item}
+                                        </Typography>
+                                    ))}
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={12} sm={6}>
+                                <Typography
+                                    textAlign={'start'}
+                                    variant='h5'
+                                    sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
+                                >
+                                    International offices
+                                </Typography>
+                                <Typography
+                                    component={'ul'}
+                                    textAlign={'start'}
+                                    variant='subtitle2'
+                                    sx={{ color: '#031225', ml: '1.25rem' }}
+                                >
+                                    {OfficeLoactionInternational.map((item, index) => (
+                                        <Typography
+                                            component={'li'}
+                                            textAlign={'start'}
+                                            variant='subtitle2'
+                                            sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
+                                            key={index}
+                                        >
+                                            {item}
+                                        </Typography>
+                                    ))}
+                                </Typography>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={12} sm={6}>
-                            <Typography
-                                textAlign={'start'}
-                                variant='h5'
-                                sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
-                            >
-                                International offices
-                            </Typography>
-                            <Typography
-                                component={'ul'}
-                                textAlign={'start'}
-                                variant='subtitle2'
-                                sx={{ color: '#031225', ml: '1.25rem' }}
-                            >
-                                {OfficeLoactionInternational.map((item, index) => (
-                                    <Typography
-                                        component={'li'}
-                                        textAlign={'start'}
-                                        variant='subtitle2'
-                                        sx={{ color: '#031225', mb: '1rem', fontWeight: 300 }}
-                                        key={index}
-                                    >
-                                        {item}
-                                    </Typography>
-                                ))}
-                            </Typography>
-                        </Grid>
-                    </Grid>
                     <Typography
                         paragraph
                         variant='subtitle2'
@@ -173,14 +188,13 @@ export default function Home() {
                         Statistics
                     </Typography>
                     <StatisticsCard
-                        exporterRank='16'
-                        importerRank='10'
-                        tradeBalanceRank='136'
+                        exporterRank={16}
+                        importerRank={10}
+                        tradeBalanceRank={136}
                         totalTradeAmtList={totalTradeAmtList}
                     />
                 </Container>
             </Box>
-
             <ProcessSection />
             <ServicesCards companiesPage />
             <Box sx={{ px: theme.spacing(12) }}>
@@ -196,11 +210,30 @@ export default function Home() {
 }
 
 function ContainerType({ image, title, desc }: { image: string | StaticImageData; title: String; desc: String }) {
+    const [hovered, setHovered] = React.useState(false);
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
+
     return (
-        <Box sx={{ mb: '2rem' }}>
+        <Box sx={{ mb: '2rem' }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <Grid container alignItems='center'>
                 <Grid item xs={4}>
-                    <Image src={image} alt='' style={{ height: 'auto', width: '75%' }} />
+                    <Image src={image} alt='' style={{
+                        height: 'auto',
+                        width: '75%',
+                        transition: 'transform 0.4s',
+                        transform: hovered ? 'scale(1.1)' : 'scale(1)',
+                    }}
+                    />
                 </Grid>
                 <Grid item xs={8}>
                     <Typography

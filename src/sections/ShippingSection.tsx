@@ -8,10 +8,11 @@ import equipement from '../assets/icons/equipement.png'
 import ship from '../assets/icons/ship.png'
 import person from '../assets/icons/person.png'
 import stern from '../assets/images/stern.webp'
+import NumberCounter from '@/components/NumberCounter'
 
 declare type ShippingProps = {
     icon: string | StaticImageData
-    text?: string
+    text?: number
     subtitle?: string
 }
 
@@ -39,8 +40,8 @@ const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
             >
                 <Image src={icon} alt='card icon' style={{ height: '3.25rem', width: 'auto' }} />
             </Box>
-            <Typography variant='h3' sx={{ mt: theme.spacing(1.25) }}>
-                {text}
+            <Typography variant='h3' sx={{ mt: theme.spacing(1.25),whiteSpace: 'nowrap' }}>
+            <NumberCounter targetNumber={text||0} duration={1000} />+
             </Typography>
             <Typography variant='h6' textAlign='center' sx={{ maxWidth: '14rem' }}>
                 {subtitle}
@@ -82,11 +83,11 @@ export default function ShippingSection() {
                             mt: theme.spacing(2),
                         }}
                     >
-                        <ShippingDataCard icon={anchor} text='47+' subtitle='Serving Ports' />
-                        <ShippingDataCard icon={container} text='3000+' subtitle='Equipment' />
-                        <ShippingDataCard icon={equipement} text='150+' subtitle='Special Equipment' />
-                        <ShippingDataCard icon={ship} text='35+' subtitle='Serving Countries' />
-                        <ShippingDataCard icon={person} text='500+' subtitle='Happy Customers' />
+                        <ShippingDataCard icon={anchor} text={47} subtitle='Serving Ports' />
+                        <ShippingDataCard icon={container} text={3000} subtitle='Equipment' />
+                        <ShippingDataCard icon={equipement} text={150} subtitle='Special Equipment' />
+                        <ShippingDataCard icon={ship} text={35} subtitle='Serving Countries' />
+                        <ShippingDataCard icon={person} text={500} subtitle='Happy Customers' />
                     </Box>
                 </Box>
             </Container>

@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from '@mui/material'
+import NumberCounter from '../NumberCounter'
 
-
-export default function StatisticsCard({ exporterRank, importerRank, tradeBalanceRank, totalTradeAmtList }: { exporterRank: String, importerRank: String, tradeBalanceRank: String, totalTradeAmtList: string[] }) {
+export default function StatisticsCard({ exporterRank, importerRank, tradeBalanceRank, totalTradeAmtList }: { exporterRank: number, importerRank: number, tradeBalanceRank: number, totalTradeAmtList: string[] }) {
     return <Box>
         <Box sx={{ bgcolor: "#FFFFFF", p: "1.25rem", borderRadius: "1.25rem" }}>
             <Grid container spacing={2} sx={{ mb: "2rem" }}>
@@ -11,7 +11,8 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                             Exporter Rank
                         </Typography >
                         <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "center" }}>
-                            <Typography variant="h1" sx={{ color: '#031225', fontWeight: 400 }}>{exporterRank}</Typography>
+                            <Typography variant="h1" sx={{ color: '#031225', fontWeight: 400 }}>
+                                <NumberCounter targetNumber={exporterRank} duration={1000} /></Typography>
                             <Typography variant="body1" sx={{ color: '#031225' }}>/138</Typography>
                         </Box>
                     </Box>
@@ -22,7 +23,9 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                             Importer Rank
                         </Typography >
                         <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "center" }}>
-                            <Typography variant="h1" sx={{ color: '#031225', fontWeight: 400 }}>{importerRank}</Typography>
+                            <Typography variant="h1" sx={{ color: '#031225', fontWeight: 400 }}>
+                                <NumberCounter targetNumber={importerRank} duration={1000} />
+                            </Typography>
                             <Typography variant="body1" sx={{ color: '#031225' }}>/138</Typography>
                         </Box>
                     </Box>
@@ -33,7 +36,9 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                             Trade Balance Rank
                         </Typography >
                         <Box sx={{ display: "flex", alignItems: "baseline", justifyContent: "center" }}>
-                            <Typography variant="h1" sx={{ color: '#031225', fontWeight: 400 }}>{tradeBalanceRank}</Typography>
+                            <Typography variant="h1" sx={{ color: '#031225', fontWeight: 400 }}>
+                                <NumberCounter targetNumber={tradeBalanceRank} duration={1000} />
+                            </Typography>
                             <Typography variant="body1" sx={{ color: '#031225' }}>/138</Typography>
                         </Box>
                     </Box>
