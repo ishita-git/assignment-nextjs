@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Grid, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
@@ -14,20 +14,12 @@ export default function ClienteleCard({ cardImage, cardIcon, title, subtitle }: 
     const theme = useTheme()
 
     return (
-        <Box sx={{ cursor: 'pointer' }}>
-            <Image src={cardImage} alt='card image' style={{ width: '100%', height: 'auto' }} />
-
-            <Box
-                sx={{
-                    position: 'absolute',
-                    bottom: 0,
-                    right: 0,
-                    width: '60%',
-                    height: '80%',
-                    px: theme.spacing(6),
-                }}
-            >
-                <Box sx={{ display: 'flex', my: theme.spacing(1.5) }}>
+        <Grid container alignItems='center'>
+            <Grid item xs={5}>
+                <Image src={cardImage} alt='card image' style={{ width: '100%', height: 'auto' }} />
+            </Grid>
+            <Grid item xs={7} sx={{ pl: theme.spacing(4) }}>
+                <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
                     <Image src={cardIcon} alt='card image' style={{ width: 'auto', height: '4rem' }} />
                 </Box>
                 <Typography
@@ -35,7 +27,8 @@ export default function ClienteleCard({ cardImage, cardIcon, title, subtitle }: 
                     sx={{
                         fontWeight: 600,
                         fontSize: '2.5rem',
-                        mb: theme.spacing(0.5),
+                        mt: theme.spacing(2),
+                        mb: theme.spacing(1),
                     }}
                 >
                     {title}
@@ -43,7 +36,7 @@ export default function ClienteleCard({ cardImage, cardIcon, title, subtitle }: 
                 <Typography variant='subtitle2' textAlign='justify'>
                     {subtitle}
                 </Typography>
-            </Box>
-        </Box>
+            </Grid>
+        </Grid>
     )
 }

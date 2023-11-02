@@ -6,6 +6,7 @@ import { clientsData } from '../data/clientsData'
 import ClienteleCard from '../components/ClienteleCard'
 import EastRoundedIcon from '@mui/icons-material/EastRounded'
 import WestRoundedIcon from '@mui/icons-material/WestRounded'
+import clientBg from '../assets/clients/client-bg.webp'
 
 export default function ClienteleSection() {
     const theme = useTheme()
@@ -43,8 +44,18 @@ export default function ClienteleSection() {
             <Container
                 maxWidth='md'
                 disableGutters
-                sx={{ py: theme.spacing(2), position: 'relative', height: '34rem' }}
+                sx={{ my: theme.spacing(2), position: 'relative', height: '34rem' }}
             >
+                <Image
+                    src={clientBg}
+                    alt='client-bg'
+                    style={{
+                        width: '100%',
+                        height: 'auto',
+                        marginLeft: theme.spacing(8),
+                        marginTop: theme.spacing(2.8),
+                    }}
+                />
                 {clientsData.slice(startIconIndex, startIconIndex + visibleIcons).map((item, index) => (
                     <Box
                         key={index}
@@ -55,6 +66,7 @@ export default function ClienteleSection() {
                             display: 'flex',
                             justifyContent: 'center',
                             position: 'absolute',
+                            top: 0,
                         }}
                     >
                         <ClienteleCard

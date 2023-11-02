@@ -27,40 +27,40 @@ import icon26 from '../assets/clients/SV.webp'
 import icon27 from '../assets/clients/TGL.webp'
 import icon28 from '../assets/clients/tiger.webp'
 import icon29 from '../assets/clients/UFM.webp'
-import card1 from '../assets/clients/AIS-card.webp'
-import card2 from '../assets/clients/all-cargo-card.webp'
-import card3 from '../assets/clients/charter-link-card.webp'
-import card4 from '../assets/clients/console-shipping-card.webp'
-import card5 from '../assets/clients/CP-card.webp'
-import card6 from '../assets/clients/CWT-card.webp'
-import card7 from '../assets/clients/dabur-card.webp'
-import card8 from '../assets/clients/ECU-card.webp'
-import card9 from '../assets/clients/EMU-card.webp'
-import card10 from '../assets/clients/FL-card.webp'
-import card11 from '../assets/clients/FSL-card.webp'
-import card12 from '../assets/clients/GP-card.webp'
-import card13 from '../assets/clients/greenlam-card.webp'
-import card14 from '../assets/clients/Greenwich-card.webp'
-import card15 from '../assets/clients/Heineken-card.webp'
-import card16 from '../assets/clients/Hitachi-card.webp'
-import card17 from '../assets/clients/honda-card.webp'
-import card18 from '../assets/clients/JMB-card.webp'
-import card19 from '../assets/clients/jindal-card.webp'
-import card20 from '../assets/clients/maruti-suzuki-card.webp'
-import card21 from '../assets/clients/Panasonic-card.webp'
-import card22 from '../assets/clients/PS-card.webp'
-import card23 from '../assets/clients/ST-card.webp'
-import card24 from '../assets/clients/SRF-card.webp'
-import card25 from '../assets/clients/subros-card.webp'
-import card26 from '../assets/clients/SV-card.webp'
-import card27 from '../assets/clients/TGL-card.webp'
-import card28 from '../assets/clients/tiger-card.webp'
-import card29 from '../assets/clients/UFM-card.webp'
+import img1 from '../assets/clients/AIS-img.webp'
+import img2 from '../assets/clients/all-cargo-img.webp'
+import img3 from '../assets/clients/charter-link-img.webp'
+import img4 from '../assets/clients/console-shipping-img.webp'
+import img5 from '../assets/clients/CP-img.webp'
+import img6 from '../assets/clients/CWT-img.webp'
+import img7 from '../assets/clients/dabur-img.webp'
+import img8 from '../assets/clients/ECU-img.webp'
+import img9 from '../assets/clients/EMU-img.webp'
+import img10 from '../assets/clients/FL-img.webp'
+import img11 from '../assets/clients/FSL-img.webp'
+import img12 from '../assets/clients/GP-img.webp'
+import img13 from '../assets/clients/greenlam-img.webp'
+import img14 from '../assets/clients/Greenwich-img.webp'
+import img15 from '../assets/clients/Heineken-img.webp'
+import img16 from '../assets/clients/Hitachi-img.webp'
+import img17 from '../assets/clients/honda-img.webp'
+import img18 from '../assets/clients/JMB-img.webp'
+import img19 from '../assets/clients/jindal-img.webp'
+import img20 from '../assets/clients/maruti-suzuki-img.webp'
+import img21 from '../assets/clients/Panasonic-img.webp'
+import img22 from '../assets/clients/PS-img.webp'
+import img23 from '../assets/clients/ST-img.webp'
+import img24 from '../assets/clients/SRF-img.webp'
+import img25 from '../assets/clients/subros-img.webp'
+import img26 from '../assets/clients/SV-img.webp'
+import img27 from '../assets/clients/TGL-img.webp'
+import img28 from '../assets/clients/tiger-img.webp'
+import img29 from '../assets/clients/UFM-img.webp'
 
 export const clientsData = [
     {
         id: 1,
-        cardImage: card1,
+        cardImage: img1,
         cardIcon: icon1,
         title: 'Asahi India Glass Ltd (AIS)',
         subtitle:
@@ -68,7 +68,7 @@ export const clientsData = [
     },
     {
         id: 2,
-        cardImage: card2,
+        cardImage: img2,
         cardIcon: icon2,
         title: 'All Cargo',
         subtitle:
@@ -76,7 +76,7 @@ export const clientsData = [
     },
     {
         id: 3,
-        cardImage: card3,
+        cardImage: img3,
         cardIcon: icon3,
         title: 'Charter Link Logistics',
         subtitle:
@@ -84,7 +84,7 @@ export const clientsData = [
     },
     {
         id: 4,
-        cardImage: card4,
+        cardImage: img4,
         cardIcon: icon4,
         title: 'Console Shipping',
         subtitle:
@@ -92,7 +92,7 @@ export const clientsData = [
     },
     {
         id: 5,
-        cardImage: card5,
+        cardImage: img5,
         cardIcon: icon5,
         title: 'CP World Lines Pvt. Ltd.',
         subtitle:
@@ -100,7 +100,7 @@ export const clientsData = [
     },
     {
         id: 6,
-        cardImage: card6,
+        cardImage: img6,
         cardIcon: icon6,
         title: 'CWT Globelink',
         subtitle:
@@ -108,7 +108,7 @@ export const clientsData = [
     },
     {
         id: 7,
-        cardImage: card7,
+        cardImage: img7,
         cardIcon: icon7,
         title: 'Dabur',
         subtitle:
@@ -116,7 +116,7 @@ export const clientsData = [
     },
     {
         id: 8,
-        cardImage: card8,
+        cardImage: img8,
         cardIcon: icon8,
         title: 'ECU Worldwide',
         subtitle:
@@ -124,7 +124,7 @@ export const clientsData = [
     },
     {
         id: 9,
-        cardImage: card9,
+        cardImage: img9,
         cardIcon: icon9,
         title: 'EMU Lines',
         subtitle:
@@ -132,7 +132,7 @@ export const clientsData = [
     },
     {
         id: 10,
-        cardImage: card10,
+        cardImage: img10,
         cardIcon: icon10,
         title: 'Freight Links',
         subtitle:
@@ -140,7 +140,7 @@ export const clientsData = [
     },
     {
         id: 11,
-        cardImage: card11,
+        cardImage: img11,
         cardIcon: icon11,
         title: 'Freight Systems',
         subtitle:
@@ -148,7 +148,7 @@ export const clientsData = [
     },
     {
         id: 12,
-        cardImage: card12,
+        cardImage: img12,
         cardIcon: icon12,
         title: 'Green Panel',
         subtitle:
@@ -156,7 +156,7 @@ export const clientsData = [
     },
     {
         id: 13,
-        cardImage: card13,
+        cardImage: img13,
         cardIcon: icon13,
         title: 'Greenlam Ply',
         subtitle:
@@ -164,7 +164,7 @@ export const clientsData = [
     },
     {
         id: 14,
-        cardImage: card14,
+        cardImage: img14,
         cardIcon: icon14,
         title: 'Greenwich Meridian',
         subtitle:
@@ -172,7 +172,7 @@ export const clientsData = [
     },
     {
         id: 15,
-        cardImage: card15,
+        cardImage: img15,
         cardIcon: icon15,
         title: 'Heineken Beer',
         subtitle:
@@ -180,7 +180,7 @@ export const clientsData = [
     },
     {
         id: 16,
-        cardImage: card16,
+        cardImage: img16,
         cardIcon: icon16,
         title: 'Hitachi',
         subtitle:
@@ -188,7 +188,7 @@ export const clientsData = [
     },
     {
         id: 17,
-        cardImage: card17,
+        cardImage: img17,
         cardIcon: icon17,
         title: 'Honda',
         subtitle:
@@ -196,7 +196,7 @@ export const clientsData = [
     },
     {
         id: 18,
-        cardImage: card18,
+        cardImage: img18,
         cardIcon: icon18,
         title: 'J M Baxi',
         subtitle:
@@ -204,7 +204,7 @@ export const clientsData = [
     },
     {
         id: 19,
-        cardImage: card19,
+        cardImage: img19,
         cardIcon: icon19,
         title: 'Jindal',
         subtitle:
@@ -212,7 +212,7 @@ export const clientsData = [
     },
     {
         id: 20,
-        cardImage: card20,
+        cardImage: img20,
         cardIcon: icon20,
         title: 'Maruti Suzuki',
         subtitle:
@@ -220,7 +220,7 @@ export const clientsData = [
     },
     {
         id: 21,
-        cardImage: card21,
+        cardImage: img21,
         cardIcon: icon21,
         title: 'Panasonic',
         subtitle:
@@ -228,7 +228,7 @@ export const clientsData = [
     },
     {
         id: 22,
-        cardImage: card22,
+        cardImage: img22,
         cardIcon: icon22,
         title: 'Penanshin Shipping',
         subtitle:
@@ -236,7 +236,7 @@ export const clientsData = [
     },
     {
         id: 23,
-        cardImage: card23,
+        cardImage: img23,
         cardIcon: icon23,
         title: 'Shipco Transport',
         subtitle:
@@ -244,7 +244,7 @@ export const clientsData = [
     },
     {
         id: 24,
-        cardImage: card24,
+        cardImage: img24,
         cardIcon: icon24,
         title: 'SRF',
         subtitle:
@@ -252,7 +252,7 @@ export const clientsData = [
     },
     {
         id: 25,
-        cardImage: card25,
+        cardImage: img25,
         cardIcon: icon25,
         title: 'Subros',
         subtitle:
@@ -260,7 +260,7 @@ export const clientsData = [
     },
     {
         id: 26,
-        cardImage: card26,
+        cardImage: img26,
         cardIcon: icon26,
         title: 'Sula Vineyards',
         subtitle:
@@ -268,7 +268,7 @@ export const clientsData = [
     },
     {
         id: 27,
-        cardImage: card27,
+        cardImage: img27,
         cardIcon: icon27,
         title: 'Team Global Logistic',
         subtitle:
@@ -276,7 +276,7 @@ export const clientsData = [
     },
     {
         id: 28,
-        cardImage: card28,
+        cardImage: img28,
         cardIcon: icon28,
         title: 'Tiger Beer',
         subtitle:
@@ -284,7 +284,7 @@ export const clientsData = [
     },
     {
         id: 29,
-        cardImage: card29,
+        cardImage: img29,
         cardIcon: icon29,
         title: 'United Freights',
         subtitle:
