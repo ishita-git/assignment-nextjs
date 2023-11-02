@@ -27,13 +27,16 @@ function ElevationScroll(props: Props) {
 
 declare type CompaniesLayoutProps = {
     image: string | StaticImageData
+    mapImage?: string | StaticImageData
     title?: string
     subtitle?: string
+    address?: String
+    telephoneNumber?: String
     children: React.ReactNode
     props?: Props
 }
 
-export default function CompaniesLayout({ image, title, subtitle, children, props }: CompaniesLayoutProps) {
+export default function CompaniesLayout({ image, title, subtitle, children, props, mapImage, address, telephoneNumber }: CompaniesLayoutProps) {
     const theme = useTheme()
 
     return (
@@ -55,7 +58,7 @@ export default function CompaniesLayout({ image, title, subtitle, children, prop
                         <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
                             Contact Us
                         </Typography>
-                        <MuskaanGroupHq />
+                        <MuskaanGroupHq address={address} image={mapImage} telephoneNumber={telephoneNumber} />
                     </Container>
                 </Box>
                 <FooterSection />

@@ -14,10 +14,11 @@ import ourCommitmentImg from '../../../assets/companies/muskaan_shipping/our_com
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import ServicesCard from '@/components/companies/ServicesCard'
 import CustomText from '@/components/companies/CustomText'
+import mapImage from '../../../assets/companies/muskaan_shipping/map.png'
 export default function Home() {
     const theme = useTheme()
     return (
-        <CompaniesLayout image={shippingBg} title={'Muskaan Shipping PTE\nLtd.'}>
+        <CompaniesLayout image={shippingBg} title={'Muskaan Shipping PTE\nLtd.'} mapImage={mapImage} address="60 Kaki Bukit Place #02-13Suites 3 Eunos Techpark,Singapore 415979" telephoneNumber="+65 64921136">
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h2' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>

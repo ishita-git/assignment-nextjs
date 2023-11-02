@@ -93,15 +93,7 @@ export default function Home() {
                     <Typography variant='h2' sx={{ textAlign: 'start', mb: "1rem" }}>
                         About Us
                     </Typography>
-                    {/* <motion.div
-                        style={stylesWithCssVar({
-                            opacity: paragraph1Opacity,
-                            "--y": paragraph1TranslateY,
-                            position,
-                        })}> */}
                     <CustomText text='Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations.' />
-
-                    {/* </motion.div> */}
                     <Grid container spacing={2} sx={{ mb: '1rem', mt: '0.5rem' }}>
                         <Grid item xs={12} sm={6}>
                             <Typography

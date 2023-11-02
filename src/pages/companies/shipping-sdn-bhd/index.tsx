@@ -15,12 +15,13 @@ import ourCommitmentImg from '../../../assets/companies/muskaan_shipping/our_com
 import CustomText from '@/components/companies/CustomText'
 import ServicesCard from '@/components/companies/ServicesCard'
 import StatisticsCard from '@/components/companies/StatisticsCard'
+import mapImage from '../../../assets/companies/muskaan_shipping_sdn/map.png'
 
 export default function Home() {
     const theme = useTheme()
 
     return (
-        <CompaniesLayout image={shippingBg} title={'Muskaan Shipping SDN\nBHD'}>
+        <CompaniesLayout image={shippingBg} title={'Muskaan Shipping SDN\nBHD'} mapImage={mapImage} address="Centro Business CentreSuite #16-02, level 16,No.8 Jalan Batu Tiga Lama,Klang 41200 Selangor, Malaysia" telephoneNumber="+603-33418460/61">
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h2' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>

@@ -5,6 +5,7 @@ import { useTheme } from '@mui/material/styles'
 import CompaniesLayout from '../CompaniesLayout'
 import shippingBg from '../../../assets/companies/shipping-llc-bg.webp'
 import titleImg from '../../../assets/companies/muskaan_shipping_llc/shipping.png'
+import mapImage from '../../../assets/companies/muskaan_shipping_llc/map.png'
 import airFreightImg from '../../../assets/companies/muskaan_shipping_llc/air_freight.png'
 import oceanFreightImg from '../../../assets/companies/muskaan_shipping_llc/ocean_freight.png'
 import landTranportImg from '../../../assets/companies/muskaan_shipping_llc/land_transportation.png'
@@ -32,7 +33,7 @@ export default function Home() {
     const theme = useTheme()
 
     return (
-        <CompaniesLayout image={shippingBg} title='Muskaan Shipping LLC'>
+        <CompaniesLayout image={shippingBg} title={'Muskaan Shipping LLC'} mapImage={mapImage} address="Mohammed Noor Talib Bldg.,701, 7th floor, Khaleed bin waleed Road Opp.Royal Ascot Hotel Burdubai,PO Box : - 128160 Dubai" telephoneNumber="+97143511215">
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h2' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
