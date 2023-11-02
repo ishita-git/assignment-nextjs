@@ -7,6 +7,8 @@ import ClienteleCard from '../components/ClienteleCard'
 import EastRoundedIcon from '@mui/icons-material/EastRounded'
 import WestRoundedIcon from '@mui/icons-material/WestRounded'
 import clientBg from '../assets/clients/client-bg.webp'
+import prevIcon from '../assets/icons/previous.webp'
+import nextIcon from '../assets/icons/next.webp'
 
 export default function ClienteleSection() {
     const theme = useTheme()
@@ -82,7 +84,7 @@ export default function ClienteleSection() {
                     </Box>
                 ))}
             </Container>
-            <Container maxWidth='lg' disableGutters sx={{ mb: theme.spacing(4), position: 'relative' }}>
+            <Container maxWidth='md' disableGutters sx={{ mb: theme.spacing(4), position: 'relative' }}>
                 <Box
                     sx={{
                         my: theme.spacing(2),
@@ -92,11 +94,13 @@ export default function ClienteleSection() {
                         alignItems: 'center',
                     }}
                 >
-                    <IconButton onClick={handlePrev}>
-                        <WestRoundedIcon fontSize='large' sx={{ color: theme.palette.primary.main }} />
+                    <IconButton onClick={handlePrev} sx={{ marginRight: '6rem' }}>
+                        <Image src={prevIcon} alt='prevIcon' style={{ height: '2rem', width: 'auto' }} />
+                        {/* <WestRoundedIcon fontSize='large' sx={{ color: theme.palette.primary.main }} /> */}
                     </IconButton>
+
                     {clientsData.slice(startIconIndex, startIconIndex + visibleIcons).map((item, index) => (
-                        <Box sx={{ height: '4rem', display: 'flex' }} key={index} onClick={() => changeCard(index)}>
+                        <Box sx={{ height: '3rem', display: 'flex' }} key={index} onClick={() => changeCard(index)}>
                             <Image
                                 src={item.cardIcon}
                                 alt='client icon'
@@ -104,13 +108,14 @@ export default function ClienteleSection() {
                                     width: 'auto',
                                     height: '100%',
                                     cursor: 'pointer',
-                                    opacity: index == cardIndex ? 1 : 0.5,
                                 }}
                             />
                         </Box>
                     ))}
-                    <IconButton onClick={handleNext}>
-                        <EastRoundedIcon fontSize='large' sx={{ color: theme.palette.primary.main }} />
+
+                    <IconButton onClick={handleNext} sx={{ marginLeft: '6rem' }}>
+                        <Image src={nextIcon} alt='nextIcon' style={{ height: '2rem', width: 'auto' }} />
+                        {/* <EastRoundedIcon fontSize='large' sx={{ color: theme.palette.primary.main }} /> */}
                     </IconButton>
                 </Box>
             </Container>

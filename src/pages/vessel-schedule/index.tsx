@@ -17,7 +17,7 @@ import { useTheme } from '@mui/material/styles'
 import 'dayjs/locale/en-gb'
 import titleImg from '../../assets/images/cargo-ship-1.webp'
 import shipIcon from '../../assets/icons/icons_cargo_ship.png'
-import arraowRight from '../../assets/icons/arrow-right-big.png'
+import arrowRight from '../../assets/icons/arrow-right-big.png'
 import switchIcon from '../../assets/icons/switch.png'
 // import leftArrowIcon from '../../assets/icons/ep_back.png'
 // import rightArrowIcon from '../../assets/icons/ep_back_right.png'
@@ -163,7 +163,7 @@ export default function Home() {
                                 {item?.port_of_loading}
                             </Typography>
                             <Image
-                                src={arraowRight}
+                                src={arrowRight}
                                 alt=''
                                 style={{ height: 'auto', width: '5rem', margin: '0rem 4rem' }}
                             />
