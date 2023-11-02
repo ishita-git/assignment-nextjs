@@ -10,9 +10,9 @@ import clientBg from '../assets/clients/client-bg.webp'
 
 export default function ClienteleSection() {
     const theme = useTheme()
-    const visibleIcons = 4
+    const visibleIcons = 5
     const [startIconIndex, setStartIconIndex] = useState(0)
-    const [cardIndex, setCardIndex] = useState(startIconIndex)
+    const [cardIndex, setCardIndex] = useState(startIconIndex + Math.floor(visibleIcons / 2))
 
     const handlePrev = () => {
         if (startIconIndex > 0) {
@@ -20,6 +20,7 @@ export default function ClienteleSection() {
         } else {
             setStartIconIndex(clientsData.length - visibleIcons)
         }
+        setCardIndex(cardIndex - 1)
     }
 
     const handleNext = () => {
@@ -28,13 +29,16 @@ export default function ClienteleSection() {
         } else {
             setStartIconIndex(0)
         }
+        setCardIndex(cardIndex + 1)
     }
 
     const changeCard = (index: number) => {
         setCardIndex(startIconIndex + index)
+        if (index !== Math.floor(visibleIcons / 2)) {
+            const difference = index - Math.floor(visibleIcons / 2)
+            setStartIconIndex(startIconIndex + difference)
+        }
     }
-
-    console.log(cardIndex)
 
     return (
         <Box sx={{ p: theme.spacing(4) }}>
@@ -52,8 +56,8 @@ export default function ClienteleSection() {
                     style={{
                         width: '100%',
                         height: 'auto',
-                        marginLeft: theme.spacing(8),
-                        marginTop: theme.spacing(2.8),
+                        paddingLeft: theme.spacing(8),
+                        paddingTop: theme.spacing(2.5),
                     }}
                 />
                 {clientsData.slice(startIconIndex, startIconIndex + visibleIcons).map((item, index) => (
@@ -78,10 +82,10 @@ export default function ClienteleSection() {
                     </Box>
                 ))}
             </Container>
-            <Container maxWidth='lg' disableGutters sx={{ py: theme.spacing(2), position: 'relative' }}>
+            <Container maxWidth='lg' disableGutters sx={{ mb: theme.spacing(4), position: 'relative' }}>
                 <Box
                     sx={{
-                        my: theme.spacing(4),
+                        my: theme.spacing(2),
                         width: '100%',
                         display: 'flex',
                         justifyContent: 'space-between',
@@ -96,7 +100,12 @@ export default function ClienteleSection() {
                             <Image
                                 src={item.cardIcon}
                                 alt='client icon'
-                                style={{ width: 'auto', height: '100%', cursor: 'pointer' }}
+                                style={{
+                                    width: 'auto',
+                                    height: '100%',
+                                    cursor: 'pointer',
+                                    opacity: index == cardIndex ? 1 : 0.5,
+                                }}
                             />
                         </Box>
                     ))}
