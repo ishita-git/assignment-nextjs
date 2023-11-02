@@ -14,8 +14,7 @@ import tankContainer from '../../../assets/companies/muskan_conatiners/tank-cont
 import { ProcessData, OfficeLoactionIndia, OfficeLoactionInternational } from '../../../data/companiesData'
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import CustomText from '@/components/companies/CustomText'
-import { stylesWithCssVar } from "@/components/motion";
-import { useScroll, useTransform, motion } from "framer-motion";
+
 function ProcessSection() {
     const [hoveredImage, setHoveredImage] = useState(null);
 
@@ -83,51 +82,10 @@ function ProcessSection() {
         </Box>
     )
 }
-const animationOrder = {
-    initial: 0,
-    fadeInEnd: 0.15,
-    showParagraphOne: 0.25,
-    hideParagraphOne: 0.3,
-    showParagraphTwoStart: 0.35,
-    showParagraphTwoEnd: 0.4,
-    hideParagraphTwo: 0.5,
-    showLoadingScreenStart: 0.53,
-    showLoadingScreenEnd: 0.58,
-    createBranchStart: 0.65,
-    createBranchEnd: 0.7,
-    createBranchFadeInStart: 0.78,
-    createBranchFadeInEnd: 0.85,
-    endTextFadeInStart: 0.95,
-    endTextFadeInEnd: 1,
-};
+
 export default function Home() {
     const theme = useTheme()
-    const targetRef = useRef<HTMLDivElement | null>(null);
-    const { scrollYProgress } = useScroll({
-        target: targetRef,
-        offset: ["start end", "end end"],
-    });
-    const paragraph1Opacity = useTransform(
-        scrollYProgress,
-        [
-            animationOrder.fadeInEnd + 0.02,
-            animationOrder.showParagraphOne,
-            animationOrder.hideParagraphOne,
-        ],
-        [0, 1, 0]
-    );
-    const paragraph1TranslateY = useTransform(
-        scrollYProgress,
-        [
-            animationOrder.fadeInEnd + 0.02,
-            animationOrder.showParagraphOne,
-            animationOrder.hideParagraphOne,
-        ],
-        ["4rem", "0rem", "-4rem"]
-    );
-    const position = useTransform(scrollYProgress, (pos) =>
-        pos >= 1 ? "relative" : "fixed"
-    );
+    
     return (
         <CompaniesLayout image={containerLinesBg} title={'Muskan Container Lines\nPvt Ltd.'}>
             <Box sx={{ px: theme.spacing(12) }}>
