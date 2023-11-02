@@ -15,7 +15,9 @@ export default function ServicesSection() {
     return (
         <Box sx={{ mt: theme.spacing(18), px: theme.spacing(4) }} id='services'>
             <Container disableGutters maxWidth='xl'>
-                <Typography variant='h2'>Our Services</Typography>
+                <Typography variant='h2' textAlign='center'>
+                    Our Services
+                </Typography>
 
                 <Box sx={{ my: theme.spacing(6) }}>
                     <Swiper

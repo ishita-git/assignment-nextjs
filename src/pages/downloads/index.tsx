@@ -42,22 +42,17 @@ export default function Home() {
             </Box>
             <Box sx={{ mx: theme.spacing(6) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Box sx={{ my: '5rem', display:"flex",flexDirection:"column",alignItems:"center" }}>
-                        <Typography
-                            variant='h2'
-                            sx={{
-                                color: '#003A9B',
-                            
-                            }}
-                        >
+                    <Box sx={{ my: '5rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <Typography variant='h2' sx={{ color: '#003A9B' }}>
                             Useful Downloads
                         </Typography>
-                        <Box sx={{ bgcolor: "#339966", height: "0.25rem", borderRadius: "2rem" ,width:"23rem"}} > </Box>
-                        <Typography
-                            variant='h4'
-                            sx={{ color: '#313131', mt: '1.5rem', whiteSpace: 'pre-line' }}
-                        >
-                            {'Explore a curated collection of resources that empower your decisions\nand enrich your understanding. From expert insights to informative\n guides, your journey of discovery awaits'}
+                        <Box sx={{ bgcolor: '#339966', height: '0.25rem', borderRadius: '2rem', width: '23rem' }}>
+                            {' '}
+                        </Box>
+                        <Typography variant='h4' sx={{ color: '#313131', mt: '1.5rem', whiteSpace: 'pre-line' }}>
+                            {
+                                'Explore a curated collection of resources that empower your decisions\nand enrich your understanding. From expert insights to informative\n guides, your journey of discovery awaits'
+                            }
                         </Typography>
                     </Box>
 
@@ -65,7 +60,7 @@ export default function Home() {
                         {downloadData.map((item) => (
                             <Grid item xs={12} sm={4} key={item.id}>
                                 <Box
-                                    sx={{ bgcolor: '#ffffff', padding: '1rem', borderRadius: '1.1rem', height: '100%' }}
+                                    sx={{ bgcolor: '#FFFFFF', padding: '1rem', borderRadius: '1.1rem', height: '100%' }}
                                 >
                                     <Typography
                                         variant='h6'

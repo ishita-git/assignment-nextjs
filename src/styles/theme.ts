@@ -34,10 +34,10 @@ const theme = createTheme({
             color: '#FFFFFF',
         },
         h2: {
-            fontSize: '3.4rem',
+            fontSize: '3rem',
             fontWeight: '600',
-            lineHeight: '4.5rem',
-            textAlign: 'center',
+            lineHeight: '3.5rem',
+            textAlign: 'start',
             color: '#031225',
         },
         h3: {

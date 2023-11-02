@@ -21,10 +21,16 @@ export default function Home() {
     const theme = useTheme()
 
     return (
-        <CompaniesLayout image={shippingBg} title={'Muskaan Shipping SDN\nBHD'} mapImage={mapImage} address="Centro Business CentreSuite #16-02, level 16,No.8 Jalan Batu Tiga Lama,Klang 41200 Selangor, Malaysia" telephoneNumber="+603-33418460/61">
+        <CompaniesLayout
+            image={shippingBg}
+            title={'Muskaan Shipping SDN\nBHD'}
+            mapImage={mapImage}
+            address='Centro Business CentreSuite #16-02, level 16,No.8 Jalan Batu Tiga Lama,Klang 41200 Selangor, Malaysia'
+            telephoneNumber='+603-33418460/61'
+        >
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h2' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h2' sx={{ mb: '1rem', color: '#1B1B1F' }}>
                         About Us
                     </Typography>
                     <Grid container spacing={2} alignItems='center'>
@@ -36,13 +42,18 @@ export default function Home() {
                             <Image src={titleImg} alt='' style={{ width: '100%', height: 'auto' }} />
                         </Grid>
                     </Grid>
-                    <CustomText text="Today, Muskaan Shipping Sdn. Bhd. boasts a dedicated team of 10 professionals across Peninsular Malaysia. To bolster its core Container and Car Carrier traffic services, the office automation networking system was enhanced to meet the growing demands of valued customers." />
-                    <CustomText text={`Complementing its container services, Muskaan Line Own Container Fleet maintains an inventory of over 1000 units of various container types, easily recognizable as "Muskaan Box" on both roads and vessels. Regional Trade Management Offices in Malaysia provide comprehensive support for 'Muskaan' Line operations, optimizing efficiency through a global network that seamlessly coordinates day-to-day shipping requirements. In line with 'Muskaan' Line's philosophy and established global network, Muskaan Shipping Sdn. Bhd. stands fully prepared to meet the rising expectations of excellence from its valued customers.`} />
-                    <Typography variant='h3' sx={{ textAlign: 'start',mt:"4rem" ,mb: '1rem', color: '#1B1B1F' }}>
+                    <CustomText text='Today, Muskaan Shipping Sdn. Bhd. boasts a dedicated team of 10 professionals across Peninsular Malaysia. To bolster its core Container and Car Carrier traffic services, the office automation networking system was enhanced to meet the growing demands of valued customers.' />
+                    <CustomText
+                        text={`Complementing its container services, Muskaan Line Own Container Fleet maintains an inventory of over 1000 units of various container types, easily recognizable as "Muskaan Box" on both roads and vessels. Regional Trade Management Offices in Malaysia provide comprehensive support for 'Muskaan' Line operations, optimizing efficiency through a global network that seamlessly coordinates day-to-day shipping requirements. In line with 'Muskaan' Line's philosophy and established global network, Muskaan Shipping Sdn. Bhd. stands fully prepared to meet the rising expectations of excellence from its valued customers.`}
+                    />
+                    <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '1rem', color: '#1B1B1F' }}>
                         Statistics
                     </Typography>
-                    <Image src={statistics} alt="" style={{ width: "100%", height: "auto", padding: "2rem 6rem" }} />
-                    <Typography variant='h4' sx={{ textAlign: 'center', mb: '4rem', color: '#1B1B1F', fontWeight: 600 }}>
+                    <Image src={statistics} alt='' style={{ width: '100%', height: 'auto', padding: '2rem 6rem' }} />
+                    <Typography
+                        variant='h4'
+                        sx={{ textAlign: 'center', mb: '4rem', color: '#1B1B1F', fontWeight: 600 }}
+                    >
                         Country Growth V/S World Growth V/S GDP Growth
                     </Typography>
                     <StatisticsCard
@@ -53,28 +64,44 @@ export default function Home() {
                     />
                 </Container>
             </Box>
-            <Box sx={{ display: 'flex', position: 'relavtive', flexDirection:"column" ,justifyContent:"center"}}>
-                <Image src={visionBg} alt="" style={{ height: 'auto', width: "100%", }} />
-                <Grid container spacing={4} sx={{ position: "absolute",  px: "12rem" }}>
+            <Box sx={{ display: 'flex', position: 'relavtive', flexDirection: 'column', justifyContent: 'center' }}>
+                <Image src={visionBg} alt='' style={{ height: 'auto', width: '100%' }} />
+                <Grid container spacing={4} sx={{ position: 'absolute', px: '12rem' }}>
                     <Grid item xs={6} sm={6}>
                         <Box sx={{ textAlign: 'start' }}>
-                            <Image src={visionIcon} alt="" style={{ height: 'auto', width: "12.5%", }} />
-                            <Typography variant='h3' sx={{ textAlign: 'start',  mt: '2rem',mb:"1rem", color: '#FFFFFF', fontWeight:600 }}>
+                            <Image src={visionIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
+                            <Typography
+                                variant='h3'
+                                sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
+                            >
                                 Our Vision
                             </Typography>
-                            <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
-                                We aim to achieve what multinational forwarders cannot: meeting our customers' Critical Success Factors. Our ambition is entirely customer-centric, recognizing that our customers have the freedom to choose their service provider.
+                            <Typography
+                                variant='subtitle2'
+                                sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}
+                            >
+                                We aim to achieve what multinational forwarders cannot: meeting our customers' Critical
+                                Success Factors. Our ambition is entirely customer-centric, recognizing that our
+                                customers have the freedom to choose their service provider.
                             </Typography>
                         </Box>
                     </Grid>
                     <Grid item xs={6} sm={6}>
                         <Box sx={{ textAlign: 'start' }}>
-                            <Image src={targetIcon} alt="" style={{ height: 'auto', width: "12.5%", }} />
-                            <Typography variant='h3' sx={{ textAlign: 'start', mt: '2rem',mb:"1rem", color: '#FFFFFF', fontWeight:600}}>
+                            <Image src={targetIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
+                            <Typography
+                                variant='h3'
+                                sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
+                            >
                                 Our Mission
                             </Typography>
-                            <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
-                                We prioritize clear communication and adaptability to meet changing customer needs, striving to build enduring relationships. Our extensive transportation knowledge ensures top-quality service.
+                            <Typography
+                                variant='subtitle2'
+                                sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}
+                            >
+                                We prioritize clear communication and adaptability to meet changing customer needs,
+                                striving to build enduring relationships. Our extensive transportation knowledge ensures
+                                top-quality service.
                             </Typography>
                         </Box>
                     </Grid>
@@ -85,24 +112,24 @@ export default function Home() {
                     <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '1rem', color: '#1B1B1F' }}>
                         Our Services
                     </Typography>
-                    <Typography variant='h5' sx={{ textAlign: 'start',mt: '2rem', mb:"0.5rem",color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb: '0.5rem', color: '#1B1B1F' }}>
                         Core business of Muskaan Line:
                     </Typography>
                     <CustomText
                         text={`Our container shipping services play a pivotal role in transporting a wide array of products essential to people's daily lives, ranging from general consumer goods to crucial parts and raw materials. These services span the globe, with a strong presence in four key hubs: Japan, Asia, Europe, and North America, representing a central facet of "Muskaan" Line's core operations.`}
                     />
                     <CustomText text='We have forged robust international alliances with esteemed shipping companies hailing from Japan, Germany, and Taiwan. These collaborations enable us to operate major East-West routes, connecting Asia with North America, Asia with Europe, and Europe with North America. Furthermore, we extend our services to encompass intra-Asian routes that encompass the Middle East and the Indian subcontinent, as well as the South-North route that links South America, Australia, and Africa with various regions in Asia.' />
-                    <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb:"0.5rem", color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb: '0.5rem', color: '#1B1B1F' }}>
                         Elevating Customer Satisfaction through Exceptional Service Quality:
                     </Typography>
                     <CustomText
                         text={`Muskaan Line's container shipping services stand out for their consistent, frequent schedules and top-notch service quality. Our unwavering commitment to addressing diverse customer requirements has earned us a strong global reputation, with several leading companies recognizing us as Carrier of the Year. Additionally, "Muskaan" Line distinguishes itself through its integrated infrastructure, which includes container terminals in India, the U.S., and the Gulf, as well as specialized double-stack trains in India, enhancing our offerings in marine and land-based transportation.`}
                     />
-                    <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb:"0.5rem",  color: '#1B1B1F' }}>
+                    <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb: '0.5rem', color: '#1B1B1F' }}>
                         Navigational Safety and Environmental Responsibility:
                     </Typography>
                     <CustomText text="The paramount duty of a transportation carrier is to securely convey customers' cargo to its destination, maintaining its original condition. Beyond handling standard container freight, we offer technical assistance for the safe transport of hazardous materials and oversized items that cannot fit into containers, ensuring a seamless and secure marine and onshore journey. Furthermore, we are committed to environmental conservation, implementing practices like fuel-efficient cruising to mitigate ship-generated greenhouse gas emissions and employing shore power at our Long Beach, California terminal to eliminate ship fuel consumption." />
-                     <Grid container spacing={2} sx={{my:"4rem"}}>
+                    <Grid container spacing={2} sx={{ my: '4rem' }}>
                         <Grid item xs={12} sm={4}>
                             <ServicesCard
                                 image={ourCommitmentImg}

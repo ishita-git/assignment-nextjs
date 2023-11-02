@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { Box, Container, Grid, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
@@ -10,22 +10,21 @@ import { ContainerType, ChooseUsData } from '../../../data/companiesData'
 import CustomText from '@/components/companies/CustomText'
 export default function Home() {
     const theme = useTheme()
-    const [hoveredImage, setHoveredImage] = useState(null);
+    const [hoveredImage, setHoveredImage] = useState(null)
 
     const handleMouseEnter = (index: any) => {
-        setHoveredImage(index);
-    };
+        setHoveredImage(index)
+    }
 
     const handleMouseLeave = () => {
-        setHoveredImage(null);
-    };
-
+        setHoveredImage(null)
+    }
 
     return (
         <CompaniesLayout image={logisticsBg} title='Muskan Logistics'>
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h2' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h2' sx={{ mb: '1rem', color: '#1B1B1F' }}>
                         About Us
                     </Typography>
                     <Grid container spacing={2}>

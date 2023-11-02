@@ -9,7 +9,7 @@ export default function CompaniesTab() {
     return (
         <Box sx={{ mx: theme.spacing(12), mb: theme.spacing(6) }}>
             <Box>
-                <Typography variant='h2' textAlign='start' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
+                <Typography variant='h2' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
                     India
                 </Typography>
                 {companiesTabData.map((item, index) =>
@@ -21,7 +21,7 @@ export default function CompaniesTab() {
                 )}
             </Box>
             <Box>
-                <Typography variant='h2' textAlign='start' sx={{ mt: theme.spacing(8), mb: theme.spacing(2) }}>
+                <Typography variant='h2' sx={{ mt: theme.spacing(8), mb: theme.spacing(2) }}>
                     Overseas
                 </Typography>
                 {companiesTabData.map((item, index) =>

@@ -41,13 +41,22 @@ export default function Home() {
 
     return (
         <Layout image={careerBackground} title='Join Muskaan' subtitle='Unlock a World of Career Possibilities'>
-            <Typography variant='h2' gutterBottom>
+            <Typography variant='h2' textAlign='center' gutterBottom>
                 Interested? We are Hiring
             </Typography>
-                <Typography variant='h6' sx={{ color: '#031225', textAlign: 'center',whiteSpace:"pre-line", fontWeight:400 ,mb: theme.spacing(6)}}>
-                    {"We're looking for amazing people to join our team.\nCheck out our current job openings."}
-                </Typography>
-        
+            <Typography
+                variant='h6'
+                sx={{
+                    color: '#031225',
+                    textAlign: 'center',
+                    whiteSpace: 'pre-line',
+                    fontWeight: 400,
+                    mb: theme.spacing(6),
+                }}
+            >
+                {"We're looking for amazing people to join our team.\nCheck out our current job openings."}
+            </Typography>
+
             <Grid container spacing={2} wrap='wrap'>
                 {careerData.map((job) => (
                     <Grid item key={job.id} xs={6} sm={4}>
@@ -58,11 +67,17 @@ export default function Home() {
                                     alt='career image'
                                     style={{ width: '25%', height: 'auto', marginBottom: '2rem' }}
                                 />
-                                <Typography variant='h6' sx={{ color: '#313131', textAlign: 'center' ,fontWeight:600,mb:"1rem"}} >
+                                <Typography
+                                    variant='h6'
+                                    sx={{ color: '#313131', textAlign: 'center', fontWeight: 600, mb: '1rem' }}
+                                >
                                     {job.title}
                                 </Typography>
                                 <div style={ellipsisStyles}>
-                                    <Typography variant='body1' sx={{ color: 'rgba(49, 49, 49, 0.80)', mb: '1rem',fontWeight:300 }}>
+                                    <Typography
+                                        variant='body1'
+                                        sx={{ color: 'rgba(49, 49, 49, 0.80)', mb: '1rem', fontWeight: 300 }}
+                                    >
                                         <div dangerouslySetInnerHTML={{ __html: job?.description }} />
                                     </Typography>
                                 </div>

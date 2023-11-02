@@ -33,10 +33,16 @@ export default function Home() {
     const theme = useTheme()
 
     return (
-        <CompaniesLayout image={shippingBg} title={'Muskaan Shipping LLC'} mapImage={mapImage} address="Mohammed Noor Talib Bldg.,701, 7th floor, Khaleed bin waleed Road Opp.Royal Ascot Hotel Burdubai,PO Box : - 128160 Dubai" telephoneNumber="+97143511215">
+        <CompaniesLayout
+            image={shippingBg}
+            title={'Muskaan Shipping LLC'}
+            mapImage={mapImage}
+            address='Mohammed Noor Talib Bldg.,701, 7th floor, Khaleed bin waleed Road Opp.Royal Ascot Hotel Burdubai,PO Box : - 128160 Dubai'
+            telephoneNumber='+97143511215'
+        >
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h2' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
+                    <Typography variant='h2' sx={{ mb: '1rem', color: '#1B1B1F' }}>
                         About Us
                     </Typography>
                     <Grid container spacing={2}>

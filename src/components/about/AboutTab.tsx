@@ -9,11 +9,7 @@ export default function AboutTab() {
     const theme = useTheme()
     return (
         <Box sx={{ mx: theme.spacing(12) }}>
-            <Typography
-                variant='h2'
-                textAlign='start'
-                sx={{ mt: theme.spacing(4), mb: theme.spacing(2), fontSize: '3rem' }}
-            >
+            <Typography variant='h2' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
                 About Muskaan
             </Typography>
             <Box sx={{ mb: theme.spacing(6) }}>
@@ -78,11 +74,7 @@ export default function AboutTab() {
                     </Typography>
                 </Grid>
             </Grid>
-            <Typography
-                variant='h2'
-                textAlign='start'
-                sx={{ mt: theme.spacing(6), mb: theme.spacing(2), fontSize: '3rem' }}
-            >
+            <Typography variant='h2' sx={{ mt: theme.spacing(6), mb: theme.spacing(2) }}>
                 Our Customer
             </Typography>
             <Box sx={{ display: 'flex', textAlign: 'center', flexWrap: 'wrap' }}>

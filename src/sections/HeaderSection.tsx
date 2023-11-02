@@ -79,13 +79,12 @@ export default function HeaderSection({ image, title, subtitle, video, customHei
 
                     <Typography
                         variant='h2'
+                        textAlign='center'
                         sx={{
                             mt: theme.spacing(1.25),
                             fontFamily: oswald.style.fontFamily,
                             color: 'common.white',
                             fontWeight: 400,
-                            fontSize: '3rem',
-                            whiteSpace: 'pre-line',
                         }}
                     >
                         {subtitle}

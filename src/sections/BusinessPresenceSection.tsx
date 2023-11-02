@@ -50,16 +50,16 @@ import React from 'react'
 // }
 
 const CompanyCard = ({ text, href }: { text: string; href: string }) => {
-    const theme = useTheme();
-    const [hovered, setHovered] = React.useState(false);
+    const theme = useTheme()
+    const [hovered, setHovered] = React.useState(false)
 
     const handleMouseEnter = () => {
-        setHovered(true);
-    };
+        setHovered(true)
+    }
 
     const handleMouseLeave = () => {
-        setHovered(false);
-    };
+        setHovered(false)
+    }
 
     return (
         <Box
@@ -87,8 +87,8 @@ const CompanyCard = ({ text, href }: { text: string; href: string }) => {
                 </Typography>
             </Link>
         </Box>
-    );
-};
+    )
+}
 
 export default function BusinessPresenceSection() {
     const theme = useTheme()
@@ -96,7 +96,9 @@ export default function BusinessPresenceSection() {
     return (
         <Box sx={{ my: theme.spacing(6), mx: theme.spacing(4) }}>
             <Container maxWidth='md' disableGutters>
-                <Typography variant='h2'>Our agents</Typography>
+                <Typography variant='h2' textAlign='center'>
+                    Our Agents
+                </Typography>
                 <Box sx={{ mt: theme.spacing(3) }}>
                     <Grid container spacing={2}>
                         <Grid item sm={4} xs={6}>
@@ -144,7 +146,7 @@ export default function BusinessPresenceSection() {
                     position: 'relative',
                 }}
             >
-                <Typography variant='h2' sx={{ mb: theme.spacing(4) }}>
+                <Typography variant='h2' textAlign='center' sx={{ mb: theme.spacing(4) }}>
                     Our Reach
                 </Typography>
                 <Image

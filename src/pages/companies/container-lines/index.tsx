@@ -16,15 +16,15 @@ import StatisticsCard from '@/components/companies/StatisticsCard'
 import CustomText from '@/components/companies/CustomText'
 
 function ProcessSection() {
-    const [hoveredImage, setHoveredImage] = useState(null);
+    const [hoveredImage, setHoveredImage] = useState(null)
 
     const handleMouseEnter = (index: any) => {
-        setHoveredImage(index);
-    };
+        setHoveredImage(index)
+    }
 
     const handleMouseLeave = () => {
-        setHoveredImage(null);
-    };
+        setHoveredImage(null)
+    }
 
     return (
         <Box sx={{ position: 'relative' }}>
@@ -33,9 +33,10 @@ function ProcessSection() {
                 <Typography variant='h3' sx={{ my: '3rem' }}>
                     Process
                 </Typography>
-                <Box sx={{
-                    display: 'flex',
-                }}
+                <Box
+                    sx={{
+                        display: 'flex',
+                    }}
                 >
                     {ProcessData.map((item, index) => (
                         <Box
@@ -77,7 +78,6 @@ function ProcessSection() {
                         </Box>
                     ))}
                 </Box>
-
             </Box>
         </Box>
     )
@@ -85,12 +85,12 @@ function ProcessSection() {
 
 export default function Home() {
     const theme = useTheme()
-    
+
     return (
         <CompaniesLayout image={containerLinesBg} title={'Muskan Container Lines\nPvt Ltd.'}>
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h2' sx={{ textAlign: 'start', mb: "1rem" }}>
+                    <Typography variant='h2' sx={{ mb: '1rem' }}>
                         About Us
                     </Typography>
                     <CustomText text='Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations.' />
@@ -206,34 +206,34 @@ export default function Home() {
                     <Image src={branchesMap} alt='branches' style={{ width: '40rem', height: 'auto' }} />
                 </Container>
             </Box>
-        </CompaniesLayout >
+        </CompaniesLayout>
     )
 }
 
 function ContainerType({ image, title, desc }: { image: string | StaticImageData; title: String; desc: String }) {
-    const [hovered, setHovered] = React.useState(false);
+    const [hovered, setHovered] = React.useState(false)
 
     const handleMouseEnter = () => {
-        setHovered(true);
-    };
+        setHovered(true)
+    }
 
     const handleMouseLeave = () => {
-        setHovered(false);
-    };
+        setHovered(false)
+    }
 
     return (
-        <Box sx={{ mb: '2rem' }}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
+        <Box sx={{ mb: '2rem' }} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <Grid container alignItems='center'>
                 <Grid item xs={4}>
-                    <Image src={image} alt='' style={{
-                        height: 'auto',
-                        width: '75%',
-                        transition: 'transform 0.4s',
-                        transform: hovered ? 'scale(1.1)' : 'scale(1)',
-                    }}
+                    <Image
+                        src={image}
+                        alt=''
+                        style={{
+                            height: 'auto',
+                            width: '75%',
+                            transition: 'transform 0.4s',
+                            transform: hovered ? 'scale(1.1)' : 'scale(1)',
+                        }}
                     />
                 </Grid>
                 <Grid item xs={8}>
