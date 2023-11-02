@@ -41,9 +41,25 @@ export default function CarouselCard({ coverImage, title, subtitle, footerImage,
                                 left: 0,
                             }}
                         />
-                        <Typography variant='h6' sx={{ p: theme.spacing(1), position: 'absolute', top: 0, left: 0, right: 0, textAlign: "center" }}>
-                            {title}
-                        </Typography>
+                        <Box
+                            sx={{
+                                height: '22.5rem',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <Typography
+                                variant='h6'
+                                sx={{
+                                    p: theme.spacing(1),
+                                    position: 'absolute',
+                                    textAlign: 'center',
+                                }}
+                            >
+                                {title}
+                            </Typography>
+                        </Box>
                     </Box>
                 </Fade>
 
