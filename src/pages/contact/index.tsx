@@ -12,10 +12,10 @@ import phoneIcon from '../../assets/icons/phone_color.svg'
 
 function AddressCard({ companyLoc, address, phone }: { companyLoc: String, address: String, phone: String }) {
     return <Box>
-        <Typography variant='h5' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F',fontWeight:400 }}>
+        <Typography variant='h4' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F',fontWeight:400 }}>
             {companyLoc}
         </Typography>
-        <Typography variant='subtitle2' sx={{ textAlign: 'start', mb: '0.5rem', fontWeight: 300,fontSize:"0.75rem" }}>
+        <Typography variant='subtitle2' sx={{ textAlign: 'start', mb: '0.5rem', color: '#1B1B1F'  }}>
             {address}
         </Typography>
         <Box sx={{ display: "flex", alignItems:'center' }}>

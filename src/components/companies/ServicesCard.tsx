@@ -1,6 +1,7 @@
 import { Box, Typography } from '@mui/material'
 import Image, { StaticImageData } from 'next/image'
 import React, { useState } from 'react';
+import VisibilityTracker, { AnimationType } from '../VisibilityTracker';
 
 export default function ServicesCard({ title, desc, image }: { title: String, desc: String, image: string | StaticImageData }) {
 
@@ -27,6 +28,7 @@ export default function ServicesCard({ title, desc, image }: { title: String, de
             <Typography variant='h6' sx={{ textAlign: 'start', my: '1rem', color: '#FFFFFF', fontWeight: 600 }}>
                 {title}
             </Typography>
+            <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
             <Typography variant='body1' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300, fontSize: "0.75rem" }}>
                 {desc}
             </Typography>
@@ -50,6 +52,7 @@ export default function ServicesCard({ title, desc, image }: { title: String, de
                     ))}
                 </Typography> :
                 <></>}
+                </VisibilityTracker>
         </Box>
     </Box>
 }

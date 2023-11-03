@@ -19,7 +19,7 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
                     {companiesPage ? 'Our Services' : ' Other Services'}
                 </Typography>
 
-                <Box sx={{ cursor: 'pointer', mt: theme.spacing(2) }}>
+                <Box sx={{ cursor: 'pointer', mt: companiesPage?'0rem': theme.spacing(2) }}>
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={12}

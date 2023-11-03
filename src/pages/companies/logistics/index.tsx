@@ -87,7 +87,7 @@ export default function Home() {
                             </Box>
                         ))}
                     </Box>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mt: theme.spacing(6), color: '#1B1B1F' }}>
+                    <Typography variant='h3' sx={{ textAlign: 'start', mt: theme.spacing(4), color: '#1B1B1F' }}>
                         Why Choose Us?
                     </Typography>
                     <CustomText text='Our containers are versatile and compliant with global standards, ideal for sea, truck, rail transportation, and secure storage.' />
