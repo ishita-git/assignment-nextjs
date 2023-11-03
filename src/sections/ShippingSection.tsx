@@ -9,7 +9,7 @@ import ship from '../assets/icons/ship.png'
 import person from '../assets/icons/person.png'
 import stern from '../assets/images/stern.webp'
 import NumberCounter from '@/components/NumberCounter'
-import VisibilityTracker, { AnimationType } from '@/components/services/VisibilityTracker'
+import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
 
 declare type ShippingProps = {
     icon: string | StaticImageData

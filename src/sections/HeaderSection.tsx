@@ -4,6 +4,7 @@ import type { StaticImageData } from 'next/image'
 import { Box, Container, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
+import VisibilityTracker, { AnimationType, CollapseOrientation } from '@/components/VisibilityTracker'
 
 declare type HeaderProps = {
     image?: string | StaticImageData
@@ -72,25 +73,27 @@ export default function HeaderSection({ image, title, subtitle, video, customHei
                     mx: theme.spacing(4),
                 }}
             >
-                <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h1' sx={{ mt: theme.spacing(8), fontSize: '4.5rem', whiteSpace: 'pre-line' }}>
-                        {title}
-                    </Typography>
+                <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={2000}>
+                    <Container maxWidth='xl' disableGutters>
+                        <Typography variant='h1' sx={{ mt: theme.spacing(8), fontSize: '4.5rem', whiteSpace: 'pre-line',lineHeight:"6.2rem" }}>
+                            {title}
+                        </Typography>
 
-                    <Typography
-                        variant='h2'
-                        sx={{
-                            mt: theme.spacing(1.25),
-                            fontFamily: oswald.style.fontFamily,
-                            color: 'common.white',
-                            fontWeight: 400,
-                            fontSize: '3rem',
-                            whiteSpace: 'pre-line',
-                        }}
-                    >
-                        {subtitle}
-                    </Typography>
-                </Container>
+                        <Typography
+                            variant='h2'
+                            sx={{
+                                mt: theme.spacing(1.25),
+                                fontFamily: oswald.style.fontFamily,
+                                color: 'common.white',
+                                fontWeight: 400,
+                                fontSize: '3rem',
+                                whiteSpace: 'pre-line',
+                            }}
+                        >
+                            {subtitle}
+                        </Typography>
+                    </Container>
+                </VisibilityTracker>
             </Box>
         </Box>
     )

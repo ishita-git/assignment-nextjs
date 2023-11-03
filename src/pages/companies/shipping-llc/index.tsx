@@ -14,10 +14,30 @@ import CustomText from '@/components/companies/CustomText'
 import ServicesCard from '@/components/companies/ServicesCard'
 import { CoreValuesData } from '@/data/companiesData'
 import StatisticsCard from '@/components/companies/StatisticsCard'
+import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
 
 function ValuesBox({ image, title, desc }: { image: string | StaticImageData; title: String; desc: String }) {
+    const [hovered, setHovered] = React.useState(false);
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
     return (
-        <Box sx={{ bgcolor: '#FFFFFF', borderRadius: '1rem', p: '1.25rem', height: '16rem' }}>
+        <Box sx={{
+            bgcolor: '#FFFFFF',
+            borderRadius: '1rem',
+            p: '1.25rem',
+            height: '16rem',
+            transition: 'transform 0.4s', // Add a transition for transform
+            transform: hovered ? 'scale(1.1)' : 'scale(1)',
+        }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <Image src={image} alt='' style={{ height: 'auto', width: '25%' }} />
             <Typography variant='h6' sx={{ textAlign: 'center', my: '1rem', color: '#1B1B1F', fontWeight: 600 }}>
                 {title}
@@ -129,17 +149,21 @@ export default function Home() {
                 <Image src={visionBg} alt='' style={{ height: 'auto', width: '100%' }} />
                 <Box sx={{ textAlign: 'start', position: 'absolute', px: '12rem', width: '60%' }}>
                     <Image src={visionIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
-                    <Typography
-                        variant='h3'
-                        sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
-                    >
-                        Our Vision
-                    </Typography>
-                    <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
-                        We aim to achieve what multinational forwarders cannot: meeting our customers' Critical Success
-                        Factors. Our ambition is entirely customer-centric, recognizing that our customers have the
-                        freedom to choose their service provider.
-                    </Typography>
+                    <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
+                        <Typography
+                            variant='h3'
+                            sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
+                        >
+                            Our Vision
+                        </Typography>
+                    </VisibilityTracker>
+                    <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
+                        <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
+                            We aim to achieve what multinational forwarders cannot: meeting our customers' Critical Success
+                            Factors. Our ambition is entirely customer-centric, recognizing that our customers have the
+                            freedom to choose their service provider.
+                        </Typography>
+                    </VisibilityTracker>
                 </Box>
             </Box>
             <Box sx={{ px: theme.spacing(12) }}>

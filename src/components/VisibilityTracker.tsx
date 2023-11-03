@@ -1,17 +1,20 @@
 import theme from '@/styles/theme';
-import Fade from '@mui/material/Fade';
-import Grow from '@mui/material/Grow';
-import Slide from '@mui/material/Slide';
+import { Fade, Grow, Collapse, Slide, Box } from '@mui/material';
+
 import React, { useRef, useEffect, useState } from 'react';
 
-export enum AnimationType { FADE, GROW, NOANIMATION }
+export enum AnimationType { FADE, GROW, NOANIMATION, SLIDE, COLLAPSE }
+export enum CollapseOrientation { HORIZONTAL, VERTICAL }
 
 interface VisibilityTrackerprops {
     children: React.ReactNode
     animationType: AnimationType | string
+    timeout?: number
+    reLoadOnScroll?: boolean
+    collapseOrientation?: CollapseOrientation
 }
 
-const VisibilityTracker: React.FC<VisibilityTrackerprops> = ({ children, animationType }) => {
+const VisibilityTracker: React.FC<VisibilityTrackerprops> = ({ children, animationType, timeout = 1000, reLoadOnScroll: reLoadOnScroll = false, collapseOrientation = CollapseOrientation.VERTICAL }) => {
     const targetRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -26,8 +29,10 @@ const VisibilityTracker: React.FC<VisibilityTrackerprops> = ({ children, animati
                     // yourFunctionToCall();
                 } else {
                     // Element is not in the viewport
-                    // console.log('Element is not visible');
-                    setIsVisible(false);
+                    if (reLoadOnScroll) {
+                        // console.log('Element is not visible');
+                        setIsVisible(false);
+                    }
                 }
             },
             {
@@ -64,33 +69,40 @@ const VisibilityTracker: React.FC<VisibilityTrackerprops> = ({ children, animati
                 switch (animationType) {
                     case AnimationType.FADE:
                         return (
-                            isVisible ? (
+                            reLoadOnScroll ? null : (isVisible ? (
                                 <Fade
-                                    {...(isVisible ? { timeout: 1000 } : {})}
+                                    {...(isVisible ? { timeout: timeout } : {})}
                                     in={isVisible}
-                                    easing={{ enter: theme.transitions.easing.easeInOut, exit: theme.transitions.easing.easeInOut }}
+                                // easing={{ enter: theme.transitions.easing.easeInOut, exit: theme.transitions.easing.easeInOut }}
                                 >
                                     <div>{children}</div>
                                 </Fade>
-                            ) : <div>{children}</div>
+                            ) : null)
                         );
                     case AnimationType.GROW:
                         return (
-                            isVisible ? (
+                            reLoadOnScroll ? null : (isVisible ? (
                                 <Grow
-                                    {...(isVisible ? { timeout: 1000 } : {})}
+                                    {...(isVisible ? { timeout: timeout } : {})}
                                     in={isVisible}
                                     easing={{ enter: theme.transitions.easing.easeInOut, exit: theme.transitions.easing.easeInOut }}
                                 >
                                     <div>{children}</div>
                                 </Grow>
-                            ) : <div>{children}</div>
+                            ) : null)
                         );
                     case AnimationType.NOANIMATION:
                         return (
                             isVisible ?
                                 <div>{children}</div>
                                 : null);
+                    case AnimationType.COLLAPSE:
+                        return (
+                            <Collapse orientation={collapseOrientation == CollapseOrientation.VERTICAL ? "vertical" : "horizontal"} in={isVisible} timeout={timeout}>
+                                <div>{children}</div>
+                            </Collapse>
+
+                        );
                     default:
                         return <div>{children}</div>;
                 }

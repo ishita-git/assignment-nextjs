@@ -14,6 +14,7 @@ import ourCommitmentImg from '../../../assets/companies/muskaan_shipping/our_com
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import ServicesCard from '@/components/companies/ServicesCard'
 import CustomText from '@/components/companies/CustomText'
+import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
 export default function Home() {
     const theme = useTheme()
     return (
@@ -56,20 +57,24 @@ export default function Home() {
                 <Image src={visionBg} alt='' style={{ height: 'auto', width: '100%' }} />
                 <Box sx={{ position: 'absolute', padding: '0rem 12rem', width: '60%', textAlign: 'start' }}>
                     <Image src={visionIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
-                    <Typography
-                        variant='h3'
-                        sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
-                    >
-                        Our Vision
-                    </Typography>
-                    <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
-                        Our core values are our foundation for future success, guiding us in serving our customers and
-                        exploring new services and routes. We remain committed to shipping, especially intra-Asia
-                        routes, leveraging our deep regional ties. We prioritize staff development, pursue growth in
-                        emerging markets like Africa and South America, and invest in efficient vessels and land-based
-                        infrastructure. We believe our expertise and adaptability will continue to yield tangible
-                        results across diverse environments.
-                    </Typography>
+                    <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
+                        <Typography
+                            variant='h3'
+                            sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
+                        >
+                            Our Vision
+                        </Typography>
+                    </VisibilityTracker>
+                    <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
+                        <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
+                            Our core values are our foundation for future success, guiding us in serving our customers and
+                            exploring new services and routes. We remain committed to shipping, especially intra-Asia
+                            routes, leveraging our deep regional ties. We prioritize staff development, pursue growth in
+                            emerging markets like Africa and South America, and invest in efficient vessels and land-based
+                            infrastructure. We believe our expertise and adaptability will continue to yield tangible
+                            results across diverse environments.
+                        </Typography>
+                    </VisibilityTracker>
                 </Box>
             </Box>
             <Box sx={{ px: theme.spacing(12) }}>

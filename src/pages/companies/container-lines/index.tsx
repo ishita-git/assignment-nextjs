@@ -14,9 +14,8 @@ import tankContainer from '../../../assets/companies/muskan_conatiners/tank-cont
 import { ProcessData, OfficeLoactionIndia, OfficeLoactionInternational } from '../../../data/companiesData'
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import CustomText from '@/components/companies/CustomText'
-import { stylesWithCssVar } from "@/components/motion";
 import { Visibility } from '@mui/icons-material'
-import VisibilityTracker, { AnimationType } from '@/components/services/VisibilityTracker'
+import VisibilityTracker, { AnimationType, CollapseOrientation } from '@/components/VisibilityTracker'
 
 function ProcessSection() {
     const [hoveredImage, setHoveredImage] = useState(null);
@@ -36,11 +35,13 @@ function ProcessSection() {
                 <Typography variant='h3' sx={{ my: '3rem' }}>
                     Process
                 </Typography>
+                {/* <VisibilityTracker animationType={AnimationType.COLLAPSE} collapseOrientation={CollapseOrientation.VERTICAL}  timeout={1500}> */}
                 <Box sx={{
                     display: 'flex',
                 }}
                 >
                     {ProcessData.map((item, index) => (
+                        <VisibilityTracker animationType={AnimationType.COLLAPSE} collapseOrientation={CollapseOrientation.VERTICAL}  timeout={1500}>
                         <Box
                             key={index}
                             sx={{
@@ -78,9 +79,10 @@ function ProcessSection() {
                                 {item.desc}
                             </Typography>
                         </Box>
+                        </VisibilityTracker>
                     ))}
                 </Box>
-
+                {/* </VisibilityTracker> */}
             </Box>
         </Box>
     )
@@ -96,9 +98,7 @@ export default function Home() {
                     <Typography variant='h2' sx={{ textAlign: 'start', mb: "1rem" }}>
                         About Us
                     </Typography>
-                        <CustomText text='Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations.' />
-                  
-                    <VisibilityTracker animationType={AnimationType.GROW} >
+                    <CustomText text='Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations.' />
                     <Grid container spacing={2} sx={{ mb: '1rem', mt: '0.5rem' }}>
                         <Grid item xs={12} sm={6}>
                             <Typography
@@ -155,7 +155,6 @@ export default function Home() {
                             </Typography>
                         </Grid>
                     </Grid>
-                    </VisibilityTracker>
                     <Typography
                         paragraph
                         variant='subtitle2'
@@ -194,14 +193,12 @@ export default function Home() {
                     <Typography variant='h3' sx={{ textAlign: 'start', mb: '2rem', color: '#1B1B1F' }}>
                         Statistics
                     </Typography>
-                    <VisibilityTracker animationType={AnimationType.GROW}>
                         <StatisticsCard
                             exporterRank={16}
                             importerRank={10}
                             tradeBalanceRank={136}
                             totalTradeAmtList={totalTradeAmtList}
                         />
-                        </VisibilityTracker>
                 </Container>
             </Box>
             <ProcessSection />

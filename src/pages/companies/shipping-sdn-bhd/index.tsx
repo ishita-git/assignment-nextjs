@@ -15,6 +15,7 @@ import ourCommitmentImg from '../../../assets/companies/muskaan_shipping/our_com
 import CustomText from '@/components/companies/CustomText'
 import ServicesCard from '@/components/companies/ServicesCard'
 import StatisticsCard from '@/components/companies/StatisticsCard'
+import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
 
 export default function Home() {
     const theme = useTheme()
@@ -58,23 +59,31 @@ export default function Home() {
                     <Grid item xs={6} sm={6}>
                         <Box sx={{ textAlign: 'start' }}>
                             <Image src={visionIcon} alt="" style={{ height: 'auto', width: "12.5%", }} />
+                            <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
                             <Typography variant='h3' sx={{ textAlign: 'start',  mt: '2rem',mb:"1rem", color: '#FFFFFF', fontWeight:600 }}>
                                 Our Vision
                             </Typography>
+                            </VisibilityTracker>
+                            <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
                             <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
                                 We aim to achieve what multinational forwarders cannot: meeting our customers' Critical Success Factors. Our ambition is entirely customer-centric, recognizing that our customers have the freedom to choose their service provider.
                             </Typography>
+                            </VisibilityTracker>
                         </Box>
                     </Grid>
                     <Grid item xs={6} sm={6}>
                         <Box sx={{ textAlign: 'start' }}>
                             <Image src={targetIcon} alt="" style={{ height: 'auto', width: "12.5%", }} />
+                            <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
                             <Typography variant='h3' sx={{ textAlign: 'start', mt: '2rem',mb:"1rem", color: '#FFFFFF', fontWeight:600}}>
                                 Our Mission
                             </Typography>
+                            </VisibilityTracker>
+                            <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
                             <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
                                 We prioritize clear communication and adaptability to meet changing customer needs, striving to build enduring relationships. Our extensive transportation knowledge ensures top-quality service.
                             </Typography>
+                            </VisibilityTracker>
                         </Box>
                     </Grid>
                 </Grid>

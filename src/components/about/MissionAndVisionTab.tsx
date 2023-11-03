@@ -5,6 +5,7 @@ import bulbImage from '../../assets/about/missionTab/bulb.webp'
 import targetImage from '../../assets/about/missionTab/target.png'
 import shipImage from '../../assets/about/missionTab/ship.webp'
 import visionImage from '../../assets/about/missionTab/vision.png'
+import VisibilityTracker, { AnimationType } from '../VisibilityTracker'
 
 export default function MissionAndVisionTab() {
     const theme = useTheme()
@@ -39,12 +40,15 @@ export default function MissionAndVisionTab() {
                                 alt='Target Image'
                                 style={{ height: 'auto', width: '15%', marginBottom: '2rem' }}
                             />
+                            <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
                             <Typography
                                 variant='h3'
                                 sx={{ mb: '1.5rem', color: '#1B1B1F', textAlign: 'start', fontSize: '2.8rem' }}
                             >
                                 Our Mission
                             </Typography>
+                            </VisibilityTracker>
+                            <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
                             <Typography
                                 paragraph
                                 variant='body1'
@@ -58,6 +62,7 @@ export default function MissionAndVisionTab() {
                                 considering them integral members of our team. Our commitment entails serving them with
                                 unwavering integrity and a sense of responsibility at all times.
                             </Typography>
+                            </VisibilityTracker>
                         </Box>
                     </Grid>
                     <Grid item xs={12} sm={6}>
@@ -89,12 +94,15 @@ export default function MissionAndVisionTab() {
                                 alt='Vision Image'
                                 style={{ height: 'auto', width: '15%', marginBottom: '2rem' }}
                             />
+                            <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
                             <Typography
                                 variant='h2'
                                 sx={{ mb: '1.5rem', color: '#1B1B1F', textAlign: 'start', fontSize: '2.8rem' }}
                             >
                                 Our Vision
                             </Typography>
+                            </VisibilityTracker>
+                            <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
                             <Typography
                                 paragraph
                                 variant='body1'
@@ -108,6 +116,7 @@ export default function MissionAndVisionTab() {
                                 powered by our expertise, aids in not only delivering exceptional service but also
                                 guiding our clients effectively within the realms of land and sea logistics.
                             </Typography>
+                            </VisibilityTracker>
                         </Box>
                     </Grid>
                 </Grid>
