@@ -15,7 +15,7 @@ RUN chmod 2777 "/usr/src/app"
 COPY . /usr/src/app
 
 # Install app dependencies
-RUN yarn install --pure-lockfile
+RUN yarn install
 RUN yarn build
 
 EXPOSE 3000
