@@ -43,7 +43,7 @@ export default function ClienteleSection() {
     }
 
     return (
-        <Box sx={{ p: theme.spacing(4) }}>
+        <Box sx={{ mx: theme.spacing(4) }}>
             <Typography variant='h2' textAlign='center' sx={{ mb: theme.spacing(2) }}>
                 Appreciated by some of the best in industry
             </Typography>

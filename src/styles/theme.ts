@@ -11,6 +11,7 @@ const theme = createTheme({
         },
         primary: {
             main: '#003A9B',
+            light: '#194DA5',
         },
         secondary: {
             main: '#031225',
@@ -117,11 +118,6 @@ const theme = createTheme({
                     textDecoration: 'none',
                 },
             },
-            // styleOverrides: {
-            //     style: {
-            //         fontSize: '0.5rem',
-            //     },
-            // },
         },
         MuiMenu: {
             styleOverrides: {

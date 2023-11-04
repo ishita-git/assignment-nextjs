@@ -20,7 +20,7 @@ export default function FooterSection() {
             <Box sx={{ mx: theme.spacing(4), pt: theme.spacing(4) }}>
                 <Container maxWidth='xl' disableGutters>
                     <Grid container spacing={4}>
-                        <Grid item md={3} sm={6} xs={12}>
+                        <Grid item sm={3} xs={12}>
                             <Link href='/'>
                                 <Image
                                     src={logo}
@@ -43,7 +43,11 @@ export default function FooterSection() {
                             </Typography>
 
                             <Box sx={{ mx: 'auto' }}>
-                                <Link href='https://www.facebook.com/muskangroupofcompanies' target="_blank" rel="noopener noreferrer">
+                                <Link
+                                    href='https://www.facebook.com/muskangroupofcompanies'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
                                     <Image
                                         src={facebook}
                                         alt='facebook'
@@ -54,7 +58,11 @@ export default function FooterSection() {
                                         }}
                                     />
                                 </Link>
-                                <Link href='https://www.linkedin.com/company/muskan-group-of-companies' target="_blank" rel="noopener noreferrer">
+                                <Link
+                                    href='https://www.linkedin.com/company/muskan-group-of-companies'
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                >
                                     <Image
                                         src={linkedIn}
                                         alt='linkedin'
@@ -65,7 +73,7 @@ export default function FooterSection() {
                                         }}
                                     />
                                 </Link>
-                                <Link href='https://twitter.com/MuskanGroup1' target="_blank" rel="noopener noreferrer">
+                                <Link href='https://twitter.com/MuskanGroup1' target='_blank' rel='noopener noreferrer'>
                                     <Image
                                         src={twitter}
                                         alt='twitter'
@@ -76,7 +84,7 @@ export default function FooterSection() {
                                         }}
                                     />
                                 </Link>
-                                <Link href='/' target="_blank" rel="noopener noreferrer">
+                                <Link href='/' target='_blank' rel='noopener noreferrer'>
                                     <Image
                                         src={instagram}
                                         alt='instagram'
@@ -90,7 +98,7 @@ export default function FooterSection() {
                             </Box>
                         </Grid>
 
-                        <Grid item md={3} sm={6} xs={12}>
+                        <Grid item sm={3} xs={12}>
                             <Typography variant='h6' sx={{ mb: '1rem', fontWeight: 600 }}>
                                 Reach Us Out
                             </Typography>
@@ -105,7 +113,10 @@ export default function FooterSection() {
                                         marginRight: '1rem',
                                     }}
                                 />
-                                <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>
+                                <Typography
+                                    variant='body1'
+                                    sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}
+                                >
                                     Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor, NEW DELHI - 110078
                                 </Typography>
                             </Box>
@@ -126,7 +137,12 @@ export default function FooterSection() {
                                         marginRight: '1rem',
                                     }}
                                 />
-                                <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>011 41587468/40687469</Typography>
+                                <Typography
+                                    variant='body1'
+                                    sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}
+                                >
+                                    011 41587468/40687469
+                                </Typography>
                             </Box>
 
                             <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -139,11 +155,16 @@ export default function FooterSection() {
                                         marginRight: '1rem',
                                     }}
                                 />
-                                <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>info@mclpl.co.in</Typography>
+                                <Typography
+                                    variant='body1'
+                                    sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}
+                                >
+                                    info@mclpl.co.in
+                                </Typography>
                             </Box>
                         </Grid>
 
-                        <Grid item md={2} sm={6} xs={12}>
+                        <Grid item sm={2} xs={12}>
                             <Typography variant='h6' sx={{ mb: '1rem', fontWeight: 600 }}>
                                 Quick Links
                             </Typography>
@@ -155,7 +176,17 @@ export default function FooterSection() {
                                         alignItems: 'center',
                                     }}
                                 >
-                                    <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>About Us</Typography>
+                                    <Typography
+                                        variant='body1'
+                                        sx={{
+                                            fontWeight: 300,
+                                            color: '#FFFFFF',
+                                            textAlign: 'start',
+                                            fontSize: '0.75rem',
+                                        }}
+                                    >
+                                        About Us
+                                    </Typography>
                                     <Image
                                         src={arrowRight}
                                         alt='link'
@@ -176,7 +207,17 @@ export default function FooterSection() {
                                         mt: '1rem',
                                     }}
                                 >
-                                    <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>Career</Typography>
+                                    <Typography
+                                        variant='body1'
+                                        sx={{
+                                            fontWeight: 300,
+                                            color: '#FFFFFF',
+                                            textAlign: 'start',
+                                            fontSize: '0.75rem',
+                                        }}
+                                    >
+                                        Career
+                                    </Typography>
                                     <Image
                                         src={arrowRight}
                                         alt='link'
@@ -197,7 +238,17 @@ export default function FooterSection() {
                                         mt: '1rem',
                                     }}
                                 >
-                                    <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>Contact Us</Typography>
+                                    <Typography
+                                        variant='body1'
+                                        sx={{
+                                            fontWeight: 300,
+                                            color: '#FFFFFF',
+                                            textAlign: 'start',
+                                            fontSize: '0.75rem',
+                                        }}
+                                    >
+                                        Contact Us
+                                    </Typography>
                                     <Image
                                         src={arrowRight}
                                         alt='link'
@@ -218,7 +269,17 @@ export default function FooterSection() {
                                         mt: '1rem',
                                     }}
                                 >
-                                    <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>Services</Typography>
+                                    <Typography
+                                        variant='body1'
+                                        sx={{
+                                            fontWeight: 300,
+                                            color: '#FFFFFF',
+                                            textAlign: 'start',
+                                            fontSize: '0.75rem',
+                                        }}
+                                    >
+                                        Services
+                                    </Typography>
                                     <Image
                                         src={arrowRight}
                                         alt='link'
@@ -239,7 +300,17 @@ export default function FooterSection() {
                                         mt: '1rem',
                                     }}
                                 >
-                                    <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>Useful Downloads</Typography>
+                                    <Typography
+                                        variant='body1'
+                                        sx={{
+                                            fontWeight: 300,
+                                            color: '#FFFFFF',
+                                            textAlign: 'start',
+                                            fontSize: '0.75rem',
+                                        }}
+                                    >
+                                        Useful Downloads
+                                    </Typography>
                                     <Image
                                         src={arrowRight}
                                         alt='link'
@@ -253,23 +324,39 @@ export default function FooterSection() {
                             </Link>
                         </Grid>
 
-                        <Grid item md={4} sm={6} xs={12}>
+                        <Grid item sm={4} xs={12}>
                             <Typography variant='h6' sx={{ mb: '1rem', fontWeight: 600 }}>
                                 Subscribe Us
                             </Typography>
-                            <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>
+                            <Typography
+                                variant='body1'
+                                sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}
+                            >
                                 Subscribe to our newsletter and never miss our latest news and promotions.
                             </Typography>
                             <Box sx={{ my: '1rem' }}>
                                 <SecondaryTextField placeholder='Enter your mail id' endButton />
                             </Box>
-                            <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>Privacy Policy</Typography>
-                            <Link href="/sitemap.xml" target="_blank" rel="noopener noreferrer">
-                                <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>
+                            <Typography
+                                variant='body1'
+                                sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}
+                            >
+                                Privacy Policy
+                            </Typography>
+                            <Link href='/sitemap.xml' target='_blank' rel='noopener noreferrer'>
+                                <Typography
+                                    variant='body1'
+                                    sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}
+                                >
                                     Site Map
                                 </Typography>
                             </Link>
-                            <Typography variant='body1' sx={{ fontWeight: 300, color: "#FFFFFF", textAlign: "start", fontSize: "0.75rem" }}>Terms & Conditions</Typography>
+                            <Typography
+                                variant='body1'
+                                sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}
+                            >
+                                Terms & Conditions
+                            </Typography>
                         </Grid>
                     </Grid>
                     <Divider

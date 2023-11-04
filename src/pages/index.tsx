@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTheme } from '@mui/material/styles'
-import { AppBar, Box, Container, Grid, Toolbar, Typography, useScrollTrigger } from '@mui/material'
-import HeaderSection from '../sections/HeaderSection'
+import { AppBar, Box, Container, Grid, useScrollTrigger } from '@mui/material'
+import HeroSection from '../sections/HeroSection'
 import TrackShipmentCard from '../components/TrackShipmentCard'
 import TrackVesselSchedulesCard from '../components/TrackVesselSchedulesCard'
 import ServicesSection from '../sections/ServicesSection'
@@ -41,11 +41,7 @@ export default function ElevateAppBar(props: Props) {
                 </AppBar>
             </ElevationScroll>
             <Box sx={{ background: '#EFF6FF', width: '100vw' }}>
-                <HeaderSection
-                    video
-                    title='Effortless Shipping and Logistics'
-                    subtitle='Muskan Group Makes it Simple'
-                />
+                <HeroSection />
 
                 <Box
                     sx={{

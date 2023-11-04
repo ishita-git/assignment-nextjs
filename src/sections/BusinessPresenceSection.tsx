@@ -110,31 +110,17 @@ export default function BusinessPresenceSection() {
                         <Grid item sm={4} xs={12}>
                             <CompanyCard text='Muskan Shipping PTE Ltd.' href='/companies/shipping-pte' />
                         </Grid>
-                        <Grid item xs={6}>
-                            <Box
-                                sx={{
-                                    pl: {
-                                        md: theme.spacing(12),
-                                        xl: theme.spacing(8),
-                                    },
-                                }}
-                            >
-                                <CompanyCard text='Muskaan Shipping SDN BHD' href='/companies/shipping-sdn-bhd' />
-                            </Box>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Box
-                                sx={{
-                                    pr: {
-                                        md: theme.spacing(12),
-                                        xl: theme.spacing(8),
-                                    },
-                                }}
-                            >
-                                <CompanyCard text='Muskaan Shipping LLC' href='/companies/shipping-llc' />
-                            </Box>
-                        </Grid>
                     </Grid>
+                    <Container maxWidth='sm' disableGutters sx={{ mt: theme.spacing(4) }}>
+                        <Grid container spacing={4}>
+                            <Grid item xs={6}>
+                                <CompanyCard text='Muskaan Shipping SDN BHD' href='/companies/shipping-sdn-bhd' />
+                            </Grid>
+                            <Grid item xs={6}>
+                                <CompanyCard text='Muskaan Shipping LLC' href='/companies/shipping-llc' />
+                            </Grid>
+                        </Grid>
+                    </Container>
                 </Box>
             </Container>
 

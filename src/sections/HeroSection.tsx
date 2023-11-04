@@ -1,42 +1,41 @@
 import React from 'react'
-import Image from 'next/image'
-import type { StaticImageData } from 'next/image'
 import { Box, Container, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
 
-declare type HeaderProps = {
-    image?: string | StaticImageData
-    title?: string
-    subtitle?: string
-    customHeight?: string
-}
-
-export default function HeaderSection({ image, title, subtitle, customHeight }: HeaderProps) {
+export default function HeroSection() {
     const theme = useTheme()
     return (
         <Box
             sx={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: customHeight ? customHeight : '42vw',
+                height: '44vw',
                 display: 'flex',
                 flexDirection: 'column',
             }}
         >
-            {image ? (
-                <Image
-                    src={image}
-                    alt='cargo'
+            <>
+                <video
+                    src='/video/container_terminal.webm'
+                    muted
+                    autoPlay
+                    loop
                     style={{
                         width: '100%',
                         height: 'auto',
                         position: 'absolute',
                     }}
                 />
-            ) : (
-                <></>
-            )}
+                <div
+                    style={{
+                        position: 'absolute',
+                        width: '100%',
+                        height: '100%',
+                        background: 'rgba(0, 0, 0, 0.5)',
+                    }}
+                />
+            </>
 
             <Box
                 sx={{
@@ -47,7 +46,7 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
             >
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h1' sx={{ mt: theme.spacing(8), fontSize: '4.5rem', whiteSpace: 'pre-line' }}>
-                        {title}
+                        Effortless Shipping and Logistics
                     </Typography>
 
                     <Typography
@@ -60,7 +59,7 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
                             fontWeight: 400,
                         }}
                     >
-                        {subtitle}
+                        Muskan Group Makes it Simple
                     </Typography>
                 </Container>
             </Box>

@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { useTheme } from '@mui/material/styles'
-import { Box, Container, Link, Menu, MenuItem, Typography } from '@mui/material'
+import { Box, Container, IconButton, Link, Menu, MenuItem, Typography, useMediaQuery } from '@mui/material'
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded'
 import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded'
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import PrimaryButton from './PrimaryButton'
+import Sidebar from './Sidebar'
 import logo from '../assets/logo.png'
 
 export default function Navbar() {
-    const [companiesMenu, setCompaniesMenu] = React.useState<null | HTMLElement>(null)
-    const [servicesMenu, setServicesMenu] = React.useState<null | HTMLElement>(null)
-    const [toolsMenu, setToolsMenu] = React.useState<null | HTMLElement>(null)
+    const [companiesMenu, setCompaniesMenu] = useState<null | HTMLElement>(null)
+    const [servicesMenu, setServicesMenu] = useState<null | HTMLElement>(null)
+    const [toolsMenu, setToolsMenu] = useState<null | HTMLElement>(null)
+    const [sidebarOpen, setSidebarOpen] = useState(false)
 
+    const theme = useTheme()
     const openCompaniesMenu = Boolean(companiesMenu)
     const openServicesMenu = Boolean(servicesMenu)
     const openToolsMenu = Boolean(toolsMenu)
@@ -34,7 +38,15 @@ export default function Navbar() {
     const closeToolsMenu = () => {
         setToolsMenu(null)
     }
-    const theme = useTheme()
+
+    const tabletMode = useMediaQuery('(max-width:899px)')
+
+    const handleSidebarToggle = () => {
+        setSidebarOpen(!sidebarOpen)
+    }
+    const handleSidebarClose = () => {
+        setSidebarOpen(false)
+    }
 
     return (
         <Container
@@ -61,168 +73,178 @@ export default function Navbar() {
                 </Box>
             </Link>
 
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Box>
-                    <Box sx={{ cursor: 'pointer' }}>
-                        <Typography
-                            variant='subtitle2'
-                            sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem', color: '#FFFFFF' }}
-                            onClick={handleCompaniesMenu}
-                        >
-                            Companies
-                            {companiesMenu ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
-                        </Typography>
-                    </Box>
-
-                    <Menu anchorEl={companiesMenu} open={openCompaniesMenu} onClose={closeCompaniesMenu}>
-                        <MenuItem onClick={closeCompaniesMenu}>
-                            <Link href='/companies/container-lines' sx={{ color: 'inherit' }}>
-                                Muskan Container lines Pvt. Ltd.
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeCompaniesMenu}>
-                            <Link href='/companies/logistics' sx={{ color: 'inherit' }}>
-                                Muskan Logistics
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeCompaniesMenu}>
-                            <Link href='/companies/shipping-pte' sx={{ color: 'inherit' }}>
-                                Muskaan Shipping PTE Ltd.
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeCompaniesMenu}>
-                            <Link href='/companies/shipping-sdn-bhd' sx={{ color: 'inherit' }}>
-                                Muskaan Shipping SDN BHD
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeCompaniesMenu}>
-                            <Link href='/companies/shipping-llc' sx={{ color: 'inherit' }}>
-                                Muskaan Shipping LLC
-                            </Link>
-                        </MenuItem>
-                    </Menu>
-                </Box>
-
-                <Box>
-                    <Box sx={{ cursor: 'pointer', ml: theme.spacing(1.5) }}>
-                        <Typography
-                            variant='subtitle2'
-                            sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem', color: '#FFFFFF' }}
-                            onClick={handleServicesMenu}
-                        >
-                            Services
-                            {servicesMenu ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
-                        </Typography>
-                    </Box>
-
-                    <Menu anchorEl={servicesMenu} open={openServicesMenu} onClose={closeServicesMenu}>
-                        <MenuItem onClick={closeServicesMenu}>
-                            <Link href='/services/nvocc' sx={{ color: 'inherit' }}>
-                                NVOCC
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeServicesMenu}>
-                            <Link href='/services/transportation' sx={{ color: 'inherit' }}>
-                                Transportation
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeServicesMenu}>
-                            <Link href='/services/air-freight' sx={{ color: 'inherit' }}>
-                                Air Freight
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeServicesMenu}>
-                            <Link href='/services/multimodel' sx={{ color: 'inherit' }}>
-                                Multimodel-Transportation
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeServicesMenu}>
-                            <Link href='/services/over-dimension' sx={{ color: 'inherit' }}>
-                                Over Dimension Cargo
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeServicesMenu}>
-                            <Link href='/services/project-cargo' sx={{ color: 'inherit' }}>
-                                Project Cargo
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeServicesMenu}>
-                            <Link href='/services/custom-clearance' sx={{ color: 'inherit' }}>
-                                Custom Clearance
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeServicesMenu}>
-                            <Link href='/services/lcl' sx={{ color: 'inherit' }}>
-                                LCL Consolidation Services
-                            </Link>
-                        </MenuItem>
-                    </Menu>
-                </Box>
-
-                <Link href='/about'>
-                    <Typography variant='subtitle2' sx={{ ml: theme.spacing(1.5), color: '#FFFFFF' }}>
-                        About Us
-                    </Typography>
-                </Link>
-
-                <Link href='/contact'>
-                    <Typography variant='subtitle2' sx={{ ml: theme.spacing(1.5), color: '#FFFFFF' }}>
-                        Contact Us
-                    </Typography>
-                </Link>
-
-                <Link href='/career'>
-                    <Typography variant='subtitle2' sx={{ ml: theme.spacing(1.5), color: '#FFFFFF' }}>
-                        Career
-                    </Typography>
-                </Link>
-
-                <Box>
-                    <Box sx={{ cursor: 'pointer', ml: theme.spacing(1.5) }}>
-                        <Typography
-                            variant='subtitle2'
-                            sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem', color: '#FFFFFF' }}
-                            onClick={handleToolsMenu}
-                        >
-                            Tools
-                            {toolsMenu ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
-                        </Typography>
-                    </Box>
-
-                    <Menu anchorEl={toolsMenu} open={openToolsMenu} onClose={closeToolsMenu}>
-                        <MenuItem onClick={closeToolsMenu}>
-                            <Link href='/equipments' sx={{ color: 'inherit' }}>
-                                Equipments
-                            </Link>
-                        </MenuItem>
-
-                        <MenuItem onClick={closeToolsMenu}>
-                            <Link href='/track' sx={{ color: 'inherit' }}>
-                                Track
-                            </Link>
-                        </MenuItem>
-                        <MenuItem onClick={closeToolsMenu}>
-                            <Link href='/vessel-schedule' sx={{ color: 'inherit' }}>
-                                Vessel Schedules
-                            </Link>
-                        </MenuItem>
-
-                        <MenuItem onClick={closeToolsMenu}>
-                            <Link href='/quote' sx={{ color: 'inherit' }}>
-                                Quote
-                            </Link>
-                        </MenuItem>
-                    </Menu>
-                </Box>
-
-                {/* equipments */}
-
-                <Box sx={{ ml: theme.spacing(1.5) }}>
-                    <Link href="http://app.muskan-group.com/">
-                    <PrimaryButton text='Login' light width='6rem' height='2rem' />
+            {tabletMode ? (
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Link href='http://app.muskan-group.com/' sx={{ mr: theme.spacing(1.25) }}>
+                        <PrimaryButton text='Login' light width='6rem' height='2rem' />
                     </Link>
+                    <IconButton onClick={handleSidebarToggle}>
+                        <MenuRoundedIcon sx={{ color: '#FFFFFF' }} />
+                    </IconButton>
+                    <Sidebar open={sidebarOpen} handleClose={handleSidebarClose} />
                 </Box>
-            </Box>
+            ) : (
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box>
+                        <Box sx={{ cursor: 'pointer' }}>
+                            <Typography
+                                variant='subtitle2'
+                                sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem', color: '#FFFFFF' }}
+                                onClick={handleCompaniesMenu}
+                            >
+                                Companies
+                                {companiesMenu ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
+                            </Typography>
+                        </Box>
+
+                        <Menu anchorEl={companiesMenu} open={openCompaniesMenu} onClose={closeCompaniesMenu}>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/container-lines' sx={{ color: 'inherit' }}>
+                                    Muskan Container lines Pvt. Ltd.
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/logistics' sx={{ color: 'inherit' }}>
+                                    Muskan Logistics
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/shipping-pte' sx={{ color: 'inherit' }}>
+                                    Muskaan Shipping PTE Ltd.
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/shipping-sdn-bhd' sx={{ color: 'inherit' }}>
+                                    Muskaan Shipping SDN BHD
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeCompaniesMenu}>
+                                <Link href='/companies/shipping-llc' sx={{ color: 'inherit' }}>
+                                    Muskaan Shipping LLC
+                                </Link>
+                            </MenuItem>
+                        </Menu>
+                    </Box>
+
+                    <Box>
+                        <Box sx={{ cursor: 'pointer', ml: theme.spacing(1.5) }}>
+                            <Typography
+                                variant='subtitle2'
+                                sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem', color: '#FFFFFF' }}
+                                onClick={handleServicesMenu}
+                            >
+                                Services
+                                {servicesMenu ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
+                            </Typography>
+                        </Box>
+
+                        <Menu anchorEl={servicesMenu} open={openServicesMenu} onClose={closeServicesMenu}>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/nvocc' sx={{ color: 'inherit' }}>
+                                    NVOCC
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/transportation' sx={{ color: 'inherit' }}>
+                                    Transportation
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/air-freight' sx={{ color: 'inherit' }}>
+                                    Air Freight
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/multimodel' sx={{ color: 'inherit' }}>
+                                    Multimodel-Transportation
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/over-dimension' sx={{ color: 'inherit' }}>
+                                    Over Dimension Cargo
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/project-cargo' sx={{ color: 'inherit' }}>
+                                    Project Cargo
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/custom-clearance' sx={{ color: 'inherit' }}>
+                                    Custom Clearance
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeServicesMenu}>
+                                <Link href='/services/lcl' sx={{ color: 'inherit' }}>
+                                    LCL Consolidation Services
+                                </Link>
+                            </MenuItem>
+                        </Menu>
+                    </Box>
+
+                    <Link href='/about'>
+                        <Typography variant='subtitle2' sx={{ ml: theme.spacing(1.5), color: '#FFFFFF' }}>
+                            About Us
+                        </Typography>
+                    </Link>
+
+                    <Link href='/contact'>
+                        <Typography variant='subtitle2' sx={{ ml: theme.spacing(1.5), color: '#FFFFFF' }}>
+                            Contact Us
+                        </Typography>
+                    </Link>
+
+                    <Link href='/career'>
+                        <Typography variant='subtitle2' sx={{ ml: theme.spacing(1.5), color: '#FFFFFF' }}>
+                            Career
+                        </Typography>
+                    </Link>
+
+                    <Box>
+                        <Box sx={{ cursor: 'pointer', ml: theme.spacing(1.5) }}>
+                            <Typography
+                                variant='subtitle2'
+                                sx={{ display: 'flex', alignItems: 'center', lineHeight: '3rem', color: '#FFFFFF' }}
+                                onClick={handleToolsMenu}
+                            >
+                                Tools
+                                {toolsMenu ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
+                            </Typography>
+                        </Box>
+
+                        <Menu anchorEl={toolsMenu} open={openToolsMenu} onClose={closeToolsMenu}>
+                            <MenuItem onClick={closeToolsMenu}>
+                                <Link href='/equipments' sx={{ color: 'inherit' }}>
+                                    Equipments
+                                </Link>
+                            </MenuItem>
+
+                            <MenuItem onClick={closeToolsMenu}>
+                                <Link href='/track' sx={{ color: 'inherit' }}>
+                                    Track
+                                </Link>
+                            </MenuItem>
+                            <MenuItem onClick={closeToolsMenu}>
+                                <Link href='/vessel-schedule' sx={{ color: 'inherit' }}>
+                                    Vessel Schedules
+                                </Link>
+                            </MenuItem>
+
+                            <MenuItem onClick={closeToolsMenu}>
+                                <Link href='/quote' sx={{ color: 'inherit' }}>
+                                    Quote
+                                </Link>
+                            </MenuItem>
+                        </Menu>
+                    </Box>
+
+                    <Box sx={{ ml: theme.spacing(1.5) }}>
+                        <Link href='http://app.muskan-group.com/'>
+                            <PrimaryButton text='Login' light width='6rem' height='2rem' />
+                        </Link>
+                    </Box>
+                </Box>
+            )}
         </Container>
     )
 }
