@@ -1,16 +1,18 @@
 import React from 'react'
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
 
 export default function HeroSection() {
     const theme = useTheme()
+    const tabletMode = useMediaQuery('(max-width:899px)')
+
     return (
         <Box
             sx={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: '44vw',
+                height: tabletMode ? '56vw' : '44vw',
                 display: 'flex',
                 flexDirection: 'column',
             }}
@@ -45,7 +47,14 @@ export default function HeroSection() {
                 }}
             >
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h1' sx={{ mt: theme.spacing(8), fontSize: '4.5rem', whiteSpace: 'pre-line' }}>
+                    <Typography
+                        variant='h1'
+                        sx={{
+                            mt: { xs: theme.spacing(4), md: theme.spacing(8) },
+                            fontSize: { xs: '3rem', md: '4.5rem' },
+                            whiteSpace: 'pre-line',
+                        }}
+                    >
                         Effortless Shipping and Logistics
                     </Typography>
 
@@ -53,10 +62,11 @@ export default function HeroSection() {
                         variant='h2'
                         textAlign='center'
                         sx={{
-                            mt: theme.spacing(1.25),
+                            mt: { xs: theme.spacing(0), md: theme.spacing(1.25) },
                             fontFamily: oswald.style.fontFamily,
                             color: 'common.white',
                             fontWeight: 400,
+                            fontSize: { xs: '2rem', md: '3rem' },
                         }}
                     >
                         Muskan Group Makes it Simple

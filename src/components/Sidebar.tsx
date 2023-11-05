@@ -108,20 +108,28 @@ const Sidebar = ({ open, handleClose }: SidebarProps) => {
                             <Typography variant='h6'>{item.title}</Typography>
                             {isActive === item.id ? <ExpandLessRoundedIcon /> : <ExpandMoreRoundedIcon />}
                         </Box>
-                        {isActive === item.id && (
-                            <Box sx={{ my: theme.spacing(0.5) }}>
-                                {item.content.map((contentItem, index) => (
-                                    <Box
-                                        key={index}
-                                        sx={{ display: 'flex', py: theme.spacing(0.5), px: theme.spacing(1) }}
-                                    >
-                                        <Link href={contentItem.href} sx={{ color: 'inherit' }}>
-                                            {contentItem.link}
-                                        </Link>
-                                    </Box>
-                                ))}
-                            </Box>
-                        )}
+                        <Box
+                            sx={{
+                                maxHeight: isActive === item.id ? '500px' : '0',
+                                overflow: 'hidden',
+                                transition: 'max-height 1s ease-in-out', // Apply the transition here
+                            }}
+                        >
+                            {isActive === item.id && (
+                                <Box sx={{ my: theme.spacing(0.5) }}>
+                                    {item.content.map((contentItem, index) => (
+                                        <Box
+                                            key={index}
+                                            sx={{ display: 'flex', py: theme.spacing(0.5), px: theme.spacing(1) }}
+                                        >
+                                            <Link href={contentItem.href} sx={{ color: 'inherit' }}>
+                                                {contentItem.link}
+                                            </Link>
+                                        </Box>
+                                    ))}
+                                </Box>
+                            )}
+                        </Box>
                     </Box>
                 ))}
 

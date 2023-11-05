@@ -1,9 +1,7 @@
 import React from 'react'
 import { useTheme } from '@mui/material/styles'
-import { AppBar, Box, Container, Grid, useScrollTrigger } from '@mui/material'
+import { AppBar, Box, useScrollTrigger } from '@mui/material'
 import HeroSection from '../sections/HeroSection'
-import TrackShipmentCard from '../components/TrackShipmentCard'
-import TrackVesselSchedulesCard from '../components/TrackVesselSchedulesCard'
 import ServicesSection from '../sections/ServicesSection'
 import ShippingSection from '../sections/ShippingSection'
 import BusinessPresenceSection from '../sections/BusinessPresenceSection'
@@ -11,6 +9,7 @@ import ClienteleSection from '../sections/ClienteleSection'
 import ContactSection from '../sections/ContactSection'
 import FooterSection from '../sections/FooterSection'
 import Navbar from '../components/Navbar'
+import ShipmentTracker from '@/sections/ShipmentTracker'
 
 interface Props {
     window?: () => Window
@@ -52,17 +51,7 @@ export default function ElevateAppBar(props: Props) {
                         mx: theme.spacing(2),
                     }}
                 >
-                    <Container maxWidth='md' sx={{ position: 'absolute' }}>
-                        <Grid container spacing={2} sx={{ width: '100%' }}>
-                            <Grid item xs={12} sm={6}>
-                                <TrackShipmentCard />
-                            </Grid>
-
-                            <Grid item xs={12} sm={6}>
-                                <TrackVesselSchedulesCard />
-                            </Grid>
-                        </Grid>
-                    </Container>
+                    <ShipmentTracker />
                 </Box>
 
                 <ServicesSection />

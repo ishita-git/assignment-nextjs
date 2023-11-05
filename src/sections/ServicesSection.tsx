@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { servicesData } from '../data/servicesData'
 import CarouselCard from '../components/CaraousalCard'
@@ -11,9 +11,10 @@ import { Autoplay, Keyboard, Navigation, Pagination } from 'swiper/modules'
 
 export default function ServicesSection() {
     const theme = useTheme()
+    const tabletMode = useMediaQuery('(max-width:899px)')
 
     return (
-        <Box sx={{ mt: theme.spacing(18), px: theme.spacing(4) }} id='services'>
+        <Box sx={{ mt: tabletMode ? theme.spacing(0) : theme.spacing(4), px: theme.spacing(4) }} id='services'>
             <Container disableGutters maxWidth='xl'>
                 <Typography variant='h2' textAlign='center'>
                     Our Services
@@ -40,7 +41,7 @@ export default function ServicesSection() {
                         breakpoints={{
                             200: { slidesPerView: 1 },
                             550: { slidesPerView: 2 },
-                            750: { slidesPerView: 3 },
+                            765: { slidesPerView: 3 },
                             1000: { slidesPerView: 4 },
                         }}
                         navigation={true}
