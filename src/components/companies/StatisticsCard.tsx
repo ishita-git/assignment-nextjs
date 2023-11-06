@@ -1,8 +1,10 @@
 import { Box, Grid, Typography } from '@mui/material'
 import NumberCounter from '../NumberCounter'
+import VisibilityTracker, { AnimationType } from '../VisibilityTracker'
 
 export default function StatisticsCard({ exporterRank, importerRank, tradeBalanceRank, totalTradeAmtList }: { exporterRank: number, importerRank: number, tradeBalanceRank: number, totalTradeAmtList: string[] }) {
     return <Box>
+         <VisibilityTracker animationType={AnimationType.NOANIMATION}>
         <Box sx={{ bgcolor: "#FFFFFF", p: "1.25rem", borderRadius: "1.25rem" }}>
             <Grid container spacing={2} sx={{ mb: "2rem" }}>
                 <Grid item xs={12} sm={4}>
@@ -76,6 +78,7 @@ export default function StatisticsCard({ exporterRank, importerRank, tradeBalanc
                 </Grid>
             </Box>
         </Box>
+        </VisibilityTracker>
         <Typography variant='h3' sx={{ fontWeight: 600, mt: '2rem', mb: '4rem', color: '#1B1B1F' }}>
             Trade Statistics
         </Typography>

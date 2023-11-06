@@ -9,6 +9,7 @@ import ship from '../assets/icons/ship.png'
 import person from '../assets/icons/person.png'
 import stern from '../assets/images/stern.webp'
 import NumberCounter from '@/components/NumberCounter'
+import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
 
 declare type ShippingProps = {
     icon: string | StaticImageData
@@ -42,8 +43,9 @@ const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
             >
                 <Image src={icon} alt='card icon' style={{ height: tabletMode ? '2rem' : '3.25rem', width: 'auto' }} />
             </Box>
-            <Typography variant='h3' sx={{ mt: theme.spacing(1.25), whiteSpace: 'nowrap' }}>
-                <NumberCounter targetNumber={text || 0} duration={1000} />
+
+            <Typography variant='h3' sx={{ mt: theme.spacing(1.25),whiteSpace: 'nowrap' }}>
+            <NumberCounter targetNumber={text||0} duration={2000} />+
             </Typography>
             <Typography variant='h6' textAlign='center' sx={{ maxWidth: wideMobileMode ? '6rem' : '10rem' }}>
                 {subtitle}
@@ -77,6 +79,7 @@ export default function ShippingSection() {
             />
 
             <Container maxWidth='lg' disableGutters sx={{ position: 'relative', my: 'auto' }}>
+                <VisibilityTracker animationType={AnimationType.NOANIMATION}>
                 <Box sx={{ px: theme.spacing(4) }}>
                     <Typography
                         variant='h3'
@@ -108,6 +111,7 @@ export default function ShippingSection() {
                         <ShippingDataCard icon={person} text={500} subtitle='Happy Customers' />
                     </Box>
                 </Box>
+                </VisibilityTracker>
             </Container>
         </Box>
     )
