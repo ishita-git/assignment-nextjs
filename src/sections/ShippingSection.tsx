@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import anchor from '../assets/icons/anchor.png'
 import container from '../assets/icons/container.png'
@@ -19,6 +19,8 @@ declare type ShippingProps = {
 
 const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
     const theme = useTheme()
+    const tabletMode = useMediaQuery('(max-width:899px)')
+    const wideMobileMode = useMediaQuery('(max-width:649px)')
 
     return (
         <Box
@@ -31,20 +33,21 @@ const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
             <Box
                 sx={{
                     backgroundColor: '#EFF6FF',
-                    width: '5rem',
-                    height: '5rem',
+                    width: tabletMode ? '3.5rem' : '5rem',
+                    height: tabletMode ? '3.5rem' : '5rem',
                     borderRadius: '22px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
                 }}
             >
-                <Image src={icon} alt='card icon' style={{ height: '3.25rem', width: 'auto' }} />
+                <Image src={icon} alt='card icon' style={{ height: tabletMode ? '2rem' : '3.25rem', width: 'auto' }} />
             </Box>
+
             <Typography variant='h3' sx={{ mt: theme.spacing(1.25),whiteSpace: 'nowrap' }}>
             <NumberCounter targetNumber={text||0} duration={2000} />+
             </Typography>
-            <Typography variant='h6' textAlign='center' sx={{ maxWidth: '14rem' }}>
+            <Typography variant='h6' textAlign='center' sx={{ maxWidth: wideMobileMode ? '6rem' : '10rem' }}>
                 {subtitle}
             </Typography>
         </Box>
@@ -53,13 +56,14 @@ const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
 
 export default function ShippingSection() {
     const theme = useTheme()
+    const tabletMode = useMediaQuery('(max-width:899px)')
 
     return (
         <Box
             sx={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: '30vw',
+                height: tabletMode ? '52vw' : '36vw',
                 display: 'flex',
             }}
         >
@@ -68,16 +72,31 @@ export default function ShippingSection() {
                 alt='stern'
                 style={{
                     width: '100%',
-                    height: 'auto',
+                    height: tabletMode ? '40rem' : '30rem',
                     position: 'absolute',
+                    objectFit: 'cover',
                 }}
             />
 
             <Container maxWidth='lg' disableGutters sx={{ position: 'relative', my: 'auto' }}>
                 <VisibilityTracker animationType={AnimationType.NOANIMATION}>
                 <Box sx={{ px: theme.spacing(4) }}>
-                    <Typography variant='h3'>Seamless Logistics, Worldwide Shipping</Typography>
-                    <Typography variant='h3'>Your Gateway to Effortless Trade</Typography>
+                    <Typography
+                        variant='h3'
+                        sx={{ fontSize: tabletMode ? '1.5rem' : '2rem', lineHeight: tabletMode ? '2.25rem' : '3rem' }}
+                    >
+                        Seamless Logistics, Worldwide Shipping
+                    </Typography>
+                    <Typography
+                        variant='h3'
+                        sx={{
+                            fontSize: tabletMode ? '1.5rem' : '2rem',
+                            lineHeight: tabletMode ? '2.25rem' : '3rem',
+                            mb: '4rem',
+                        }}
+                    >
+                        Your Gateway to Effortless Trade
+                    </Typography>
                     <Box
                         sx={{
                             display: 'flex',

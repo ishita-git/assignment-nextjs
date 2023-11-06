@@ -12,11 +12,10 @@ declare type HeaderProps = {
     image?: string | StaticImageData
     title?: string
     subtitle?: string
-    video?: boolean
     customHeight?: string
 }
 
-export default function HeaderSection({ image, title, subtitle, video, customHeight }: HeaderProps) {
+export default function HeaderSection({ image, title, subtitle, customHeight }: HeaderProps) {
     const theme = useTheme()
     return (
         <Box
@@ -38,32 +37,6 @@ export default function HeaderSection({ image, title, subtitle, video, customHei
                         position: 'absolute',
                     }}
                 />
-            ) : (
-                <></>
-            )}
-
-            {video ? (
-                <>
-                    <video
-                        src='/video/container_terminal.webm'
-                        muted
-                        autoPlay
-                        loop
-                        style={{
-                            width: '100%',
-                            height: 'auto',
-                            position: 'absolute',
-                        }}
-                    />
-                    <div
-                        style={{
-                            position: 'absolute',
-                            width: '100%',
-                            height: '100%',
-                            background: 'rgba(0, 0, 0, 0.5)', // 25% black overlay
-                        }}
-                    />
-                </>
             ) : (
                 <></>
             )}

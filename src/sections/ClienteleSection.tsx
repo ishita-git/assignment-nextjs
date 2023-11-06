@@ -1,89 +1,165 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { Box, Container, Fade, IconButton, Typography } from '@mui/material'
+import { Box, Container, IconButton, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { clientsData } from '../data/clientsData'
 import ClienteleCard from '../components/ClienteleCard'
-import EastRoundedIcon from '@mui/icons-material/EastRounded'
-import WestRoundedIcon from '@mui/icons-material/WestRounded'
 import clientBg from '../assets/clients/client-bg.webp'
+import clientBgSm from '../assets/clients/client-bg-sm.png'
 import prevIcon from '../assets/icons/previous.webp'
 import nextIcon from '../assets/icons/next.webp'
 
 export default function ClienteleSection() {
     const theme = useTheme()
-    const visibleIcons = 5
+    const narrowTabletMode = useMediaQuery('(max-width:749px)')
+    const tabletMode = useMediaQuery('(max-width:849px)')
+    const desktopMode = useMediaQuery('(max-width:1299px)')
+
+    const visibleIcons = narrowTabletMode ? 3 : 5
+    const iconsLength = clientsData.length
     const [startIconIndex, setStartIconIndex] = useState(0)
-    const [cardIndex, setCardIndex] = useState(startIconIndex + Math.floor(visibleIcons / 2))
+    const [cardIndex, setCardIndex] = useState(Math.floor(iconsLength / 2))
 
     const handlePrev = () => {
-        if (startIconIndex > 0) {
-            setStartIconIndex(startIconIndex - 1)
-        } else {
-            setStartIconIndex(clientsData.length - visibleIcons)
-        }
-        setCardIndex(cardIndex - 1)
+        const newIndex = (startIconIndex - 1 + iconsLength) % iconsLength
+        setStartIconIndex(newIndex)
+        setCardIndex((cardIndex - 1 + iconsLength) % iconsLength)
     }
 
     const handleNext = () => {
-        if (startIconIndex + visibleIcons < clientsData.length) {
-            setStartIconIndex(startIconIndex + 1)
-        } else {
-            setStartIconIndex(0)
-        }
-        setCardIndex(cardIndex + 1)
+        const newIndex = (startIconIndex + 1) % iconsLength
+        setStartIconIndex(newIndex)
+        setCardIndex((cardIndex + 1) % iconsLength)
     }
 
     const changeCard = (index: number) => {
-        setCardIndex(startIconIndex + index)
+        const newIndex = (startIconIndex + index) % iconsLength
+        setCardIndex(newIndex)
         if (index !== Math.floor(visibleIcons / 2)) {
-            const difference = index - Math.floor(visibleIcons / 2)
-            setStartIconIndex(startIconIndex + difference)
+            const difference = newIndex - Math.floor(visibleIcons / 2)
+            setStartIconIndex((startIconIndex + difference + iconsLength) % iconsLength)
         }
     }
 
     return (
-        <Box sx={{ p: theme.spacing(4) }}>
-            <Typography variant='h2' textAlign='center' sx={{ mb: theme.spacing(2) }}>
-                Appreciated by some of the best in industry
-            </Typography>
-            <Container
-                maxWidth='md'
-                disableGutters
-                sx={{ my: theme.spacing(2), position: 'relative', height: '34rem' }}
-            >
-                <Image
-                    src={clientBg}
-                    alt='client-bg'
-                    style={{
-                        width: '100%',
-                        height: 'auto',
-                        paddingLeft: theme.spacing(8),
-                        paddingTop: theme.spacing(2.5),
-                    }}
-                />
-                {clientsData.slice(startIconIndex, startIconIndex + visibleIcons).map((item, index) => (
-                    <Box
-                        key={index}
+        <Box sx={{ mx: theme.spacing(4) }}>
+            {narrowTabletMode ? (
+                <Container maxWidth='sm' disableGutters>
+                    <Box sx={{ my: theme.spacing(2) }}>
+                        <Typography variant='h2' textAlign='center'>
+                            Appreciated by some of
+                        </Typography>
+                        <Typography variant='h2' textAlign='center'>
+                            the best in industry
+                        </Typography>
+                    </Box>
+                    <Box sx={{ position: 'relative' }}>
+                        <Image
+                            src={clientBgSm}
+                            alt='client-bg-sm'
+                            style={{ width: '100%', height: 'auto', position: 'relative' }}
+                        />
+                        {Array.from({ length: visibleIcons }).map((_, index) => {
+                            const arrayIndex = (startIconIndex + index) % iconsLength
+                            return (
+                                <Box
+                                    key={arrayIndex}
+                                    sx={{
+                                        opacity: index === Math.floor(visibleIcons / 2) ? 1 : 0,
+                                        transition: 'opacity 0.5s',
+                                        width: '100%',
+                                        height: '100%',
+                                        position: 'absolute',
+                                        top: 0,
+                                    }}
+                                >
+                                    <Box sx={{ pt: theme.spacing(2), pl: theme.spacing(2) }}>
+                                        <Image
+                                            src={clientsData[arrayIndex].cardSm}
+                                            alt='card-sm'
+                                            style={{ width: '100%', height: 'auto' }}
+                                        />
+                                    </Box>
+                                    <Box sx={{ p: theme.spacing(2) }}>
+                                        <Typography variant='h2' sx={{ fontSize: '3rem', mb: theme.spacing(2) }}>
+                                            {clientsData[arrayIndex].title}
+                                        </Typography>
+                                        <Typography
+                                            variant='subtitle2'
+                                            textAlign='justify'
+                                            sx={{ fontSize: '1.25rem', lineHeight: '1.75rem' }}
+                                        >
+                                            {clientsData[arrayIndex].subtitle}
+                                        </Typography>
+                                    </Box>
+                                </Box>
+                            )
+                        })}
+                    </Box>
+                </Container>
+            ) : (
+                <>
+                    {tabletMode ? (
+                        <Box sx={{ my: theme.spacing(2) }}>
+                            <Typography variant='h2' textAlign='center'>
+                                Appreciated by some of the
+                            </Typography>
+                            <Typography variant='h2' textAlign='center'>
+                                best in industry
+                            </Typography>
+                        </Box>
+                    ) : (
+                        <Typography variant='h2' textAlign='center' sx={{ mb: theme.spacing(2) }}>
+                            Appreciated by some of the best in industry
+                        </Typography>
+                    )}
+
+                    <Container
+                        maxWidth='md'
+                        disableGutters
                         sx={{
-                            opacity: cardIndex === startIconIndex + index ? 1 : 0,
-                            transition: 'opacity 0.5s',
-                            width: '100%',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            position: 'absolute',
-                            top: 0,
+                            my: theme.spacing(2),
+                            position: 'relative',
+                            height: desktopMode ? '45vw' : '34rem',
                         }}
                     >
-                        <ClienteleCard
-                            cardImage={item.cardImage}
-                            cardIcon={item.cardIcon}
-                            title={item.title}
-                            subtitle={item.subtitle}
+                        <Image
+                            src={clientBg}
+                            alt='client-bg'
+                            style={{
+                                width: '100%',
+                                height: 'auto',
+                                paddingLeft: theme.spacing(8),
+                                paddingTop: theme.spacing(2.5),
+                            }}
                         />
-                    </Box>
-                ))}
-            </Container>
+                        {Array.from({ length: visibleIcons }).map((_, index) => {
+                            const arrayIndex = (startIconIndex + index) % iconsLength
+                            return (
+                                <Box
+                                    key={arrayIndex}
+                                    sx={{
+                                        opacity: index === Math.floor(visibleIcons / 2) ? 1 : 0,
+                                        transition: 'opacity 0.5s',
+                                        width: '100%',
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        position: 'absolute',
+                                        top: 0,
+                                    }}
+                                >
+                                    <ClienteleCard
+                                        cardImage={clientsData[arrayIndex].cardImage}
+                                        cardIcon={clientsData[arrayIndex].cardIcon}
+                                        title={clientsData[arrayIndex].title}
+                                        subtitle={clientsData[arrayIndex].subtitle}
+                                    />
+                                </Box>
+                            )
+                        })}
+                    </Container>
+                </>
+            )}
             <Container maxWidth='md' disableGutters sx={{ mb: theme.spacing(4), position: 'relative' }}>
                 <Box
                     sx={{
@@ -94,28 +170,39 @@ export default function ClienteleSection() {
                         alignItems: 'center',
                     }}
                 >
-                    <IconButton onClick={handlePrev} sx={{ marginRight: '6rem' }}>
+                    <IconButton
+                        onClick={handlePrev}
+                        sx={{ marginRight: narrowTabletMode ? theme.spacing(4) : theme.spacing(6) }}
+                    >
                         <Image src={prevIcon} alt='prevIcon' style={{ height: '2rem', width: 'auto' }} />
-                        {/* <WestRoundedIcon fontSize='large' sx={{ color: theme.palette.primary.main }} /> */}
                     </IconButton>
 
-                    {clientsData.slice(startIconIndex, startIconIndex + visibleIcons).map((item, index) => (
-                        <Box sx={{ height: '3rem', display: 'flex' }} key={index} onClick={() => changeCard(index)}>
-                            <Image
-                                src={item.cardIcon}
-                                alt='client icon'
-                                style={{
-                                    width: 'auto',
-                                    height: '100%',
-                                    cursor: 'pointer',
-                                }}
-                            />
-                        </Box>
-                    ))}
+                    {Array.from({ length: visibleIcons }).map((_, index) => {
+                        const arrayIndex = (startIconIndex + index) % iconsLength
+                        return (
+                            <Box
+                                sx={{ height: '3rem', display: 'flex' }}
+                                key={arrayIndex}
+                                onClick={() => changeCard(index)}
+                            >
+                                <Image
+                                    src={clientsData[arrayIndex].cardIcon}
+                                    alt='client icon'
+                                    style={{
+                                        width: 'auto',
+                                        height: '100%',
+                                        cursor: 'pointer',
+                                    }}
+                                />
+                            </Box>
+                        )
+                    })}
 
-                    <IconButton onClick={handleNext} sx={{ marginLeft: '6rem' }}>
+                    <IconButton
+                        onClick={handleNext}
+                        sx={{ marginLeft: narrowTabletMode ? theme.spacing(4) : theme.spacing(6) }}
+                    >
                         <Image src={nextIcon} alt='nextIcon' style={{ height: '2rem', width: 'auto' }} />
-                        {/* <EastRoundedIcon fontSize='large' sx={{ color: theme.palette.primary.main }} /> */}
                     </IconButton>
                 </Box>
             </Container>
