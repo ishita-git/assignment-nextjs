@@ -136,6 +136,7 @@ const CompanyPill = ({ text, href }: { text: string; href: string }) => {
 
 export default function BusinessPresenceSection() {
     const theme = useTheme()
+    const wideTabletMode = useMediaQuery('(max-width:999px)')
     const tabletMode = useMediaQuery('(max-width:899px)')
     const narrowTabletMode = useMediaQuery('(max-width:799px)')
     const mobileMode = useMediaQuery('(max-width:599px)')
@@ -174,8 +175,14 @@ export default function BusinessPresenceSection() {
                             <Container maxWidth='sm' disableGutters sx={{ mt: theme.spacing(4) }}>
                                 <Grid
                                     container
-                                    spacing={4}
-                                    sx={{ px: narrowTabletMode ? theme.spacing(8) : theme.spacing(6) }}
+                                    spacing={tabletMode ? 4 : 10}
+                                    sx={{
+                                        px: narrowTabletMode
+                                            ? theme.spacing(8)
+                                            : wideTabletMode
+                                            ? theme.spacing(6)
+                                            : theme.spacing(2),
+                                    }}
                                 >
                                     <Grid item xs={6}>
                                         <CompanyCard
