@@ -19,9 +19,11 @@ interface Port {
 }
 
 export default function TrackVesselSchedulesCard() {
-    const theme = useTheme()
     const router = useRouter()
-    const tabletMode = useMediaQuery('(max-width:899px)')
+    const theme = useTheme()
+    const wideMode = useMediaQuery('(min-width:900px)')
+    const mediumMode = useMediaQuery('(min-width:400px) and (max-width:899px)')
+    const SmallMode = useMediaQuery('(max-width:399px)')
 
     const [originLocation, setOriginLocation] = useState('')
     const [destinationLocation, setDestinationLocation] = useState('')
@@ -75,7 +77,7 @@ export default function TrackVesselSchedulesCard() {
             sx={{
                 backgroundColor: '#EFF6FF',
                 height: '16.8rem',
-                minWidth: tabletMode ? '30rem' : '26rem',
+                minWidth: wideMode ? '26rem' : mediumMode ? '30rem' : '26rem',
                 borderRadius: '0px 16px 16px 16px',
                 boxShadow: '4px 8px 8px 0px #00000033',
                 padding: theme.spacing(1),

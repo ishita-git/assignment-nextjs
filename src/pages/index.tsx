@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTheme } from '@mui/material/styles'
-import { AppBar, Box, useScrollTrigger } from '@mui/material'
+import { AppBar, Box, useMediaQuery, useScrollTrigger } from '@mui/material'
 import HeroSection from '../sections/HeroSection'
 import ServicesSection from '../sections/ServicesSection'
 import ShippingSection from '../sections/ShippingSection'
@@ -31,6 +31,10 @@ function ElevationScroll(props: Props) {
 
 export default function ElevateAppBar(props: Props) {
     const theme = useTheme()
+    const desktopMode = useMediaQuery('(min-width:900px)')
+    const tabletMode = useMediaQuery('(min-width:650px) and (max-width:899px)')
+    const mobileMode = useMediaQuery('(min-width:500px) and (max-width:649px)')
+    const SmallMobileMode = useMediaQuery('(max-width:499px)')
 
     return (
         <React.Fragment>
@@ -45,7 +49,15 @@ export default function ElevateAppBar(props: Props) {
                 <Box
                     sx={{
                         position: 'relative',
-                        top: '-20vh',
+                        top: desktopMode
+                            ? '-18vh'
+                            : tabletMode
+                            ? '-16vh'
+                            : mobileMode
+                            ? '-12vh'
+                            : SmallMobileMode
+                            ? '-9vh'
+                            : '0vh',
                         display: 'flex',
                         justifyContent: 'center',
                         mx: theme.spacing(2),

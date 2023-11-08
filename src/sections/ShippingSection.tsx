@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
-import { Box, Container, Typography, useMediaQuery } from '@mui/material'
+import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import anchor from '../assets/icons/anchor.png'
 import container from '../assets/icons/container.png'
@@ -42,10 +42,32 @@ const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
             >
                 <Image src={icon} alt='card icon' style={{ height: tabletMode ? '2rem' : '3.25rem', width: 'auto' }} />
             </Box>
+
             <Typography variant='h3' sx={{ mt: theme.spacing(1.25), whiteSpace: 'nowrap' }}>
-                <NumberCounter targetNumber={text || 0} duration={1000} />
+                <NumberCounter targetNumber={text || 0} duration={1000} />+
             </Typography>
             <Typography variant='h6' textAlign='center' sx={{ maxWidth: wideMobileMode ? '6rem' : '10rem' }}>
+                {subtitle}
+            </Typography>
+        </Box>
+    )
+}
+
+const WideShippingDataCard = ({ text, subtitle }: { text?: number; subtitle?: string }) => {
+    const theme = useTheme()
+
+    return (
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+            }}
+        >
+            <Typography variant='h4' sx={{ mt: theme.spacing(1.25), whiteSpace: 'nowrap' }}>
+                <NumberCounter targetNumber={text || 0} duration={1000} />+
+            </Typography>
+            <Typography variant='body2' textAlign='center' sx={{ maxWidth: '4rem' }}>
                 {subtitle}
             </Typography>
         </Box>
@@ -55,6 +77,7 @@ const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
 export default function ShippingSection() {
     const theme = useTheme()
     const tabletMode = useMediaQuery('(max-width:899px)')
+    const smallMobileMode = useMediaQuery('(max-width:499px)')
 
     return (
         <Box
@@ -77,36 +100,54 @@ export default function ShippingSection() {
             />
 
             <Container maxWidth='lg' disableGutters sx={{ position: 'relative', my: 'auto' }}>
-                <Box sx={{ px: theme.spacing(4) }}>
+                <Box sx={{ px: { xs: theme.spacing(0), sm: theme.spacing(4) } }}>
                     <Typography
-                        variant='h3'
+                        variant={smallMobileMode ? 'h6' : 'h3'}
+                        textAlign='center'
                         sx={{ fontSize: tabletMode ? '1.5rem' : '2rem', lineHeight: tabletMode ? '2.25rem' : '3rem' }}
                     >
                         Seamless Logistics, Worldwide Shipping
                     </Typography>
                     <Typography
-                        variant='h3'
+                        variant={smallMobileMode ? 'h6' : 'h3'}
+                        textAlign='center'
                         sx={{
                             fontSize: tabletMode ? '1.5rem' : '2rem',
                             lineHeight: tabletMode ? '2.25rem' : '3rem',
-                            mb: '4rem',
+                            mb: { xs: theme.spacing(2), sm: theme.spacing(4) },
                         }}
                     >
                         Your Gateway to Effortless Trade
                     </Typography>
-                    <Box
-                        sx={{
-                            display: 'flex',
-                            justifyContent: 'space-around',
-                            mt: theme.spacing(2),
-                        }}
-                    >
-                        <ShippingDataCard icon={anchor} text={47} subtitle='Serving Ports' />
-                        <ShippingDataCard icon={container} text={3000} subtitle='Equipment' />
-                        <ShippingDataCard icon={equipement} text={150} subtitle='Special Equipment' />
-                        <ShippingDataCard icon={ship} text={35} subtitle='Serving Countries' />
-                        <ShippingDataCard icon={person} text={500} subtitle='Happy Customers' />
-                    </Box>
+                    {smallMobileMode ? (
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'space-around',
+                                mt: theme.spacing(2),
+                            }}
+                        >
+                            <WideShippingDataCard text={47} subtitle='Serving Ports' />
+                            <WideShippingDataCard text={3000} subtitle='Equipment' />
+                            <WideShippingDataCard text={150} subtitle='Special Equipment' />
+                            <WideShippingDataCard text={35} subtitle='Serving Countries' />
+                            <WideShippingDataCard text={500} subtitle='Happy Customers' />
+                        </Box>
+                    ) : (
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'space-around',
+                                mt: theme.spacing(2),
+                            }}
+                        >
+                            <ShippingDataCard icon={anchor} text={47} subtitle='Serving Ports' />
+                            <ShippingDataCard icon={container} text={3000} subtitle='Equipment' />
+                            <ShippingDataCard icon={equipement} text={150} subtitle='Special Equipment' />
+                            <ShippingDataCard icon={ship} text={35} subtitle='Serving Countries' />
+                            <ShippingDataCard icon={person} text={500} subtitle='Happy Customers' />
+                        </Box>
+                    )}
                 </Box>
             </Container>
         </Box>

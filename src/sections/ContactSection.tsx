@@ -18,7 +18,7 @@ export default function ContactSection() {
                     maxWidth='sm'
                     disableGutters
                     sx={{
-                        p: theme.spacing(2.5),
+                        p: theme.spacing(2),
                         borderRadius: theme.spacing(1.5),
                         backgroundColor: theme.palette.primary.main,
                     }}

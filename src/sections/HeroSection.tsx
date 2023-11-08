@@ -5,14 +5,16 @@ import { oswald } from '../styles/fonts'
 
 export default function HeroSection() {
     const theme = useTheme()
-    const tabletMode = useMediaQuery('(max-width:899px)')
-
+    const desktopMode = useMediaQuery('(min-width:800px)')
+    const tabletMode = useMediaQuery('(min-width:600px) and (max-width:799px)')
+    const mobileMode = useMediaQuery(' (min-width:450px) and (max-width:599px)')
+    const ultraMobileMode = useMediaQuery(' (max-width:449px)')
     return (
         <Box
             sx={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: tabletMode ? '56vw' : '44vw',
+                height: '56vw',
                 display: 'flex',
                 flexDirection: 'column',
             }}
@@ -43,30 +45,73 @@ export default function HeroSection() {
                 sx={{
                     position: 'relative',
                     mt: theme.spacing(2),
-                    mx: theme.spacing(4),
+                    mx: theme.spacing(ultraMobileMode ? 0 : mobileMode ? 2 : 4),
                 }}
             >
-                <Container maxWidth='xl' disableGutters>
+                <Container
+                    maxWidth='xl'
+                    disableGutters
+                    sx={{
+                        height: '46vw',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}
+                >
                     <Typography
                         variant='h1'
                         sx={{
-                            mt: { xs: theme.spacing(4), md: theme.spacing(8) },
-                            fontSize: { xs: '3rem', md: '4.5rem' },
+                            fontSize: desktopMode
+                                ? '4.5rem'
+                                : tabletMode
+                                ? '3.8rem'
+                                : mobileMode
+                                ? '3rem'
+                                : ultraMobileMode
+                                ? '2.2rem'
+                                : '0rem',
+                            lineHeight: desktopMode
+                                ? '6rem'
+                                : tabletMode
+                                ? '4.2rem'
+                                : mobileMode
+                                ? '3.5rem'
+                                : ultraMobileMode
+                                ? '2.6rem'
+                                : '0rem',
                             whiteSpace: 'pre-line',
                         }}
                     >
-                        Effortless Shipping and Logistics
+                        Effortless Shipping {ultraMobileMode ? '&' : 'and'} Logistics
                     </Typography>
 
                     <Typography
                         variant='h2'
                         textAlign='center'
                         sx={{
-                            mt: { xs: theme.spacing(0), md: theme.spacing(1.25) },
+                            mt: { xs: theme.spacing(1), sm: theme.spacing(2) },
                             fontFamily: oswald.style.fontFamily,
                             color: 'common.white',
                             fontWeight: 400,
-                            fontSize: { xs: '2rem', md: '3rem' },
+                            fontSize: desktopMode
+                                ? '3rem'
+                                : tabletMode
+                                ? '2.5rem'
+                                : mobileMode
+                                ? '2rem'
+                                : ultraMobileMode
+                                ? '1.75rem'
+                                : '0rem',
+                            lineHeight: desktopMode
+                                ? '4rem'
+                                : tabletMode
+                                ? '3rem'
+                                : mobileMode
+                                ? '2.5rem'
+                                : ultraMobileMode
+                                ? '2rem'
+                                : '0rem',
                         }}
                     >
                         Muskan Group Makes it Simple

@@ -38,10 +38,10 @@ const accordionLinks = [
         id: 3,
         title: 'Tools',
         content: [
-            { href: '/services/equipments', link: 'Equipments' },
-            { href: '/services/track', link: 'Track' },
-            { href: '/services/vessel-schedule', link: 'Vessel Schedule' },
-            { href: '/services/quote', link: 'Quote' },
+            { href: '/equipments', link: 'Equipments' },
+            { href: '/track', link: 'Track' },
+            { href: '/vessel-schedule', link: 'Vessel Schedule' },
+            { href: '/quote', link: 'Quote' },
         ],
     },
 ]

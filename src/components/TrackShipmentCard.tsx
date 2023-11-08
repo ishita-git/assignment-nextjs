@@ -6,7 +6,9 @@ import PrimaryTextField from './PrimaryTextField'
 
 export default function TrackShipmentCard() {
     const theme = useTheme()
-    const tabletMode = useMediaQuery('(max-width:899px)')
+    const wideMode = useMediaQuery('(min-width:900px)')
+    const mediumMode = useMediaQuery('(min-width:400px) and (max-width:899px)')
+    const SmallMode = useMediaQuery('(max-width:399px)')
 
     const onSubmit = () => {
         console.log('submit')
@@ -17,7 +19,7 @@ export default function TrackShipmentCard() {
             sx={{
                 backgroundColor: '#EFF6FF',
                 height: '16.8rem',
-                minWidth: tabletMode ? '30rem' : '26rem',
+                minWidth: wideMode ? '26rem' : mediumMode ? '30rem' : '26rem',
                 borderRadius: '0px 16px 16px 16px',
                 boxShadow: '4px 8px 8px 0px #00000033',
                 padding: theme.spacing(1),
