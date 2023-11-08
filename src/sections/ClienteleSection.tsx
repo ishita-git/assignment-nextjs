@@ -13,6 +13,7 @@ import unileverImg from '../assets/clients/Unilever-sm.webp'
 export default function ClienteleSection() {
     const theme = useTheme()
     const mobileMode = useMediaQuery('(max-width:499px)')
+    const wideMobileMode = useMediaQuery('(max-width:629px)')
     const narrowTabletMode = useMediaQuery('(max-width:749px)')
     const tabletMode = useMediaQuery('(max-width:849px)')
     const desktopMode = useMediaQuery('(max-width:1299px)')
@@ -56,7 +57,7 @@ export default function ClienteleSection() {
                         </Typography>
                     </Box>
 
-                    <Box sx={{ position: 'relative', height: '44rem' }}>
+                    <Box sx={{ position: 'relative', height: wideMobileMode ? '42rem' : '45rem' }}>
                         {Array.from({ length: visibleIcons }).map((_, index) => {
                             const arrayIndex = (startIconIndex + index) % iconsLength
                             return (
@@ -64,7 +65,7 @@ export default function ClienteleSection() {
                                     key={arrayIndex}
                                     sx={{
                                         backgroundColor: '#C1D2EC',
-                                        borderRadius: '240px 120px 16px 16px',
+                                        borderRadius: '200px 100px 16px 16px',
                                         opacity: index === Math.floor(visibleIcons / 2) ? 1 : 0,
                                         transition: 'opacity 0.5s',
                                         position: 'absolute',
@@ -167,7 +168,7 @@ export default function ClienteleSection() {
                 >
                     <IconButton
                         onClick={handlePrev}
-                        sx={{ marginRight: narrowTabletMode ? theme.spacing(4) : theme.spacing(6) }}
+                        sx={{ marginRight: theme.spacing(mobileMode ? 0 : narrowTabletMode ? 4 : 6) }}
                     >
                         <Image src={prevIcon} alt='prevIcon' style={{ height: '2rem', width: 'auto' }} />
                     </IconButton>
@@ -195,7 +196,7 @@ export default function ClienteleSection() {
 
                     <IconButton
                         onClick={handleNext}
-                        sx={{ marginLeft: narrowTabletMode ? theme.spacing(4) : theme.spacing(6) }}
+                        sx={{ marginLeft: theme.spacing(mobileMode ? 0 : narrowTabletMode ? 4 : 6) }}
                     >
                         <Image src={nextIcon} alt='nextIcon' style={{ height: '2rem', width: 'auto' }} />
                     </IconButton>
