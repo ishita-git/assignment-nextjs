@@ -14,6 +14,8 @@ import tankContainer from '../../../assets/companies/muskan_conatiners/tank-cont
 import { ProcessData, OfficeLoactionIndia, OfficeLoactionInternational } from '../../../data/companiesData'
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import CustomText from '@/components/companies/CustomText'
+import { Visibility } from '@mui/icons-material'
+import VisibilityTracker, { AnimationType, CollapseOrientation } from '@/components/VisibilityTracker'
 
 function ProcessSection() {
     const [hoveredImage, setHoveredImage] = useState(null)
@@ -33,51 +35,54 @@ function ProcessSection() {
                 <Typography variant='h3' sx={{ my: '3rem' }}>
                     Process
                 </Typography>
-                <Box
-                    sx={{
-                        display: 'flex',
-                    }}
+                {/* <VisibilityTracker animationType={AnimationType.COLLAPSE} collapseOrientation={CollapseOrientation.VERTICAL}  timeout={1500}> */}
+                <Box sx={{
+                    display: 'flex',
+                }}
                 >
                     {ProcessData.map((item, index) => (
-                        <Box
-                            key={index}
-                            sx={{
-                                height: '20rem',
-                                bgcolor: '#FFFFFF',
-                                borderRadius: '1rem',
-                                padding: '1.25rem',
-                                mx: '1rem',
-                                transition: 'transform 0.4s',
-                                transform: hoveredImage === index ? 'scale(1.1)' : 'scale(1)',
-                            }}
-                            onMouseEnter={() => handleMouseEnter(index)}
-                            onMouseLeave={handleMouseLeave}
-                        >
-                            <Image
-                                src={item.image}
-                                alt='card background'
-                                style={{
-                                    width: 'auto',
-                                    height: '4rem',
+                        <VisibilityTracker animationType={AnimationType.COLLAPSE} collapseOrientation={CollapseOrientation.VERTICAL} timeout={1500}>
+                            <Box
+                                key={index}
+                                sx={{
+                                    height: '20rem',
+                                    bgcolor: '#FFFFFF',
+                                    borderRadius: '1rem',
+                                    padding: '1.25rem',
+                                    mx: '1rem',
+                                    transition: 'transform 0.4s',
+                                    transform: hoveredImage === index ? 'scale(1.1)' : 'scale(1)',
                                 }}
-                            />
-                            <Typography
-                                variant='h6'
-                                textAlign={'center'}
-                                sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}
+                                onMouseEnter={() => handleMouseEnter(index)}
+                                onMouseLeave={handleMouseLeave}
                             >
-                                {item.title}
-                            </Typography>
-                            <Typography
-                                variant='body1'
-                                textAlign={'center'}
-                                sx={{ color: '#031225', marginBottom: '1rem', fontWeight: 300 }}
-                            >
-                                {item.desc}
-                            </Typography>
-                        </Box>
+                                <Image
+                                    src={item.image}
+                                    alt='card background'
+                                    style={{
+                                        width: 'auto',
+                                        height: '4rem',
+                                    }}
+                                />
+                                <Typography
+                                    variant='h6'
+                                    textAlign={'center'}
+                                    sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}
+                                >
+                                    {item.title}
+                                </Typography>
+                                <Typography
+                                    variant='body1'
+                                    textAlign={'center'}
+                                    sx={{ color: '#031225', marginBottom: '1rem', fontWeight: 300 }}
+                                >
+                                    {item.desc}
+                                </Typography>
+                            </Box>
+                        </VisibilityTracker>
                     ))}
                 </Box>
+                {/* </VisibilityTracker> */}
             </Box>
         </Box>
     )
@@ -85,6 +90,7 @@ function ProcessSection() {
 
 export default function Home() {
     const theme = useTheme()
+
 
     return (
         <CompaniesLayout image={containerLinesBg} title={'Muskan Container Lines\nPvt Ltd.'}>
@@ -200,9 +206,29 @@ export default function Home() {
             <ServicesCards companiesPage />
             <Box sx={{ px: theme.spacing(12) }}>
                 <Container maxWidth='xl' disableGutters>
-                    <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '2rem', color: '#1B1B1F' }}>
+                    <Typography variant='h3' sx={{ textAlign: 'start', my: '2rem', color: '#1B1B1F' }}>
                         Our Branches
                     </Typography>
+                    <Box sx={{mb:"6rem"}} >
+                        <Grid container spacing={2}>
+                            <Grid item sm={4} xs={6}>
+                                <AddressCard companyLoc="New Delhi" address="Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor, NEW DELHI - 110078" />
+                            </Grid>
+                            <Grid item sm={4} xs={6}>
+                                <AddressCard companyLoc="Gujarat" address="Office No. 222, 2nd Floor, Manali Tower, Plot No. 110, Sector No. 8, Behind Oslo Circle, Sector 8, Gandhidham, Gujarat 370203" />
+                            </Grid>
+                            <Grid item sm={4} xs={12}>
+                                <AddressCard companyLoc="Navi Mumbai" address="Office No. 323, 3rd Floor, Skylark Building, Plot No. 63, Sector 11, Belapur CBD, Navi Mumbai - 400614" />
+                            </Grid>
+                            <Grid item sm={4} xs={12}>
+                                <AddressCard companyLoc="Chennai" address="72/1,first floor, shop no 3, Linghi Chetty street, Mannady Chennai - 600001" />
+                            </Grid>
+                            <Grid item sm={4} xs={12}>
+                                <AddressCard companyLoc="Kolkata" address="Cabin No. 13 & 14 , 3rd Floor, 26, Chittaranjan Avenue, Kolkata -700012" />
+                            </Grid>
+                        </Grid>
+
+                    </Box>
                     <Image src={branchesMap} alt='branches' style={{ width: '40rem', height: 'auto' }} />
                 </Container>
             </Box>
@@ -255,5 +281,16 @@ function ContainerType({ image, title, desc }: { image: string | StaticImageData
             </Grid>
         </Box>
     )
+}
+
+function AddressCard({ companyLoc, address }: { companyLoc: String, address: String }) {
+    return <Box sx={{}}>
+        <Typography variant='h5' sx={{ textAlign: 'start', mb: '0.5rem', color: '#031225', fontWeight: 500 }}>
+            {companyLoc}
+        </Typography>
+        <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#031225',fontWeight:300,fontSize:"0.75rem" }}>
+            {address}
+        </Typography>
+    </Box>
 }
 const totalTradeAmtList = ['$394,813,673,347', '$570,402,004,491', '$175,588,331,144', '22.45%', '26.92%']

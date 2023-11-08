@@ -10,7 +10,7 @@ function CompanyInfo({ title, body }: { title: String; body: String }) {
     return (
         <Box sx={{ mb: '1rem' }}>
             <InputLabel>{title}</InputLabel>
-            <Typography variant='body2' sx={{ fontWeight: 400, color: '#1B1B1F' }}>
+            <Typography variant='subtitle2' sx={{ textAlign: 'start', mb: '0.5rem',  color: '#1B1B1F' }}>
                 {body}
             </Typography>
         </Box>
