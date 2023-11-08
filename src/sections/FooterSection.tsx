@@ -222,7 +222,7 @@ export default function FooterSection() {
 
                     <Divider sx={{ mt: theme.spacing(2), borderColor: '#FFFFFF80' }} />
                     <Typography variant='body2' textAlign='end' sx={{ py: theme.spacing(2) }}>
-                        © 2023 Copyright: Muskan-Group of Companies
+                        © 2023 Copyright: Muskan Group
                     </Typography>
                 </Box>
             ) : narrowTabletMode ? (
@@ -980,7 +980,7 @@ export default function FooterSection() {
                             }}
                         />
                         <Typography variant='body2' textAlign='end' sx={{ py: theme.spacing(2) }}>
-                            © 2023 Copyright: Muskan-Group of Companies
+                            © 2023 Copyright: Muskan Group of Companies
                         </Typography>
                     </Container>
                 </Box>

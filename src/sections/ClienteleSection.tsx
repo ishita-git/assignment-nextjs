@@ -8,9 +8,11 @@ import clientBg from '../assets/clients/client-bg.webp'
 import clientBgSm from '../assets/clients/client-bg-sm.png'
 import prevIcon from '../assets/icons/previous.webp'
 import nextIcon from '../assets/icons/next.webp'
+import unileverImg from '../assets/clients/Unilever-sm.webp'
 
 export default function ClienteleSection() {
     const theme = useTheme()
+    const mobileMode = useMediaQuery('(max-width:499px)')
     const narrowTabletMode = useMediaQuery('(max-width:749px)')
     const tabletMode = useMediaQuery('(max-width:849px)')
     const desktopMode = useMediaQuery('(max-width:1299px)')
@@ -46,40 +48,33 @@ export default function ClienteleSection() {
             {narrowTabletMode ? (
                 <Container maxWidth='sm' disableGutters>
                     <Box sx={{ my: theme.spacing(2) }}>
-                        <Typography variant='h2' textAlign='center'>
+                        <Typography variant={mobileMode ? 'h3' : 'h2'} textAlign='center' sx={{ color: '#081225' }}>
                             Appreciated by some of
                         </Typography>
-                        <Typography variant='h2' textAlign='center'>
+                        <Typography variant={mobileMode ? 'h3' : 'h2'} textAlign='center' sx={{ color: '#081225' }}>
                             the best in industry
                         </Typography>
                     </Box>
-                    <Box sx={{ position: 'relative' }}>
-                        <Image
-                            src={clientBgSm}
-                            alt='client-bg-sm'
-                            style={{ width: '100%', height: 'auto', position: 'relative' }}
-                        />
+
+                    <Box sx={{ position: 'relative', height: '44rem' }}>
                         {Array.from({ length: visibleIcons }).map((_, index) => {
                             const arrayIndex = (startIconIndex + index) % iconsLength
                             return (
                                 <Box
                                     key={arrayIndex}
                                     sx={{
+                                        backgroundColor: '#C1D2EC',
+                                        borderRadius: '240px 120px 16px 16px',
                                         opacity: index === Math.floor(visibleIcons / 2) ? 1 : 0,
                                         transition: 'opacity 0.5s',
-                                        width: '100%',
-                                        height: '100%',
                                         position: 'absolute',
-                                        top: 0,
                                     }}
                                 >
-                                    <Box sx={{ pt: theme.spacing(2), pl: theme.spacing(2) }}>
-                                        <Image
-                                            src={clientsData[arrayIndex].cardSm}
-                                            alt='card-sm'
-                                            style={{ width: '100%', height: 'auto' }}
-                                        />
-                                    </Box>
+                                    <Image
+                                        src={clientsData[arrayIndex].cardSm}
+                                        alt='client-img-sm'
+                                        style={{ width: '100%', height: 'auto' }}
+                                    />
                                     <Box sx={{ p: theme.spacing(2) }}>
                                         <Typography variant='h2' sx={{ fontSize: '3rem', mb: theme.spacing(2) }}>
                                             {clientsData[arrayIndex].title}

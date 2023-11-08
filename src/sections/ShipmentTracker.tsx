@@ -7,6 +7,7 @@ import TrackVesselSchedulesCard from '../components/TrackVesselSchedulesCard'
 export default function ShipmentTracker() {
     const theme = useTheme()
     const tabletMode = useMediaQuery('(max-width:899px)')
+    const SmallMode = useMediaQuery('(max-width:399px)')
 
     const [activeTab, setActiveTab] = useState(1)
 
@@ -23,7 +24,7 @@ export default function ShipmentTracker() {
                             sx={{
                                 borderRadius: '16px 0px 0px 0px',
                                 height: '3rem',
-                                width: '12.5rem',
+                                width: SmallMode ? '9rem' : '14rem',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -39,7 +40,7 @@ export default function ShipmentTracker() {
                                     color: activeTab === 1 ? theme.palette.primary.main : theme.palette.common.white,
                                 }}
                             >
-                                Track Shipment
+                                {SmallMode ? 'Shipment' : 'Track Shipment'}
                             </Typography>
                         </Box>
 
@@ -47,7 +48,7 @@ export default function ShipmentTracker() {
                             sx={{
                                 borderRadius: '0px 16px 0px 0px',
                                 height: '3rem',
-                                width: '12.5rem',
+                                width: SmallMode ? '9rem' : '14rem',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
@@ -63,7 +64,7 @@ export default function ShipmentTracker() {
                                     color: activeTab === 2 ? theme.palette.primary.main : theme.palette.common.white,
                                 }}
                             >
-                                Track Schedules
+                                {SmallMode ? 'Schedules' : 'Track Schedules'}
                             </Typography>
                         </Box>
                     </Box>
@@ -81,7 +82,7 @@ export default function ShipmentTracker() {
                                     borderRadius: '16px 16px 0px 0px',
                                     backgroundColor: 'primary.main',
                                     height: '2.5rem',
-                                    width: '16rem',
+                                    width: '14rem',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
@@ -98,7 +99,7 @@ export default function ShipmentTracker() {
                                     borderRadius: '16px 16px 0px 0px',
                                     backgroundColor: 'primary.main',
                                     height: '2.5rem',
-                                    width: '16rem',
+                                    width: '14rem',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',

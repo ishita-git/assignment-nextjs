@@ -40,6 +40,8 @@ export default function Navbar() {
     }
 
     const tabletMode = useMediaQuery('(max-width:899px)')
+    const mobileMode = useMediaQuery('(max-width:599px)')
+    const ultraSmallMode = useMediaQuery('(max-width:399px)')
 
     const handleSidebarToggle = () => {
         setSidebarOpen(!sidebarOpen)
@@ -57,20 +59,24 @@ export default function Navbar() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 py: theme.spacing(1),
-                px: theme.spacing(4),
+                px: mobileMode ? theme.spacing(2) : theme.spacing(4),
             }}
         >
             <Link href='/' sx={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={logo} alt='logo' style={{ height: '3rem', width: 'auto' }} />
 
-                <Box>
-                    <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1.5rem', color: '#FFFFFF' }}>
-                        Muskan Group
-                    </Typography>
-                    {/* <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1rem', color: '#FFFFFF' }}>
+                {ultraSmallMode ? (
+                    <></>
+                ) : (
+                    <Box>
+                        <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1.5rem', color: '#FFFFFF' }}>
+                            Muskan Group
+                        </Typography>
+                        {/* <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1rem', color: '#FFFFFF' }}>
                         of Companies
                     </Typography> */}
-                </Box>
+                    </Box>
+                )}
             </Link>
 
             {tabletMode ? (
