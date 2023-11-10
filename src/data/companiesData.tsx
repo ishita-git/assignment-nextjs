@@ -15,37 +15,37 @@ import professionalismImg from '../assets/companies/muskaan_shipping_llc/profess
 import reliabilityImg from '../assets/companies/muskaan_shipping_llc/reliability.png'
 export const ContainerType = [
     {
-        id:0,
+        id: 0,
         image: dryContainer,
         title: 'Dry Containers',
         desc: 'Utilized in global transportation for items like manufactured components, everyday consumer goods, electronics, and clothing.',
     },
     {
-        id:1,
+        id: 1,
         image: refrigeratedContainer,
         title: 'Refrigerated Containers',
         desc: 'Used for the transportation of perishable items that require specific temperature control, including fresh and frozen foods.',
     },
     {
-        id:2,
+        id: 2,
         image: flatRack,
         title: 'Flat Racks',
         desc: 'Deployed for the transportation of large and heavy cargo, including building materials, large equipments and machinery.',
     },
     {
-        id:3,
+        id: 3,
         image: openTops,
         title: 'Open Tops',
         desc: 'Utilized for the transportation of bulky and over-sized cargo, including construction materials and heavy machinery.',
     },
     {
-        id:4,
+        id: 4,
         image: insulatedContainer,
         title: 'Insulated or thermal',
         desc: 'These are shipping storage containers equipped with controlled temperature settings, to maintain elevated temperatures.',
     },
     {
-        id:5,
+        id: 5,
         image: tankContainer,
         title: 'Tank Containers',
         desc: 'Used to transport large quantities of liquid products, especially industrial chemicals, commercial fuels and oils.',
@@ -59,7 +59,7 @@ export const ChooseUsData = [
     'Discounts for wholesale and regular customers',
 ]
 
-export const OfficeLoactionIndia = ['Delhi(Head Office)', 'Maharashtra', 'Gujrat', 'Chennai', 'Kolkata']
+export const OfficeLoactionIndia = ['Delhi (Head Office)', 'Maharashtra', 'Gujrat', 'Chennai', 'Kolkata']
 
 export const OfficeLoactionInternational = ['Malaysia', 'Singapore', 'UAE', 'Srilanka']
 export const ProcessData = [

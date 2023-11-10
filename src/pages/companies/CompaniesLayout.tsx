@@ -36,7 +36,16 @@ declare type CompaniesLayoutProps = {
     props?: Props
 }
 
-export default function CompaniesLayout({ image, title, subtitle, children, props, mapImage, address, telephoneNumber }: CompaniesLayoutProps) {
+export default function CompaniesLayout({
+    image,
+    title,
+    subtitle,
+    children,
+    props,
+    mapImage,
+    address,
+    telephoneNumber,
+}: CompaniesLayoutProps) {
     const theme = useTheme()
 
     return (
@@ -53,7 +62,7 @@ export default function CompaniesLayout({ image, title, subtitle, children, prop
                     {children}
                 </Container>
 
-                <Box sx={{ px: theme.spacing(12) }}>
+                <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                     <Container maxWidth='xl' disableGutters>
                         <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
                             Contact Us

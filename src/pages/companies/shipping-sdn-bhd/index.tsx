@@ -1,6 +1,6 @@
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import CompaniesLayout from '../CompaniesLayout'
 import shippingBg from '../../../assets/companies/shipping-sdn-bhd-bg.webp'
@@ -20,6 +20,9 @@ import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker
 
 export default function Home() {
     const theme = useTheme()
+    const mobileMode = useMediaQuery('(max-width:599px)')
+    const customMobileMode = useMediaQuery('(min-width:600px) and (max-width:699px)')
+    const ultraMobileMode = useMediaQuery('(max-width:400px)')
 
     return (
         <CompaniesLayout
@@ -29,7 +32,7 @@ export default function Home() {
             address='Centro Business CentreSuite #16-02, level 16,No.8 Jalan Batu Tiga Lama,Klang 41200 Selangor, Malaysia'
             telephoneNumber='+603-33418460/61'
         >
-            <Box sx={{ px: theme.spacing(12) }}>
+            <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h2' sx={{ mb: '1rem', color: '#1B1B1F' }}>
                         About Us
@@ -65,58 +68,93 @@ export default function Home() {
                     />
                 </Container>
             </Box>
-            <Box sx={{ display: 'flex', position: 'relavtive', flexDirection: 'column', justifyContent: 'center' }}>
-                <Image src={visionBg} alt='' style={{ height: 'auto', width: '100%' }} />
-                <Grid container spacing={4} sx={{ position: 'absolute', px: '12rem' }}>
-                    <Grid item xs={6} sm={6}>
+            <Box
+                sx={{
+                    display: 'flex',
+                    position: 'relavtive',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                <Image src={visionBg} alt='' style={{ height: 'auto', width: mobileMode ? '300%' : '100%' }} />
+                <Grid
+                    container
+                    spacing={mobileMode ? 2 : 4}
+                    sx={{
+                        position: 'absolute',
+                        px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) },
+                    }}
+                >
+                    <Grid item xs={12} sm={6}>
                         <Box sx={{ textAlign: 'start' }}>
-                            <Image src={visionIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
+                            {customMobileMode || ultraMobileMode ? (
+                                <></>
+                            ) : (
+                                <Image src={visionIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
+                            )}
                             <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
-                            <Typography
-                                variant='h3'
-                                sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
-                            >
-                                Our Vision
-                            </Typography>
+                                <Typography
+                                    variant='h3'
+                                    sx={{
+                                        textAlign: 'start',
+                                        mt: '2rem',
+                                        mb: '1rem',
+                                        color: '#FFFFFF',
+                                        fontWeight: 600,
+                                    }}
+                                >
+                                    Our Vision
+                                </Typography>
                             </VisibilityTracker>
                             <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
-                            <Typography
-                                variant='subtitle2'
-                                sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}
-                            >
-                                We aim to achieve what multinational forwarders cannot: meeting our customers' Critical
-                                Success Factors. Our ambition is entirely customer-centric, recognizing that our
-                                customers have the freedom to choose their service provider.
-                            </Typography>
+                                <Typography
+                                    variant='subtitle2'
+                                    sx={{ textAlign: 'justify', color: '#FFFFFF', fontWeight: 300 }}
+                                >
+                                    We aim to achieve what multinational forwarders cannot: meeting our customers'
+                                    Critical Success Factors. Our ambition is entirely customer-centric, recognizing
+                                    that our customers have the freedom to choose their service provider.
+                                </Typography>
                             </VisibilityTracker>
                         </Box>
                     </Grid>
-                    <Grid item xs={6} sm={6}>
+                    <Grid item xs={12} sm={6}>
                         <Box sx={{ textAlign: 'start' }}>
-                            <Image src={targetIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
+                            {customMobileMode || ultraMobileMode ? (
+                                <></>
+                            ) : (
+                                <Image src={targetIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
+                            )}
                             <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
-                            <Typography
-                                variant='h3'
-                                sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
-                            >
-                                Our Mission
-                            </Typography>
+                                <Typography
+                                    variant='h3'
+                                    sx={{
+                                        textAlign: 'start',
+                                        mt: '2rem',
+                                        mb: '1rem',
+                                        color: '#FFFFFF',
+                                        fontWeight: 600,
+                                    }}
+                                >
+                                    Our Mission
+                                </Typography>
                             </VisibilityTracker>
                             <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
-                            <Typography
-                                variant='subtitle2'
-                                sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}
-                            >
-                                We prioritize clear communication and adaptability to meet changing customer needs,
-                                striving to build enduring relationships. Our extensive transportation knowledge ensures
-                                top-quality service.
-                            </Typography>
+                                <Typography
+                                    variant='subtitle2'
+                                    sx={{ textAlign: 'justify', color: '#FFFFFF', fontWeight: 300 }}
+                                >
+                                    We prioritize clear communication and adaptability to meet changing customer needs,
+                                    striving to build enduring relationships. Our extensive transportation knowledge
+                                    ensures top-quality service.
+                                </Typography>
                             </VisibilityTracker>
                         </Box>
                     </Grid>
                 </Grid>
             </Box>
-            <Box sx={{ px: theme.spacing(12) }}>
+            <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '1rem', color: '#1B1B1F' }}>
                         Our Services
@@ -138,19 +176,35 @@ export default function Home() {
                         Navigational Safety and Environmental Responsibility:
                     </Typography>
                     <CustomText text="The paramount duty of a transportation carrier is to securely convey customers' cargo to its destination, maintaining its original condition. Beyond handling standard container freight, we offer technical assistance for the safe transport of hazardous materials and oversized items that cannot fit into containers, ensuring a seamless and secure marine and onshore journey. Furthermore, we are committed to environmental conservation, implementing practices like fuel-efficient cruising to mitigate ship-generated greenhouse gas emissions and employing shore power at our Long Beach, California terminal to eliminate ship fuel consumption." />
-                    <Grid container spacing={2} sx={{ my: '4rem' }}>
+                    <Grid
+                        container
+                        spacing={customMobileMode ? 1 : 2}
+                        sx={
+                            mobileMode
+                                ? { display: 'flex', flexDirection: 'column', alignItems: 'center' }
+                                : { my: '4rem' }
+                        }
+                    >
                         <Grid item xs={12} sm={4}>
                             <ServicesCard
                                 image={ourCommitmentImg}
                                 title='Our Commitment'
-                                desc=" Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:"
+                                desc={
+                                    customMobileMode
+                                        ? "Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty."
+                                        : "Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:"
+                                }
                             />
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <ServicesCard
                                 image={customBrokerageImg}
                                 title='Custom Brokerage'
-                                desc='Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                desc={
+                                    customMobileMode
+                                        ? 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
+                                        : 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                }
                             />
                         </Grid>
                         <Grid item xs={12} sm={4}>

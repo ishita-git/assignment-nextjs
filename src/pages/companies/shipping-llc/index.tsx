@@ -1,6 +1,6 @@
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import CompaniesLayout from '../CompaniesLayout'
 import shippingBg from '../../../assets/companies/shipping-llc-bg.webp'
@@ -18,28 +18,29 @@ import StatisticsCard from '@/components/companies/StatisticsCard'
 import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
 
 function ValuesBox({ image, title, desc }: { image: string | StaticImageData; title: String; desc: String }) {
-    const [hovered, setHovered] = React.useState(false);
+    const [hovered, setHovered] = React.useState(false)
 
     const handleMouseEnter = () => {
-        setHovered(true);
-    };
+        setHovered(true)
+    }
 
     const handleMouseLeave = () => {
-        setHovered(false);
-    };
+        setHovered(false)
+    }
     return (
-        <Box sx={{
-            bgcolor: '#FFFFFF',
-            borderRadius: '1rem',
-            p: '1.25rem',
-            height: '16rem',
-            transition: 'transform 0.4s', // Add a transition for transform
-            transform: hovered ? 'scale(1.1)' : 'scale(1)',
-        }}
+        <Box
+            sx={{
+                bgcolor: '#FFFFFF',
+                borderRadius: '1rem',
+                p: '1.25rem',
+                height: '16rem',
+                transition: 'transform 0.4s', // Add a transition for transform
+                transform: hovered ? 'scale(1.1)' : 'scale(1)',
+            }}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <Image src={image} alt='' style={{ height: 'auto', width: '25%' }} />
+            <Image src={image} alt='' style={{ height: 'auto', width: '3.5rem' }} />
             <Typography variant='h6' sx={{ textAlign: 'center', my: '1rem', color: '#1B1B1F', fontWeight: 600 }}>
                 {title}
             </Typography>
@@ -51,6 +52,8 @@ function ValuesBox({ image, title, desc }: { image: string | StaticImageData; ti
 }
 export default function Home() {
     const theme = useTheme()
+    const mobileMode = useMediaQuery('(max-width:599px)')
+    const customMobileMode = useMediaQuery('(min-width:600px) and (max-width:699px)')
 
     return (
         <CompaniesLayout
@@ -60,7 +63,7 @@ export default function Home() {
             address='Mohammed Noor Talib Bldg.,701, 7th floor, Khaleed bin waleed Road Opp.Royal Ascot Hotel Burdubai,PO Box : - 128160 Dubai'
             telephoneNumber='+97143511215'
         >
-            <Box sx={{ px: theme.spacing(12) }}>
+            <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h2' sx={{ mb: '1rem', color: '#1B1B1F' }}>
                         About Us
@@ -96,17 +99,27 @@ export default function Home() {
                                     />
                                 </Grid>
                                 <Grid item sm={4} xs={12}>
-                                    <ValuesBox
-                                        key={CoreValuesData[2].id}
-                                        image={CoreValuesData[2].image}
-                                        title={CoreValuesData[2].title}
-                                        desc={CoreValuesData[2].desc}
-                                    />
+                                    <Box
+                                        sx={{
+                                            px: {
+                                                xs: theme.spacing(6),
+                                                sm: theme.spacing(0),
+                                            },
+                                        }}
+                                    >
+                                        <ValuesBox
+                                            key={CoreValuesData[2].id}
+                                            image={CoreValuesData[2].image}
+                                            title={CoreValuesData[2].title}
+                                            desc={CoreValuesData[2].desc}
+                                        />
+                                    </Box>
                                 </Grid>
                                 <Grid item xs={6}>
                                     <Box
                                         sx={{
                                             pl: {
+                                                sm: theme.spacing(8),
                                                 md: theme.spacing(12),
                                                 xl: theme.spacing(8),
                                             },
@@ -124,6 +137,7 @@ export default function Home() {
                                     <Box
                                         sx={{
                                             pr: {
+                                                sm: theme.spacing(8),
                                                 md: theme.spacing(12),
                                                 xl: theme.spacing(8),
                                             },
@@ -152,10 +166,25 @@ export default function Home() {
                     />
                 </Container>
             </Box>
-            <Box sx={{ display: 'flex', position: 'relavtive', flexDirection: 'column', justifyContent: 'center' }}>
-                <Image src={visionBg} alt='' style={{ height: 'auto', width: '100%' }} />
-                <Box sx={{ textAlign: 'start', position: 'absolute', px: '12rem', width: '60%' }}>
-                    <Image src={visionIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
+            <Box
+                sx={{
+                    display: 'flex',
+                    position: 'relavtive',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: mobileMode ? 'center' : 'start',
+                }}
+            >
+                <Image src={visionBg} alt='' style={{ height: 'auto', width: mobileMode ? '180%' : '100%' }} />
+                <Box
+                    sx={{
+                        textAlign: 'start',
+                        position: 'absolute',
+                        px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) },
+                        width: { xs: '100%', sm: '80%', md: '60%' },
+                    }}
+                >
+                    <Image src={visionIcon} alt='' style={{ height: '3.25rem', width: 'auto' }} />
                     <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
                         <Typography
                             variant='h3'
@@ -166,14 +195,14 @@ export default function Home() {
                     </VisibilityTracker>
                     <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
                         <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
-                            We aim to achieve what multinational forwarders cannot: meeting our customers' Critical Success
-                            Factors. Our ambition is entirely customer-centric, recognizing that our customers have the
-                            freedom to choose their service provider.
+                            We aim to achieve what multinational forwarders cannot: meeting our customers' Critical
+                            Success Factors. Our ambition is entirely customer-centric, recognizing that our customers
+                            have the freedom to choose their service provider.
                         </Typography>
                     </VisibilityTracker>
                 </Box>
             </Box>
-            <Box sx={{ px: theme.spacing(12) }}>
+            <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '1rem', color: '#1B1B1F' }}>
                         Our Services
@@ -186,7 +215,15 @@ export default function Home() {
                         Freight Forwarding:
                     </Typography>
                     <CustomText text="Muskaan Shipping LLC, located in Dubai, U.A.E., is a dynamic and rapidly expanding NVOCC shipping agency and international freight forwarding company. Our global presence enables us to deliver international shipping and logistics solutions to clients worldwide. Our proficient team of seasoned management professionals, boasting decades of experience in the shipping and freight forwarding industry, oversees the company's operations. We are supported by substantial multimillion-dollar investments earmarked for business expansion, trade development, and cutting-edge technology implementation. With a corporate vision of becoming a preferred integrated global shipping company, we prioritize a customer-centric approach and foster an employee-friendly environment. Our dedicated team of professionals is committed to delivering top-quality services to both international and domestic clients. We have established a robust global network, with key offices and partners strategically located across North America, South America, Europe, the USA, Far East, North East Asia, South East Asia, CIS, East Africa, West Africa, and the Middle East." />
-                    <Grid container spacing={2} sx={{ my: '1rem' }}>
+                    <Grid
+                        container
+                        spacing={2}
+                        sx={
+                            mobileMode
+                                ? { display: 'flex', flexDirection: 'column', alignItems: 'center' }
+                                : { my: '1rem' }
+                        }
+                    >
                         <Grid item xs={12} sm={4}>
                             <ServicesCard
                                 image={oceanFreightImg}
@@ -198,14 +235,22 @@ export default function Home() {
                             <ServicesCard
                                 image={airFreightImg}
                                 title='Air Freight'
-                                desc='We offer a comprehensive range of air freight solutions, leveraging our global network for efficient export, import, and cross-trade shipments. Our strong partnerships with major airlines ensure guaranteed space and competitive pricing. With a focus on reliability and document preparation, we provide trusted air freight services tailored to your needs.'
+                                desc={
+                                    customMobileMode
+                                        ? 'We offer a comprehensive range of air freight solutions, leveraging our global network for efficient export, import, and cross-trade shipments. With a focus on reliability and document preparation, we provide trusted air freight services tailored to your needs.'
+                                        : 'We offer a comprehensive range of air freight solutions, leveraging our global network for efficient export, import, and cross-trade shipments. Our strong partnerships with major airlines ensure guaranteed space and competitive pricing. With a focus on reliability and document preparation, we provide trusted air freight services tailored to your needs.'
+                                }
                             />
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <ServicesCard
                                 image={landTranportImg}
                                 title='Land Transportation'
-                                desc='We specialize in both international and domestic land transport logistics within the GCC countries. Our flexible and efficient road services are customized to meet the specific needs of our customers, including container transportation, LTL and FTL services to GCC countries, breakbulk shipments, and heavy equipment transport.'
+                                desc={
+                                    customMobileMode
+                                        ? 'We specialize in comprehensive land transport logistics within GCC countries. Our flexible road services cater to customer needs, offering container transportation, LTL and FTL services to GCC countries, breakbulk shipments, and heavy equipment transport.'
+                                        : 'We specialize in both international and domestic land transport logistics within the GCC countries. Our flexible and efficient road services are customized to meet the specific needs of our customers, including container transportation, LTL and FTL services to GCC countries, breakbulk shipments, and heavy equipment transport.'
+                                }
                             />
                         </Grid>
                     </Grid>

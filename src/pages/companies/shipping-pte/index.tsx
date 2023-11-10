@@ -1,6 +1,6 @@
 import React from 'react'
 import Image, { StaticImageData } from 'next/image'
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import CompaniesLayout from '../CompaniesLayout'
 import shippingBg from '../../../assets/companies/shipping-pte-bg.webp'
@@ -18,6 +18,9 @@ import mapImage from '../../../assets/companies/muskaan_shipping/map.png'
 import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
 export default function Home() {
     const theme = useTheme()
+    const mobileMode = useMediaQuery('(max-width:599px)')
+    const customMobileMode = useMediaQuery('(min-width:600px) and (max-width:699px)')
+
     return (
         <CompaniesLayout
             image={shippingBg}
@@ -26,7 +29,7 @@ export default function Home() {
             address='60 Kaki Bukit Place #02-13Suites 3 Eunos Techpark,Singapore 415979'
             telephoneNumber='+65 64921136'
         >
-            <Box sx={{ px: theme.spacing(12) }}>
+            <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h2' sx={{ mb: '1rem', color: '#1B1B1F' }}>
                         About Us
@@ -60,31 +63,62 @@ export default function Home() {
                     />
                 </Container>
             </Box>
-            <Box sx={{ display: 'flex', position: 'relavtive', flexDirection: 'column', justifyContent: 'center' }}>
-                <Image src={visionBg} alt='' style={{ height: 'auto', width: '100%' }} />
-                <Box sx={{ position: 'absolute', padding: '0rem 12rem', width: '60%', textAlign: 'start' }}>
-                    <Image src={visionIcon} alt='' style={{ height: 'auto', width: '12.5%' }} />
+            <Box
+                sx={{
+                    display: 'flex',
+                    position: 'relavtive',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                }}
+            >
+                <Image src={visionBg} alt='' style={{ height: 'auto', width: mobileMode ? '250%' : '125%' }} />
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        padding: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) },
+                        width: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'flex-start',
+                    }}
+                >
+                    <Image src={visionIcon} alt='' style={{ height: 'auto', width: mobileMode ? '8%' : '12.5%' }} />
                     <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
                         <Typography
                             variant='h3'
-                            sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
+                            sx={{
+                                textAlign: 'start',
+                                mt: { xs: '1rem', md: '2rem' },
+                                mb: '1rem',
+                                color: '#FFFFFF',
+                                fontWeight: 600,
+                            }}
                         >
                             Our Vision
                         </Typography>
                     </VisibilityTracker>
                     <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
-                        <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
-                            Our core values are our foundation for future success, guiding us in serving our customers and
-                            exploring new services and routes. We remain committed to shipping, especially intra-Asia
-                            routes, leveraging our deep regional ties. We prioritize staff development, pursue growth in
-                            emerging markets like Africa and South America, and invest in efficient vessels and land-based
-                            infrastructure. We believe our expertise and adaptability will continue to yield tangible
-                            results across diverse environments.
+                        <Typography
+                            variant='subtitle2'
+                            sx={{
+                                textAlign: 'justify',
+                                color: '#FFFFFF',
+                                fontWeight: 300,
+                                width: { xs: '100%', md: '60%' },
+                            }}
+                        >
+                            Our core values are our foundation for future success, guiding us in serving our customers
+                            and exploring new services and routes. We remain committed to shipping, especially
+                            intra-Asia routes, leveraging our deep regional ties. We prioritize staff development,
+                            pursue growth in emerging markets like Africa and South America, and invest in efficient
+                            vessels and land-based infrastructure. We believe our expertise and adaptability will
+                            continue to yield tangible results across diverse environments.
                         </Typography>
                     </VisibilityTracker>
                 </Box>
             </Box>
-            <Box sx={{ px: theme.spacing(12) }}>
+            <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h3' sx={{ textAlign: 'start', mt: '6rem', mb: '2rem', color: '#1B1B1F' }}>
                         Our Services
@@ -95,19 +129,31 @@ export default function Home() {
                     <CustomText text='Muskaan Shipping Pte. Ltd. operates as a Non-Vessel Operating Cargo Carrier (NVOCC), serving over 700 destinations worldwide. We specialize in securing competitive volume prices for LCL cargo, offering efficient consolidation services with various shipping lines. Our customers benefit from guaranteed weekly LCL groupage services to major global ports, emphasizing speed, connectivity, safety, and reliability.' />
                     <CustomText text='Led by professionals with extensive experience in international freight forwarding, NVOCC, and consolidation, we handle diverse cargo types, including hazardous and non-hazardous chemicals, machinery, raw materials, refrigerated goods, and oversized project cargo.' />
                     <CustomText text="Our group's expansion in the Asia Pacific region over recent years positions us on the path to becoming a global international freight forwarding company, dedicated to providing top-tier service to clients worldwide. Our Multi-Modal Transport System, supported by a proactive customer service team and a global agent network, ensures timely door-to-door cargo delivery, consistently meeting customer expectations." />
-                    <Grid container spacing={2} sx={{ my: theme.spacing(4) }}>
+                    <Grid
+                        container
+                        spacing={customMobileMode ? 1 : 2}
+                        sx={
+                            mobileMode
+                                ? { display: 'flex', flexDirection: 'column', alignItems: 'center' }
+                                : { my: '4rem' }
+                        }
+                    >
                         <Grid item xs={12} sm={4}>
                             <ServicesCard
                                 image={ourCommitmentImg}
                                 title='Our Commitment'
-                                desc=" Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:"
+                                desc="Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:"
                             />
                         </Grid>
                         <Grid item xs={12} sm={4}>
                             <ServicesCard
                                 image={customBrokerageImg}
                                 title='Custom Brokerage'
-                                desc='Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                desc={
+                                    customMobileMode
+                                        ? 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
+                                        : 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                }
                             />
                         </Grid>
                         <Grid item xs={12} sm={4}>

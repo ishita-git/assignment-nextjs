@@ -32,7 +32,7 @@ export default function FooterSection() {
     return (
         <Box sx={{ backgroundColor: '#003A9B', mt: theme.spacing(4) }}>
             {mobileMode ? (
-                <Box sx={{ mx: theme.spacing(4), pt: theme.spacing(4) }}>
+                <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4) }, pt: theme.spacing(4) }}>
                     <Link href='/'>
                         <Image src={logo} alt='logo' style={{ height: '3rem', width: 'auto', marginRight: 'auto' }} />
                     </Link>

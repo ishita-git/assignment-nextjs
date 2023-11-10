@@ -1,12 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Container, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
 import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
-
-
 
 declare type HeaderProps = {
     image?: string | StaticImageData
@@ -17,6 +15,10 @@ declare type HeaderProps = {
 
 export default function HeaderSection({ image, title, subtitle, customHeight }: HeaderProps) {
     const theme = useTheme()
+    const tabletMode = useMediaQuery('(max-width:749px)')
+    const mobileMode = useMediaQuery('(max-width:599px)')
+    const ultraMobileMode = useMediaQuery('(max-width:399px)')
+
     return (
         <Box
             sx={{
@@ -45,12 +47,32 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
                 sx={{
                     position: 'relative',
                     mt: theme.spacing(2),
-                    mx: theme.spacing(4),
+                    mx: { xs: theme.spacing(0), sm: theme.spacing(4) },
                 }}
             >
                 <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={2000}>
                     <Container maxWidth='xl' disableGutters>
-                        <Typography variant='h1' sx={{ mt: theme.spacing(8), fontSize: '4.5rem', whiteSpace: 'pre-line', lineHeight: "6.2rem" }}>
+                        <Typography
+                            variant='h1'
+                            sx={{
+                                mt: theme.spacing(mobileMode ? 4 : 8),
+                                fontSize: ultraMobileMode
+                                    ? '1.8rem'
+                                    : mobileMode
+                                    ? '2.4rem'
+                                    : tabletMode
+                                    ? '3rem'
+                                    : '4.5rem',
+                                whiteSpace: 'pre-line',
+                                lineHeight: ultraMobileMode
+                                    ? '2.2rem'
+                                    : mobileMode
+                                    ? '3rem'
+                                    : tabletMode
+                                    ? '3.8rem'
+                                    : '6.2rem',
+                            }}
+                        >
                             {title}
                         </Typography>
 
@@ -67,7 +89,6 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
                         >
                             {subtitle}
                         </Typography>
-
                     </Container>
                 </VisibilityTracker>
             </Box>

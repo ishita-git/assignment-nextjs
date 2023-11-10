@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { Box, Container, Grid, Typography } from '@mui/material'
+import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import CompaniesLayout from '../CompaniesLayout'
 import ServicesCards from '../../../components/services/ServicesCards'
@@ -10,6 +10,7 @@ import { ContainerType, ChooseUsData } from '../../../data/companiesData'
 import CustomText from '@/components/companies/CustomText'
 export default function Home() {
     const theme = useTheme()
+    const tabletMode = useMediaQuery('(max-width:799px)')
     const [hoveredImage, setHoveredImage] = useState(null)
 
     const handleMouseEnter = (index: any) => {
@@ -22,7 +23,7 @@ export default function Home() {
 
     return (
         <CompaniesLayout image={logisticsBg} title='Muskan Logistics'>
-            <Box sx={{ px: theme.spacing(12) }}>
+            <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                 <Container maxWidth='xl' disableGutters>
                     <Typography variant='h2' sx={{ mb: '1rem', color: '#1B1B1F' }}>
                         About Us
@@ -41,10 +42,18 @@ export default function Home() {
                         variant='h3'
                         sx={{ textAlign: 'start', mt: '3rem', mb: '1rem', color: '#1B1B1F', fontWeight: 500 }}
                     >
-                        Our Conatiners
+                        Our Containers
                     </Typography>
                     <CustomText text='Our comprehensive container offerings encompass both new and used sea and dry cargo containers, available in various types. Whether you require standard containers or specialized equipment like flat racks, tanks, double-door, or side-door containers, we have a solution to meet your specific needs.' />
-                    <Box sx={{ display: 'flex', textAlign: 'center', flexWrap: 'wrap', mb: '3rem' }}>
+                    <Box
+                        sx={{
+                            display: 'flex',
+                            textAlign: 'center',
+                            justifyContent: 'center',
+                            flexWrap: 'wrap',
+                            mb: '3rem',
+                        }}
+                    >
                         {ContainerType.map((item, index) => (
                             <Box
                                 key={index}
@@ -58,6 +67,8 @@ export default function Home() {
                                     pt: theme.spacing(1.5),
                                     borderRadius: '1rem',
                                     height: '25rem',
+                                    overflow: 'hidden',
+                                    minWidth: '16rem',
                                 }}
                             >
                                 <Typography
@@ -77,8 +88,8 @@ export default function Home() {
                                     src={item.image}
                                     alt=''
                                     style={{
-                                        height: '10rem',
-                                        width: 'auto',
+                                        height: tabletMode ? 'auto' : '10rem',
+                                        width: tabletMode ? '100%' : 'auto',
                                         marginTop: theme.spacing(1),
                                         transition: 'transform 0.4s',
                                         transform: hoveredImage === index ? 'scale(1.1)' : 'scale(1)',

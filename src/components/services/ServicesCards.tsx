@@ -13,13 +13,21 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
     const theme = useTheme()
 
     return (
-        <Box sx={{ px: theme.spacing(12), pt: theme.spacing(companiesPage ? 1 : 4) }}>
+        <Box
+            sx={{
+                px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) },
+                pt: theme.spacing(companiesPage ? 1 : 4),
+            }}
+        >
             <Container disableGutters maxWidth='xl'>
-                <Typography variant='h3' sx={{ textAlign: companiesPage?'start':'center', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
+                <Typography
+                    variant='h3'
+                    sx={{ textAlign: companiesPage ? 'start' : 'center', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}
+                >
                     {companiesPage ? 'Our Services' : ' Other Services'}
                 </Typography>
 
-                <Box sx={{ cursor: 'pointer', mt: companiesPage?'0rem': theme.spacing(2) }}>
+                <Box sx={{ cursor: 'pointer', mt: companiesPage ? '0rem' : theme.spacing(2) }}>
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={12}
@@ -50,7 +58,15 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
                         {servicesData.map((item) => (
                             <SwiperSlide key={item.id}>
                                 <Link href={item.link}>
-                                    <Box sx={{  height: '15rem',display:'flex', flexDirection:'column',justifyContent:"center",alignItems:"center" }}>
+                                    <Box
+                                        sx={{
+                                            height: '15rem',
+                                            display: 'flex',
+                                            flexDirection: 'column',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                        }}
+                                    >
                                         <Image
                                             src={item.horizontalCard}
                                             alt='card background'
@@ -62,7 +78,7 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
                                         <Typography
                                             variant='h6'
                                             textAlign='center'
-                                            sx={{ p: theme.spacing(1), position: 'absolute',fontWeight:600 }}
+                                            sx={{ p: theme.spacing(1), position: 'absolute', fontWeight: 600 }}
                                         >
                                             {item.title}
                                         </Typography>
