@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Tab, Tabs } from '@mui/material'
+import { Box, Tab, Tabs, useMediaQuery } from '@mui/material'
 import HighCubeTab from '../../components/equipments/HighCubeTab'
 import ReeferTab from '../../components/equipments/ReeferTab'
 import OpenTopTab from '../../components/equipments/OpenTopTab'
@@ -14,7 +14,7 @@ interface TabPanelProps {
 }
 
 function TabPanel({ children, value, index }: TabPanelProps) {
-    return <div hidden={value !== index}>{value === index && <Box>{children}</Box>}</div>
+    return <Box hidden={value !== index}>{value === index && <Box>{children}</Box>}</Box>
 }
 
 export default function Home() {
@@ -24,33 +24,39 @@ export default function Home() {
         setValue(newValue)
     }
 
+    const ultraMobileMode = useMediaQuery('(max-width:449px)')
+
     return (
         <Layout
             image={equipmentsBg}
-            title='Our Equipment'
+            title={ultraMobileMode ? '' : 'Our Equipment'}
             subtitle={'Range of container types tailored\n to your shipping needs'}
-            customHeight='35vw'
+            customHeight='42vw'
             withTabs
         >
-            <Tabs value={value} onChange={handleChange} variant='fullWidth'>
-                <Tab label='High Cube' sx={{ bgcolor: value === 0 ? '#003A9B' : '#FFFFFF' }} />
-                <Tab label='Reefer' sx={{ bgcolor: value === 1 ? '#003A9B' : '#FFFFFF' }} />
-                <Tab label='Open Top' sx={{ bgcolor: value === 2 ? '#003A9B' : '#FFFFFF' }} />
-                <Tab label='Flat Rack' sx={{ bgcolor: value === 3 ? '#003A9B' : '#FFFFFF' }} />
-            </Tabs>
+            <Box sx={{ overflowX: 'auto' }}>
+                <Tabs value={value} onChange={handleChange} variant='fullWidth'>
+                    <Tab label='High Cube' sx={{ bgcolor: value === 0 ? '#003A9B' : '#FFFFFF' }} />
+                    <Tab label='Reefer' sx={{ bgcolor: value === 1 ? '#003A9B' : '#FFFFFF' }} />
+                    <Tab label='Open Top' sx={{ bgcolor: value === 2 ? '#003A9B' : '#FFFFFF' }} />
+                    <Tab label='Flat Rack' sx={{ bgcolor: value === 3 ? '#003A9B' : '#FFFFFF' }} />
+                </Tabs>
+            </Box>
 
-            <TabPanel value={value} index={0}>
-                <HighCubeTab />
-            </TabPanel>
-            <TabPanel value={value} index={1}>
-                <ReeferTab />
-            </TabPanel>
-            <TabPanel value={value} index={2}>
-                <OpenTopTab />
-            </TabPanel>
-            <TabPanel value={value} index={3}>
-                <FlatRackTab />
-            </TabPanel>
+            <>
+                <TabPanel value={value} index={0}>
+                    <HighCubeTab />
+                </TabPanel>
+                <TabPanel value={value} index={1}>
+                    <ReeferTab />
+                </TabPanel>
+                <TabPanel value={value} index={2}>
+                    <OpenTopTab />
+                </TabPanel>
+                <TabPanel value={value} index={3}>
+                    <FlatRackTab />
+                </TabPanel>
+            </>
         </Layout>
     )
 }
