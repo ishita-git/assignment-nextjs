@@ -1,22 +1,32 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import ServicesLayout from '../ServicesLayout'
 import Image from 'next/image'
 import backgroundImg from '../../../assets/services/nvocc_bg.webp'
 import titleImg from '../../../assets/services/nvocc_img.webp'
 
 export default function Home() {
+    const ultraMobileMode = useMediaQuery('(max-width:449px)')
+
     return (
-        <ServicesLayout image={backgroundImg} title='Services' subtitle={"NVOCC (NON Vessel Operating Common Carrier)"}>
+        <ServicesLayout
+            image={backgroundImg}
+            title='Services'
+            subtitle={
+                ultraMobileMode
+                    ? 'NVOCC (NON Vessel\nOperating Common Carrier) '
+                    : 'NVOCC (NON Vessel Operating Common Carrier)'
+            }
+        >
             <Box sx={{ mb: '2.5rem' }}>
                 <Typography variant='h3' sx={{ textAlign: 'start', color: '#031225', whiteSpace: 'pre-line' }}>
-                    {"NVOCC (NON Vessel\nOperating Common Carrier)"}
+                    {'NVOCC (NON Vessel\nOperating Common Carrier)'}
                 </Typography>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             Muskan Container Lines Pvt Ltd is a renowned NVOCC player with a strong presence not only in
                             India but also across the Middle East, Far East, and South East Asia. Our extensive fleet of
@@ -26,7 +36,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             We take pride in our proactive approach to logistics, actively engaging with shipping lines,
                             port agents, local carriers, and other partners to ensure the safe and timely delivery of
@@ -44,7 +54,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     In recent years, we've seen significant growth in our NVOCC activities, particularly in Europe and
                     the Gulf, as we've actively promoted them alongside our overseas partners. Our commitment to
@@ -53,7 +63,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     In conclusion, Muskan Container Lines Pvt Ltd is a trusted NVOCC leader serving global markets. Our
                     large fleet, proactive collaborations, competent team, and advanced IT systems position us as a

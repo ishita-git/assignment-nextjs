@@ -2,7 +2,7 @@ import React from 'react'
 import type { StaticImageData } from 'next/image'
 import HeaderSection from '../../sections/HeaderSection'
 import FooterSection from '../../sections/FooterSection'
-import { AppBar, Box, Container, useScrollTrigger } from '@mui/material'
+import { AppBar, Box, Container, useScrollTrigger, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import ServicesCards from '../../components/services/ServicesCards'
 import Navbar from '../../components/Navbar'
@@ -36,6 +36,8 @@ declare type ServicesLayoutProps = {
 export default function ServicesLayout({ image, title, subtitle, children, props }: ServicesLayoutProps) {
     const theme = useTheme()
 
+    const ultraMobileMode = useMediaQuery('(max-width:449px)')
+
     return (
         <React.Fragment>
             <ElevationScroll {...props}>
@@ -44,8 +46,8 @@ export default function ServicesLayout({ image, title, subtitle, children, props
                 </AppBar>
             </ElevationScroll>
             <Box sx={{ backgroundColor: '#EFF6FF' }}>
-                <HeaderSection image={image} title={title} subtitle={subtitle} />
-                <Box sx={{ px: theme.spacing(12) }}>
+                <HeaderSection image={image} title={ultraMobileMode ? '' : title} subtitle={subtitle} />
+                <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                     <Container maxWidth='xl' disableGutters>
                         {children}
                     </Container>

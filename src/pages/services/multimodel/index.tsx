@@ -16,7 +16,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             Muskan Container Lines Pvt. Ltd. excels in Multimodal Transport services, seamlessly
                             integrating air, sea, and land transportation into an efficient and interconnected chain.
@@ -27,7 +27,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             We are dedicated to proactively addressing transportation challenges, aligning solutions
                             with your specific needs. Beyond our reputation as a shipping company, our expertise in
@@ -44,7 +44,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     Containerization's profound impact on our industry is evident in our commitment to multimodal
                     transport. This approach streamlines coordination and minimizes time loss and risks associated with
@@ -54,7 +54,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     In summary, Muskan Container Lines Pvt. Ltd.'s Multimodal Transport services embody our dedication
                     to comprehensive and efficient logistics solutions. Our seamless integration of air, sea, and land

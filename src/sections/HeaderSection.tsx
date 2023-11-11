@@ -85,6 +85,20 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
                                 color: 'common.white',
                                 fontWeight: 400,
                                 whiteSpace: 'pre-line',
+                                fontSize: ultraMobileMode
+                                    ? '1.6rem'
+                                    : mobileMode
+                                    ? '2rem'
+                                    : tabletMode
+                                    ? '2.3rem'
+                                    : '3rem',
+                                lineHeight: ultraMobileMode
+                                    ? '1.8rem'
+                                    : mobileMode
+                                    ? '2.4rem'
+                                    : tabletMode
+                                    ? '2.8rem'
+                                    : '3.5rem',
                             }}
                         >
                             {subtitle}

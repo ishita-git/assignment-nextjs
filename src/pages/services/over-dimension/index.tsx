@@ -16,7 +16,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             The Group has recently witnessed an impressive surge in its commitment to the transportation
                             of oversized cargo. This remarkable growth is palpable when considering the substantial
@@ -28,7 +28,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             Expanding its reach far beyond its initial confines, this commitment has extended to
                             encompass a multitude of locations in South East Asia, China, East and West Africa,
@@ -43,7 +43,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     To efficiently and professionally oversee the entire fleet dedicated to this specialized cargo
                     transport, the Group companies have come together to pool all relevant equipment. This strategic

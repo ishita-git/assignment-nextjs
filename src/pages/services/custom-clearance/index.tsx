@@ -16,7 +16,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             Import Customs Clearance involves a comprehensive range of services, including HSN
                             classification, duty assessment, and the preparation of bills of entry. This encompasses the
@@ -26,7 +26,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             On the export front, our services encompass the preparation of shipping bills, typically
                             based on the shipper's letter of instruction. We also handle classification for drawback,
@@ -42,7 +42,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     Our clearance services are seamlessly managed through our advanced software, Logi-Sys. This software
                     facilitates the smooth flow of data interchange, including the receipt of soft copies of bills of
@@ -53,7 +53,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     Our excellent rapport with customs officers ensures expedited clearance and the prompt release of
                     consignments for imports or the relevant bill of lading for exports. This efficiency translates into

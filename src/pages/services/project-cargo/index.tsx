@@ -16,7 +16,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             For more than a decade, our Group has been at the forefront of Project Cargo Logistics
                             through our dedicated entity, now known as Muskan Container Lines Private Limited. Over this
@@ -27,7 +27,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             Clients depend on us as a reliable logistics partner, confident that we can provide the
                             necessary equipment and vessels for the transportation of cargo of varying sizes and shapes
@@ -44,7 +44,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     Our global offices play a pivotal role in ensuring the safe, secure, and timely delivery of project
                     consignments. Often, our scope of activities extends beyond transportation and includes tasks such
@@ -54,7 +54,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     A prime example of our growing footprint in the project cargo domain is our Chennai office, which
                     has achieved significant milestones within a few months of establishment. This office has
@@ -64,7 +64,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     Muskan Container Lines Private Limited boasts a strong legacy of excellence in Project Cargo
                     Logistics, spanning more than a decade. Our ability to meet the unique needs of our clients in this

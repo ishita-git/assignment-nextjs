@@ -18,7 +18,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             Muskan Container Lines Pvt Limited has extended its services to include airfreight, a
                             strategic move in response to the burgeoning demand from our discerning clientele. As a
@@ -30,7 +30,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             Our commitment to excellence in airfreight is exemplified by the synergy between our global
                             network of associate offices and our express service. This seamless integration allows us to
@@ -46,7 +46,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     Our goal is to meet your routine and specialized shipping requirements with precision, ensuring
                     on-time collection and delivery to major cities across the globe.
@@ -59,7 +59,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     Muskan Container Lines Pvt Limited has extended its services to encompass airfreight, responding to
                     the growing demand from our clients. Our leadership in the market is built on a foundation of

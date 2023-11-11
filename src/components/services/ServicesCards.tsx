@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Container, Link, Typography } from '@mui/material'
+import { Box, Container, Link, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { servicesData } from '../../data/servicesData'
 // swiper
@@ -11,12 +11,13 @@ import Image from 'next/image'
 
 export default function ServicesCards({ companiesPage }: { companiesPage?: boolean }) {
     const theme = useTheme()
+    const mobileMode = useMediaQuery('(max-width:549px)')
 
     return (
         <Box
             sx={{
                 px: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) },
-                pt: theme.spacing(companiesPage ? 1 : 4),
+                pt: theme.spacing(companiesPage ? 1 : mobileMode ? -1 : 4),
             }}
         >
             <Container disableGutters maxWidth='xl'>
@@ -24,10 +25,15 @@ export default function ServicesCards({ companiesPage }: { companiesPage?: boole
                     variant='h3'
                     sx={{ textAlign: companiesPage ? 'start' : 'center', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}
                 >
-                    {companiesPage ? 'Our Services' : ' Other Services'}
+                    {companiesPage ? 'Our Services' : 'Other Services'}
                 </Typography>
 
-                <Box sx={{ cursor: 'pointer', mt: companiesPage ? '0rem' : theme.spacing(2) }}>
+                <Box
+                    sx={{
+                        cursor: 'pointer',
+                        mt: companiesPage ? '0rem' : theme.spacing(2),
+                    }}
+                >
                     <Swiper
                         slidesPerView={1}
                         spaceBetween={12}

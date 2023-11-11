@@ -16,7 +16,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             Over a considerable span of time, our involvement in this endeavor has been robust,
                             encompassing various Indian load ports and Inland Container Depots (ICDs). We have
@@ -28,7 +28,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             For a significant duration, we have been actively engaged in this endeavor across various
                             Indian load ports and Inland Container Depots (ICDs). Our expertise lies in efficiently
@@ -44,7 +44,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     Throughout a substantial period, our involvement in this field has been marked by dedication,
                     spanning numerous Indian load ports and Inland Container Depots (ICDs). We excel in managing
@@ -56,7 +56,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     For quite some time, we have actively pursued this endeavor across various Indian load ports and
                     Inland Container Depots (ICDs). Our expertise lies in efficiently handling shipments to a variety of
@@ -67,7 +67,7 @@ export default function Home() {
                 <Typography
                     paragraph
                     variant='subtitle2'
-                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                    sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                 >
                     Our long-standing involvement in this activity has been marked by active operations across various
                     Indian load ports and Inland Container Depots (ICDs). We excel in managing shipments to diverse

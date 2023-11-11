@@ -17,7 +17,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             Muskan Container Lines offers an extensive array of trucking and intermodal services,
                             providing our clients with a comprehensive transportation solution. Our commitment to
@@ -29,7 +29,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             We have at our disposal a wide-ranging fleet of trucks, trailers, and other inland
                             transportation vehicles.
@@ -37,7 +37,7 @@ export default function Home() {
                         <Typography
                             paragraph
                             variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'start' }}
+                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
                         >
                             These assets are instrumental in facilitating the movement of your cargo from its point of
                             origin to the port of dispatch and from the port of arrival to its final destination. Our
