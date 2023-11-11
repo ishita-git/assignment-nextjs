@@ -1,7 +1,6 @@
 import React from 'react'
 import {
     Box,
-    Container,
     FormControl,
     FormControlLabel,
     Grid,
@@ -16,6 +15,7 @@ import {
     Snackbar,
     TextField,
     Typography,
+    useMediaQuery,
 } from '@mui/material'
 import { SelectChangeEvent } from '@mui/material/Select'
 import { useTheme } from '@mui/material/styles'
@@ -38,6 +38,7 @@ let currentDate = new Date()
 
 export default function Home() {
     const theme = useTheme()
+    const mobileMode = useMediaQuery('(max-width:599px)')
 
     const [containerType, setContainerType] = React.useState('')
     const [weightType, setWeightType] = React.useState('')
@@ -79,21 +80,27 @@ export default function Home() {
             <Typography
                 variant='h3'
                 textAlign='start'
-                sx={{ color: '#262626', mt: theme.spacing(8), mb: theme.spacing(2) }}
+                sx={{
+                    color: '#262626',
+                    mt: theme.spacing(8),
+                    mb: theme.spacing(2),
+                    width: { sm: '40rem', md: '100%' },
+                    mx: 'auto',
+                }}
             >
                 Booking Details
             </Typography>
-            <Paper sx={{ borderRadius: '16px', p: theme.spacing(1) }}>
+            <Paper sx={{ borderRadius: '16px', p: theme.spacing(1), width: { sm: '40rem', md: '100%' }, mx: 'auto' }}>
                 <Typography variant='h4' textAlign='start' sx={{ color: '#262626', fontWeight: 600 }}>
                     Location Information
                 </Typography>
 
                 <Box sx={{ my: theme.spacing(1) }}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
+                    <Grid container spacing={mobileMode ? 0 : 2}>
+                        <Grid item xs={12} md={6}>
                             <PrimaryTextField label='Origin' placeholder='Enter origin city' />
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} md={6}>
                             <PrimaryTextField label='Destination' placeholder='Enter destination city' />
                         </Grid>
                     </Grid>
@@ -104,8 +111,8 @@ export default function Home() {
                 </Typography>
 
                 <Box sx={{ my: theme.spacing(1) }}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
+                    <Grid container spacing={mobileMode ? 0 : 2}>
+                        <Grid item xs={12} md={6}>
                             <Box sx={{ mb: theme.spacing(1) }}>
                                 <InputLabel>Container Type</InputLabel>
                                 <FormControl fullWidth>
@@ -158,7 +165,7 @@ export default function Home() {
                                 </FormControl>
                             </Box>
                         </Grid>
-                        <Grid item xs={6} sm={3}>
+                        <Grid item xs={12} sm={12} md={3}>
                             <InputLabel>Container Quantity</InputLabel>
                             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <Box
@@ -190,7 +197,7 @@ export default function Home() {
                                 </IconButton>
                             </Box>
                         </Grid>
-                        <Grid item xs={6} sm={3}>
+                        <Grid item xs={12} sm={12} md={3} sx={{ mt: '0.5rem' }}>
                             <InputLabel>Weight per Container</InputLabel>
                             <Box
                                 sx={{
@@ -199,7 +206,7 @@ export default function Home() {
                                     alignItems: 'center',
                                 }}
                             >
-                                <Box sx={{ backgroundColor: '#0312251A', borderRadius: '8px', width: '35%' }}>
+                                <Box sx={{ backgroundColor: '#0312251A', borderRadius: '8px', width: '30%' }}>
                                     <TextField
                                         variant='standard'
                                         placeholder='Weight'
@@ -259,49 +266,86 @@ export default function Home() {
                     </Grid>
                 </Box>
 
-                <Typography variant='h4' textAlign='start' sx={{ color: '#262626', fontWeight: 600 }}>
+                <Typography
+                    variant='h4'
+                    textAlign='start'
+                    sx={{ color: '#262626', fontWeight: 600, mt: theme.spacing(2) }}
+                >
                     Customer Status
                 </Typography>
 
                 <Box sx={{ display: 'flex', justifyContent: 'flex-start', my: theme.spacing(1) }}>
                     <FormControl>
-                        <RadioGroup row>
-                            <FormControlLabel
-                                value='Price Ownere'
-                                control={<Radio />}
-                                label={
-                                    <>
-                                        <Typography variant='h6' sx={{ color: '#003A9B' }}>
-                                            Price Owner
-                                        </Typography>
-                                        <Typography variant='body2' sx={{ color: '#031225' }}>
-                                            Booking as the price owner
-                                        </Typography>
-                                    </>
-                                }
-                            />
-                            <FormControlLabel
-                                value='Agent'
-                                control={<Radio />}
-                                label={
-                                    <>
-                                        <Typography variant='h6' sx={{ color: '#003A9B' }}>
-                                            Agent
-                                        </Typography>
-                                        <Typography variant='body2' sx={{ color: '#031225' }}>
-                                            Booking on behalf of the price owner
-                                        </Typography>
-                                    </>
-                                }
-                                sx={{ ml: theme.spacing(1) }}
-                            />
-                        </RadioGroup>
+                        {mobileMode ? (
+                            <RadioGroup>
+                                <FormControlLabel
+                                    value='Price Ownere'
+                                    control={<Radio />}
+                                    label={
+                                        <>
+                                            <Typography variant='h6' sx={{ color: '#003A9B' }}>
+                                                Price Owner
+                                            </Typography>
+                                            <Typography variant='body2' sx={{ color: '#031225' }}>
+                                                Booking as the price owner
+                                            </Typography>
+                                        </>
+                                    }
+                                />
+                                <FormControlLabel
+                                    value='Agent'
+                                    control={<Radio />}
+                                    label={
+                                        <>
+                                            <Typography variant='h6' sx={{ color: '#003A9B' }}>
+                                                Agent
+                                            </Typography>
+                                            <Typography variant='body2' sx={{ color: '#031225' }}>
+                                                Booking on behalf of the price owner
+                                            </Typography>
+                                        </>
+                                    }
+                                />
+                            </RadioGroup>
+                        ) : (
+                            <RadioGroup row>
+                                <FormControlLabel
+                                    value='Price Ownere'
+                                    control={<Radio />}
+                                    label={
+                                        <>
+                                            <Typography variant='h6' sx={{ color: '#003A9B' }}>
+                                                Price Owner
+                                            </Typography>
+                                            <Typography variant='body2' sx={{ color: '#031225' }}>
+                                                Booking as the price owner
+                                            </Typography>
+                                        </>
+                                    }
+                                />
+                                <FormControlLabel
+                                    value='Agent'
+                                    control={<Radio />}
+                                    label={
+                                        <>
+                                            <Typography variant='h6' sx={{ color: '#003A9B' }}>
+                                                Agent
+                                            </Typography>
+                                            <Typography variant='body2' sx={{ color: '#031225' }}>
+                                                Booking on behalf of the price owner
+                                            </Typography>
+                                        </>
+                                    }
+                                    sx={{ ml: theme.spacing(1) }}
+                                />
+                            </RadioGroup>
+                        )}
                     </FormControl>
                 </Box>
 
                 <Box sx={{ mt: theme.spacing(2) }}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} sm={6}>
+                    <Grid container spacing={mobileMode ? 0 : 2}>
+                        <Grid item xs={12} md={6}>
                             <Typography variant='h4' textAlign='start' sx={{ color: '#262626', fontWeight: 600 }}>
                                 Cargo Type
                             </Typography>
@@ -309,7 +353,7 @@ export default function Home() {
                                 <PrimaryTextField />
                             </Box>
                         </Grid>
-                        <Grid item xs={12} sm={6}>
+                        <Grid item xs={12} md={6}>
                             <Typography variant='h4' textAlign='start' sx={{ color: '#262626', fontWeight: 600 }}>
                                 Date
                             </Typography>
@@ -321,7 +365,7 @@ export default function Home() {
                                         sx={{
                                             '& .MuiInputBase-root': {
                                                 height: '2.4rem',
-                                                width: '12rem',
+                                                width: mobileMode ? '9rem' : '12rem',
                                                 backgroundColor: '#0312251A',
                                                 borderRadius: '8px',
                                                 fontSize: '1rem',

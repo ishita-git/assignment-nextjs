@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import Image from 'next/image'
 import bulbImage from '../../assets/about/missionTab/bulb.webp'
@@ -9,9 +9,10 @@ import VisibilityTracker, { AnimationType } from '../VisibilityTracker'
 
 export default function MissionAndVisionTab() {
     const theme = useTheme()
+    const mobileMode = useMediaQuery('(max-width:599px)')
 
     return (
-        <Box sx={{ mx: theme.spacing(12), mb: theme.spacing(6) }}>
+        <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) }, mb: theme.spacing(6) }}>
             <Box sx={{ mb: theme.spacing(4) }}>
                 <Typography variant='h2' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
                     Looking into Future
@@ -21,39 +22,62 @@ export default function MissionAndVisionTab() {
                 <AboutFuture body="While navigating the intricacies of the Chinese market presents its challenges, Muskan is well-equipped with expertise, robust partnerships, and an intricate grasp of local business practices. These factors enable us to replicate successes across the continent. Just as in the Gulf and Far East, and across all our endeavors, Muskan's unified vision and adaptability in new and distinct working landscapes allow us to translate our aspirations into tangible achievements." />
             </Box>
             <Box>
-                <Typography variant='h2' sx={{ mt: theme.spacing(6), mb: theme.spacing(6) }}>
+                <Typography
+                    variant='h2'
+                    sx={{
+                        mt: theme.spacing(6),
+                        mb: theme.spacing(mobileMode ? 2 : 6),
+                        fontSize: mobileMode ? '3rem' : '3.2rem',
+                    }}
+                >
                     Our Mission & Vision
                 </Typography>
                 <Grid container spacing={2} alignItems='center'>
                     <Grid item xs={12} sm={6} justifyContent='left'>
                         <Box sx={{ textAlign: 'start' }}>
-                            <Image
-                                src={targetImage}
-                                alt='Target Image'
-                                style={{ height: 'auto', width: '15%', marginBottom: '2rem' }}
-                            />
-                            <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
-                            <Typography
-                                variant='h3'
-                                sx={{ mb: '1.5rem', color: '#1B1B1F', textAlign: 'start', fontSize: '2.8rem' }}
-                            >
-                                Our Mission
-                            </Typography>
-                            </VisibilityTracker>
+                            {mobileMode ? (
+                                <Box sx={{ display: 'flex', alignItems: 'center', mb: '1rem' }}>
+                                    <Image
+                                        src={targetImage}
+                                        alt='Target Image'
+                                        style={{ height: '2.4rem', width: 'auto', marginLeft: '-0.25rem' }}
+                                    />
+                                    <Typography variant='h3' sx={{ color: '#1B1B1F', ml: '1rem' }}>
+                                        Our Mission
+                                    </Typography>
+                                </Box>
+                            ) : (
+                                <>
+                                    <Image
+                                        src={targetImage}
+                                        alt='Target Image'
+                                        style={{ height: 'auto', width: '15%', marginBottom: '2rem' }}
+                                    />
+                                    <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
+                                        <Typography variant='h2' sx={{ mb: '1.5rem', color: '#1B1B1F' }}>
+                                            Our Mission
+                                        </Typography>
+                                    </VisibilityTracker>
+                                </>
+                            )}
                             <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
-                            <Typography
-                                paragraph
-                                variant='body1'
-                                sx={{ fontWeight: 400, color: '#1B1B1F', textAlign: 'start', lineHeight: '1.5rem' }}
-                            >
-                                Our aim is to cater to our global clientele in the logistics and transportation sphere
-                                through innovative and economical supply chain solutions that consistently surpass their
-                                expectations. Our goal is to deliver utmost value, enhancing freight management
-                                efficiencies and generating substantial savings for our customers throughout the
-                                shipping process. We hold steadfast in fostering strong customer relationships,
-                                considering them integral members of our team. Our commitment entails serving them with
-                                unwavering integrity and a sense of responsibility at all times.
-                            </Typography>
+                                <Typography
+                                    paragraph
+                                    variant='body1'
+                                    sx={{
+                                        color: '#1B1B1F',
+                                        textAlign: 'justify',
+                                        lineHeight: '1.5rem',
+                                    }}
+                                >
+                                    Our aim is to cater to our global clientele in the logistics and transportation
+                                    sphere through innovative and economical supply chain solutions that consistently
+                                    surpass their expectations. Our goal is to deliver utmost value, enhancing freight
+                                    management efficiencies and generating substantial savings for our customers
+                                    throughout the shipping process. We hold steadfast in fostering strong customer
+                                    relationships, considering them integral members of our team. Our commitment entails
+                                    serving them with unwavering integrity and a sense of responsibility at all times.
+                                </Typography>
                             </VisibilityTracker>
                         </Box>
                     </Grid>
@@ -62,53 +86,90 @@ export default function MissionAndVisionTab() {
                             src={bulbImage}
                             alt='Bulb Image'
                             style={{
-                                width: '100%',
+                                width: mobileMode ? '20rem' : '100%',
                                 height: 'auto',
                             }}
                         />
                     </Grid>
                 </Grid>
-                <Grid container spacing={2} alignItems='center' sx={{ marginTop: '2rem' }}>
+                <Grid container spacing={2} alignItems='center' sx={{ mt: mobileMode ? 0 : '2rem' }}>
                     <Grid item xs={12} sm={6}>
-                        <Image
-                            src={shipImage}
-                            alt='Ship Image'
-                            style={{
-                                width: '100%',
-                                height: 'auto',
-                            }}
-                        />
+                        {mobileMode ? (
+                            <></>
+                        ) : (
+                            <Image
+                                src={shipImage}
+                                alt='Ship Image'
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                }}
+                            />
+                        )}
                     </Grid>
                     <Grid item xs={12} sm={6}>
                         <Box sx={{ textAlign: 'start' }}>
-                            <Image
-                                src={visionImage}
-                                alt='Vision Image'
-                                style={{ height: 'auto', width: '15%', marginBottom: '2rem' }}
-                            />
-                            <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
-                            <Typography variant='h2' sx={{ mb: '1.5rem', color: '#1B1B1F' }}>
-                                Our Vision
-                            </Typography>
-                            </VisibilityTracker>
+                            {mobileMode ? (
+                                <Box sx={{ display: 'flex', alignItems: 'center', mb: '1rem' }}>
+                                    <Image
+                                        src={visionImage}
+                                        alt='Vision Image'
+                                        style={{ height: '2.4rem', width: 'auto', marginLeft: '-0.25rem' }}
+                                    />
+                                    <Typography variant='h3' sx={{ color: '#1B1B1F', ml: '1rem' }}>
+                                        Our Vision
+                                    </Typography>
+                                </Box>
+                            ) : (
+                                <>
+                                    <Image
+                                        src={visionImage}
+                                        alt='Vision Image'
+                                        style={{ height: 'auto', width: '15%', marginBottom: '2rem' }}
+                                    />
+                                    <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
+                                        <Typography variant='h2' sx={{ mb: '1.5rem', color: '#1B1B1F' }}>
+                                            Our Vision
+                                        </Typography>
+                                    </VisibilityTracker>
+                                </>
+                            )}
+
                             <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
-                            <Typography
-                                paragraph
-                                variant='body1'
-                                sx={{ fontWeight: 400, color: '#1B1B1F', textAlign: 'start', lineHeight: '1.5rem' }}
-                            >
-                                Our pursuit of excellence centers on delivering world-class logistics services. We are
-                                consistently prepared to cater to our customers' requirements around the clock. Our
-                                primary objective is to establish enduring partnerships with our esteemed clients by
-                                consistently offering this elevated standard of service. We exert great effort to
-                                present our clients with more than just reactive assistance; our proactive approach,
-                                powered by our expertise, aids in not only delivering exceptional service but also
-                                guiding our clients effectively within the realms of land and sea logistics.
-                            </Typography>
+                                <Typography
+                                    paragraph
+                                    variant='body1'
+                                    sx={{
+                                        color: '#1B1B1F',
+                                        textAlign: 'justify',
+                                        lineHeight: '1.5rem',
+                                    }}
+                                >
+                                    Our pursuit of excellence centers on delivering world-class logistics services. We
+                                    are consistently prepared to cater to our customers' requirements around the clock.
+                                    Our primary objective is to establish enduring partnerships with our esteemed
+                                    clients by consistently offering this elevated standard of service. We exert great
+                                    effort to present our clients with more than just reactive assistance; our proactive
+                                    approach, powered by our expertise, aids in not only delivering exceptional service
+                                    but also guiding our clients effectively within the realms of land and sea
+                                    logistics.
+                                </Typography>
                             </VisibilityTracker>
                         </Box>
                     </Grid>
                 </Grid>
+                {mobileMode ? (
+                    <Image
+                        src={shipImage}
+                        alt='Ship Image'
+                        style={{
+                            width: '20rem',
+                            height: 'auto',
+                        }}
+                    />
+                ) : (
+                    <></>
+                )}
             </Box>
         </Box>
     )

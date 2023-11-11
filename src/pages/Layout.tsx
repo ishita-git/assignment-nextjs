@@ -46,9 +46,7 @@ export default function Layout({ image, title, subtitle, withTabs, children, pro
             </ElevationScroll>
             <Box sx={{ backgroundColor: '#EFF6FF' }}>
                 <HeaderSection image={image} title={title} subtitle={subtitle} customHeight={customHeight} />
-                <Box sx={{ px: theme.spacing(withTabs ? 0 : 4) }}>
-                    {withTabs ? <Box>{children}</Box> : <Container maxWidth='xl'>{children}</Container>}
-                </Box>
+                <Box>{withTabs ? <Box>{children}</Box> : <Container maxWidth='xl'>{children}</Container>}</Box>
                 <FooterSection />
             </Box>
         </React.Fragment>

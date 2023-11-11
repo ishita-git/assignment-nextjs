@@ -32,7 +32,7 @@ export default function LayoutHeaderLess({ children, props }: { children: React.
                     <Navbar />
                 </AppBar>
             </ElevationScroll>
-            <Box sx={{ backgroundColor: '#EFF6FF', mx: theme.spacing(4) }}>
+            <Box sx={{ backgroundColor: '#EFF6FF', mx: { xs: theme.spacing(2), sm: theme.spacing(4) } }}>
                 <Container maxWidth='xl' disableGutters>
                     {children}
                 </Container>

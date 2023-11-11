@@ -15,8 +15,8 @@ import {
     Snackbar,
     MenuItem,
     AppBar,
-    useScrollTrigger,
     Container,
+    useMediaQuery,
 } from '@mui/material'
 import MuiAlert from '@mui/material/Alert'
 import { SelectChangeEvent } from '@mui/material/Select'
@@ -47,6 +47,7 @@ interface JobType {
 
 export default function JobDetail() {
     const theme = useTheme()
+    const mobileMode = useMediaQuery('(max-width:449px)')
     const router = useRouter()
 
     const { id } = router.query
@@ -118,16 +119,18 @@ export default function JobDetail() {
             <Box sx={{ backgroundColor: '#EFF6FF' }}>
                 <HeaderSection
                     image={careerBackground}
-                    title={'Join Muskaan'}
-                    subtitle={"Unlock a World of Career Possibilities'"}
+                    title='Join Muskaan'
+                    subtitle={mobileMode ? '' : 'Unlock a World of Career Possibilities'}
                 />
-                <Box sx={{ px: theme.spacing(12) }}>
+                <Box
+                    sx={{ px: { xs: theme.spacing(mobileMode ? 0 : 2), sm: theme.spacing(4), md: theme.spacing(12) } }}
+                >
                     <Container maxWidth='xl'>
                         <Typography variant='h2' sx={{ mb: '1rem' }}>
                             {jobData?.title}
                         </Typography>
 
-                        <Typography variant='subtitle2' sx={{ color: '#000000', fontWeight: 400 }}>
+                        <Typography variant='subtitle2' textAlign='justify' sx={{ color: '#000000', fontWeight: 400 }}>
                             <div dangerouslySetInnerHTML={{ __html: jobData?.description || '' }} />
                         </Typography>
 
@@ -139,6 +142,7 @@ export default function JobDetail() {
                                     </Typography>
                                     <Typography
                                         variant='subtitle2'
+                                        textAlign='justify'
                                         sx={{ color: '#031225', ml: '1.25rem', fontWeight: 300 }}
                                     >
                                         <div dangerouslySetInnerHTML={{ __html: jobData?.requirements || '' }} />
@@ -150,6 +154,7 @@ export default function JobDetail() {
                                     </Typography>
                                     <Typography
                                         variant='subtitle2'
+                                        textAlign='justify'
                                         sx={{ color: '#031225', ml: '1.25rem', fontWeight: 300 }}
                                     >
                                         <div dangerouslySetInnerHTML={{ __html: jobData?.qualification || '' }} />

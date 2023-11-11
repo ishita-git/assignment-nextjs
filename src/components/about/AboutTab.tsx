@@ -8,7 +8,7 @@ import { clientsData } from '../../data/clientsData'
 export default function AboutTab() {
     const theme = useTheme()
     return (
-        <Box sx={{ mx: theme.spacing(12) }}>
+        <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
             <Typography variant='h2' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
                 About Muskaan
             </Typography>
