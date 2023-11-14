@@ -12,6 +12,7 @@ declare type TextFieldProps = {
     disabled?: boolean
     value?: string
     name?: string
+    noBottomPadding?: boolean
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -25,10 +26,11 @@ export default function PrimaryTextField({
     disabled,
     value,
     name,
+    noBottomPadding,
     onChange,
 }: TextFieldProps) {
     return (
-        <Box sx={{ mb: '1rem' }}>
+        <Box sx={{ mb: noBottomPadding ? '-0.5rem' : '1rem' }}>
             <InputLabel>{label}</InputLabel>
             <Box sx={{ backgroundColor: '#0312251A', borderRadius: '8px' }}>
                 <TextField

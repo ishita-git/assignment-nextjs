@@ -38,7 +38,7 @@ const accordionLinks = [
         title: 'Tools',
         content: [
             { href: '/equipments', link: 'Equipments' },
-            { href: '/track', link: 'Track' },
+            { href: '/track', link: 'Track Shipments' },
             { href: '/vessel-schedule', link: 'Vessel Schedule' },
             { href: '/quote', link: 'Quote' },
         ],

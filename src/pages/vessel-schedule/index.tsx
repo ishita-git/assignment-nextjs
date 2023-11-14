@@ -12,6 +12,7 @@ import {
     InputLabel,
     Typography,
     styled,
+    useMediaQuery,
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import 'dayjs/locale/en-gb'
@@ -37,7 +38,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import PrimaryButton from '@/components/PrimaryButton'
 import SecondaryButton from '@/components/SecondaryButton'
 import { fetchDataFromApi } from '@/api/api'
-import Layout from '../Layout'
+import LayoutCentered from '../LayoutCentered'
+import TrackVesselSchedulesCard from '@/components/TrackVesselSchedulesCard'
 
 interface VesselData {
     id: number
@@ -75,6 +77,11 @@ export default function Home() {
     const router = useRouter()
     const { pol, pod, dateValue } = router.query
 
+    const tabletMode = useMediaQuery('(max-width:799px)')
+    const wideMobileMode = useMediaQuery('(max-width:699px)')
+    const mobileMode = useMediaQuery('(max-width:599px)')
+    const ultraMobileMode = useMediaQuery('(max-width:449px)')
+
     const [expanded, setExpanded] = React.useState(false)
 
     const handleExpandClick = () => {
@@ -96,66 +103,28 @@ export default function Home() {
     }, [])
 
     return (
-        <Layout image={titleImg} title='Schedules'>
+        <LayoutCentered image={titleImg} title={ultraMobileMode ? 'Schedules' : 'Vessel Schedules'}>
             <Box
                 sx={{
                     position: 'relative',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    mx: '15rem',
+                    height: ultraMobileMode ? '12.5rem' : mobileMode ? '8rem' : '5rem',
+                    mx: ultraMobileMode ? '0rem' : mobileMode ? '2rem' : wideMobileMode ? '4rem' : '6rem',
+                    borderRadius: '12px',
                 }}
             >
-                <Box
+                <Container
+                    maxWidth='lg'
+                    disableGutters
                     sx={{
-                        width: '100%',
-                        top: '-20vh',
-                        position: 'absolute',
-                        bgcolor: '#FFFFFF',
-                        p: '1.25rem',
-                        borderRadius: '1.25rem',
+                        position: 'relative',
+                        top: ultraMobileMode ? '2rem' : mobileMode ? '-3rem' : '-6rem',
                     }}
                 >
-                    <Grid container spacing={1} alignItems='center'>
-                        <Grid item sm={10}>
-                            <PrimaryTextField label='Origin' placeholder='Enter Origin Point' />
-                            <PrimaryTextField label='Destination' placeholder='Enter Destination Point' />
-                        </Grid>
-                        <Grid item sm={2}>
-                            <Image src={switchIcon} alt='' style={{ height: 'auto', width: '25%' }} />
-                        </Grid>
-                    </Grid>
-
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end' }}>
-                        <Box>
-                            <InputLabel>Date</InputLabel>
-                            <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale='en-gb'>
-                                <DatePicker
-                                    defaultValue={dayjs(currentDate)}
-                                    closeOnSelect
-                                    sx={{
-                                        '& .MuiInputBase-root': {
-                                            height: '2.4rem',
-                                            width: '12rem',
-                                            backgroundColor: '#0312251A',
-                                            borderRadius: '8px',
-                                            fontSize: '1rem',
-                                            color: '#6D7987',
-                                        },
-                                    }}
-                                    format='DD-MM-YYYY'
-                                />
-                            </LocalizationProvider>
-                        </Box>
-
-                        <Box>
-                            <SecondaryButton text='Cancel' />
-                            <PrimaryButton text='Submit' />
-                        </Box>
-                    </Box>
-                </Box>
+                    <TrackVesselSchedulesCard onEmptyPage />
+                </Container>
             </Box>
 
-            <Box sx={{ mt: theme.spacing(10), p: theme.spacing(4) }}>
+            <Box sx={{ my: '4rem' }}>
                 {vesselData?.map((item) => (
                     <Container maxWidth='xl' key={item.id}>
                         <Box sx={{ display: 'flex', mb: '1.25rem', alignItems: 'center' }}>
@@ -301,7 +270,7 @@ export default function Home() {
                     </Container>
                 ))}
             </Box>
-        </Layout>
+        </LayoutCentered>
     )
 }
 

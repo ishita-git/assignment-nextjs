@@ -3,18 +3,18 @@ import { Button } from '@mui/material'
 declare type ButtonProps = {
     text: string
     light?: boolean
-    width?:number|string
-    height?:number|string
+    width?: number | string
+    height?: number | string
     onClick?: () => void
 }
 
-export default function PrimaryButton({ text, light, onClick ,width,height}: ButtonProps) {
+export default function PrimaryButton({ text, light, onClick, width, height }: ButtonProps) {
     return (
         <Button
             variant='contained'
             sx={{
                 backgroundColor: light ? '#FFFFFF' : '#003A9B',
-                height: height ||'2.4rem',
+                height: height || '2.4rem',
                 width: width || '10rem',
                 borderRadius: '8px',
                 textTransform: 'none',

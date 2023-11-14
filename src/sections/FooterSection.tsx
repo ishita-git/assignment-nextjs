@@ -24,13 +24,13 @@ import arrowRight from '../assets/icons/arrow-right.png'
 import SecondaryTextField from '../components/SecondaryTextField'
 import CircleIcon from '@mui/icons-material/Circle'
 
-export default function FooterSection() {
+export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
     const theme = useTheme()
     const narrowTabletMode = useMediaQuery('(max-width:749px)')
     const mobileMode = useMediaQuery('(max-width:599px)')
 
     return (
-        <Box sx={{ backgroundColor: '#003A9B', mt: theme.spacing(4) }}>
+        <Box sx={{ backgroundColor: '#003A9B', mt: noMargin ? 0 : theme.spacing(4) }}>
             {mobileMode ? (
                 <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4) }, pt: theme.spacing(4) }}>
                     <Link href='/'>

@@ -227,7 +227,7 @@ export default function Navbar() {
 
                             <MenuItem onClick={closeToolsMenu}>
                                 <Link href='/track' sx={{ color: 'inherit' }}>
-                                    Track
+                                    Track Shipments
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeToolsMenu}>
