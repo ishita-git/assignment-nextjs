@@ -7,24 +7,20 @@ import {
     Divider,
     Grid,
     IconButton,
-    IconButtonProps,
-    Paper,
     Table,
     TableBody,
     TableCell,
     TableContainer,
-    TableHead,
-    TablePagination,
     TableRow,
     Typography,
-    styled,
     useMediaQuery,
 } from '@mui/material'
+
+import { useTheme } from '@mui/material/styles'
 import 'dayjs/locale/en-gb'
 import titleImg from '../../assets/images/cargo-ship-1.webp'
 import shipIcon from '../../assets/icons/icons_cargo_ship.png'
 import circularShipIcon from '../../assets/icons/circular_ship_icon.png'
-import locationIcon from '../../assets/icons/location.png'
 import circularLocationIcon from '../../assets/icons/circular_location.png'
 import PrimaryTextField from '@/components/PrimaryTextField'
 import PrimaryButton from '@/components/PrimaryButton'
@@ -32,19 +28,7 @@ import downArrowIcon from '../../assets/icons/arrow_down_circle.png'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import FlagIcon from '@mui/icons-material/Flag'
 import LayoutCentered from '../LayoutCentered'
-
-function CustomText({ title, subtitle }: { title: String; subtitle: String }) {
-    return (
-        <Box sx={{ mx: '0.5rem' }}>
-            <Typography variant='subtitle2' sx={{ fontSize: '0.8rem', color: '#1B1B1F', fontWeight: 500 }}>
-                {title}
-            </Typography>
-            <Typography variant='subtitle2' sx={{ color: '#1B1B1F', fontWeight: 600 }}>
-                {subtitle}
-            </Typography>
-        </Box>
-    )
-}
+import TrackResponseText from '@/components/TrackResponseText'
 
 const columns = [
     { id: 1, label: '', borderRadius: '12px 0 0 12px' },
@@ -71,19 +55,29 @@ const rows = [
     { id: 3, icon: circularLocationIcon, location: 'Jebel Ali', date: '25-09-2023, 19:00', status: '' },
 ]
 
-interface ExpandMoreProps extends IconButtonProps {
+interface ExpandMoreProps {
     expand: boolean
+    onClick: () => void
+    children: React.ReactNode
 }
 
-const ExpandMore = styled((props: ExpandMoreProps) => {
-    const { expand, ...other } = props
-    return <IconButton {...other} />
-})(({ theme, expand }) => ({
-    transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
-}))
+const ExpandMore = ({ expand, onClick, children }: ExpandMoreProps) => {
+    const theme = useTheme()
+
+    return (
+        <IconButton
+            onClick={onClick}
+            sx={{
+                transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+                transition: theme.transitions.create('transform', {
+                    duration: theme.transitions.duration.shortest,
+                }),
+            }}
+        >
+            {children}
+        </IconButton>
+    )
+}
 
 export default function Home() {
     const ShortMode = useMediaQuery('(min-width:700px) and (max-width:849px)')
@@ -187,7 +181,10 @@ export default function Home() {
                                 >
                                     <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                         <LocationOnIcon />
-                                        <CustomText title={ShortMode ? 'POL' : 'Port of Loading'} subtitle='Mundra' />
+                                        <TrackResponseText
+                                            title={ShortMode ? 'POL' : 'Port of Loading'}
+                                            subtitle='Mundra'
+                                        />
                                     </Box>
 
                                     <Divider sx={{ border: '1px dashed #929292', width: '10%' }} />
@@ -196,38 +193,36 @@ export default function Home() {
 
                                     <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                         <FlagIcon />
-                                        <CustomText
+                                        <TrackResponseText
                                             title={ShortMode ? 'POD' : 'Port Of Discharge'}
                                             subtitle='Jebel Ali'
                                         />
                                     </Box>
                                 </Box>
 
-                                <Divider
-                                    sx={{ borderColor: '#929292', mt: '1rem', mb: smallMobileMode ? '1.5rem' : '1rem' }}
-                                />
+                                <Divider sx={{ mt: '1rem', mb: smallMobileMode ? '1.5rem' : '1rem' }} />
 
                                 {smallMobileMode ? (
                                     <Grid container spacing={1} justifyContent='space-between' alignItems='center'>
                                         <Grid item xs={6}>
-                                            <CustomText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
+                                            <TrackResponseText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
                                         </Grid>
                                         <Grid item xs={6}>
-                                            <CustomText title='Cargo Type' subtitle='Consolidated Cargo' />
+                                            <TrackResponseText title='Cargo Type' subtitle='Consolidated Cargo' />
                                         </Grid>
                                         <Grid item xs={6}>
-                                            <CustomText title='Current Location' subtitle='Singapore' />
+                                            <TrackResponseText title='Current Location' subtitle='Singapore' />
                                         </Grid>
                                         <Grid item xs={6}>
-                                            <CustomText title='Container Type' subtitle='40 GP Standard' />
+                                            <TrackResponseText title='Container Type' subtitle='40 GP Standard' />
                                         </Grid>
                                     </Grid>
                                 ) : (
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                        <CustomText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
-                                        <CustomText title='Cargo Type' subtitle='Consolidated Cargo' />
-                                        <CustomText title='Current Location' subtitle='Singapore' />
-                                        <CustomText title='Container Type' subtitle='40 GP Standard' />
+                                        <TrackResponseText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
+                                        <TrackResponseText title='Cargo Type' subtitle='Consolidated Cargo' />
+                                        <TrackResponseText title='Current Location' subtitle='Singapore' />
+                                        <TrackResponseText title='Container Type' subtitle='40 GP Standard' />
                                     </Box>
                                 )}
                                 <Box sx={{ display: 'flex', alignItems: 'center', mt: '1rem' }}>
@@ -241,12 +236,7 @@ export default function Home() {
                                     >
                                         Status Detail
                                     </Typography>
-                                    <ExpandMore
-                                        expand={expanded}
-                                        onClick={handleExpandClick}
-                                        aria-expanded={expanded}
-                                        aria-label='show more'
-                                    >
+                                    <ExpandMore expand={expanded} onClick={handleExpandClick}>
                                         <Image
                                             src={downArrowIcon}
                                             alt=''
@@ -267,7 +257,10 @@ export default function Home() {
                                 >
                                     <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                         <LocationOnIcon />
-                                        <CustomText title={ShortMode ? 'POL' : 'Port of Loading'} subtitle='Mundra' />
+                                        <TrackResponseText
+                                            title={ShortMode ? 'POL' : 'Port of Loading'}
+                                            subtitle='Mundra'
+                                        />
                                     </Box>
 
                                     <Divider sx={{ border: '1px dashed #929292', width: '10%' }} />
@@ -276,7 +269,7 @@ export default function Home() {
 
                                     <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                         <FlagIcon />
-                                        <CustomText
+                                        <TrackResponseText
                                             title={ShortMode ? 'POD' : 'Port Of Discharge'}
                                             subtitle='Jebel Ali'
                                         />
@@ -287,13 +280,13 @@ export default function Home() {
 
                                 <Box sx={{ width: '56%' }}>
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                                        <CustomText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
-                                        <CustomText title='Cargo Type' subtitle='Consolidated Cargo' />
-                                        <CustomText
+                                        <TrackResponseText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
+                                        <TrackResponseText title='Cargo Type' subtitle='Consolidated Cargo' />
+                                        <TrackResponseText
                                             title={ShortMode ? 'Location' : 'Current Location'}
                                             subtitle='Singapore'
                                         />
-                                        <CustomText title='Container Type' subtitle='40 GP Standard' />
+                                        <TrackResponseText title='Container Type' subtitle='40 GP Standard' />
                                     </Box>
                                     <Box sx={{ display: 'flex', alignItems: 'center', mt: '1rem' }}>
                                         <Typography
@@ -306,12 +299,7 @@ export default function Home() {
                                         >
                                             Status Detail
                                         </Typography>
-                                        <ExpandMore
-                                            expand={expanded}
-                                            onClick={handleExpandClick}
-                                            aria-expanded={expanded}
-                                            aria-label='show more'
-                                        >
+                                        <ExpandMore expand={expanded} onClick={handleExpandClick}>
                                             <Image
                                                 src={downArrowIcon}
                                                 alt=''
