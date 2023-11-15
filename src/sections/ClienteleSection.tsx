@@ -45,7 +45,7 @@ export default function ClienteleSection() {
     }
 
     return (
-        <Box sx={{ mx: theme.spacing(4) }}>
+        <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4) } }}>
             {narrowTabletMode ? (
                 <Container maxWidth='sm' disableGutters>
                     <Box sx={{ my: theme.spacing(2) }}>
@@ -65,7 +65,7 @@ export default function ClienteleSection() {
                                     key={arrayIndex}
                                     sx={{
                                         backgroundColor: '#C1D2EC',
-                                        borderRadius: '200px 100px 16px 16px',
+                                        borderRadius: '100px 100px 16px 16px',
                                         opacity: index === Math.floor(visibleIcons / 2) ? 1 : 0,
                                         transition: 'opacity 0.5s',
                                         position: 'absolute',
@@ -166,21 +166,14 @@ export default function ClienteleSection() {
                         alignItems: 'center',
                     }}
                 >
-                    <IconButton
-                        onClick={handlePrev}
-                        sx={{ marginRight: theme.spacing(mobileMode ? 0 : narrowTabletMode ? 4 : 6) }}
-                    >
+                    <IconButton onClick={handlePrev} sx={{ marginRight: theme.spacing(mobileMode ? 0 : narrowTabletMode ? 4 : 6) }}>
                         <Image src={prevIcon} alt='prevIcon' style={{ height: '2rem', width: 'auto' }} />
                     </IconButton>
 
                     {Array.from({ length: visibleIcons }).map((_, index) => {
                         const arrayIndex = (startIconIndex + index) % iconsLength
                         return (
-                            <Box
-                                sx={{ height: '3rem', display: 'flex' }}
-                                key={arrayIndex}
-                                onClick={() => changeCard(index)}
-                            >
+                            <Box sx={{ height: '3rem', display: 'flex' }} key={arrayIndex} onClick={() => changeCard(index)}>
                                 <Image
                                     src={clientsData[arrayIndex].cardIcon}
                                     alt='client icon'
@@ -194,10 +187,7 @@ export default function ClienteleSection() {
                         )
                     })}
 
-                    <IconButton
-                        onClick={handleNext}
-                        sx={{ marginLeft: theme.spacing(mobileMode ? 0 : narrowTabletMode ? 4 : 6) }}
-                    >
+                    <IconButton onClick={handleNext} sx={{ marginLeft: theme.spacing(mobileMode ? 0 : narrowTabletMode ? 4 : 6) }}>
                         <Image src={nextIcon} alt='nextIcon' style={{ height: '2rem', width: 'auto' }} />
                     </IconButton>
                 </Box>

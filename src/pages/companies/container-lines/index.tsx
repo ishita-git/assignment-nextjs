@@ -90,11 +90,7 @@ function ProcessSection() {
                                             height: '4rem',
                                         }}
                                     />
-                                    <Typography
-                                        variant='h6'
-                                        textAlign={'center'}
-                                        sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}
-                                    >
+                                    <Typography variant='h6' textAlign={'center'} sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}>
                                         {item.title}
                                     </Typography>
                                     <Typography
@@ -138,11 +134,7 @@ function ProcessSection() {
                                             height: '4rem',
                                         }}
                                     />
-                                    <Typography
-                                        variant='h6'
-                                        textAlign={'center'}
-                                        sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}
-                                    >
+                                    <Typography variant='h6' textAlign={'center'} sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}>
                                         {item.title}
                                     </Typography>
                                     <Typography
@@ -177,19 +169,10 @@ export default function Home() {
                     <CustomText text='Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations.' />
                     <Grid container spacing={2} sx={{ mb: '1rem', mt: '0.5rem' }}>
                         <Grid item xs={12} sm={6}>
-                            <Typography
-                                textAlign={'start'}
-                                variant='h5'
-                                sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
-                            >
+                            <Typography textAlign={'start'} variant='h5' sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}>
                                 Offices in India
                             </Typography>
-                            <Typography
-                                component={'ul'}
-                                textAlign={'start'}
-                                variant='subtitle2'
-                                sx={{ color: '#031225', ml: '1.25rem' }}
-                            >
+                            <Typography component={'ul'} textAlign={'start'} variant='subtitle2' sx={{ color: '#031225', ml: '1.25rem' }}>
                                 {OfficeLoactionIndia.map((item, index) => (
                                     <Typography
                                         component={'li'}
@@ -204,19 +187,10 @@ export default function Home() {
                             </Typography>
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <Typography
-                                textAlign={'start'}
-                                variant='h5'
-                                sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}
-                            >
+                            <Typography textAlign={'start'} variant='h5' sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}>
                                 International offices
                             </Typography>
-                            <Typography
-                                component={'ul'}
-                                textAlign={'start'}
-                                variant='subtitle2'
-                                sx={{ color: '#031225', ml: '1.25rem' }}
-                            >
+                            <Typography component={'ul'} textAlign={'start'} variant='subtitle2' sx={{ color: '#031225', ml: '1.25rem' }}>
                                 {OfficeLoactionInternational.map((item, index) => (
                                     <Typography
                                         component={'li'}
@@ -231,14 +205,9 @@ export default function Home() {
                             </Typography>
                         </Grid>
                     </Grid>
-                    <Typography
-                        paragraph
-                        variant='subtitle2'
-                        sx={{ color: '#031225', fontWeight: '300', textAlign: 'justify' }}
-                    >
-                        Shipping cargo often requires specialized containers to ensure safe and efficient
-                        transportation. Our company provides a variety of specialized containers tailored to different
-                        cargo needs. These include:{' '}
+                    <Typography paragraph variant='subtitle2' sx={{ color: '#031225', fontWeight: '300', textAlign: 'justify' }}>
+                        Shipping cargo often requires specialized containers to ensure safe and efficient transportation. Our company
+                        provides a variety of specialized containers tailored to different cargo needs. These include:{' '}
                     </Typography>{' '}
                     <Grid container spacing={1} sx={{ my: '4rem' }}>
                         <Grid item xs={12} sm={6}>
@@ -269,12 +238,7 @@ export default function Home() {
                     <Typography variant='h3' sx={{ textAlign: 'start', mb: '2rem', color: '#1B1B1F' }}>
                         Statistics
                     </Typography>
-                    <StatisticsCard
-                        exporterRank={16}
-                        importerRank={10}
-                        tradeBalanceRank={136}
-                        totalTradeAmtList={totalTradeAmtList}
-                    />
+                    <StatisticsCard exporterRank={16} importerRank={10} tradeBalanceRank={136} totalTradeAmtList={totalTradeAmtList} />
                 </Container>
             </Box>
             <ProcessSection />
@@ -353,11 +317,7 @@ export default function Home() {
                             </Grid>
                         </Box>
                     )}
-                    {tabletMode ? (
-                        <></>
-                    ) : (
-                        <Image src={branchesMap} alt='branches' style={{ width: '40rem', height: 'auto' }} />
-                    )}
+                    {tabletMode ? <></> : <Image src={branchesMap} alt='branches' style={{ width: '40rem', height: 'auto' }} />}
                 </Container>
             </Box>
         </CompaniesLayout>
@@ -391,18 +351,10 @@ function ContainerType({ image, title, desc }: { image: string | StaticImageData
                     />
                 </Grid>
                 <Grid item xs={8}>
-                    <Typography
-                        variant='h4'
-                        textAlign={'start'}
-                        sx={{ fontWeight: 600, color: '#031225', marginBottom: '0.5rem' }}
-                    >
+                    <Typography variant='h4' textAlign={'start'} sx={{ fontWeight: 600, color: '#031225', marginBottom: '0.5rem' }}>
                         {title}
                     </Typography>
-                    <Typography
-                        variant='subtitle2'
-                        textAlign={'start'}
-                        sx={{ color: '#031225', marginBottom: '1rem', fontWeight: 300 }}
-                    >
+                    <Typography variant='subtitle2' textAlign={'start'} sx={{ color: '#031225', marginBottom: '1rem', fontWeight: 300 }}>
                         {desc}
                     </Typography>
                 </Grid>
@@ -417,10 +369,7 @@ function AddressCard({ companyLoc, address }: { companyLoc: String; address: Str
             <Typography variant='h5' sx={{ textAlign: 'start', mb: '0.5rem', color: '#031225', fontWeight: 500 }}>
                 {companyLoc}
             </Typography>
-            <Typography
-                variant='subtitle2'
-                sx={{ textAlign: 'start', color: '#031225', fontWeight: 300, fontSize: '0.75rem' }}
-            >
+            <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#031225', fontWeight: 300, fontSize: '0.75rem' }}>
                 {address}
             </Typography>
         </Box>
