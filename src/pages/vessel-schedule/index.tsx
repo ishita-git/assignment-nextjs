@@ -82,7 +82,32 @@ const ExpandMore = ({ expand, onClick, children }: ExpandMoreProps) => {
     )
 }
 
-let currentDate = new Date()
+function PortInfo({ date, info, portName, portAddress }: { date: String; info: String; portName: String; portAddress: String }) {
+    return (
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Divider component='div' orientation='vertical'>
+                <Image src={circularLocationIcon} alt='circular Location Icon' style={{ height: '2rem', width: '2rem' }} />
+            </Divider>
+            <Box sx={{ ml: '1rem' }}>
+                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
+                        {date}
+                    </Typography>
+                    <Typography sx={{ fontSize: '0.8rem', textAlign: 'start', color: '#313131B2', ml: '1rem' }}>{info}</Typography>
+                </Box>
+                <Typography
+                    variant='body1'
+                    sx={{ textAlign: 'start', color: '#003A9B', fontWeight: 700, textTransform: 'capitalize', my: '0.5rem' }}
+                >
+                    {portName.toLowerCase()}
+                </Typography>
+                <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
+                    {portAddress}
+                </Typography>
+            </Box>
+        </Box>
+    )
+}
 
 export default function Home() {
     const router = useRouter()
@@ -216,11 +241,7 @@ export default function Home() {
                                         ) : (
                                             <>
                                                 <Divider sx={{ border: '1px dashed #929292', width: '10%' }} />
-                                                <Image
-                                                    src={shipIcon}
-                                                    alt='shipIcon'
-                                                    style={{ height: '2rem', width: 'auto' }}
-                                                />
+                                                <Image src={shipIcon} alt='shipIcon' style={{ height: '2rem', width: 'auto' }} />
                                                 <Divider sx={{ border: '1px dashed #929292', width: '10%' }} />
                                             </>
                                         )}
@@ -258,15 +279,9 @@ export default function Home() {
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: '1.5rem' }}>
                                         <PrimaryButton text='Book Now' />
                                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                            <Typography sx={{ marginLeft: 'auto', mr: '0.5rem' }}>
-                                                View Detail
-                                            </Typography>
+                                            <Typography sx={{ marginLeft: 'auto', mr: '0.5rem' }}>View Detail</Typography>
                                             <ExpandMore expand={expanded} onClick={handleExpandClick}>
-                                                <Image
-                                                    src={downArrowIcon}
-                                                    alt=''
-                                                    style={{ height: 'auto', width: '1.25rem' }}
-                                                />
+                                                <Image src={downArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
                                             </ExpandMore>
                                         </Box>
                                     </Box>
@@ -293,11 +308,7 @@ export default function Home() {
                                                 />
                                             </Box>
                                             <Divider sx={{ border: '1px dashed #929292', width: '10%' }} />
-                                            <Image
-                                                src={shipIcon}
-                                                alt='shipIcon'
-                                                style={{ height: '2rem', width: 'auto' }}
-                                            />
+                                            <Image src={shipIcon} alt='shipIcon' style={{ height: '2rem', width: 'auto' }} />
                                             <Divider sx={{ border: '1px dashed #929292', width: '10%' }} />
                                             <Box sx={{ display: 'flex', alignItems: 'flex-start', maxWidth: '10rem' }}>
                                                 <FlagIcon />
@@ -341,15 +352,9 @@ export default function Home() {
                                             <TrackResponseText title='Service Lane' subtitle='NCI' />
                                         </Box>
                                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                            <Typography sx={{ marginLeft: 'auto', mr: '0.5rem' }}>
-                                                View Detail
-                                            </Typography>
+                                            <Typography sx={{ marginLeft: 'auto', mr: '0.5rem' }}>View Detail</Typography>
                                             <ExpandMore expand={expanded} onClick={handleExpandClick}>
-                                                <Image
-                                                    src={downArrowIcon}
-                                                    alt=''
-                                                    style={{ height: 'auto', width: '1.25rem' }}
-                                                />
+                                                <Image src={downArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
                                             </ExpandMore>
                                         </Box>
                                     </Box>
@@ -359,11 +364,11 @@ export default function Home() {
 
                         <Collapse in={expanded} timeout='auto' unmountOnExit>
                             <Divider sx={{ my: '2rem', borderColor: '#929292' }} />
-                            <DocLocation
-                                docTime={item?.eta_pol}
-                                pol='ETD at POL'
+                            <PortInfo
+                                date={item?.eta_pol}
+                                info='ETD at POL'
                                 portName={item?.port_of_loading}
-                                address=' Adani Ports and SEZ'
+                                portAddress='Adani Ports and SEZ'
                             />
                             <ShipLocation
                                 lane='IGS (Service Lane)'
@@ -374,11 +379,11 @@ export default function Home() {
                                 inland='28-08-2023 00:00'
                                 vgm={item?.vgm_cut_off}
                             />
-                            <DocLocation
-                                docTime={item?.eta_pod}
-                                pol=' ETD at POL'
+                            <PortInfo
+                                date={item?.eta_pod}
+                                info=' ETD at POL'
                                 portName={item?.port_of_discharge}
-                                address=' Adani Ports and SEZ'
+                                portAddress=' Adani Ports and SEZ'
                             />
                         </Collapse>
                     </Box>
@@ -388,51 +393,7 @@ export default function Home() {
     )
 }
 
-function DocLocation({
-    docTime,
-    pol,
-    portName,
-    address,
-}: {
-    docTime: String
-    pol: String
-    portName: String
-    address: String
-}) {
-    return (
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Divider component='div' orientation='vertical'>
-                <Image src={circularLocationIcon} alt='' style={{ height: '2rem', width: '2rem' }} />
-            </Divider>
-            <Box sx={{ ml: '2rem' }}>
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F', mr: '0.5rem' }}>
-                        {docTime}
-                    </Typography>
-                    <Typography sx={{ fontSize: '0.1rem', textAlign: 'start', color: '#313131B2' }}>{pol}</Typography>
-                </Box>
-                <Typography
-                    variant='body1'
-                    sx={{ textAlign: 'start', color: '#003A9B', fontWeight: 'bold', my: '0.25rem' }}
-                >
-                    {portName}
-                </Typography>
-                <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                    {address}
-                </Typography>
-            </Box>
-        </Box>
-    )
-}
-function ShipLocation({
-    lane,
-    duration,
-    shipName,
-    doc,
-    port,
-    inland,
-    vgm,
-}: {
+declare type ShipLocationProps = {
     lane: String
     duration: String
     shipName: String
@@ -440,77 +401,95 @@ function ShipLocation({
     port: String
     inland: String
     vgm: String
-}) {
+}
+
+function ShipLocation({ lane, duration, shipName, doc, port, inland, vgm }: ShipLocationProps) {
+    const wideMobileMode = useMediaQuery('(max-width:699px)')
+    const smallMobileMode = useMediaQuery('(max-width:599px)')
+
     return (
-        <Box sx={{ display: 'flex', alignItems: 'center', height: '12rem' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', height: smallMobileMode ? '24rem' : wideMobileMode ? '18rem' : '12rem' }}>
             <Divider component='div' orientation='vertical' flexItem>
                 <Image src={circularShipGreyIcon} alt='' style={{ height: '2rem', width: '2rem' }} />
             </Divider>
-            <Box
-                sx={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    ml: '2rem',
-                    bgcolor: '#EFF6FF',
-                    width: '100%',
-                    p: '1.25rem',
-                    borderRadius: '1.25rem',
-                    justifyContent: 'space-around',
-                }}
-            >
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Image src={circularShipBlackIcon} alt='' style={{ height: '2rem', width: '2rem' }} />
-                    <Box sx={{ mx: '1.25rem' }}>
-                        <Typography variant='body2' sx={{ textAlign: 'start', color: '#1B1B1F', mb: '0.5rem' }}>
-                            {lane}
-                        </Typography>
-                        <Typography variant='h6' sx={{ textAlign: 'start', color: '#003A9B', mb: '0.5rem' }}>
-                            {shipName}
-                        </Typography>
-                        <Typography variant='body2' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            {duration}
-                        </Typography>
+            {wideMobileMode ? (
+                <Box sx={{ mx: '1rem', bgcolor: '#EFF6FF', width: '100%', p: '1rem', borderRadius: '12px' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        <Image src={circularShipBlackIcon} alt='' style={{ height: '2rem', width: '2rem' }} />
+                        <Box sx={{ mx: '1rem' }}>
+                            <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
+                                {lane}
+                            </Typography>
+                            <Typography variant='h6' sx={{ textAlign: 'start', fontWeight: 600, color: '#003A9B', my: '0.5rem' }}>
+                                {shipName}
+                            </Typography>
+                            <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
+                                {duration}
+                            </Typography>
+                        </Box>
                     </Box>
-                </Box>
-                <Divider orientation='vertical' flexItem />
-                <Box sx={{ display: 'flex', alignItems: 'end' }}>
-                    <Box sx={{ mx: '1.25rem' }}>
-                        <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F', mb: '1rem' }}>
+                    <Divider sx={{ my: '1rem' }} />
+                    <Box>
+                        <Typography variant='h6' sx={{ color: '#1B1B1F', fontSize: '1rem', mb: '0.8rem' }}>
                             Cut off
                         </Typography>
-                        <Typography variant='body2' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            Doc
-                        </Typography>
-                        <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            {doc}
-                        </Typography>
-                    </Box>
-                    <Box sx={{ mx: '1.25rem' }}>
-                        <Typography variant='body2' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            Inland
-                        </Typography>
-                        <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            {inland}
-                        </Typography>
-                    </Box>
-                    <Box sx={{ mx: '1.25rem' }}>
-                        <Typography variant='body2' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            VGM
-                        </Typography>
-                        <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            {vgm}
-                        </Typography>
-                    </Box>
-                    <Box sx={{ mx: '1.25rem' }}>
-                        <Typography variant='body2' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            Port
-                        </Typography>
-                        <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
-                            {port}
-                        </Typography>
+                        <Grid container spacing={1}>
+                            <Grid item xs={6} sm={3}>
+                                <TrackResponseText title='Doc' subtitle={doc} noMargin />
+                            </Grid>
+                            <Grid item xs={6} sm={3}>
+                                <TrackResponseText title='Inland' subtitle={inland} noMargin />
+                            </Grid>
+                            <Grid item xs={6} sm={3}>
+                                <TrackResponseText title='VGM' subtitle={vgm} noMargin />
+                            </Grid>
+                            <Grid item xs={6} sm={3}>
+                                <TrackResponseText title='Port' subtitle={port} noMargin />
+                            </Grid>
+                        </Grid>
                     </Box>
                 </Box>
-            </Box>
+            ) : (
+                <Box
+                    sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        mx: '2rem',
+                        bgcolor: '#EFF6FF',
+                        width: '100%',
+                        p: '1rem',
+                        borderRadius: '12px',
+                    }}
+                >
+                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        <Image src={circularShipBlackIcon} alt='' style={{ height: '2rem', width: '2rem' }} />
+                        <Box sx={{ mx: '1rem' }}>
+                            <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
+                                {lane}
+                            </Typography>
+                            <Typography variant='h6' sx={{ textAlign: 'start', fontWeight: 600, color: '#003A9B', my: '0.5rem' }}>
+                                {shipName}
+                            </Typography>
+                            <Typography variant='body1' sx={{ textAlign: 'start', color: '#1B1B1F' }}>
+                                {duration}
+                            </Typography>
+                        </Box>
+                    </Box>
+                    <Divider orientation='vertical' flexItem />
+                    <Box sx={{ width: '70%' }}>
+                        <Typography variant='h6' sx={{ textAlign: 'start', color: '#1B1B1F', mx: '0.5rem', fontSize: '1rem' }}>
+                            Cut off
+                        </Typography>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: '1rem' }}>
+                            <TrackResponseText title='Doc' subtitle={doc} />
+                            <TrackResponseText title='Inland' subtitle={inland} />
+                            <TrackResponseText title='VGM' subtitle={vgm} />
+                            <TrackResponseText title='Port' subtitle={port} />
+                        </Box>
+                    </Box>
+                </Box>
+            )}
         </Box>
     )
 }
