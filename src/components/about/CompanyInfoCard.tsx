@@ -11,13 +11,13 @@ declare type CompanyCardProps = {
 
 export default function CompanyInfoCard({ title, des, coverImage }: CompanyCardProps) {
     const theme = useTheme()
-    const wideTabletMode = useMediaQuery('(max-width:700px) and (max-width:799px)')
+    const wideTabletMode = useMediaQuery('(min-width:700px) and (max-width:799px)')
     const tabletMode = useMediaQuery('(max-width:699px)')
     const mobileMode = useMediaQuery('(max-width:599px)')
     const ultraMobileMode = useMediaQuery('(max-width:449px)')
 
     return (
-        <Box sx={{ position: 'relative', mb: '1.5rem' }}>
+        <Box sx={{ position: 'relative', mb: '1.5rem', borderRadius: '16px', overflow: 'hidden' }}>
             <Image
                 src={coverImage}
                 alt='card background'
@@ -26,6 +26,19 @@ export default function CompanyInfoCard({ title, des, coverImage }: CompanyCardP
                     height: 'auto',
                 }}
             />
+            {tabletMode || wideTabletMode ? (
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: 0,
+                        width: '100%',
+                        height: '100%',
+                        background: 'rgba(0, 0, 0, 0.5)',
+                    }}
+                />
+            ) : (
+                <></>
+            )}
             <Box
                 sx={{
                     px: theme.spacing(mobileMode ? 1 : 2.5),

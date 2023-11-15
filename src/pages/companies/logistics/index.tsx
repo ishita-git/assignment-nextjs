@@ -38,10 +38,7 @@ export default function Home() {
                     </Grid>
                     <CustomText text='Our expansive global operational network positions us as a premier provider of container supply services to our customers. Additionally, our significant scale allows us to operate with the most competitive cost ratios in the industry.' />
                     <CustomText text='With a formidable fleet comprising over 1500 twenty-foot containers, Muskan Logistic leases its containers to virtually every major container shipping line globally, earning recognition as a prominent container provider to the top global container shipping lines. Through our extensive global network, spanning 15 offices across 5 countries, Muskan Logistic extends access to its containers via approximately 50 third-party owned container depot facilities in these countries.' />
-                    <Typography
-                        variant='h3'
-                        sx={{ textAlign: 'start', mt: '3rem', mb: '1rem', color: '#1B1B1F', fontWeight: 500 }}
-                    >
+                    <Typography variant='h3' sx={{ textAlign: 'start', mt: '3rem', mb: '1rem', color: '#1B1B1F', fontWeight: 500 }}>
                         Our Containers
                     </Typography>
                     <CustomText text='Our comprehensive container offerings encompass both new and used sea and dry cargo containers, available in various types. Whether you require standard containers or specialized equipment like flat racks, tanks, double-door, or side-door containers, we have a solution to meet your specific needs.' />
@@ -71,10 +68,7 @@ export default function Home() {
                                     minWidth: '16rem',
                                 }}
                             >
-                                <Typography
-                                    variant='h6'
-                                    sx={{ color: '#031225', fontWeight: 600, textAlign: 'start', mb: '1rem' }}
-                                >
+                                <Typography variant='h6' sx={{ color: '#031225', fontWeight: 600, textAlign: 'start', mb: '1rem' }}>
                                     {item.title}
                                 </Typography>
                                 <Typography
@@ -102,12 +96,7 @@ export default function Home() {
                         Why Choose Us?
                     </Typography>
                     <CustomText text='Our containers are versatile and compliant with global standards, ideal for sea, truck, rail transportation, and secure storage.' />
-                    <Typography
-                        component={'ul'}
-                        textAlign={'start'}
-                        variant='body1'
-                        sx={{ color: '#031225', ml: '1.25rem' }}
-                    >
+                    <Typography component={'ul'} textAlign={'start'} variant='body1' sx={{ color: '#031225', ml: '1.25rem' }}>
                         {ChooseUsData.map((item, index) => (
                             <Typography
                                 component={'li'}

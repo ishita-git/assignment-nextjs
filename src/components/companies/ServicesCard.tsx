@@ -3,15 +3,7 @@ import Image, { StaticImageData } from 'next/image'
 import React, { useState } from 'react'
 import VisibilityTracker, { AnimationType } from '../VisibilityTracker'
 
-export default function ServicesCard({
-    title,
-    desc,
-    image,
-}: {
-    title: String
-    desc: String
-    image: string | StaticImageData
-}) {
+export default function ServicesCard({ title, desc, image }: { title: String; desc: String; image: string | StaticImageData }) {
     const customMobileMode = useMediaQuery('(min-width:600px) and (max-width:649px)')
 
     const [hovered, setHovered] = React.useState(false)
@@ -50,10 +42,7 @@ export default function ServicesCard({
                     {title}
                 </Typography>
                 <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
-                    <Typography
-                        variant='body1'
-                        sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300, fontSize: '0.75rem' }}
-                    >
+                    <Typography variant='body1' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300, fontSize: '0.75rem' }}>
                         {desc}
                     </Typography>
                     {title == 'Our Commitment' ? (

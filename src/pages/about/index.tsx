@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Tab, Tabs } from '@mui/material'
+import { Box, Tab, Tabs, useMediaQuery } from '@mui/material'
 import AboutTab from '../../components/about/AboutTab'
 import CompaniesTab from '../../components/about/CompaniesTab'
 import MissionAndVisionTab from '../../components/about/MissionAndVisionTab'
@@ -17,6 +17,7 @@ function TabPanel({ children, value, index }: TabPanelProps) {
 }
 
 export default function Home() {
+    const mobileMode = useMediaQuery('(max-width:599px)')
     const [value, setValue] = React.useState(0)
 
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -24,7 +25,7 @@ export default function Home() {
     }
 
     return (
-        <Layout image={aboutBackground} title='Muskaan Group Of Companies' withTabs customHeight='35vw'>
+        <Layout image={aboutBackground} title='Muskaan Group Of Companies' withTabs customHeight={mobileMode ? '45vw' : '35vw'}>
             <Tabs value={value} onChange={handleChange} variant='fullWidth'>
                 <Tab label='About' sx={{ bgcolor: value === 0 ? '#003A9B' : '#FFFFFF' }} />
                 <Tab label='Companies' sx={{ bgcolor: value === 1 ? '#003A9B' : '#FFFFFF' }} />

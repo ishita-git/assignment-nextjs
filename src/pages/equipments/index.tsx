@@ -24,6 +24,7 @@ export default function Home() {
         setValue(newValue)
     }
 
+    const mobileMode = useMediaQuery('(max-width:599px)')
     const ultraMobileMode = useMediaQuery('(max-width:449px)')
 
     return (
@@ -31,7 +32,7 @@ export default function Home() {
             image={equipmentsBg}
             title={ultraMobileMode ? '' : 'Our Equipment'}
             subtitle={'Range of container types tailored\n to your shipping needs'}
-            customHeight='42vw'
+            customHeight={mobileMode ? '48vw' : '42vw'}
             withTabs
         >
             <Box sx={{ overflowX: 'auto' }}>

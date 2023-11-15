@@ -17,6 +17,7 @@ import ServicesCard from '@/components/companies/ServicesCard'
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import mapImage from '../../../assets/companies/muskaan_shipping_sdn/map.png'
 import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
+import ServicesCardMobile from '@/components/companies/ServicesCardMobile'
 
 export default function Home() {
     const theme = useTheme()
@@ -54,18 +55,10 @@ export default function Home() {
                         Statistics
                     </Typography>
                     <Image src={statistics} alt='' style={{ width: '100%', height: 'auto', padding: '2rem 6rem' }} />
-                    <Typography
-                        variant='h4'
-                        sx={{ textAlign: 'center', mb: '4rem', color: '#1B1B1F', fontWeight: 600 }}
-                    >
+                    <Typography variant='h4' sx={{ textAlign: 'center', mb: '4rem', color: '#1B1B1F', fontWeight: 600 }}>
                         Country Growth V/S World Growth V/S GDP Growth
                     </Typography>
-                    <StatisticsCard
-                        exporterRank={23}
-                        importerRank={25}
-                        tradeBalanceRank={10}
-                        totalTradeAmtList={totalTradeAmtList}
-                    />
+                    <StatisticsCard exporterRank={23} importerRank={25} tradeBalanceRank={10} totalTradeAmtList={totalTradeAmtList} />
                 </Container>
             </Box>
             <Box
@@ -108,13 +101,10 @@ export default function Home() {
                                 </Typography>
                             </VisibilityTracker>
                             <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
-                                <Typography
-                                    variant='subtitle2'
-                                    sx={{ textAlign: 'justify', color: '#FFFFFF', fontWeight: 300 }}
-                                >
-                                    We aim to achieve what multinational forwarders cannot: meeting our customers'
-                                    Critical Success Factors. Our ambition is entirely customer-centric, recognizing
-                                    that our customers have the freedom to choose their service provider.
+                                <Typography variant='subtitle2' sx={{ textAlign: 'justify', color: '#FFFFFF', fontWeight: 300 }}>
+                                    We aim to achieve what multinational forwarders cannot: meeting our customers' Critical Success Factors.
+                                    Our ambition is entirely customer-centric, recognizing that our customers have the freedom to choose
+                                    their service provider.
                                 </Typography>
                             </VisibilityTracker>
                         </Box>
@@ -141,13 +131,9 @@ export default function Home() {
                                 </Typography>
                             </VisibilityTracker>
                             <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
-                                <Typography
-                                    variant='subtitle2'
-                                    sx={{ textAlign: 'justify', color: '#FFFFFF', fontWeight: 300 }}
-                                >
-                                    We prioritize clear communication and adaptability to meet changing customer needs,
-                                    striving to build enduring relationships. Our extensive transportation knowledge
-                                    ensures top-quality service.
+                                <Typography variant='subtitle2' sx={{ textAlign: 'justify', color: '#FFFFFF', fontWeight: 300 }}>
+                                    We prioritize clear communication and adaptability to meet changing customer needs, striving to build
+                                    enduring relationships. Our extensive transportation knowledge ensures top-quality service.
                                 </Typography>
                             </VisibilityTracker>
                         </Box>
@@ -176,45 +162,57 @@ export default function Home() {
                         Navigational Safety and Environmental Responsibility:
                     </Typography>
                     <CustomText text="The paramount duty of a transportation carrier is to securely convey customers' cargo to its destination, maintaining its original condition. Beyond handling standard container freight, we offer technical assistance for the safe transport of hazardous materials and oversized items that cannot fit into containers, ensuring a seamless and secure marine and onshore journey. Furthermore, we are committed to environmental conservation, implementing practices like fuel-efficient cruising to mitigate ship-generated greenhouse gas emissions and employing shore power at our Long Beach, California terminal to eliminate ship fuel consumption." />
-                    <Grid
-                        container
-                        spacing={customMobileMode ? 1 : 2}
-                        sx={
-                            mobileMode
-                                ? { display: 'flex', flexDirection: 'column', alignItems: 'center' }
-                                : { my: '4rem' }
-                        }
-                    >
-                        <Grid item xs={12} sm={4}>
-                            <ServicesCard
+                    {mobileMode ? (
+                        <Box>
+                            <ServicesCardMobile
                                 image={ourCommitmentImg}
                                 title='Our Commitment'
-                                desc={
-                                    customMobileMode
-                                        ? "Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty."
-                                        : "Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:"
-                                }
+                                desc="Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:"
                             />
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <ServicesCard
+                            <ServicesCardMobile
                                 image={customBrokerageImg}
                                 title='Custom Brokerage'
-                                desc={
-                                    customMobileMode
-                                        ? 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
-                                        : 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
-                                }
+                                desc='Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
                             />
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <ServicesCard
+                            <ServicesCardMobile
                                 image={logImg}
                                 title='Logistic & Transportation'
                                 desc=' Our tailored services in Peninsular Malaysia include a wide range of trucks for prompt pick-up and delivery. We utilize multi-modal options, including road, rail, and water transport, along with a vast network of carriers for rapid response to changing needs.'
                             />
+                        </Box>
+                    ) : (
+                        <Grid
+                            container
+                            spacing={customMobileMode ? 1 : 2}
+                            sx={mobileMode ? { display: 'flex', flexDirection: 'column', alignItems: 'center' } : { my: '4rem' }}
+                        >
+                            <Grid item sm={4}>
+                                <ServicesCard
+                                    image={ourCommitmentImg}
+                                    title='Our Commitment'
+                                    desc="Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:"
+                                />
+                            </Grid>
+                            <Grid item sm={4}>
+                                <ServicesCard
+                                    image={customBrokerageImg}
+                                    title='Custom Brokerage'
+                                    desc={
+                                        customMobileMode
+                                            ? 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
+                                            : 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                    }
+                                />
+                            </Grid>
+                            <Grid item sm={4}>
+                                <ServicesCard
+                                    image={logImg}
+                                    title='Logistic & Transportation'
+                                    desc=' Our tailored services in Peninsular Malaysia include a wide range of trucks for prompt pick-up and delivery. We utilize multi-modal options, including road, rail, and water transport, along with a vast network of carriers for rapid response to changing needs.'
+                                />
+                            </Grid>
                         </Grid>
-                    </Grid>
+                    )}
                 </Container>
             </Box>
         </CompaniesLayout>

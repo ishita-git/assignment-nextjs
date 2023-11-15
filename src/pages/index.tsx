@@ -49,15 +49,7 @@ export default function ElevateAppBar(props: Props) {
                 <Box
                     sx={{
                         position: 'relative',
-                        top: desktopMode
-                            ? '-18vh'
-                            : tabletMode
-                            ? '-16vh'
-                            : mobileMode
-                            ? '-12vh'
-                            : SmallMobileMode
-                            ? '-9vh'
-                            : '0vh',
+                        top: desktopMode ? '-18vh' : tabletMode ? '-16vh' : mobileMode ? '-12vh' : SmallMobileMode ? '-9vh' : '0vh',
                         display: 'flex',
                         justifyContent: 'center',
                         mx: theme.spacing(2),

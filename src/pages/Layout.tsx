@@ -35,8 +35,6 @@ declare type LayoutProps = {
 }
 
 export default function Layout({ image, title, subtitle, withTabs, children, props, customHeight }: LayoutProps) {
-    const theme = useTheme()
-
     return (
         <React.Fragment>
             <ElevationScroll {...props}>

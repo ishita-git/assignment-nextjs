@@ -23,20 +23,11 @@ export default function AboutTab() {
                     <Typography textAlign={'start'} variant='h5' sx={{ color: '#031225', marginBottom: '1rem' }}>
                         Quality Policy
                     </Typography>
-                    <Typography
-                        textAlign={'start'}
-                        variant='body1'
-                        sx={{ color: '#031225', marginBottom: '1rem', lineHeight: '1.5rem' }}
-                    >
-                        Our commitment lies in elevating customer satisfaction by comprehending and fulfilling their
-                        specific needs. To achieve this, we actively pursue the following goals:
+                    <Typography textAlign={'start'} variant='body1' sx={{ color: '#031225', marginBottom: '1rem', lineHeight: '1.5rem' }}>
+                        Our commitment lies in elevating customer satisfaction by comprehending and fulfilling their specific needs. To
+                        achieve this, we actively pursue the following goals:
                     </Typography>
-                    <Typography
-                        component={'ul'}
-                        textAlign={'start'}
-                        variant='body1'
-                        sx={{ color: '#031225', ml: '1.25rem' }}
-                    >
+                    <Typography component={'ul'} textAlign={'start'} variant='body1' sx={{ color: '#031225', ml: '1.25rem' }}>
                         {qualityPolicyData.map((item, index) => (
                             <Typography
                                 component={'li'}
@@ -54,12 +45,7 @@ export default function AboutTab() {
                     <Typography textAlign={'start'} variant='h5' sx={{ color: '#031225', marginBottom: '1rem' }}>
                         Key Attributes
                     </Typography>
-                    <Typography
-                        component={'ul'}
-                        textAlign={'start'}
-                        variant='body1'
-                        sx={{ color: '#031225', ml: '1.25rem' }}
-                    >
+                    <Typography component={'ul'} textAlign={'start'} variant='body1' sx={{ color: '#031225', ml: '1.25rem' }}>
                         {keyAttributesData.map((item, index) => (
                             <Typography
                                 component={'li'}
@@ -77,7 +63,7 @@ export default function AboutTab() {
             <Typography variant='h2' sx={{ mt: theme.spacing(6), mb: theme.spacing(2) }}>
                 Our Customer
             </Typography>
-            <Box sx={{ display: 'flex', textAlign: 'center', flexWrap: 'wrap' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}>
                 {clientsData.map((item, index) => (
                     <Box key={index} sx={{ mx: '1rem', mb: '3rem' }}>
                         <Image src={item.cardIcon} alt='icon' style={{ height: '3rem', width: 'auto' }} />
@@ -90,11 +76,7 @@ export default function AboutTab() {
 
 function AboutDescription({ body }: { body: String }) {
     return (
-        <Typography
-            variant='body2'
-            sx={{ fontWeight: 400, color: '#031225', marginBottom: '1rem', lineHeight: '1.5rem' }}
-            paragraph
-        >
+        <Typography variant='body2' sx={{ fontWeight: 400, color: '#031225', marginBottom: '1rem', lineHeight: '1.5rem' }} paragraph>
             {body}
         </Typography>
     )

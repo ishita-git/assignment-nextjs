@@ -16,6 +16,7 @@ import ServicesCard from '@/components/companies/ServicesCard'
 import { CoreValuesData } from '@/data/companiesData'
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
+import ServicesCardMobile from '@/components/companies/ServicesCardMobile'
 
 function ValuesBox({ image, title, desc }: { image: string | StaticImageData; title: String; desc: String }) {
     const [hovered, setHovered] = React.useState(false)
@@ -158,12 +159,7 @@ export default function Home() {
                     <Typography variant='h3' sx={{ textAlign: 'start', mt: '6rem', mb: '2rem', color: '#1B1B1F' }}>
                         Statistics
                     </Typography>
-                    <StatisticsCard
-                        exporterRank={15}
-                        importerRank={17}
-                        tradeBalanceRank={6}
-                        totalTradeAmtList={totalTradeAmtList}
-                    />
+                    <StatisticsCard exporterRank={15} importerRank={17} tradeBalanceRank={6} totalTradeAmtList={totalTradeAmtList} />
                 </Container>
             </Box>
             <Box
@@ -186,18 +182,15 @@ export default function Home() {
                 >
                     <Image src={visionIcon} alt='' style={{ height: '3.25rem', width: 'auto' }} />
                     <VisibilityTracker animationType={AnimationType.COLLAPSE} timeout={1500}>
-                        <Typography
-                            variant='h3'
-                            sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}
-                        >
+                        <Typography variant='h3' sx={{ textAlign: 'start', mt: '2rem', mb: '1rem', color: '#FFFFFF', fontWeight: 600 }}>
                             Our Vision
                         </Typography>
                     </VisibilityTracker>
                     <VisibilityTracker animationType={AnimationType.FADE} timeout={2000}>
                         <Typography variant='subtitle2' sx={{ textAlign: 'start', color: '#FFFFFF', fontWeight: 300 }}>
-                            We aim to achieve what multinational forwarders cannot: meeting our customers' Critical
-                            Success Factors. Our ambition is entirely customer-centric, recognizing that our customers
-                            have the freedom to choose their service provider.
+                            We aim to achieve what multinational forwarders cannot: meeting our customers' Critical Success Factors. Our
+                            ambition is entirely customer-centric, recognizing that our customers have the freedom to choose their service
+                            provider.
                         </Typography>
                     </VisibilityTracker>
                 </Box>
@@ -215,45 +208,57 @@ export default function Home() {
                         Freight Forwarding:
                     </Typography>
                     <CustomText text="Muskaan Shipping LLC, located in Dubai, U.A.E., is a dynamic and rapidly expanding NVOCC shipping agency and international freight forwarding company. Our global presence enables us to deliver international shipping and logistics solutions to clients worldwide. Our proficient team of seasoned management professionals, boasting decades of experience in the shipping and freight forwarding industry, oversees the company's operations. We are supported by substantial multimillion-dollar investments earmarked for business expansion, trade development, and cutting-edge technology implementation. With a corporate vision of becoming a preferred integrated global shipping company, we prioritize a customer-centric approach and foster an employee-friendly environment. Our dedicated team of professionals is committed to delivering top-quality services to both international and domestic clients. We have established a robust global network, with key offices and partners strategically located across North America, South America, Europe, the USA, Far East, North East Asia, South East Asia, CIS, East Africa, West Africa, and the Middle East." />
-                    <Grid
-                        container
-                        spacing={2}
-                        sx={
-                            mobileMode
-                                ? { display: 'flex', flexDirection: 'column', alignItems: 'center' }
-                                : { my: '1rem' }
-                        }
-                    >
-                        <Grid item xs={12} sm={4}>
-                            <ServicesCard
+                    {mobileMode ? (
+                        <Box>
+                            <ServicesCardMobile
                                 image={oceanFreightImg}
                                 title='Ocean Freight'
                                 desc='We offer reliable global ocean freight solutions to major seaports, utilizing our extensive network and carrier partnerships. Our expertise in handling time-sensitive cargo ensures efficient sea freight services for your shipments worldwide.'
                             />
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <ServicesCard
+                            <ServicesCardMobile
                                 image={airFreightImg}
                                 title='Air Freight'
-                                desc={
-                                    customMobileMode
-                                        ? 'We offer a comprehensive range of air freight solutions, leveraging our global network for efficient export, import, and cross-trade shipments. With a focus on reliability and document preparation, we provide trusted air freight services tailored to your needs.'
-                                        : 'We offer a comprehensive range of air freight solutions, leveraging our global network for efficient export, import, and cross-trade shipments. Our strong partnerships with major airlines ensure guaranteed space and competitive pricing. With a focus on reliability and document preparation, we provide trusted air freight services tailored to your needs.'
-                                }
+                                desc='We offer a comprehensive range of air freight solutions, leveraging our global network for efficient export, import, and cross-trade shipments. Our strong partnerships with major airlines ensure guaranteed space and competitive pricing. With a focus on reliability and document preparation, we provide trusted air freight services tailored to your needs.'
                             />
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <ServicesCard
+                            <ServicesCardMobile
                                 image={landTranportImg}
                                 title='Land Transportation'
-                                desc={
-                                    customMobileMode
-                                        ? 'We specialize in comprehensive land transport logistics within GCC countries. Our flexible road services cater to customer needs, offering container transportation, LTL and FTL services to GCC countries, breakbulk shipments, and heavy equipment transport.'
-                                        : 'We specialize in both international and domestic land transport logistics within the GCC countries. Our flexible and efficient road services are customized to meet the specific needs of our customers, including container transportation, LTL and FTL services to GCC countries, breakbulk shipments, and heavy equipment transport.'
-                                }
+                                desc='We specialize in both international and domestic land transport logistics within the GCC countries. Our flexible and efficient road services are customized to meet the specific needs of our customers, including container transportation, LTL and FTL services to GCC countries, breakbulk shipments, and heavy equipment transport.'
                             />
+                        </Box>
+                    ) : (
+                        <Grid container spacing={2} sx={{ my: '1rem' }}>
+                            <Grid item xs={12} sm={4}>
+                                <ServicesCard
+                                    image={oceanFreightImg}
+                                    title='Ocean Freight'
+                                    desc='We offer reliable global ocean freight solutions to major seaports, utilizing our extensive network and carrier partnerships. Our expertise in handling time-sensitive cargo ensures efficient sea freight services for your shipments worldwide.'
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={4}>
+                                <ServicesCard
+                                    image={airFreightImg}
+                                    title='Air Freight'
+                                    desc={
+                                        customMobileMode
+                                            ? 'We offer a comprehensive range of air freight solutions, leveraging our global network for efficient export, import, and cross-trade shipments. With a focus on reliability and document preparation, we provide trusted air freight services tailored to your needs.'
+                                            : 'We offer a comprehensive range of air freight solutions, leveraging our global network for efficient export, import, and cross-trade shipments. Our strong partnerships with major airlines ensure guaranteed space and competitive pricing. With a focus on reliability and document preparation, we provide trusted air freight services tailored to your needs.'
+                                    }
+                                />
+                            </Grid>
+                            <Grid item xs={12} sm={4}>
+                                <ServicesCard
+                                    image={landTranportImg}
+                                    title='Land Transportation'
+                                    desc={
+                                        customMobileMode
+                                            ? 'We specialize in comprehensive land transport logistics within GCC countries. Our flexible road services cater to customer needs, offering container transportation, LTL and FTL services to GCC countries, breakbulk shipments, and heavy equipment transport.'
+                                            : 'We specialize in both international and domestic land transport logistics within the GCC countries. Our flexible and efficient road services are customized to meet the specific needs of our customers, including container transportation, LTL and FTL services to GCC countries, breakbulk shipments, and heavy equipment transport.'
+                                    }
+                                />
+                            </Grid>
                         </Grid>
-                    </Grid>
+                    )}
                     <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb: '0.5rem', color: '#1B1B1F' }}>
                         Project Logistics:
                     </Typography>

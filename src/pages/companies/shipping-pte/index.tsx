@@ -13,6 +13,7 @@ import logImg from '../../../assets/companies/muskaan_shipping/logistic_transpor
 import ourCommitmentImg from '../../../assets/companies/muskaan_shipping/our_commitment.png'
 import StatisticsCard from '@/components/companies/StatisticsCard'
 import ServicesCard from '@/components/companies/ServicesCard'
+import ServicesCardMobile from '@/components/companies/ServicesCardMobile'
 import CustomText from '@/components/companies/CustomText'
 import mapImage from '../../../assets/companies/muskaan_shipping/map.png'
 import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
@@ -49,18 +50,10 @@ export default function Home() {
                         Statistics
                     </Typography>
                     <Image src={statstics} alt='' style={{ width: '100%', height: 'auto', padding: '1rem 8rem' }} />
-                    <Typography
-                        variant='h4'
-                        sx={{ textAlign: 'center', mb: '4rem', color: '#1B1B1F', fontWeight: 600 }}
-                    >
+                    <Typography variant='h4' sx={{ textAlign: 'center', mb: '4rem', color: '#1B1B1F', fontWeight: 600 }}>
                         Overall Exports & Imports of Services (2014-18)
                     </Typography>
-                    <StatisticsCard
-                        exporterRank={14}
-                        importerRank={15}
-                        tradeBalanceRank={13}
-                        totalTradeAmtList={totalTradeAmtList}
-                    />
+                    <StatisticsCard exporterRank={14} importerRank={15} tradeBalanceRank={13} totalTradeAmtList={totalTradeAmtList} />
                 </Container>
             </Box>
             <Box
@@ -108,11 +101,10 @@ export default function Home() {
                                 width: { xs: '100%', md: '60%' },
                             }}
                         >
-                            Our core values are our foundation for future success, guiding us in serving our customers
-                            and exploring new services and routes. We remain committed to shipping, especially
-                            intra-Asia routes, leveraging our deep regional ties. We prioritize staff development,
-                            pursue growth in emerging markets like Africa and South America, and invest in efficient
-                            vessels and land-based infrastructure. We believe our expertise and adaptability will
+                            Our core values are our foundation for future success, guiding us in serving our customers and exploring new
+                            services and routes. We remain committed to shipping, especially intra-Asia routes, leveraging our deep regional
+                            ties. We prioritize staff development, pursue growth in emerging markets like Africa and South America, and
+                            invest in efficient vessels and land-based infrastructure. We believe our expertise and adaptability will
                             continue to yield tangible results across diverse environments.
                         </Typography>
                     </VisibilityTracker>
@@ -129,41 +121,57 @@ export default function Home() {
                     <CustomText text='Muskaan Shipping Pte. Ltd. operates as a Non-Vessel Operating Cargo Carrier (NVOCC), serving over 700 destinations worldwide. We specialize in securing competitive volume prices for LCL cargo, offering efficient consolidation services with various shipping lines. Our customers benefit from guaranteed weekly LCL groupage services to major global ports, emphasizing speed, connectivity, safety, and reliability.' />
                     <CustomText text='Led by professionals with extensive experience in international freight forwarding, NVOCC, and consolidation, we handle diverse cargo types, including hazardous and non-hazardous chemicals, machinery, raw materials, refrigerated goods, and oversized project cargo.' />
                     <CustomText text="Our group's expansion in the Asia Pacific region over recent years positions us on the path to becoming a global international freight forwarding company, dedicated to providing top-tier service to clients worldwide. Our Multi-Modal Transport System, supported by a proactive customer service team and a global agent network, ensures timely door-to-door cargo delivery, consistently meeting customer expectations." />
-                    <Grid
-                        container
-                        spacing={customMobileMode ? 1 : 2}
-                        sx={
-                            mobileMode
-                                ? { display: 'flex', flexDirection: 'column', alignItems: 'center' }
-                                : { my: '4rem' }
-                        }
-                    >
-                        <Grid item xs={12} sm={4}>
-                            <ServicesCard
+                    {mobileMode ? (
+                        <Box>
+                            <ServicesCardMobile
                                 image={ourCommitmentImg}
                                 title='Our Commitment'
                                 desc="Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:"
                             />
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <ServicesCard
+                            <ServicesCardMobile
                                 image={customBrokerageImg}
                                 title='Custom Brokerage'
-                                desc={
-                                    customMobileMode
-                                        ? 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
-                                        : 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
-                                }
+                                desc='Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
                             />
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                            <ServicesCard
+                            <ServicesCardMobile
                                 image={logImg}
                                 title='Logistic & Transportation'
                                 desc=' Our tailored services in Peninsular Malaysia include a wide range of trucks for prompt pick-up and delivery. We utilize multi-modal options, including road, rail, and water transport, along with a vast network of carriers for rapid response to changing needs.'
                             />
+                        </Box>
+                    ) : (
+                        <Grid
+                            container
+                            spacing={customMobileMode ? 1 : 2}
+                            sx={mobileMode ? { display: 'flex', flexDirection: 'column', alignItems: 'center' } : { my: '4rem' }}
+                        >
+                            <Grid item sm={4}>
+                                <ServicesCard
+                                    image={ourCommitmentImg}
+                                    title='Our Commitment'
+                                    desc="Our mission is to provide high-quality services and solutions that earn and maintain our customers' trust and loyalty. This is rooted in our core beliefs:"
+                                />
+                            </Grid>
+                            <Grid item sm={4}>
+                                <ServicesCard
+                                    image={customBrokerageImg}
+                                    title='Custom Brokerage'
+                                    desc={
+                                        customMobileMode
+                                            ? 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
+                                            : 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                    }
+                                />
+                            </Grid>
+                            <Grid item sm={4}>
+                                <ServicesCard
+                                    image={logImg}
+                                    title='Logistic & Transportation'
+                                    desc=' Our tailored services in Peninsular Malaysia include a wide range of trucks for prompt pick-up and delivery. We utilize multi-modal options, including road, rail, and water transport, along with a vast network of carriers for rapid response to changing needs.'
+                                />
+                            </Grid>
                         </Grid>
-                    </Grid>
+                    )}
                 </Container>
             </Box>
         </CompaniesLayout>

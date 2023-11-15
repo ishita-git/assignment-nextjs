@@ -70,13 +70,12 @@ export default function MissionAndVisionTab() {
                                         lineHeight: '1.5rem',
                                     }}
                                 >
-                                    Our aim is to cater to our global clientele in the logistics and transportation
-                                    sphere through innovative and economical supply chain solutions that consistently
-                                    surpass their expectations. Our goal is to deliver utmost value, enhancing freight
-                                    management efficiencies and generating substantial savings for our customers
-                                    throughout the shipping process. We hold steadfast in fostering strong customer
-                                    relationships, considering them integral members of our team. Our commitment entails
-                                    serving them with unwavering integrity and a sense of responsibility at all times.
+                                    Our aim is to cater to our global clientele in the logistics and transportation sphere through
+                                    innovative and economical supply chain solutions that consistently surpass their expectations. Our goal
+                                    is to deliver utmost value, enhancing freight management efficiencies and generating substantial savings
+                                    for our customers throughout the shipping process. We hold steadfast in fostering strong customer
+                                    relationships, considering them integral members of our team. Our commitment entails serving them with
+                                    unwavering integrity and a sense of responsibility at all times.
                                 </Typography>
                             </VisibilityTracker>
                         </Box>
@@ -86,7 +85,7 @@ export default function MissionAndVisionTab() {
                             src={bulbImage}
                             alt='Bulb Image'
                             style={{
-                                width: mobileMode ? '20rem' : '100%',
+                                width: '100%',
                                 height: 'auto',
                             }}
                         />
@@ -114,7 +113,7 @@ export default function MissionAndVisionTab() {
                                     <Image
                                         src={visionImage}
                                         alt='Vision Image'
-                                        style={{ height: '2.4rem', width: 'auto', marginLeft: '-0.25rem' }}
+                                        style={{ height: '2.4rem', width: '100', marginLeft: '-0.25rem' }}
                                     />
                                     <Typography variant='h3' sx={{ color: '#1B1B1F', ml: '1rem' }}>
                                         Our Vision
@@ -145,14 +144,12 @@ export default function MissionAndVisionTab() {
                                         lineHeight: '1.5rem',
                                     }}
                                 >
-                                    Our pursuit of excellence centers on delivering world-class logistics services. We
-                                    are consistently prepared to cater to our customers' requirements around the clock.
-                                    Our primary objective is to establish enduring partnerships with our esteemed
-                                    clients by consistently offering this elevated standard of service. We exert great
-                                    effort to present our clients with more than just reactive assistance; our proactive
-                                    approach, powered by our expertise, aids in not only delivering exceptional service
-                                    but also guiding our clients effectively within the realms of land and sea
-                                    logistics.
+                                    Our pursuit of excellence centers on delivering world-class logistics services. We are consistently
+                                    prepared to cater to our customers' requirements around the clock. Our primary objective is to establish
+                                    enduring partnerships with our esteemed clients by consistently offering this elevated standard of
+                                    service. We exert great effort to present our clients with more than just reactive assistance; our
+                                    proactive approach, powered by our expertise, aids in not only delivering exceptional service but also
+                                    guiding our clients effectively within the realms of land and sea logistics.
                                 </Typography>
                             </VisibilityTracker>
                         </Box>
@@ -163,7 +160,7 @@ export default function MissionAndVisionTab() {
                         src={shipImage}
                         alt='Ship Image'
                         style={{
-                            width: '20rem',
+                            width: '100%',
                             height: 'auto',
                         }}
                     />
@@ -177,11 +174,7 @@ export default function MissionAndVisionTab() {
 
 function AboutFuture({ body }: { body: String }) {
     return (
-        <Typography
-            variant='body2'
-            sx={{ fontWeight: 400, color: '#031225', marginBottom: '1rem', lineHeight: '1.5rem' }}
-            paragraph
-        >
+        <Typography variant='body2' sx={{ fontWeight: 400, color: '#031225', marginBottom: '1rem', lineHeight: '1.5rem' }} paragraph>
             {body}
         </Typography>
     )

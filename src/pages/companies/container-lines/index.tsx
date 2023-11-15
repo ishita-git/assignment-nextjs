@@ -17,14 +17,12 @@ import CustomText from '@/components/companies/CustomText'
 import { Visibility } from '@mui/icons-material'
 import VisibilityTracker, { AnimationType, CollapseOrientation } from '@/components/VisibilityTracker'
 import CompanyReachCard from '../../../components/CompanyReachCard'
-// swiper
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css'
-import 'swiper/css/pagination'
-import { Autoplay, Navigation } from 'swiper/modules'
 
 function ProcessSection() {
-    const tabletMode = useMediaQuery('(max-width:899px)')
+    const theme = useTheme()
+    const tabletMode = useMediaQuery('(max-width:999px)')
+    const wideMobileMode = useMediaQuery('(max-width:649px)')
+    const mobileMode = useMediaQuery('(max-width:499px)')
     const [hoveredImage, setHoveredImage] = useState(null)
 
     const handleMouseEnter = (index: any) => {
@@ -37,46 +35,37 @@ function ProcessSection() {
 
     return (
         <Box sx={{ position: 'relative' }}>
-            {tabletMode ? (
-                <Image src={processBanner} alt='process banner' style={{ width: 'auto', height: '68vh' }} />
-            ) : (
-                <Image src={processBanner} alt='process banner' style={{ width: '100%', height: 'auto' }} />
-            )}
-            <Box sx={{ position: 'absolute', top: 0, width: '100%', px: { xs: '0rem', sm: '3rem' } }}>
+            <Image
+                src={processBanner}
+                alt='process banner'
+                style={{
+                    width: tabletMode ? 'auto' : '100%',
+                    height: mobileMode ? '220vh' : wideMobileMode ? '134vh' : tabletMode ? '120vh' : 'auto',
+                }}
+            />
+
+            <Box
+                sx={{
+                    position: 'absolute',
+                    top: 0,
+                    mx: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) },
+                }}
+            >
                 <Typography variant='h3' sx={{ my: '2rem' }}>
                     Process
                 </Typography>
-                {/* <VisibilityTracker animationType={AnimationType.COLLAPSE} collapseOrientation={CollapseOrientation.VERTICAL}  timeout={1500}> */}
-                {tabletMode ? (
-                    <Swiper
-                        slidesPerView={1}
-                        spaceBetween={0}
-                        loop={true}
-                        speed={1200}
-                        autoplay={{
-                            delay: 2000,
-                            disableOnInteraction: false,
-                            pauseOnMouseEnter: true,
-                        }}
-                        breakpoints={{
-                            200: { slidesPerView: 1 },
-                            500: { slidesPerView: 2 },
-                            700: { slidesPerView: 3 },
-                        }}
-                        navigation={true}
-                        modules={[Autoplay, Navigation]}
-                        className='mySwiper'
-                    >
-                        {ProcessData.map((item, index) => (
-                            <SwiperSlide key={index}>
+                <VisibilityTracker animationType={AnimationType.COLLAPSE} collapseOrientation={CollapseOrientation.VERTICAL} timeout={1500}>
+                    {mobileMode ? (
+                        <Box>
+                            {ProcessData.map((item, index) => (
                                 <Box
                                     sx={{
-                                        height: '20rem',
                                         bgcolor: '#FFFFFF',
                                         borderRadius: '1rem',
                                         padding: '1.25rem',
-                                        mx: '1rem',
                                         transition: 'transform 0.4s',
+                                        height: '100%',
+                                        mb: '2rem',
                                         transform: hoveredImage === index ? 'scale(1.1)' : 'scale(1)',
                                     }}
                                     onMouseEnter={() => handleMouseEnter(index)}
@@ -90,66 +79,51 @@ function ProcessSection() {
                                             height: '4rem',
                                         }}
                                     />
-                                    <Typography variant='h6' textAlign={'center'} sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}>
+                                    <Typography variant='h6' textAlign='center' sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}>
                                         {item.title}
                                     </Typography>
-                                    <Typography
-                                        variant='body1'
-                                        textAlign={'center'}
-                                        sx={{ color: '#031225', marginBottom: '1rem', fontWeight: 300 }}
-                                    >
+                                    <Typography variant='body1' textAlign='center' sx={{ color: '#031225', fontWeight: 300 }}>
                                         {item.desc}
                                     </Typography>
                                 </Box>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                ) : (
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        {ProcessData.map((item, index) => (
-                            <VisibilityTracker
-                                animationType={AnimationType.COLLAPSE}
-                                collapseOrientation={CollapseOrientation.VERTICAL}
-                                timeout={1500}
-                            >
-                                <Box
-                                    key={index}
-                                    sx={{
-                                        height: '20rem',
-                                        bgcolor: '#FFFFFF',
-                                        borderRadius: '1rem',
-                                        padding: '1.25rem',
-                                        mx: '1rem',
-                                        transition: 'transform 0.4s',
-                                        transform: hoveredImage === index ? 'scale(1.1)' : 'scale(1)',
-                                    }}
-                                    onMouseEnter={() => handleMouseEnter(index)}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    <Image
-                                        src={item.image}
-                                        alt='card image'
-                                        style={{
-                                            width: 'auto',
-                                            height: '4rem',
+                            ))}
+                        </Box>
+                    ) : (
+                        <Grid container spacing={2}>
+                            {ProcessData.map((item, index) => (
+                                <Grid item xs={6} md={3}>
+                                    <Box
+                                        sx={{
+                                            bgcolor: '#FFFFFF',
+                                            borderRadius: '1rem',
+                                            padding: '1.25rem',
+                                            transition: 'transform 0.4s',
+                                            height: '100%',
+                                            transform: hoveredImage === index ? 'scale(1.1)' : 'scale(1)',
                                         }}
-                                    />
-                                    <Typography variant='h6' textAlign={'center'} sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}>
-                                        {item.title}
-                                    </Typography>
-                                    <Typography
-                                        variant='body1'
-                                        textAlign={'center'}
-                                        sx={{ color: '#031225', marginBottom: '1rem', fontWeight: 300 }}
+                                        onMouseEnter={() => handleMouseEnter(index)}
+                                        onMouseLeave={handleMouseLeave}
                                     >
-                                        {item.desc}
-                                    </Typography>
-                                </Box>
-                            </VisibilityTracker>
-                        ))}
-                    </Box>
-                )}
-                {/* </VisibilityTracker> */}
+                                        <Image
+                                            src={item.image}
+                                            alt='card image'
+                                            style={{
+                                                width: 'auto',
+                                                height: '4rem',
+                                            }}
+                                        />
+                                        <Typography variant='h6' textAlign='center' sx={{ fontWeight: 600, color: '#031225', my: '1rem' }}>
+                                            {item.title}
+                                        </Typography>
+                                        <Typography variant='body1' textAlign='center' sx={{ color: '#031225', fontWeight: 300 }}>
+                                            {item.desc}
+                                        </Typography>
+                                    </Box>
+                                </Grid>
+                            ))}
+                        </Grid>
+                    )}
+                </VisibilityTracker>
             </Box>
         </Box>
     )
@@ -167,7 +141,7 @@ export default function Home() {
                         About Us
                     </Typography>
                     <CustomText text='Muskan Container Lines Pvt. Ltd. is a prominent Indian container operator, boasting the largest container fleet in India and the Indian subcontinent. With a unique track record in efficient fleet management across more than 300,000 routes domestically and internationally, we specialize in door-to-door integrated transportation and logistics solutions. These capabilities enable us to deliver container cargo to various destinations in India, the CIS, Europe, or Asia, using both in-house transportation assets and strategic partner collaborations. Our network of offices throughout the Indian subcontinent is seamlessly connected through a unified information system, ensuring efficient operations.' />
-                    <Grid container spacing={2} sx={{ mb: '1rem', mt: '0.5rem' }}>
+                    <Grid container spacing={2} sx={{ mb: '1rem', mt: '0.5rem', width: '100%' }}>
                         <Grid item xs={12} sm={6}>
                             <Typography textAlign={'start'} variant='h5' sx={{ fontWeight: 600, color: '#031225', marginBottom: '1rem' }}>
                                 Offices in India

@@ -24,7 +24,7 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
             sx={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: customHeight ? customHeight : '42vw',
+                height: customHeight ? customHeight : mobileMode ? '56vw' : '42vw',
                 display: 'flex',
                 flexDirection: 'column',
             }}
@@ -34,8 +34,8 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
                     src={image}
                     alt='cargo'
                     style={{
-                        width: '100%',
-                        height: 'auto',
+                        width: mobileMode ? 'auto' : '100%',
+                        height: mobileMode ? '50vw' : 'auto',
                         position: 'absolute',
                     }}
                 />
@@ -55,22 +55,10 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
                         <Typography
                             variant='h1'
                             sx={{
-                                mt: theme.spacing(mobileMode ? 4 : 8),
-                                fontSize: ultraMobileMode
-                                    ? '1.8rem'
-                                    : mobileMode
-                                    ? '2.4rem'
-                                    : tabletMode
-                                    ? '3rem'
-                                    : '4.5rem',
+                                mt: theme.spacing(mobileMode ? 6 : 8),
+                                fontSize: ultraMobileMode ? '1.8rem' : mobileMode ? '2.4rem' : tabletMode ? '3rem' : '4.5rem',
                                 whiteSpace: 'pre-line',
-                                lineHeight: ultraMobileMode
-                                    ? '2.2rem'
-                                    : mobileMode
-                                    ? '3rem'
-                                    : tabletMode
-                                    ? '3.8rem'
-                                    : '6.2rem',
+                                lineHeight: ultraMobileMode ? '2.2rem' : mobileMode ? '3rem' : tabletMode ? '3.8rem' : '6.2rem',
                             }}
                         >
                             {title}
@@ -85,20 +73,8 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
                                 color: 'common.white',
                                 fontWeight: 400,
                                 whiteSpace: 'pre-line',
-                                fontSize: ultraMobileMode
-                                    ? '1.6rem'
-                                    : mobileMode
-                                    ? '2rem'
-                                    : tabletMode
-                                    ? '2.3rem'
-                                    : '3rem',
-                                lineHeight: ultraMobileMode
-                                    ? '1.8rem'
-                                    : mobileMode
-                                    ? '2.4rem'
-                                    : tabletMode
-                                    ? '2.8rem'
-                                    : '3.5rem',
+                                fontSize: ultraMobileMode ? '1.6rem' : mobileMode ? '2rem' : tabletMode ? '2.3rem' : '3rem',
+                                lineHeight: ultraMobileMode ? '1.8rem' : mobileMode ? '2.4rem' : tabletMode ? '2.8rem' : '3.5rem',
                             }}
                         >
                             {subtitle}
