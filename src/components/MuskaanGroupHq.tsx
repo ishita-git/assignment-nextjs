@@ -4,7 +4,6 @@ import { Box, Grid, InputLabel, Paper, Typography } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star'
 import map from '../assets/contact/address-map.webp'
 import directionImg from '../assets/contact/direction.png'
-import { isNullishCoalesce } from 'typescript'
 
 function CompanyInfo({ title, body }: { title: String; body: String }) {
     return (
@@ -48,10 +47,7 @@ function MuskaanGroupHq({
                         <Grid item xs={8}>
                             <CompanyInfo
                                 title='Registered Office'
-                                body={
-                                    address ||
-                                    'Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor,NEW DELHI - 110078'
-                                }
+                                body={address || 'Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor,NEW DELHI - 110078'}
                             />
                             <CompanyInfo title='Telephone No.' body={telephoneNumber || '011 41587468/40687469'} />
                         </Grid>

@@ -1,16 +1,5 @@
 import Image from 'next/image'
-import {
-    Box,
-    Button,
-    Container,
-    Divider,
-    Grid,
-    InputAdornment,
-    Link,
-    TextField,
-    Typography,
-    useMediaQuery,
-} from '@mui/material'
+import { Box, Button, Container, Divider, Grid, InputAdornment, Link, TextField, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import logo from '../assets/logo.png'
 import facebook from '../assets/icons/facebook.png'
@@ -41,34 +30,14 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                     </Typography>
 
                     <Box sx={{ mx: 'auto' }}>
-                        <Link
-                            href='https://www.facebook.com/muskangroupofcompanies'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
-                            <Image
-                                src={facebook}
-                                alt='facebook'
-                                style={{ height: '1.5rem', width: 'auto', margin: '1rem' }}
-                            />
+                        <Link href='https://www.facebook.com/muskangroupofcompanies' target='_blank' rel='noopener noreferrer'>
+                            <Image src={facebook} alt='facebook' style={{ height: '1.5rem', width: 'auto', margin: '1rem' }} />
                         </Link>
-                        <Link
-                            href='https://www.linkedin.com/company/muskan-group-of-companies'
-                            target='_blank'
-                            rel='noopener noreferrer'
-                        >
-                            <Image
-                                src={linkedIn}
-                                alt='linkedin'
-                                style={{ height: '1.5rem', width: 'auto', margin: '1rem' }}
-                            />
+                        <Link href='https://www.linkedin.com/company/muskan-group-of-companies' target='_blank' rel='noopener noreferrer'>
+                            <Image src={linkedIn} alt='linkedin' style={{ height: '1.5rem', width: 'auto', margin: '1rem' }} />
                         </Link>
                         <Link href='https://twitter.com/MuskanGroup1' target='_blank' rel='noopener noreferrer'>
-                            <Image
-                                src={twitter}
-                                alt='twitter'
-                                style={{ height: '1.5rem', width: 'auto', margin: '1rem' }}
-                            />
+                            <Image src={twitter} alt='twitter' style={{ height: '1.5rem', width: 'auto', margin: '1rem' }} />
                         </Link>
                         {/* <Link href='/' target='_blank' rel='noopener noreferrer'>
                             <Image
@@ -85,15 +54,8 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                     </Typography>
 
                     <Box sx={{ display: 'flex', alignItems: 'start' }}>
-                        <Image
-                            src={address}
-                            alt='logo'
-                            style={{ height: '1.125rem', width: 'auto', marginRight: '1rem' }}
-                        />
-                        <Typography
-                            variant='body1'
-                            sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.9rem' }}
-                        >
+                        <Image src={address} alt='logo' style={{ height: '1.125rem', width: 'auto', marginRight: '1rem' }} />
+                        <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.9rem' }}>
                             Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor, NEW DELHI - 110078
                         </Typography>
                     </Box>
@@ -106,20 +68,14 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                         }}
                     >
                         <Image src={phone} alt='logo' style={{ height: '1rem', width: 'auto', marginRight: '1rem' }} />
-                        <Typography
-                            variant='body1'
-                            sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.9rem' }}
-                        >
+                        <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.9rem' }}>
                             011 41587468/40687469
                         </Typography>
                     </Box>
 
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: theme.spacing(2) }}>
                         <Image src={email} alt='logo' style={{ height: '1rem', width: 'auto', marginRight: '1rem' }} />
-                        <Typography
-                            variant='body1'
-                            sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.9rem' }}
-                        >
+                        <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.9rem' }}>
                             info@mclpl.co.in
                         </Typography>
                     </Box>
@@ -132,11 +88,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                             <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
                                 About Us
                             </Typography>
-                            <Image
-                                src={arrowRight}
-                                alt='link'
-                                style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }}
-                            />
+                            <Image src={arrowRight} alt='link' style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }} />
                         </Box>
                     </Link>
 
@@ -145,11 +97,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                             <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
                                 Career
                             </Typography>
-                            <Image
-                                src={arrowRight}
-                                alt='link'
-                                style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }}
-                            />
+                            <Image src={arrowRight} alt='link' style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }} />
                         </Box>
                     </Link>
 
@@ -158,11 +106,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                             <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
                                 Contact Us
                             </Typography>
-                            <Image
-                                src={arrowRight}
-                                alt='link'
-                                style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }}
-                            />
+                            <Image src={arrowRight} alt='link' style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }} />
                         </Box>
                     </Link>
 
@@ -171,11 +115,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                             <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
                                 Services
                             </Typography>
-                            <Image
-                                src={arrowRight}
-                                alt='link'
-                                style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }}
-                            />
+                            <Image src={arrowRight} alt='link' style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }} />
                         </Box>
                     </Link>
 
@@ -184,11 +124,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                             <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
                                 Useful Downloads
                             </Typography>
-                            <Image
-                                src={arrowRight}
-                                alt='link'
-                                style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }}
-                            />
+                            <Image src={arrowRight} alt='link' style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }} />
                         </Box>
                     </Link>
                     <Typography variant='h6' sx={{ mt: theme.spacing(2), mb: theme.spacing(0.75) }}>
@@ -230,22 +166,14 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                     <Grid container spacing={2}>
                         <Grid item sm={6}>
                             <Link href='/'>
-                                <Image
-                                    src={logo}
-                                    alt='logo'
-                                    style={{ height: '3rem', width: 'auto', marginRight: 'auto' }}
-                                />
+                                <Image src={logo} alt='logo' style={{ height: '3rem', width: 'auto', marginRight: 'auto' }} />
                             </Link>
                             <Typography variant='h6' textAlign='center' sx={{ my: theme.spacing(1) }}>
                                 Muskan Group of Companies
                             </Typography>
 
                             <Box sx={{ mx: 'auto' }}>
-                                <Link
-                                    href='https://www.facebook.com/muskangroupofcompanies'
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                >
+                                <Link href='https://www.facebook.com/muskangroupofcompanies' target='_blank' rel='noopener noreferrer'>
                                     <Image
                                         src={facebook}
                                         alt='facebook'
@@ -543,10 +471,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                             <Typography variant='h6' sx={{ mb: '1rem', fontWeight: 600 }}>
                                 Subscribe Us
                             </Typography>
-                            <Typography
-                                variant='body1'
-                                sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}
-                            >
+                            <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}>
                                 Subscribe to our newsletter and never miss our latest news and promotions.
                             </Typography>
                             <Box sx={{ my: '1rem' }}>
@@ -632,11 +557,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                 </Typography>
 
                                 <Box sx={{ mx: 'auto' }}>
-                                    <Link
-                                        href='https://www.facebook.com/muskangroupofcompanies'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                    >
+                                    <Link href='https://www.facebook.com/muskangroupofcompanies' target='_blank' rel='noopener noreferrer'>
                                         <Image
                                             src={facebook}
                                             alt='facebook'
@@ -662,11 +583,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                             }}
                                         />
                                     </Link>
-                                    <Link
-                                        href='https://twitter.com/MuskanGroup1'
-                                        target='_blank'
-                                        rel='noopener noreferrer'
-                                    >
+                                    <Link href='https://twitter.com/MuskanGroup1' target='_blank' rel='noopener noreferrer'>
                                         <Image
                                             src={twitter}
                                             alt='twitter'
@@ -715,8 +632,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                             fontSize: '0.75rem',
                                         }}
                                     >
-                                        Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor, NEW DELHI -
-                                        110078
+                                        Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor, NEW DELHI - 110078
                                     </Typography>
                                 </Box>
 

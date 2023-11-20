@@ -64,13 +64,13 @@ export default function Home() {
             <Box
                 sx={{
                     display: 'flex',
-                    position: 'relavtive',
+                    position: 'relative',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
                 }}
             >
-                <Image src={visionBg} alt='' style={{ height: 'auto', width: mobileMode ? '300%' : '100%' }} />
+                <Image src={visionBg} alt='visionBg' style={{ height: 'auto', width: mobileMode ? '300%' : '100%' }} />
                 <Grid
                     container
                     spacing={mobileMode ? 2 : 4}

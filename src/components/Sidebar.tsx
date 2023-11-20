@@ -117,10 +117,7 @@ const Sidebar = ({ open, handleClose }: SidebarProps) => {
                             {isActive === item.id && (
                                 <Box sx={{ my: theme.spacing(0.5) }}>
                                     {item.content.map((contentItem, index) => (
-                                        <Box
-                                            key={index}
-                                            sx={{ display: 'flex', py: theme.spacing(0.5), px: theme.spacing(1) }}
-                                        >
+                                        <Box key={index} sx={{ display: 'flex', py: theme.spacing(0.5), px: theme.spacing(1) }}>
                                             <Link href={contentItem.href} sx={{ color: 'inherit' }}>
                                                 {contentItem.link}
                                             </Link>

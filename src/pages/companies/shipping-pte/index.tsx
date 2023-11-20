@@ -59,7 +59,7 @@ export default function Home() {
             <Box
                 sx={{
                     display: 'flex',
-                    position: 'relavtive',
+                    position: 'relative',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
