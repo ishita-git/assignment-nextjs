@@ -8,7 +8,6 @@ import clientBg from '../assets/clients/client-bg.webp'
 import clientBgSm from '../assets/clients/client-bg-sm.png'
 import prevIcon from '../assets/icons/previous.webp'
 import nextIcon from '../assets/icons/next.webp'
-import unileverImg from '../assets/clients/Unilever-sm.webp'
 
 export default function ClienteleSection() {
     const theme = useTheme()
@@ -71,11 +70,7 @@ export default function ClienteleSection() {
                                         position: 'absolute',
                                     }}
                                 >
-                                    <Image
-                                        src={clientsData[arrayIndex].cardSm}
-                                        alt='client-img-sm'
-                                        style={{ width: '100%', height: 'auto' }}
-                                    />
+                                    <img src={clientsData[arrayIndex].cardSm} alt='client-img-sm' width='100%' height='auto' />
                                     <Box sx={{ p: theme.spacing(2) }}>
                                         <Typography variant='h2' sx={{ fontSize: '3rem', mb: theme.spacing(2) }}>
                                             {clientsData[arrayIndex].title}
@@ -174,12 +169,12 @@ export default function ClienteleSection() {
                         const arrayIndex = (startIconIndex + index) % iconsLength
                         return (
                             <Box sx={{ height: '3rem', display: 'flex' }} key={arrayIndex} onClick={() => changeCard(index)}>
-                                <Image
+                                <img
                                     src={clientsData[arrayIndex].cardIcon}
                                     alt='client icon'
+                                    width='auto'
+                                    height='100%'
                                     style={{
-                                        width: 'auto',
-                                        height: '100%',
                                         cursor: 'pointer',
                                     }}
                                 />

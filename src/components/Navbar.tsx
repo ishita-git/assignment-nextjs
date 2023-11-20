@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Image from 'next/image'
 import { useTheme } from '@mui/material/styles'
 import { Box, Container, IconButton, Link, Menu, MenuItem, Typography, useMediaQuery } from '@mui/material'
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded'
@@ -7,7 +6,6 @@ import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import PrimaryButton from './PrimaryButton'
 import Sidebar from './Sidebar'
-import logo from '../assets/logo.png'
 
 export default function Navbar() {
     const [companiesMenu, setCompaniesMenu] = useState<null | HTMLElement>(null)
@@ -63,7 +61,7 @@ export default function Navbar() {
             }}
         >
             <Link href='/' sx={{ display: 'flex', alignItems: 'center' }}>
-                <Image src={logo} alt='logo' style={{ height: '3rem', width: 'auto' }} />
+                <img src='/assets/logo.png' alt='logo' width='auto' height='48rem' />
 
                 {ultraSmallMode ? (
                     <></>
