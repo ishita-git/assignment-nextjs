@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useTheme } from '@mui/material/styles'
-import { Box, Container, IconButton, Menu, MenuItem, Typography, useMediaQuery } from '@mui/material'
+import { Box, Container, IconButton, Menu, MenuItem, Typography, useMediaQuery, Link as MUILink } from '@mui/material'
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded'
 import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
@@ -62,28 +62,30 @@ export default function Navbar() {
                 px: mobileMode ? theme.spacing(2) : theme.spacing(4),
             }}
         >
-            <Link href='/' sx={{ display: 'flex', alignItems: 'center' }}>
-                <img src='/assets/logo.png' alt='logo' width='auto' height='48rem' />
+            <Box sx={{ '& a': { display: 'flex', alignItems: 'center' } }}>
+                <Link href='/'>
+                    <img src='/assets/logo.png' alt='logo' width='auto' height='48rem' />
 
-                {ultraSmallMode ? (
-                    <></>
-                ) : (
-                    <Box>
-                        <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1.5rem', color: '#FFFFFF' }}>
-                            Muskan Group
-                        </Typography>
-                        {/* <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1rem', color: '#FFFFFF' }}>
-                        of Companies
-                    </Typography> */}
-                    </Box>
-                )}
-            </Link>
+                    {ultraSmallMode ? (
+                        <></>
+                    ) : (
+                        <Box>
+                            <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1.5rem', color: '#FFFFFF' }}>
+                                Muskan Group
+                            </Typography>
+                            {/* <Typography variant='body1' sx={{ mx: theme.spacing(1), fontSize: '1rem', color: '#FFFFFF' }}>
+                            of Companies
+                        </Typography> */}
+                        </Box>
+                    )}
+                </Link>
+            </Box>
 
             {tabletMode ? (
                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Link href='http://app.muskan-group.com/' sx={{ mr: theme.spacing(1.25) }}>
+                    <MUILink href='http://app.muskan-group.com/' sx={{ mr: theme.spacing(1.25) }}>
                         <PrimaryButton text='Login' light width='6rem' height='2rem' />
-                    </Link>
+                    </MUILink>
                     <IconButton onClick={handleSidebarToggle}>
                         <MenuRoundedIcon sx={{ color: '#FFFFFF' }} />
                     </IconButton>
@@ -103,29 +105,29 @@ export default function Navbar() {
                             </Typography>
                         </Box>
 
-                        <Menu anchorEl={companiesMenu} open={openCompaniesMenu} onClose={closeCompaniesMenu}>
+                        <Menu anchorEl={companiesMenu} open={openCompaniesMenu} onClose={closeCompaniesMenu} sx={{ '& a': { color: 'inherit' } }}>
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/container-lines' sx={{ color: 'inherit' }}>
+                                <Link href='/companies/container-lines'>
                                     Muskan Container lines Pvt. Ltd.
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/logistics' sx={{ color: 'inherit' }}>
+                                <Link href='/companies/logistics'>
                                     Muskan Logistics
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/shipping-pte' sx={{ color: 'inherit' }}>
+                                <Link href='/companies/shipping-pte'>
                                     Muskaan Shipping PTE Ltd.
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/shipping-sdn-bhd' sx={{ color: 'inherit' }}>
+                                <Link href='/companies/shipping-sdn-bhd'>
                                     Muskaan Shipping SDN BHD
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/shipping-llc' sx={{ color: 'inherit' }}>
+                                <Link href='/companies/shipping-llc'>
                                     Muskaan Shipping LLC
                                 </Link>
                             </MenuItem>
@@ -219,25 +221,25 @@ export default function Navbar() {
                         </Box>
 
                         <Menu anchorEl={toolsMenu} open={openToolsMenu} onClose={closeToolsMenu}>
-                            <MenuItem onClick={closeToolsMenu}>
-                                <Link href='/equipments' sx={{ color: 'inherit' }}>
+                            <MenuItem onClick={closeToolsMenu} sx={{ '& a': { color: 'inherit' } }}>
+                                <Link href='/equipments'>
                                     Equipments
                                 </Link>
                             </MenuItem>
 
-                            <MenuItem onClick={closeToolsMenu}>
-                                <Link href='/track' sx={{ color: 'inherit' }}>
+                            <MenuItem onClick={closeToolsMenu} sx={{ '& a': { color: 'inherit' } }}>
+                                <Link href='/track'>
                                     Track Shipments
                                 </Link>
                             </MenuItem>
-                            <MenuItem onClick={closeToolsMenu}>
-                                <Link href='/vessel-schedule' sx={{ color: 'inherit' }}>
+                            <MenuItem onClick={closeToolsMenu} sx={{ '& a': { color: 'inherit' } }}>
+                                <Link href='/vessel-schedule'>
                                     Vessel Schedules
                                 </Link>
                             </MenuItem>
 
-                            <MenuItem onClick={closeToolsMenu}>
-                                <Link href='/quote' sx={{ color: 'inherit' }}>
+                            <MenuItem onClick={closeToolsMenu} sx={{ '& a': { color: 'inherit' } }}>
+                                <Link href='/quote'>
                                     Quote
                                 </Link>
                             </MenuItem>
@@ -245,9 +247,9 @@ export default function Navbar() {
                     </Box>
 
                     <Box sx={{ ml: theme.spacing(1.5) }}>
-                        <Link href='http://app.muskan-group.com/'>
+                        <MUILink href='http://app.muskan-group.com/'>
                             <PrimaryButton text='Login' light width='6rem' height='2rem' />
-                        </Link>
+                        </MUILink>
                     </Box>
                 </Box>
             )}
