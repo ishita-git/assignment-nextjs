@@ -1,11 +1,9 @@
 import { Box, Grid, Typography } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import Image from 'next/image'
-import type { StaticImageData } from 'next/image'
 
 declare type ClienteleCardProps = {
-    cardImage: string | StaticImageData
-    cardIcon: string | StaticImageData
+    cardImage: string
+    cardIcon: string
     title?: string
     subtitle?: string
 }
@@ -16,11 +14,11 @@ export default function ClienteleCard({ cardImage, cardIcon, title, subtitle }: 
     return (
         <Grid container alignItems='center'>
             <Grid item xs={4.2}>
-                <Image src={cardImage} alt='card image' style={{ width: '100%', height: 'auto' }} />
+                <img src={cardImage} alt='card image' width='100%' height='auto' />
             </Grid>
             <Grid item xs={7.8} sx={{ px: theme.spacing(5), pt: theme.spacing(4) }}>
                 <Box sx={{ display: 'flex', justifyContent: 'flex-start' }}>
-                    <Image src={cardIcon} alt='card image' style={{ width: 'auto', height: '4rem' }} />
+                    <img src={cardIcon} alt='card image' height='4rem' width='auto' />
                 </Box>
                 <Typography
                     variant='subtitle2'
