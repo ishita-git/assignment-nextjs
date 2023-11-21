@@ -2,12 +2,12 @@ import Image from 'next/image'
 import type { StaticImageData } from 'next/image'
 import { Box, Container, Grid, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import anchor from '../assets/icons/anchor.png'
-import container from '../assets/icons/container.png'
-import equipement from '../assets/icons/equipement.png'
-import ship from '../assets/icons/ship.png'
-import person from '../assets/icons/person.png'
-import stern from '../assets/images/stern.webp'
+import anchor from '@/assets/icons/anchor.png'
+import container from '@/assets/icons/container.png'
+import equipement from '@/assets/icons/equipement.png'
+import ship from '@/assets/icons/ship.png'
+import person from '@/assets/icons/person.png'
+import stern from '@/assets/images/stern.webp'
 import NumberCounter from '@/components/NumberCounter'
 import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
 
@@ -44,9 +44,8 @@ const ShippingDataCard = ({ icon, text, subtitle }: ShippingProps) => {
                 <Image src={icon} alt='card icon' style={{ height: tabletMode ? '2rem' : '3.25rem', width: 'auto' }} />
             </Box>
 
-
-            <Typography variant='h3' sx={{ mt: theme.spacing(1.25),whiteSpace: 'nowrap' }}>
-                <NumberCounter targetNumber={text||0} duration={2000} />+
+            <Typography variant='h3' sx={{ mt: theme.spacing(1.25), whiteSpace: 'nowrap' }}>
+                <NumberCounter targetNumber={text || 0} duration={2000} />+
             </Typography>
             <Typography variant='h6' textAlign='center' sx={{ maxWidth: wideMobileMode ? '6rem' : '10rem' }}>
                 {subtitle}
@@ -102,57 +101,56 @@ export default function ShippingSection() {
             />
 
             <Container maxWidth='lg' disableGutters sx={{ position: 'relative', my: 'auto' }}>
-                <VisibilityTracker animationType={AnimationType.NOANIMATION}>        
-                <Box sx={{ px: { xs: theme.spacing(0), sm: theme.spacing(4) } }}>
-
-                    <Typography
-                        variant={smallMobileMode ? 'h6' : 'h3'}
-                        textAlign='center'
-                        sx={{ fontSize: tabletMode ? '1.5rem' : '2rem', lineHeight: tabletMode ? '2.25rem' : '3rem' }}
-                    >
-                        Seamless Logistics, Worldwide Shipping
-                    </Typography>
-                    <Typography
-                        variant={smallMobileMode ? 'h6' : 'h3'}
-                        textAlign='center'
-                        sx={{
-                            fontSize: tabletMode ? '1.5rem' : '2rem',
-                            lineHeight: tabletMode ? '2.25rem' : '3rem',
-                            mb: { xs: theme.spacing(2), sm: theme.spacing(4) },
-                        }}
-                    >
-                        Your Gateway to Effortless Trade
-                    </Typography>
-                    {smallMobileMode ? (
-                        <Box
+                <VisibilityTracker animationType={AnimationType.NOANIMATION}>
+                    <Box sx={{ px: { xs: theme.spacing(0), sm: theme.spacing(4) } }}>
+                        <Typography
+                            variant={smallMobileMode ? 'h6' : 'h3'}
+                            textAlign='center'
+                            sx={{ fontSize: tabletMode ? '1.5rem' : '2rem', lineHeight: tabletMode ? '2.25rem' : '3rem' }}
+                        >
+                            Seamless Logistics, Worldwide Shipping
+                        </Typography>
+                        <Typography
+                            variant={smallMobileMode ? 'h6' : 'h3'}
+                            textAlign='center'
                             sx={{
-                                display: 'flex',
-                                justifyContent: 'space-around',
-                                mt: theme.spacing(2),
+                                fontSize: tabletMode ? '1.5rem' : '2rem',
+                                lineHeight: tabletMode ? '2.25rem' : '3rem',
+                                mb: { xs: theme.spacing(2), sm: theme.spacing(4) },
                             }}
                         >
-                            <WideShippingDataCard text={47} subtitle='Serving Ports' />
-                            <WideShippingDataCard text={3000} subtitle='Equipment' />
-                            <WideShippingDataCard text={150} subtitle='Special Equipment' />
-                            <WideShippingDataCard text={35} subtitle='Serving Countries' />
-                            <WideShippingDataCard text={500} subtitle='Happy Customers' />
-                        </Box>
-                    ) : (
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                justifyContent: 'space-around',
-                                mt: theme.spacing(2),
-                            }}
-                        >
-                            <ShippingDataCard icon={anchor} text={47} subtitle='Serving Ports' />
-                            <ShippingDataCard icon={container} text={3000} subtitle='Equipment' />
-                            <ShippingDataCard icon={equipement} text={150} subtitle='Special Equipment' />
-                            <ShippingDataCard icon={ship} text={35} subtitle='Serving Countries' />
-                            <ShippingDataCard icon={person} text={500} subtitle='Happy Customers' />
-                        </Box>
-                    )}
-                </Box>
+                            Your Gateway to Effortless Trade
+                        </Typography>
+                        {smallMobileMode ? (
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-around',
+                                    mt: theme.spacing(2),
+                                }}
+                            >
+                                <WideShippingDataCard text={47} subtitle='Serving Ports' />
+                                <WideShippingDataCard text={3000} subtitle='Equipment' />
+                                <WideShippingDataCard text={150} subtitle='Special Equipment' />
+                                <WideShippingDataCard text={35} subtitle='Serving Countries' />
+                                <WideShippingDataCard text={500} subtitle='Happy Customers' />
+                            </Box>
+                        ) : (
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    justifyContent: 'space-around',
+                                    mt: theme.spacing(2),
+                                }}
+                            >
+                                <ShippingDataCard icon={anchor} text={47} subtitle='Serving Ports' />
+                                <ShippingDataCard icon={container} text={3000} subtitle='Equipment' />
+                                <ShippingDataCard icon={equipement} text={150} subtitle='Special Equipment' />
+                                <ShippingDataCard icon={ship} text={35} subtitle='Serving Countries' />
+                                <ShippingDataCard icon={person} text={500} subtitle='Happy Customers' />
+                            </Box>
+                        )}
+                    </Box>
                 </VisibilityTracker>
             </Container>
         </Box>

@@ -1,10 +1,10 @@
 import { Box, Grid, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import Image from 'next/image'
-import bulbImage from '../../assets/about/missionTab/bulb.webp'
-import targetImage from '../../assets/about/missionTab/target.png'
-import shipImage from '../../assets/about/missionTab/ship.webp'
-import visionImage from '../../assets/about/missionTab/vision.png'
+import bulbImage from '@/assets/about/missionTab/bulb.webp'
+import targetImage from '@/assets/about/missionTab/target.png'
+import shipImage from '@/assets/about/missionTab/ship.webp'
+import visionImage from '@/assets/about/missionTab/vision.png'
 import VisibilityTracker, { AnimationType } from '../VisibilityTracker'
 
 export default function MissionAndVisionTab() {

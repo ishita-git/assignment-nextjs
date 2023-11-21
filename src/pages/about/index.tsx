@@ -4,7 +4,7 @@ import AboutTab from '../../components/about/AboutTab'
 import CompaniesTab from '../../components/about/CompaniesTab'
 import MissionAndVisionTab from '../../components/about/MissionAndVisionTab'
 import Layout from '../Layout'
-import aboutBackground from '../../assets/about/about-backgroud.webp'
+import aboutBackground from '@/assets/about/about-backgroud.webp'
 
 interface TabPanelProps {
     children?: React.ReactNode

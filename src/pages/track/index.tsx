@@ -18,13 +18,13 @@ import {
 
 import { useTheme } from '@mui/material/styles'
 import 'dayjs/locale/en-gb'
-import titleImg from '../../assets/images/cargo-ship-1.webp'
-import shipIcon from '../../assets/icons/icons_cargo_ship.png'
-import circularShipIcon from '../../assets/icons/circular_ship_icon.png'
-import circularLocationIcon from '../../assets/icons/circular_location.png'
+import titleImg from '@/assets/images/cargo-ship-1.webp'
+import shipIcon from '@/assets/icons/icons_cargo_ship.png'
+import circularShipIcon from '@/assets/icons/circular_ship_icon.png'
+import circularLocationIcon from '@/assets/icons/circular_location.png'
 import PrimaryTextField from '@/components/PrimaryTextField'
 import PrimaryButton from '@/components/PrimaryButton'
-import downArrowIcon from '../../assets/icons/arrow_down_circle.png'
+import downArrowIcon from '@/assets/icons/arrow_down_circle.png'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import FlagIcon from '@mui/icons-material/Flag'
 import LayoutCentered from '../LayoutCentered'
@@ -117,11 +117,7 @@ export default function Home() {
                                 boxShadow: 4,
                             }}
                         >
-                            <PrimaryTextField
-                                label='Search'
-                                placeholder='Enter Reference No. / Bill No. / container No.'
-                                startIcon
-                            />
+                            <PrimaryTextField label='Search' placeholder='Enter Reference No. / Bill No. / container No.' startIcon />
                             <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                                 <PrimaryButton text='Search' width='8rem' />
                             </Box>
@@ -181,10 +177,7 @@ export default function Home() {
                                 >
                                     <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                         <LocationOnIcon />
-                                        <TrackResponseText
-                                            title={ShortMode ? 'POL' : 'Port of Loading'}
-                                            subtitle='Mundra'
-                                        />
+                                        <TrackResponseText title={ShortMode ? 'POL' : 'Port of Loading'} subtitle='Mundra' />
                                     </Box>
 
                                     <Divider sx={{ border: '1px dashed #929292', width: '10%' }} />
@@ -193,10 +186,7 @@ export default function Home() {
 
                                     <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                         <FlagIcon />
-                                        <TrackResponseText
-                                            title={ShortMode ? 'POD' : 'Port Of Discharge'}
-                                            subtitle='Jebel Ali'
-                                        />
+                                        <TrackResponseText title={ShortMode ? 'POD' : 'Port Of Discharge'} subtitle='Jebel Ali' />
                                     </Box>
                                 </Box>
 
@@ -237,11 +227,7 @@ export default function Home() {
                                         Status Detail
                                     </Typography>
                                     <ExpandMore expand={expanded} onClick={handleExpandClick}>
-                                        <Image
-                                            src={downArrowIcon}
-                                            alt=''
-                                            style={{ height: 'auto', width: '1.25rem' }}
-                                        />
+                                        <Image src={downArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
                                     </ExpandMore>
                                 </Box>
                             </Box>
@@ -257,10 +243,7 @@ export default function Home() {
                                 >
                                     <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                         <LocationOnIcon />
-                                        <TrackResponseText
-                                            title={ShortMode ? 'POL' : 'Port of Loading'}
-                                            subtitle='Mundra'
-                                        />
+                                        <TrackResponseText title={ShortMode ? 'POL' : 'Port of Loading'} subtitle='Mundra' />
                                     </Box>
 
                                     <Divider sx={{ border: '1px dashed #929292', width: '10%' }} />
@@ -269,10 +252,7 @@ export default function Home() {
 
                                     <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
                                         <FlagIcon />
-                                        <TrackResponseText
-                                            title={ShortMode ? 'POD' : 'Port Of Discharge'}
-                                            subtitle='Jebel Ali'
-                                        />
+                                        <TrackResponseText title={ShortMode ? 'POD' : 'Port Of Discharge'} subtitle='Jebel Ali' />
                                     </Box>
                                 </Box>
 
@@ -282,10 +262,7 @@ export default function Home() {
                                     <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                         <TrackResponseText title='Vessel/Voyage' subtitle='SHIMIN 015E' />
                                         <TrackResponseText title='Cargo Type' subtitle='Consolidated Cargo' />
-                                        <TrackResponseText
-                                            title={ShortMode ? 'Location' : 'Current Location'}
-                                            subtitle='Singapore'
-                                        />
+                                        <TrackResponseText title={ShortMode ? 'Location' : 'Current Location'} subtitle='Singapore' />
                                         <TrackResponseText title='Container Type' subtitle='40 GP Standard' />
                                     </Box>
                                     <Box sx={{ display: 'flex', alignItems: 'center', mt: '1rem' }}>
@@ -300,11 +277,7 @@ export default function Home() {
                                             Status Detail
                                         </Typography>
                                         <ExpandMore expand={expanded} onClick={handleExpandClick}>
-                                            <Image
-                                                src={downArrowIcon}
-                                                alt=''
-                                                style={{ height: 'auto', width: '1.25rem' }}
-                                            />
+                                            <Image src={downArrowIcon} alt='' style={{ height: 'auto', width: '1.25rem' }} />
                                         </ExpandMore>
                                     </Box>
                                 </Box>
@@ -347,17 +320,11 @@ export default function Home() {
                                                     key={index}
                                                 >
                                                     <TableCell align='left'>
-                                                        <Image
-                                                            src={row.icon}
-                                                            alt=''
-                                                            style={{ height: '2rem', width: '2rem' }}
-                                                        />
+                                                        <Image src={row.icon} alt='' style={{ height: '2rem', width: '2rem' }} />
                                                     </TableCell>
                                                     <TableCell align='center'>{row.location}</TableCell>
                                                     <TableCell align='center'>{row.date}</TableCell>
-                                                    <TableCell align='center'>
-                                                        {row.status ? row.status : 'Not yet reached'}
-                                                    </TableCell>
+                                                    <TableCell align='center'>{row.status ? row.status : 'Not yet reached'}</TableCell>
                                                 </TableRow>
                                             )
                                         })}

@@ -4,11 +4,11 @@ import { Box, Container, IconButton, Typography, useMediaQuery } from '@mui/mate
 import { useTheme } from '@mui/material/styles'
 import { clientsData } from '../data/clientsData'
 import ClienteleCard from '../components/ClienteleCard'
-import clientBg from '../assets/clients/client-bg.webp'
-import clientBgSm from '../assets/clients/client-bg-sm.png'
-import prevIcon from '../assets/icons/previous.webp'
-import nextIcon from '../assets/icons/next.webp'
-import unileverImg from '../assets/clients/Unilever-sm.webp'
+import clientBg from '@/assets/clients/client-bg.webp'
+import clientBgSm from '@/assets/clients/client-bg-sm.png'
+import prevIcon from '@/assets/icons/previous.webp'
+import nextIcon from '@/assets/icons/next.webp'
+import unileverImg from '@/assets/clients/Unilever-sm.webp'
 
 export default function ClienteleSection() {
     const theme = useTheme()

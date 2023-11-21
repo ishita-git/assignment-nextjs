@@ -5,7 +5,7 @@ import ReeferTab from '../../components/equipments/ReeferTab'
 import OpenTopTab from '../../components/equipments/OpenTopTab'
 import FlatRackTab from '../../components/equipments/FlatRackTab'
 import Layout from '../Layout'
-import equipmentsBg from '../../assets/equipments/equipments-bg.webp'
+import equipmentsBg from '@/assets/equipments/equipments-bg.webp'
 
 interface TabPanelProps {
     children?: React.ReactNode

@@ -7,7 +7,7 @@ import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded'
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import PrimaryButton from './PrimaryButton'
 import Sidebar from './Sidebar'
-import logo from '../assets/logo.png'
+import logo from '@/assets/logo.png'
 
 export default function Navbar() {
     const [companiesMenu, setCompaniesMenu] = useState<null | HTMLElement>(null)

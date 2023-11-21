@@ -1,8 +1,8 @@
 import { Box, Grid, Typography } from '@mui/material'
 import ServicesLayout from '../ServicesLayout'
 import Image from 'next/image'
-import backgroundImg from '../../../assets/services/transport_bg.webp'
-import titleImg from '../../../assets/services/transport_img.webp'
+import backgroundImg from '@/assets/services/transport_bg.webp'
+import titleImg from '@/assets/services/transport_img.webp'
 import { TransportationData } from '../../../data/servicesData'
 import Benefits from '../../../components/services/Benefits'
 export default function Home() {
@@ -14,35 +14,20 @@ export default function Home() {
                 </Typography>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={6}>
-                        <Typography
-                            paragraph
-                            variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
-                        >
-                            Muskan Container Lines offers an extensive array of trucking and intermodal services,
-                            providing our clients with a comprehensive transportation solution. Our commitment to
-                            proficiency ensures that our clients can place their trust in our services, guaranteeing
-                            timely and secure delivery of their consignments. Within our broader supply chain management
-                            system, our inland transportation network functions as a crucial link, seamlessly connecting
+                        <Typography paragraph variant='subtitle2' sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}>
+                            Muskan Container Lines offers an extensive array of trucking and intermodal services, providing our clients with
+                            a comprehensive transportation solution. Our commitment to proficiency ensures that our clients can place their
+                            trust in our services, guaranteeing timely and secure delivery of their consignments. Within our broader supply
+                            chain management system, our inland transportation network functions as a crucial link, seamlessly connecting
                             various aspects of cargo movement.
                         </Typography>
-                        <Typography
-                            paragraph
-                            variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
-                        >
-                            We have at our disposal a wide-ranging fleet of trucks, trailers, and other inland
-                            transportation vehicles.
+                        <Typography paragraph variant='subtitle2' sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}>
+                            We have at our disposal a wide-ranging fleet of trucks, trailers, and other inland transportation vehicles.
                         </Typography>
-                        <Typography
-                            paragraph
-                            variant='subtitle2'
-                            sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}
-                        >
-                            These assets are instrumental in facilitating the movement of your cargo from its point of
-                            origin to the port of dispatch and from the port of arrival to its final destination. Our
-                            approach to land transportation is marked by meticulous attention to detail, ensuring that
-                            every facet is optimized for efficiency and reliability.
+                        <Typography paragraph variant='subtitle2' sx={{ color: '#031225', fontWeight: '400', textAlign: 'justify' }}>
+                            These assets are instrumental in facilitating the movement of your cargo from its point of origin to the port of
+                            dispatch and from the port of arrival to its final destination. Our approach to land transportation is marked by
+                            meticulous attention to detail, ensuring that every facet is optimized for efficiency and reliability.
                         </Typography>
                     </Grid>
                     <Grid item xs={12} sm={6}>

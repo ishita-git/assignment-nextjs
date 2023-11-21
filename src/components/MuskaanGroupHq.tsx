@@ -2,8 +2,8 @@ import React from 'react'
 import Image, { StaticImageData } from 'next/image'
 import { Box, Grid, InputLabel, Paper, Typography } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star'
-import map from '../assets/contact/address-map.webp'
-import directionImg from '../assets/contact/direction.png'
+import map from '@/assets/contact/address-map.webp'
+import directionImg from '@/assets/contact/direction.png'
 
 function CompanyInfo({ title, body }: { title: String; body: String }) {
     return (

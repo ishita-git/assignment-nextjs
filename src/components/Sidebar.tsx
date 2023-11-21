@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles'
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded'
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded'
 import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded'
-import logo from '../assets/logo.png'
+import logo from '@/assets/logo.png'
 
 const accordionLinks = [
     {

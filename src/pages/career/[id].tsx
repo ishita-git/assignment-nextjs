@@ -23,12 +23,12 @@ import { SelectChangeEvent } from '@mui/material/Select'
 import { useTheme } from '@mui/material/styles'
 import Layout from '../Layout'
 import PrimaryTextField from '../../components/PrimaryTextField'
-// import captcha from '../../assets/images/captcha.png'
-import reload from '../../assets/icons/loop.png'
+// import captcha from '@/assets/images/captcha.png'
+import reload from '@/assets/icons/loop.png'
 import PrimaryButton from '../../components/PrimaryButton'
 import SecondaryButton from '../../components/SecondaryButton'
-import careerBackground from '../../assets/career/career-background.webp'
-import careerBanner from '../../assets/career/marketing_lg.webp'
+import careerBackground from '@/assets/career/career-background.webp'
+import careerBanner from '@/assets/career/marketing_lg.webp'
 import { fetchDataFromApi, postDataToApi } from '../../api/api'
 import Navbar from '@/components/Navbar'
 import FooterSection from '@/sections/FooterSection'
@@ -122,9 +122,7 @@ export default function JobDetail() {
                     title='Join Muskaan'
                     subtitle={mobileMode ? '' : 'Unlock a World of Career Possibilities'}
                 />
-                <Box
-                    sx={{ px: { xs: theme.spacing(mobileMode ? 0 : 2), sm: theme.spacing(4), md: theme.spacing(12) } }}
-                >
+                <Box sx={{ px: { xs: theme.spacing(mobileMode ? 0 : 2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                     <Container maxWidth='xl'>
                         <Typography variant='h2' sx={{ mb: '1rem' }}>
                             {jobData?.title}
@@ -288,9 +286,7 @@ export default function JobDetail() {
                                     </Box>
                                 </Grid>
                                 <Grid item sm={6} xs={12}>
-                                    <Box
-                                        sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
-                                    >
+                                    <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                                         <PrimaryTextField label='Captcha' placeholder='Enter Captcha' />
 
                                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -300,11 +296,7 @@ export default function JobDetail() {
                                     style={{ height: '2rem', width: 'auto', marginRight: '0.5rem' }}
                                 /> */}
                                             <IconButton>
-                                                <Image
-                                                    src={reload}
-                                                    alt='reload'
-                                                    style={{ height: '1.5rem', width: 'auto' }}
-                                                />
+                                                <Image src={reload} alt='reload' style={{ height: '1.5rem', width: 'auto' }} />
                                             </IconButton>
                                         </Box>
                                     </Box>

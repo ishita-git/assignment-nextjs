@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Navbar from '../../components/Navbar'
 import FooterSection from '../../sections/FooterSection'
 import { useTheme } from '@mui/material/styles'
-import downloadIcon from '../../assets/icons/download.png'
+import downloadIcon from '@/assets/icons/download.png'
 import { fetchDataFromApi } from '../../api/api'
 
 type DownloadDataType = {
@@ -46,9 +46,7 @@ export default function Home() {
                         <Typography variant='h2' sx={{ color: '#003A9B' }}>
                             Useful Downloads
                         </Typography>
-                        <Box sx={{ bgcolor: '#339966', height: '0.25rem', borderRadius: '2rem', width: '23rem' }}>
-                            {' '}
-                        </Box>
+                        <Box sx={{ bgcolor: '#339966', height: '0.25rem', borderRadius: '2rem', width: '23rem' }}> </Box>
                         <Typography variant='h4' sx={{ color: '#313131', mt: '1.5rem', whiteSpace: 'pre-line' }}>
                             {
                                 'Explore a curated collection of resources that empower your decisions\nand enrich your understanding. From expert insights to informative\n guides, your journey of discovery awaits'
@@ -59,13 +57,8 @@ export default function Home() {
                     <Grid container spacing={2} wrap='wrap'>
                         {downloadData.map((item) => (
                             <Grid item xs={12} sm={4} key={item.id}>
-                                <Box
-                                    sx={{ bgcolor: '#FFFFFF', padding: '1rem', borderRadius: '1.1rem', height: '100%' }}
-                                >
-                                    <Typography
-                                        variant='h6'
-                                        sx={{ color: '#313131', mb: '0.5rem', textAlign: 'start', fontWeight: 600 }}
-                                    >
+                                <Box sx={{ bgcolor: '#FFFFFF', padding: '1rem', borderRadius: '1.1rem', height: '100%' }}>
+                                    <Typography variant='h6' sx={{ color: '#313131', mb: '0.5rem', textAlign: 'start', fontWeight: 600 }}>
                                         {item.title}
                                     </Typography>
                                     <Typography
@@ -77,8 +70,7 @@ export default function Home() {
                                             width: '80%',
                                         }}
                                     >
-                                        {item.description ||
-                                            'Manuals explaining different shipping options, carriers, and rates'}
+                                        {item.description || 'Manuals explaining different shipping options, carriers, and rates'}
                                     </Typography>
                                     <Link href={item.file}>
                                         <Box

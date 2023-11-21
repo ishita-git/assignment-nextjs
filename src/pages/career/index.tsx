@@ -4,8 +4,8 @@ import Image, { StaticImageData } from 'next/image'
 import { Box, Typography, Grid, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import Layout from '../Layout'
-import careerBackground from '../../assets/career/career-background.webp'
-import careerDefault from '../../assets/career/marketing.png'
+import careerBackground from '@/assets/career/career-background.webp'
+import careerDefault from '@/assets/career/marketing.png'
 import { fetchDataFromApi } from '../../api/api'
 
 interface Career {
@@ -42,11 +42,7 @@ export default function Home() {
     }
 
     return (
-        <Layout
-            image={careerBackground}
-            title='Join Muskaan'
-            subtitle={mobileMode ? '' : 'Unlock a World of Career Possibilities'}
-        >
+        <Layout image={careerBackground} title='Join Muskaan' subtitle={mobileMode ? '' : 'Unlock a World of Career Possibilities'}>
             <Box sx={{ px: { xs: theme.spacing(mobileMode ? 0 : 2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                 <Typography variant='h2' textAlign='center' gutterBottom sx={{ fontSize: tabMode ? '2.4rem' : '3rem' }}>
                     Interested? We are Hiring
@@ -83,17 +79,11 @@ export default function Home() {
                                         alt='career image'
                                         style={{ width: '25%', height: 'auto', marginBottom: '2rem' }}
                                     />
-                                    <Typography
-                                        variant='h6'
-                                        sx={{ color: '#313131', textAlign: 'center', fontWeight: 600, mb: '1rem' }}
-                                    >
+                                    <Typography variant='h6' sx={{ color: '#313131', textAlign: 'center', fontWeight: 600, mb: '1rem' }}>
                                         {job.title}
                                     </Typography>
                                     <div style={ellipsisStyles}>
-                                        <Typography
-                                            variant='body1'
-                                            sx={{ color: 'rgba(49, 49, 49, 0.80)', mb: '1rem', fontWeight: 300 }}
-                                        >
+                                        <Typography variant='body1' sx={{ color: 'rgba(49, 49, 49, 0.80)', mb: '1rem', fontWeight: 300 }}>
                                             <div dangerouslySetInnerHTML={{ __html: job?.description }} />
                                         </Typography>
                                     </div>

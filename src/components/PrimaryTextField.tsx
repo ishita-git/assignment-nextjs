@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { Box, InputAdornment, InputLabel, TextField, Typography } from '@mui/material'
-import searchIcon from '../assets/icons/search.png'
+import searchIcon from '@/assets/icons/search.png'
 
 declare type TextFieldProps = {
     label?: string

@@ -1,25 +1,14 @@
 import React from 'react'
 import Image from 'next/image'
-import {
-    Box,
-    Grid,
-    Typography,
-    IconButton,
-    InputLabel,
-    Paper,
-    FormControl,
-    Select,
-    MenuItem,
-    useMediaQuery,
-} from '@mui/material'
+import { Box, Grid, Typography, IconButton, InputLabel, Paper, FormControl, Select, MenuItem, useMediaQuery } from '@mui/material'
 import { SelectChangeEvent } from '@mui/material/Select'
 import Layout from '../Layout'
-import contactBackground from '../../assets/contact/contact-background.webp'
+import contactBackground from '@/assets/contact/contact-background.webp'
 import PrimaryTextField from '../../components/PrimaryTextField'
-import reload from '../../assets/icons/loop.png'
+import reload from '@/assets/icons/loop.png'
 import PrimaryButton from '../../components/PrimaryButton'
 import MuskaanGroupHq from '../../components/MuskaanGroupHq'
-import phoneIcon from '../../assets/icons/phone_color.svg'
+import phoneIcon from '@/assets/icons/phone_color.svg'
 
 function AddressCard({ companyLoc, address, phone }: { companyLoc: String; address: String; phone: String }) {
     return (
@@ -58,11 +47,7 @@ export default function Home() {
     const mobileMode = useMediaQuery('(max-width:449px)')
 
     return (
-        <Layout
-            image={contactBackground}
-            title="Let's Talk"
-            subtitle={mobileMode ? '' : 'We would love to deliver your goods'}
-        >
+        <Layout image={contactBackground} title="Let's Talk" subtitle={mobileMode ? '' : 'We would love to deliver your goods'}>
             <Box sx={{ mx: { xs: 0, sm: '1rem', md: '9rem' }, my: '2rem' }}>
                 <MuskaanGroupHq />
 

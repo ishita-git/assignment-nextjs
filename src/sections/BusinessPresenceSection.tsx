@@ -3,11 +3,11 @@ import Image from 'next/image'
 import { Box, Container, Divider, Grid, Link, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import { oswald } from '../styles/fonts'
-import map from '../assets/images/map.webp'
-import map2 from '../assets/images/map2.webp'
+import map from '@/assets/images/map.webp'
+import map2 from '@/assets/images/map2.webp'
 import CompanyReachCard from '../components/CompanyReachCard'
 
-// import description from '../assets/images/map-description.png'
+// import description from '@/assets/images/map-description.png'
 
 // const MapDescription = () => {
 //     const theme = useTheme()

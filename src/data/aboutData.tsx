@@ -1,8 +1,8 @@
-import muskanContainerImage from '../assets/about/companiesTab/muskan_container_lines_pvt_ltd.webp'
-import muskanLogisticsImage from '../assets/about/companiesTab/muskan_logistics.webp'
-import muskanPTEImage from '../assets/about/companiesTab/muskaan_shipping_pte_ltd.webp'
-import muskanSDNImage from '../assets/about/companiesTab/muskaan_shipping_sdn_bhd.webp'
-import muskanLLCImage from '../assets/about/companiesTab/muskaan_shipping_llc.webp'
+import muskanContainerImage from '@/assets/about/companiesTab/muskan_container_lines_pvt_ltd.webp'
+import muskanLogisticsImage from '@/assets/about/companiesTab/muskan_logistics.webp'
+import muskanPTEImage from '@/assets/about/companiesTab/muskaan_shipping_pte_ltd.webp'
+import muskanSDNImage from '@/assets/about/companiesTab/muskaan_shipping_sdn_bhd.webp'
+import muskanLLCImage from '@/assets/about/companiesTab/muskaan_shipping_llc.webp'
 
 export const qualityPolicyData = [
     'Providing comprehensive education and training to all our employees.',
