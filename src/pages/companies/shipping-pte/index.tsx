@@ -41,7 +41,7 @@ export default function Home() {
                             <CustomText text='With a presence in over 30 locations across more than 10 countries in this region, we are committed to providing a dependable schedule, robust connectivity with Main Line Operator (MLO) sailings, efficient fleet deployment, excellent customer service, and competitive pricing. Muskaan Shipping (Pte) Ltd has expanded its operations to include services to major hub ports worldwide.' />
                         </Grid>
                         <Grid item xs={12} sm={6}>
-                            <img src={titleImg} alt='' style={{ width: '100%', height: 'auto' }} />
+                            <Image src={titleImg} alt='' style={{ width: '100%', height: 'auto' }} />
                         </Grid>
                     </Grid>
                     <CustomText text='We continually seek opportunities to enhance our presence in the global container shipping industry and have successfully ventured into main line trades serving the Gulf and India Subcontinent regions. Additionally, our extensive network of container liner services spans across the Far East to Europe, the Black Sea, Gulf, the Indian sub-continent, the Red Sea/Gulf, Africa, Oceania, Latin America, and the West Coast of the USA. Muskaan Shipping (Pte) Ltd was among the pioneering liners to establish a vital link connecting Asia, the Middle East, and Africa.' />
