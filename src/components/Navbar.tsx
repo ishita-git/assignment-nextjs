@@ -146,44 +146,44 @@ export default function Navbar() {
                             </Typography>
                         </Box>
 
-                        <Menu anchorEl={servicesMenu} open={openServicesMenu} onClose={closeServicesMenu}>
+                        <Menu anchorEl={servicesMenu} open={openServicesMenu} onClose={closeServicesMenu} sx={{ '& a': { color: 'inherit' } }}>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/nvocc' sx={{ color: 'inherit' }}>
+                                <Link href='/services/nvocc'  >
                                     NVOCC
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/transportation' sx={{ color: 'inherit' }}>
+                                <Link href='/services/transportation'  >
                                     Transportation
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/air-freight' sx={{ color: 'inherit' }}>
+                                <Link href='/services/air-freight'  >
                                     Air Freight
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/multimodel' sx={{ color: 'inherit' }}>
+                                <Link href='/services/multimodel'  >
                                     Multimodel-Transportation
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/over-dimension' sx={{ color: 'inherit' }}>
+                                <Link href='/services/over-dimension'  >
                                     Over Dimension Cargo
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/project-cargo' sx={{ color: 'inherit' }}>
+                                <Link href='/services/project-cargo'  >
                                     Project Cargo
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/custom-clearance' sx={{ color: 'inherit' }}>
+                                <Link href='/services/custom-clearance'  >
                                     Custom Clearance
                                 </Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/lcl' sx={{ color: 'inherit' }}>
+                                <Link href='/services/lcl'  >
                                     LCL Consolidation Services
                                 </Link>
                             </MenuItem>
