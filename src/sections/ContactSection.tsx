@@ -1,16 +1,67 @@
 import Image from 'next/image'
-import { Box, Container, Typography, useMediaQuery } from '@mui/material'
+import { Box, Container, Slide, Snackbar, Typography, useMediaQuery } from '@mui/material'
 import contactbackground from '@/assets/images/contact-background.webp'
 // import contactBgSm from '@/assets/images/contact-bg-sm.png'
 import contactImage from '@/assets/images/contact-img.webp'
 import { useTheme } from '@mui/material/styles'
 import SecondaryTextField from '../components/SecondaryTextField'
 import PrimaryButton from '../components/PrimaryButton'
+import { postDataToApi } from '../api/api'
+import MuiAlert from '@mui/material/Alert'
+import { useState } from 'react'
 
 export default function ContactSection() {
     const theme = useTheme()
     const tabletMode = useMediaQuery('(max-width:849px)')
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        enquiry_type:'General Enquiry',
+        message: '',
+    })
 
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = event.target
+        setFormData({ ...formData, [name]: value })
+    }
+
+    const [snackbarOpen, setSnackbarOpen] = useState(false)
+    const [snackbarMessage, setSnackbarMessage] = useState('')
+
+    const openSnackbar = (message: string) => {
+        setSnackbarMessage(message)
+        setSnackbarOpen(true)
+    }
+    const handleSnackbarClose = () => {
+        setSnackbarOpen(false)
+    }
+    const handleFormSubmit = async () => {
+        // Check if any field is empty
+        const isAnyFieldEmpty = Object.values(formData).some((value) => value === '')
+
+        if (isAnyFieldEmpty) {
+            openSnackbar('Please fill in all fields')
+            return
+        }
+
+        try {
+            const response = await postDataToApi('api/contact-us/', formData)
+            console.log('Form submitted successfully:', response)
+            openSnackbar('Form submitted successfully')
+            // Reset form fields after successful submission
+            setFormData({
+                name: '',
+                phone: '',
+                email: '',
+                enquiry_type:'General Enquiry',
+                message: '',
+            })
+        } catch (error) {
+            console.error('Error submitting the form:', error)
+            openSnackbar('Form Submission Unsuccessful')
+        }
+    }
     return (
         <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4) } }}>
             {tabletMode ? (
@@ -32,14 +83,30 @@ export default function ContactSection() {
                         Our team would love to hear from you
                     </Typography>
                     <Box sx={{ my: theme.spacing(2) }}>
-                        <SecondaryTextField placeholder='Enter your name' />
-                        <SecondaryTextField placeholder='Enter your email address' />
-                        <SecondaryTextField placeholder='Enter your contact number' />
-                        <SecondaryTextField placeholder='Enter your message' multiline={true} />
+                        <SecondaryTextField placeholder='Enter your name' name='name' value={formData.name} onChange={handleInputChange} />
+                        <SecondaryTextField
+                            placeholder='Enter your email address'
+                            name='email'
+                            value={formData.email}
+                            onChange={handleInputChange}
+                        />
+                        <SecondaryTextField
+                            placeholder='Enter your contact number'
+                            name='phone'
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                        />
+                        <SecondaryTextField
+                            placeholder='Enter your message'
+                            multiline={true}
+                            name='message'
+                            value={formData.message}
+                            onChange={handleInputChange}
+                        />
                     </Box>
 
                     <Box sx={{ display: 'flex' }}>
-                        <PrimaryButton text='Submit' light />
+                        <PrimaryButton text='Submit' light onClick={handleFormSubmit} />
                     </Box>
                 </Container>
             ) : (
@@ -64,16 +131,48 @@ export default function ContactSection() {
                             Our team would love to hear from you
                         </Typography>
                         <Box sx={{ my: theme.spacing(1.5) }}>
-                            <SecondaryTextField placeholder='Enter your name' />
-                            <SecondaryTextField placeholder='Enter your email address' />
-                            <SecondaryTextField placeholder='Enter your contact number' />
-                            <SecondaryTextField placeholder='Enter your message' multiline={true} />
+                            <SecondaryTextField
+                                placeholder='Enter your name'
+                                name='name'
+                                value={formData.name}
+                                onChange={handleInputChange}
+                            />
+                            <SecondaryTextField
+                                placeholder='Enter your email address'
+                                name='email'
+                                value={formData.email}
+                                onChange={handleInputChange}
+                            />
+                            <SecondaryTextField
+                                placeholder='Enter your contact number'
+                                name='phone'
+                                value={formData.phone}
+                                onChange={handleInputChange}
+                            />
+                            <SecondaryTextField
+                                placeholder='Enter your message'
+                                multiline={true}
+                                name='message'
+                                value={formData.message}
+                                onChange={handleInputChange}
+                            />
                         </Box>
 
                         <Box sx={{ display: 'flex' }}>
-                            <PrimaryButton text='Submit' light />
+                            <PrimaryButton text='Submit' light onClick={handleFormSubmit} />
                         </Box>
                     </Box>
+                    <Snackbar
+                        open={snackbarOpen}
+                        autoHideDuration={4000}
+                        onClose={handleSnackbarClose}
+                        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                        TransitionComponent={(props) => <Slide {...props} direction='right' />}
+                    >
+                        <MuiAlert elevation={6} variant='filled' severity='success'>
+                            {snackbarMessage}
+                        </MuiAlert>
+                    </Snackbar>
                 </Container>
             )}
         </Box>

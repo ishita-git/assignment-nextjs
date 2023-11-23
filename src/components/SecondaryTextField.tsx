@@ -4,9 +4,13 @@ declare type TextFieldProps = {
     placeholder?: string
     multiline?: boolean
     endButton?: boolean
+    value?: string
+    name?: string
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-function SecondaryTextField({ placeholder, multiline, endButton }: TextFieldProps) {
+function SecondaryTextField({ placeholder, multiline, endButton, value,
+    name,onChange }: TextFieldProps) {
     return (
         <Box sx={{ mb: '0.75rem' }}>
             <Box
@@ -18,6 +22,9 @@ function SecondaryTextField({ placeholder, multiline, endButton }: TextFieldProp
                 <TextField
                     variant='standard'
                     placeholder={placeholder}
+                    onChange={onChange}
+                    name={name}
+                    value={value}
                     InputProps={{
                         disableUnderline: true,
                         endAdornment: endButton ? (
