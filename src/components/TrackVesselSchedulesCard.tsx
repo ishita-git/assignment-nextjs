@@ -77,8 +77,8 @@ export default function TrackVesselSchedulesCard({ onEmptyPage }: { onEmptyPage?
                 backgroundColor: '#EFF6FF',
                 height: '16.8rem',
                 minWidth: wideMode ? '26rem' : mediumMode ? '30rem' : '26rem',
-                borderRadius: onEmptyPage ? '12px' : '0px 16px 16px 16px',
-                boxShadow: '4px 8px 8px 0px #00000033',
+                borderRadius: onEmptyPage ? '12px' : '0px 8px 8px 8px',
+                boxShadow: '4px 4px 4px 4px #00000023',
                 padding: theme.spacing(1),
                 position: 'relative',
             }}

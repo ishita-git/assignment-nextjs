@@ -22,8 +22,8 @@ export default function ShipmentTracker() {
                     <Box sx={{ display: 'flex' }}>
                         <Box
                             sx={{
-                                borderRadius: '16px 0px 0px 0px',
-                                height: '3rem',
+                                borderRadius: '8px 0px 0px 0px',
+                                height: smallMode ? '2rem' : '3rem',
                                 width: smallMode ? '9rem' : '14rem',
                                 display: 'flex',
                                 alignItems: 'center',
@@ -34,7 +34,7 @@ export default function ShipmentTracker() {
                             onClick={() => handleTabClick(1)}
                         >
                             <Typography
-                                variant='h5'
+                                variant={smallMode ? 'subtitle2' : 'h5'}
                                 sx={{
                                     color: activeTab === 1 ? theme.palette.primary.main : theme.palette.common.white,
                                 }}
@@ -45,8 +45,8 @@ export default function ShipmentTracker() {
 
                         <Box
                             sx={{
-                                borderRadius: '0px 16px 0px 0px',
-                                height: '3rem',
+                                borderRadius: '0px 8px 0px 0px',
+                                height: smallMode ? '2rem' : '3rem',
                                 width: smallMode ? '9rem' : '14rem',
                                 display: 'flex',
                                 alignItems: 'center',
@@ -57,7 +57,7 @@ export default function ShipmentTracker() {
                             onClick={() => handleTabClick(2)}
                         >
                             <Typography
-                                variant='h5'
+                                variant={smallMode ? 'subtitle2' : 'h5'}
                                 sx={{
                                     color: activeTab === 2 ? theme.palette.primary.main : theme.palette.common.white,
                                 }}

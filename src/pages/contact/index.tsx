@@ -129,6 +129,48 @@ export default function Home() {
                         />
                     </Grid>
                 </Grid>
+
+                <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '2rem', color: '#1B1B1F' }}>
+                    India Branches
+                </Typography>
+                <Grid container spacing={2} sx={{}}>
+                    <Grid item xs={12} sm={4}>
+                        <AddressCard
+                            companyLoc='New Delhi'
+                            address='Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor, NEW DELHI - 110078'
+                            phone='011-41587468'
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <AddressCard
+                            companyLoc='Gujarat'
+                            address='Office No. 222, 2nd Floor, Manali Tower, Plot No. 110, Sector No. 8, Behind Oslo Circle, Sector 8, Gandhidham, Gujarat 370203'
+                            phone='011-41587468'
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <AddressCard
+                            companyLoc='Navi Mumbai'
+                            address='Office No. 323, 3rd Floor, Skylark Building, Plot No. 63, Sector 11, Belapur CBD, Navi Mumbai - 400614'
+                            phone='011-41587468'
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <AddressCard
+                            companyLoc='Chennai'
+                            address='72/1,first floor, shop no 3, Linghi Chetty street, Mannady Chennai - 600001'
+                            phone='011-41587468'
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={4}>
+                        <AddressCard
+                            companyLoc='Kolkata'
+                            address='Cabin No. 13 & 14 , 3rd Floor, 26, Chittaranjan Avenue, Kolkata -700012'
+                            phone='011-41587468'
+                        />
+                    </Grid>
+                </Grid>
+
                 <Box sx={{ mt: '4rem', mb: '2rem' }}>
                     <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', color: '#1B1B1F' }}>
                         Write to Us

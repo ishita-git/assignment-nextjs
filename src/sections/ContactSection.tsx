@@ -63,7 +63,7 @@ export default function ContactSection() {
         }
     }
     return (
-        <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4) } }}>
+        <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4) }, mt: theme.spacing(12) }}>
             {tabletMode ? (
                 <Container
                     maxWidth='sm'

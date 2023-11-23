@@ -9,6 +9,7 @@ import clientBgSm from '@/assets/clients/client-bg-sm.png'
 import prevIcon from '@/assets/icons/previous.webp'
 import nextIcon from '@/assets/icons/next.webp'
 import unileverImg from '@/assets/clients/Unilever-sm.webp'
+import { oswald } from '@/styles/fonts'
 
 export default function ClienteleSection() {
     const theme = useTheme()
@@ -101,7 +102,8 @@ export default function ClienteleSection() {
                             </Typography>
                         </Box>
                     ) : (
-                        <Typography variant='h2' textAlign='center' sx={{ mb: theme.spacing(2) }}>
+                        <Typography variant='h2' textAlign='center'
+                                    sx={{ mb: theme.spacing(6), fontFamily: oswald.style.fontFamily, mt: '16rem'  }}>
                             Appreciated by some of the best in industry
                         </Typography>
                     )}

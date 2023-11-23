@@ -85,7 +85,7 @@ export default function ShippingSection() {
             sx={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: tabletMode ? '52vw' : '36vw',
+                height: tabletMode ? '52vw' : '45vw',
                 display: 'flex',
             }}
         >
@@ -94,7 +94,7 @@ export default function ShippingSection() {
                 alt='stern'
                 style={{
                     width: '100%',
-                    height: tabletMode ? '40rem' : '30rem',
+                    height: tabletMode ? '40rem' : '45rem',
                     position: 'absolute',
                     objectFit: 'cover',
                 }}
