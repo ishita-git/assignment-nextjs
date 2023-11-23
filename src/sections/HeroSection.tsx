@@ -9,12 +9,13 @@ export default function HeroSection() {
     const tabletMode = useMediaQuery('(min-width:600px) and (max-width:799px)')
     const mobileMode = useMediaQuery(' (min-width:450px) and (max-width:599px)')
     const ultraMobileMode = useMediaQuery(' (max-width:449px)')
+    const smallMode = useMediaQuery('(max-width:399px)')
     return (
         <Box
             sx={{
                 position: 'relative',
                 overflow: 'hidden',
-                height: '56vw',
+                height: smallMode ? '70vw' : '56vw',
                 display: 'flex',
                 flexDirection: 'column',
             }}
@@ -26,8 +27,8 @@ export default function HeroSection() {
                     autoPlay
                     loop
                     style={{
-                        width: '100%',
-                        height: 'auto',
+                        width: smallMode ? 'auto' : '100%',
+                        height: smallMode ? '70vw' : 'auto',
                         position: 'absolute',
                     }}
                 />
@@ -44,7 +45,7 @@ export default function HeroSection() {
             <Box
                 sx={{
                     position: 'relative',
-                    mt: theme.spacing(2),
+                    mt: theme.spacing(3),
                     mx: theme.spacing(ultraMobileMode ? 0 : mobileMode ? 2 : 4),
                 }}
             >
@@ -69,7 +70,7 @@ export default function HeroSection() {
                                 : mobileMode
                                 ? '3rem'
                                 : ultraMobileMode
-                                ? '2.2rem'
+                                ? '2rem'
                                 : '0rem',
                             lineHeight: desktopMode
                                 ? '6rem'
@@ -78,7 +79,7 @@ export default function HeroSection() {
                                 : mobileMode
                                 ? '3.5rem'
                                 : ultraMobileMode
-                                ? '2.6rem'
+                                ? '2.2rem'
                                 : '0rem',
                             whiteSpace: 'pre-line',
                         }}
@@ -101,14 +102,14 @@ export default function HeroSection() {
                                 : mobileMode
                                 ? '2rem'
                                 : ultraMobileMode
-                                ? '1.75rem'
+                                ? '1.5rem'
                                 : '0rem',
                             lineHeight: desktopMode
                                 ? '4rem'
                                 : tabletMode
                                 ? '3rem'
                                 : mobileMode
-                                ? '2.5rem'
+                                ? '2rem'
                                 : ultraMobileMode
                                 ? '2rem'
                                 : '0rem',

@@ -7,7 +7,7 @@ import TrackVesselSchedulesCard from '../components/TrackVesselSchedulesCard'
 export default function ShipmentTracker() {
     const theme = useTheme()
     const tabletMode = useMediaQuery('(max-width:899px)')
-    const SmallMode = useMediaQuery('(max-width:399px)')
+    const smallMode = useMediaQuery('(max-width:399px)')
 
     const [activeTab, setActiveTab] = useState(1)
 
@@ -24,13 +24,12 @@ export default function ShipmentTracker() {
                             sx={{
                                 borderRadius: '16px 0px 0px 0px',
                                 height: '3rem',
-                                width: SmallMode ? '9rem' : '14rem',
+                                width: smallMode ? '9rem' : '14rem',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 cursor: 'pointer',
-                                backgroundColor:
-                                    activeTab === 1 ? theme.palette.secondary.light : theme.palette.primary.main,
+                                backgroundColor: activeTab === 1 ? theme.palette.secondary.light : theme.palette.primary.main,
                             }}
                             onClick={() => handleTabClick(1)}
                         >
@@ -40,7 +39,7 @@ export default function ShipmentTracker() {
                                     color: activeTab === 1 ? theme.palette.primary.main : theme.palette.common.white,
                                 }}
                             >
-                                {SmallMode ? 'Shipment' : 'Track Shipment'}
+                                {smallMode ? 'Shipment' : 'Track Shipment'}
                             </Typography>
                         </Box>
 
@@ -48,13 +47,12 @@ export default function ShipmentTracker() {
                             sx={{
                                 borderRadius: '0px 16px 0px 0px',
                                 height: '3rem',
-                                width: SmallMode ? '9rem' : '14rem',
+                                width: smallMode ? '9rem' : '14rem',
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 cursor: 'pointer',
-                                backgroundColor:
-                                    activeTab === 2 ? theme.palette.secondary.light : theme.palette.primary.main,
+                                backgroundColor: activeTab === 2 ? theme.palette.secondary.light : theme.palette.primary.main,
                             }}
                             onClick={() => handleTabClick(2)}
                         >
@@ -64,7 +62,7 @@ export default function ShipmentTracker() {
                                     color: activeTab === 2 ? theme.palette.primary.main : theme.palette.common.white,
                                 }}
                             >
-                                {SmallMode ? 'Schedules' : 'Track Schedules'}
+                                {smallMode ? 'Schedules' : 'Track Schedules'}
                             </Typography>
                         </Box>
                     </Box>
@@ -74,7 +72,7 @@ export default function ShipmentTracker() {
                     </>
                 </Container>
             ) : (
-                <Container maxWidth='md'>
+                <Container maxWidth='xl'>
                     <Grid container spacing={2} sx={{ width: '100%' }}>
                         <Grid item xs={12} sm={6}>
                             <Box
