@@ -15,7 +15,6 @@ import StatisticsCard from '@/components/companies/StatisticsCard'
 import ServicesCard from '@/components/companies/ServicesCard'
 import ServicesCardMobile from '@/components/companies/ServicesCardMobile'
 import CustomText from '@/components/companies/CustomText'
-import mapImage from '@/assets/companies/muskaan_shipping/map.png'
 import VisibilityTracker, { AnimationType } from '@/components/VisibilityTracker'
 export default function Home() {
     const theme = useTheme()
@@ -26,7 +25,7 @@ export default function Home() {
         <CompaniesLayout
             image={shippingBg}
             title={'Muskaan Shipping PTE\nLtd.'}
-            mapImage={mapImage}
+            mapSrc={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7904395318737!2d103.84937046162658!3d1.300594082477757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19bc8a475c4b%3A0xc5fcc9a2a95e65e0!2sParklane!5e0!3m2!1sen!2sin!4v1558940174967!5m2!1sen!2sin"}
             address='60 Kaki Bukit Place #02-13Suites 3 Eunos Techpark,Singapore 415979'
             telephoneNumber='+65 64921136'
         >

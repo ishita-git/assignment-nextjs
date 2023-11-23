@@ -1,9 +1,6 @@
 import React from 'react'
-import Image, { StaticImageData } from 'next/image'
-import { Box, Grid, InputLabel, Paper, Typography } from '@mui/material'
-import StarIcon from '@mui/icons-material/Star'
-import map from '@/assets/contact/address-map.webp'
-import directionImg from '@/assets/contact/direction.png'
+import { Box, Grid, InputLabel, Paper, Typography, useMediaQuery } from '@mui/material'
+
 
 function CompanyInfo({ title, body }: { title: String; body: String }) {
     return (
@@ -17,25 +14,25 @@ function CompanyInfo({ title, body }: { title: String; body: String }) {
 }
 
 function MuskaanGroupHq({
-    image,
+    mapSrc,
     address,
     telephoneNumber,
 }: {
-    image?: string | StaticImageData
+    mapSrc?: string
     address?: String
     telephoneNumber?: String
 }) {
+
+    const mobileMode = useMediaQuery('(max-width:599px)')
+    const tabletMode = useMediaQuery('(max-width:899px)')
     return (
         <Grid container spacing={4} alignItems='center'>
             <Grid item xs={12} sm={6}>
-                <Image
-                    src={image || map}
-                    alt='map'
-                    style={{
-                        width: '100%',
-                        height: 'auto',
-                    }}
-                />
+                <iframe
+                    src = {mapSrc || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.967840161183!2d77.02405941554592!3d28.600741582430178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3cbd9f22ffd%3A0xf4d3e636afaaf3ea!2sMuskan+Container+Lines+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1559114809982!5m2!1sen!2sin'}
+                    style={{ border: '0.3rem solid white', borderRadius: '1.25rem', width: '100%', height: mobileMode?'200px': tabletMode? '250px':'275px' }}
+                >
+                </iframe>
             </Grid>
             <Grid item xs={12} sm={6}>
                 <Box>

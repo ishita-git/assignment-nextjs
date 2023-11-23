@@ -5,7 +5,6 @@ import { useTheme } from '@mui/material/styles'
 import CompaniesLayout from '../CompaniesLayout'
 import shippingBg from '@/assets/companies/shipping-llc-bg.webp'
 import titleImg from '@/assets/companies/muskaan_shipping_llc/shipping.png'
-import mapImage from '@/assets/companies/muskaan_shipping_llc/map.png'
 import airFreightImg from '@/assets/companies/muskaan_shipping_llc/air_freight.png'
 import oceanFreightImg from '@/assets/companies/muskaan_shipping_llc/ocean_freight.png'
 import landTranportImg from '@/assets/companies/muskaan_shipping_llc/land_transportation.png'
@@ -60,7 +59,7 @@ export default function Home() {
         <CompaniesLayout
             image={shippingBg}
             title={'Muskaan Shipping LLC'}
-            mapImage={mapImage}
+            mapSrc={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15145022.136160396!2d67.03364636869956!3d22.068134271266782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f432a3cfe94f7%3A0x70f0d50a6e4cbbac!2sMUSKAAN+SHIPPING+LLC!5e0!3m2!1sen!2sin!4v1561552755032!5m2!1sen!2sin"}
             address='Mohammed Noor Talib Bldg.,701, 7th floor, Khaleed bin waleed Road Opp.Royal Ascot Hotel Burdubai,PO Box : - 128160 Dubai'
             telephoneNumber='+97143511215'
         >

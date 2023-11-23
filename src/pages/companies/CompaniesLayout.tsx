@@ -27,7 +27,7 @@ function ElevationScroll(props: Props) {
 
 declare type CompaniesLayoutProps = {
     image: string | StaticImageData
-    mapImage?: string | StaticImageData
+    mapSrc?: string 
     title?: string
     subtitle?: string
     address?: String
@@ -42,7 +42,7 @@ export default function CompaniesLayout({
     subtitle,
     children,
     props,
-    mapImage,
+    mapSrc,
     address,
     telephoneNumber,
 }: CompaniesLayoutProps) {
@@ -73,7 +73,7 @@ export default function CompaniesLayout({
                         <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
                             Contact Us
                         </Typography>
-                        <MuskaanGroupHq address={address} image={mapImage} telephoneNumber={telephoneNumber} />
+                        <MuskaanGroupHq address={address} mapSrc={mapSrc} telephoneNumber={telephoneNumber} />
                     </Container>
                 </Box>
                 <FooterSection />
