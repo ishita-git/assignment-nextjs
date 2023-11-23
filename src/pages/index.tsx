@@ -35,11 +35,16 @@ export default function ElevateAppBar(props: Props) {
     const tabletMode = useMediaQuery('(min-width:650px) and (max-width:899px)')
     const mobileMode = useMediaQuery('(min-width:500px) and (max-width:649px)')
     const SmallMobileMode = useMediaQuery('(max-width:499px)')
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+        target: props.window ? props.window() : undefined,
+    })
 
     return (
         <React.Fragment>
             <ElevationScroll {...props}>
-                <AppBar>
+                <AppBar position='fixed' style={{ backgroundColor: trigger ? '#003A9B' : 'transparent' }}>
                     <Navbar />
                 </AppBar>
             </ElevationScroll>

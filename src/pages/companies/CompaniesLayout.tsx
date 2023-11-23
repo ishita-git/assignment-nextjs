@@ -47,11 +47,17 @@ export default function CompaniesLayout({
     telephoneNumber,
 }: CompaniesLayoutProps) {
     const theme = useTheme()
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+        target: props?.window ? props.window() : undefined,
+    })
+
 
     return (
         <React.Fragment>
             <ElevationScroll {...props}>
-                <AppBar>
+            <AppBar position='fixed' style={{ backgroundColor: trigger ? '#003A9B' : 'transparent' }}>
                     <Navbar />
                 </AppBar>
             </ElevationScroll>

@@ -17,6 +17,7 @@ import {
     AppBar,
     Container,
     useMediaQuery,
+    useScrollTrigger,
 } from '@mui/material'
 import MuiAlert from '@mui/material/Alert'
 import { SelectChangeEvent } from '@mui/material/Select'
@@ -112,16 +113,7 @@ export default function JobDetail() {
     const jobData = careerData?.[jobId]
 
     return (
-        <Box>
-            <AppBar>
-                <Navbar />
-            </AppBar>
-            <Box sx={{ backgroundColor: '#EFF6FF' }}>
-                <HeaderSection
-                    image={careerBackground}
-                    title='Join Muskaan'
-                    subtitle={mobileMode ? '' : 'Unlock a World of Career Possibilities'}
-                />
+        <Layout image={careerBackground} title='Join Muskaan' subtitle={mobileMode ? '' : 'Unlock a World of Career Possibilities'} withTabs>
                 <Box sx={{ px: { xs: theme.spacing(mobileMode ? 0 : 2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                     <Container maxWidth='xl'>
                         <Typography variant='h2' sx={{ mb: '1rem' }}>
@@ -327,9 +319,8 @@ export default function JobDetail() {
                             </MuiAlert>
                         </Snackbar>
                     </Container>
-                </Box>
-                <FooterSection />
-            </Box>
-        </Box>
+</Box>
+
+        </Layout>
     )
 }

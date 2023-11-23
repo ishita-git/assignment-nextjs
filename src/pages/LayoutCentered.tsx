@@ -39,11 +39,16 @@ export default function LayoutCentered({ image, title, children, props }: Layout
     const wideMobileMode = useMediaQuery('(max-width:699px)')
     const mobileMode = useMediaQuery('(max-width:499px)')
     const ultraMobileMode = useMediaQuery('(max-width:399px)')
+    const trigger = useScrollTrigger({
+        disableHysteresis: true,
+        threshold: 0,
+        target: props?.window ? props.window() : undefined,
+    })
 
     return (
         <React.Fragment>
             <ElevationScroll {...props}>
-                <AppBar>
+            <AppBar position='fixed' style={{ backgroundColor: trigger ? '#003A9B' : 'transparent' }}>
                     <Navbar />
                 </AppBar>
             </ElevationScroll>
