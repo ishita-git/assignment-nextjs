@@ -156,8 +156,7 @@ export default function BusinessPresenceSection() {
                                 mt: theme.spacing(2),
                             }}
                         >
-                            <CompanyCardMobile text='Muskan Containers line Pvt. Ltd.'
-                                               href='/companies/container-lines' />
+                            <CompanyCardMobile text='Muskan Containers line Pvt. Ltd.' href='/companies/container-lines' />
                             <CompanyCardMobile text='Muskan Logistics' href='/companies/logistics' />
                             <CompanyCardMobile text='Muskan Shipping PTE Ltd.' href='/companies/shipping-pte' />
                             <CompanyCardMobile text='Muskaan Shipping SDN BHD' href='/companies/shipping-sdn-bhd' />
@@ -167,8 +166,7 @@ export default function BusinessPresenceSection() {
                         <Box sx={{ mt: theme.spacing(3) }}>
                             <Grid container spacing={2}>
                                 <Grid item sm={4} xs={6}>
-                                    <CompanyCard text='Muskan Containers line Pvt. Ltd.'
-                                                 href='/companies/container-lines' />
+                                    <CompanyCard text='Muskan Containers line Pvt. Ltd.' href='/companies/container-lines' />
                                 </Grid>
                                 <Grid item sm={4} xs={6}>
                                     <CompanyCard text='Muskan Logistics' href='/companies/logistics' />
@@ -186,8 +184,7 @@ export default function BusinessPresenceSection() {
                                     }}
                                 >
                                     <Grid item xs={6}>
-                                        <CompanyCard text='Muskaan Shipping SDN BHD'
-                                                     href='/companies/shipping-sdn-bhd' />
+                                        <CompanyCard text='Muskaan Shipping SDN BHD' href='/companies/shipping-sdn-bhd' />
                                     </Grid>
                                     <Grid item xs={6}>
                                         <CompanyCard text='Muskaan Shipping LLC' href='/companies/shipping-llc' />
@@ -209,9 +206,7 @@ export default function BusinessPresenceSection() {
                             position: 'relative',
                         }}
                     >
-                        <Typography variant='h2' textAlign='center'
-                                    sx={{ mb: theme.spacing(4), fontFamily: oswald.style.fontFamily }}>
-
+                        <Typography variant='h2' textAlign='center' sx={{ mb: theme.spacing(4), fontFamily: oswald.style.fontFamily }}>
                             Our Reach
                         </Typography>
                         <Image
@@ -245,8 +240,9 @@ export default function BusinessPresenceSection() {
                             position: 'relative',
                         }}
                     >
-                        <Typography variant='h2' textAlign='center'
-                                    sx={{ mb: theme.spacing(2), fontFamily: oswald.style.fontFamily }}>                            Our Reach
+                        <Typography variant='h2' textAlign='center' sx={{ mb: theme.spacing(2), fontFamily: oswald.style.fontFamily }}>
+                            {' '}
+                            Our Reach
                         </Typography>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={4}>

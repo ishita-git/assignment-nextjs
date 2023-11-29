@@ -38,6 +38,9 @@ export default function HeaderSection({ image, title, subtitle, customHeight }: 
                         height: mobileMode ? '50vw' : 'auto',
                         position: 'absolute',
                     }}
+                    loading='lazy'
+                    placeholder='blur'
+                    blurDataURL='/loader/about.png'
                 />
             ) : (
                 <></>
