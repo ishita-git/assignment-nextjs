@@ -1,6 +1,19 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
-import { Box, Grid, Typography, IconButton, InputLabel, Paper, FormControl, Select, MenuItem, useMediaQuery, Snackbar, Slide } from '@mui/material'
+import {
+    Box,
+    Grid,
+    Typography,
+    IconButton,
+    InputLabel,
+    Paper,
+    FormControl,
+    Select,
+    MenuItem,
+    useMediaQuery,
+    Snackbar,
+    Slide,
+} from '@mui/material'
 import { SelectChangeEvent } from '@mui/material/Select'
 import Layout from '../Layout'
 import contactBackground from '@/assets/contact/contact-background.webp'
@@ -11,6 +24,7 @@ import MuskaanGroupHq from '../../components/MuskaanGroupHq'
 import phoneIcon from '@/assets/icons/phone_color.svg'
 import { postDataToApi } from '../../api/api'
 import MuiAlert from '@mui/material/Alert'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 function AddressCard({ companyLoc, address, phone }: { companyLoc: String; address: String; phone: String }) {
     return (
@@ -40,8 +54,6 @@ function AddressCard({ companyLoc, address, phone }: { companyLoc: String; addre
 }
 
 export default function Home() {
-
-
     const mobileMode = useMediaQuery('(max-width:449px)')
     const [formData, setFormData] = useState({
         name: '',
@@ -72,17 +84,17 @@ export default function Home() {
     }
     const handleFormSubmit = async () => {
         // Check if any field is empty
-        const isAnyFieldEmpty = Object.values(formData).some(value => value === '');
+        const isAnyFieldEmpty = Object.values(formData).some((value) => value === '')
 
         if (isAnyFieldEmpty) {
-            openSnackbar('Please fill in all fields');
-            return;
+            openSnackbar('Please fill in all fields')
+            return
         }
 
         try {
-            const response = await postDataToApi('api/contact-us/', formData);
-            console.log('Form submitted successfully:', response);
-            openSnackbar('Form submitted successfully');
+            const response = await postDataToApi('api/contact-us/', formData)
+            console.log('Form submitted successfully:', response)
+            openSnackbar('Form submitted successfully')
             // Reset form fields after successful submission
             setFormData({
                 name: '',
@@ -91,10 +103,10 @@ export default function Home() {
                 enquiry_type: '',
                 message: '',
                 captcha: '',
-            });
+            })
         } catch (error) {
-            console.error('Error submitting the form:', error);
-            openSnackbar('Form Submission Unsuccessful');
+            console.error('Error submitting the form:', error)
+            openSnackbar('Form Submission Unsuccessful')
         }
     }
 
@@ -106,7 +118,7 @@ export default function Home() {
                 <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '2rem', color: '#1B1B1F' }}>
                     Overseas Branches
                 </Typography>
-                <Grid container spacing={2} sx={{}}>
+                <Grid container spacing={2}>
                     <Grid item xs={12} sm={4}>
                         <AddressCard
                             companyLoc='Singapore'
@@ -182,12 +194,37 @@ export default function Home() {
                 <Paper sx={{ padding: '1rem', borderRadius: '16px' }}>
                     <Grid container spacing={2}>
                         <Grid item sm={6} xs={12}>
-                            <PrimaryTextField label='Name' placeholder='Enter your name' name='name' value={formData.name}   onChange={handleInputChange}/>
-                            <PrimaryTextField label='Email' placeholder='Enter your email' name='email' value={formData.email}   onChange={handleInputChange}/>
-                            <PrimaryTextField label='Message' placeholder='Enter your message' name ='message' multiline value={formData.message}   onChange={handleInputChange}/>
+                            <PrimaryTextField
+                                label='Name'
+                                placeholder='Enter your name'
+                                name='name'
+                                value={formData.name}
+                                onChange={handleInputChange}
+                            />
+                            <PrimaryTextField
+                                label='Email'
+                                placeholder='Enter your email'
+                                name='email'
+                                value={formData.email}
+                                onChange={handleInputChange}
+                            />
+                            <PrimaryTextField
+                                label='Message'
+                                placeholder='Enter your message'
+                                name='message'
+                                multiline
+                                value={formData.message}
+                                onChange={handleInputChange}
+                            />
                         </Grid>
                         <Grid item sm={6} xs={12}>
-                            <PrimaryTextField label='Mobile Number' name='phone' placeholder='Enter your contact number' value={formData.phone}   onChange={handleInputChange}/>
+                            <PrimaryTextField
+                                label='Mobile Number'
+                                name='phone'
+                                placeholder='Enter your contact number'
+                                value={formData.phone}
+                                onChange={handleInputChange}
+                            />
 
                             <Box sx={{ mb: '1rem' }}>
                                 <InputLabel>Enquiry Type</InputLabel>
@@ -226,37 +263,44 @@ export default function Home() {
                                 </FormControl>
                             </Box>
 
-                            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                <PrimaryTextField label='Captcha' placeholder='Enter Captcha' value={formData.captcha} name='captcha'  onChange={handleInputChange}/>
+                            {/* <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <PrimaryTextField
+                                    label='Captcha'
+                                    placeholder='Enter Captcha'
+                                    value={formData.captcha}
+                                    name='captcha'
+                                    onChange={handleInputChange}
+                                />
 
                                 <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                                    {/* <Image
-                                        src={captcha}
-                                        alt='reload'
-                                        style={{ height: '2rem', width: 'auto', marginRight: '0.5rem' }}
-                                    /> */}
+                                    <Image src={captcha} alt='reload' style={{ height: '2rem', width: 'auto', marginRight: '0.5rem' }} />
                                     <IconButton>
                                         <Image src={reload} alt='reload' style={{ height: '1.5rem', width: 'auto' }} />
                                     </IconButton>
                                 </Box>
+                            </Box> */}
+
+                            <Box>
+                                <InputLabel>Captcha</InputLabel>
+                                <ReCAPTCHA sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? ''} />
                             </Box>
                         </Grid>
                     </Grid>
                     <Box sx={{ display: 'flex', justifyContent: 'end', marginBottom: '1rem' }}>
-                        <PrimaryButton text='Submit' onClick={handleFormSubmit}  />
+                        <PrimaryButton text='Submit' onClick={handleFormSubmit} />
                     </Box>
                 </Paper>
                 <Snackbar
-                            open={snackbarOpen}
-                            autoHideDuration={4000}
-                            onClose={handleSnackbarClose}
-                            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                            TransitionComponent={(props) => <Slide {...props} direction='right' />}
-                        >
-                            <MuiAlert elevation={6} variant='filled' severity='success'>
-                                {snackbarMessage}
-                            </MuiAlert>
-                        </Snackbar>
+                    open={snackbarOpen}
+                    autoHideDuration={4000}
+                    onClose={handleSnackbarClose}
+                    anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                    TransitionComponent={(props) => <Slide {...props} direction='right' />}
+                >
+                    <MuiAlert elevation={6} variant='filled' severity='success'>
+                        {snackbarMessage}
+                    </MuiAlert>
+                </Snackbar>
             </Box>
         </Layout>
     )
