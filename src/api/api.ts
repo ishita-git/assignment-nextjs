@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseUrl = 'http://test.muskan-group.com'
+const baseUrl = 'https://test.muskan-group.com'
 
 // GET request
 export async function fetchDataFromApi(endpoint: string): Promise<any> {
