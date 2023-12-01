@@ -159,8 +159,8 @@ export default function BusinessPresenceSection() {
                             <CompanyCardMobile text='Muskan Containers line Pvt. Ltd.' href='/companies/container-lines' />
                             <CompanyCardMobile text='Muskan Logistics' href='/companies/logistics' />
                             <CompanyCardMobile text='Muskan Shipping PTE Ltd.' href='/companies/shipping-pte' />
-                            <CompanyCardMobile text='Muskaan Shipping SDN BHD' href='/companies/shipping-sdn-bhd' />
-                            <CompanyCardMobile text='Muskaan Shipping LLC' href='/companies/shipping-llc' />
+                            <CompanyCardMobile text='Muskan Shipping SDN BHD' href='/companies/shipping-sdn-bhd' />
+                            <CompanyCardMobile text='Muskan Shipping LLC' href='/companies/shipping-llc' />
                         </Box>
                     ) : (
                         <Box sx={{ mt: theme.spacing(3) }}>
@@ -184,10 +184,10 @@ export default function BusinessPresenceSection() {
                                     }}
                                 >
                                     <Grid item xs={6}>
-                                        <CompanyCard text='Muskaan Shipping SDN BHD' href='/companies/shipping-sdn-bhd' />
+                                        <CompanyCard text='Muskan Shipping SDN BHD' href='/companies/shipping-sdn-bhd' />
                                     </Grid>
                                     <Grid item xs={6}>
-                                        <CompanyCard text='Muskaan Shipping LLC' href='/companies/shipping-llc' />
+                                        <CompanyCard text='Muskan Shipping LLC' href='/companies/shipping-llc' />
                                     </Grid>
                                 </Grid>
                             </Container>
@@ -290,19 +290,19 @@ export default function BusinessPresenceSection() {
                             <Grid item xs={12} sm={4}>
                                 <CompanyReachCard
                                     title='Dubai, UAE'
-                                    description='Muskaan Shipping LLC, 701, 7th floor, Mohammed Noor Talib Bldg, Khaleed bin waleed Road, Near Royal Ascot Hotel, Dubai - 128160 | Office : +9714 3511215 | Fax : +9714 3511216'
+                                    description='Muskan Shipping LLC, 701, 7th floor, Mohammed Noor Talib Bldg, Khaleed bin waleed Road, Near Royal Ascot Hotel, Dubai - 128160 | Office : +9714 3511215 | Fax : +9714 3511216'
                                 />
                             </Grid>
                             <Grid item xs={12} sm={4}>
                                 <CompanyReachCard
                                     title='Port Klang, Malaysia'
-                                    description='Muskaan Shipping SDN BHD, #16-02, Centro Business Centre Suite, No.8 Jalan Batu Tiga Lama, Klang 41200, Malaysia | Tel : 00603-33418460/61 | Fax : 00603-33428462'
+                                    description='Muskan Shipping SDN BHD, #16-02, Centro Business Centre Suite, No.8 Jalan Batu Tiga Lama, Klang 41200, Malaysia | Tel : 00603-33418460/61 | Fax : 00603-33428462'
                                 />
                             </Grid>
                             <Grid item xs={12} sm={4}>
                                 <CompanyReachCard
                                     title='Colombo, Srilanka'
-                                    description='Muskaan Shipping Co Pvt Ltd, #200, George R De Silva Mawatha, Colombo - 13, Sri Lanka |  Tel : +94 714141734, +94 114 616337, +94 112 395922'
+                                    description='Muskan Shipping Co Pvt Ltd, #200, George R De Silva Mawatha, Colombo - 13, Sri Lanka |  Tel : +94 714141734, +94 114 616337, +94 112 395922'
                                 />
                             </Grid>
                             <Grid item xs={12} sm={4}>

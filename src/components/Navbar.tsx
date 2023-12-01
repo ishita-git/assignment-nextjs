@@ -7,7 +7,7 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded'
 import PrimaryButton from './PrimaryButton'
 import Sidebar from './Sidebar'
 import logo from '@/assets/logo.png'
-import Link from 'next/link';
+import Link from 'next/link'
 
 export default function Navbar() {
     const [companiesMenu, setCompaniesMenu] = useState<null | HTMLElement>(null)
@@ -105,31 +105,26 @@ export default function Navbar() {
                             </Typography>
                         </Box>
 
-                        <Menu anchorEl={companiesMenu} open={openCompaniesMenu} onClose={closeCompaniesMenu} sx={{ '& a': { color: 'inherit' } }}>
+                        <Menu
+                            anchorEl={companiesMenu}
+                            open={openCompaniesMenu}
+                            onClose={closeCompaniesMenu}
+                            sx={{ '& a': { color: 'inherit' } }}
+                        >
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/container-lines'>
-                                    Muskan Container lines Pvt. Ltd.
-                                </Link>
+                                <Link href='/companies/container-lines'>Muskan Container lines Pvt. Ltd.</Link>
                             </MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/logistics'>
-                                    Muskan Logistics
-                                </Link>
+                                <Link href='/companies/logistics'>Muskan Logistics</Link>
                             </MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/shipping-pte'>
-                                    Muskaan Shipping PTE Ltd.
-                                </Link>
+                                <Link href='/companies/shipping-pte'>Muskan Shipping PTE Ltd.</Link>
                             </MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/shipping-sdn-bhd'>
-                                    Muskaan Shipping SDN BHD
-                                </Link>
+                                <Link href='/companies/shipping-sdn-bhd'>Muskan Shipping SDN BHD</Link>
                             </MenuItem>
                             <MenuItem onClick={closeCompaniesMenu}>
-                                <Link href='/companies/shipping-llc'>
-                                    Muskaan Shipping LLC
-                                </Link>
+                                <Link href='/companies/shipping-llc'>Muskan Shipping LLC</Link>
                             </MenuItem>
                         </Menu>
                     </Box>
@@ -146,46 +141,35 @@ export default function Navbar() {
                             </Typography>
                         </Box>
 
-                        <Menu anchorEl={servicesMenu} open={openServicesMenu} onClose={closeServicesMenu} sx={{ '& a': { color: 'inherit' } }}>
+                        <Menu
+                            anchorEl={servicesMenu}
+                            open={openServicesMenu}
+                            onClose={closeServicesMenu}
+                            sx={{ '& a': { color: 'inherit' } }}
+                        >
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/nvocc'  >
-                                    NVOCC
-                                </Link>
+                                <Link href='/services/nvocc'>NVOCC</Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/transportation'  >
-                                    Transportation
-                                </Link>
+                                <Link href='/services/transportation'>Transportation</Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/air-freight'  >
-                                    Air Freight
-                                </Link>
+                                <Link href='/services/air-freight'>Air Freight</Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/multimodel'  >
-                                    Multimodel-Transportation
-                                </Link>
+                                <Link href='/services/multimodel'>Multimodel-Transportation</Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/over-dimension'  >
-                                    Over Dimension Cargo
-                                </Link>
+                                <Link href='/services/over-dimension'>Over Dimension Cargo</Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/project-cargo'  >
-                                    Project Cargo
-                                </Link>
+                                <Link href='/services/project-cargo'>Project Cargo</Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/custom-clearance'  >
-                                    Custom Clearance
-                                </Link>
+                                <Link href='/services/custom-clearance'>Custom Clearance</Link>
                             </MenuItem>
                             <MenuItem onClick={closeServicesMenu}>
-                                <Link href='/services/lcl'  >
-                                    LCL Consolidation Services
-                                </Link>
+                                <Link href='/services/lcl'>LCL Consolidation Services</Link>
                             </MenuItem>
                         </Menu>
                     </Box>
@@ -222,26 +206,18 @@ export default function Navbar() {
 
                         <Menu anchorEl={toolsMenu} open={openToolsMenu} onClose={closeToolsMenu}>
                             <MenuItem onClick={closeToolsMenu} sx={{ '& a': { color: 'inherit' } }}>
-                                <Link href='/equipments'>
-                                    Equipments
-                                </Link>
+                                <Link href='/equipments'>Equipments</Link>
                             </MenuItem>
 
                             <MenuItem onClick={closeToolsMenu} sx={{ '& a': { color: 'inherit' } }}>
-                                <Link href='/track'>
-                                    Track Shipments
-                                </Link>
+                                <Link href='/track'>Track Shipments</Link>
                             </MenuItem>
                             <MenuItem onClick={closeToolsMenu} sx={{ '& a': { color: 'inherit' } }}>
-                                <Link href='/vessel-schedule'>
-                                    Vessel Schedules
-                                </Link>
+                                <Link href='/vessel-schedule'>Vessel Schedules</Link>
                             </MenuItem>
 
                             <MenuItem onClick={closeToolsMenu} sx={{ '& a': { color: 'inherit' } }}>
-                                <Link href='/quote'>
-                                    Quote
-                                </Link>
+                                <Link href='/quote'>Quote</Link>
                             </MenuItem>
                         </Menu>
                     </Box>

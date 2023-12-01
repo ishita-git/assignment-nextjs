@@ -4,7 +4,7 @@ import HeaderSection from '../../sections/HeaderSection'
 import FooterSection from '../../sections/FooterSection'
 import { AppBar, Box, Container, Typography, useScrollTrigger } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import MuskaanGroupHq from '../../components/MuskaanGroupHq'
+import MuskanGroupHq from '../../components/MuskanGroupHq'
 import Navbar from '../../components/Navbar'
 
 interface Props {
@@ -27,7 +27,7 @@ function ElevationScroll(props: Props) {
 
 declare type CompaniesLayoutProps = {
     image: string | StaticImageData
-    mapSrc?: string 
+    mapSrc?: string
     title?: string
     subtitle?: string
     address?: String
@@ -53,11 +53,10 @@ export default function CompaniesLayout({
         target: props?.window ? props.window() : undefined,
     })
 
-
     return (
         <React.Fragment>
             <ElevationScroll {...props}>
-            <AppBar position='fixed' style={{ backgroundColor: trigger ? '#003A9B' : 'transparent' }}>
+                <AppBar position='fixed' style={{ backgroundColor: trigger ? '#003A9B' : 'transparent' }}>
                     <Navbar />
                 </AppBar>
             </ElevationScroll>
@@ -73,7 +72,7 @@ export default function CompaniesLayout({
                         <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
                             Contact Us
                         </Typography>
-                        <MuskaanGroupHq address={address} mapSrc={mapSrc} telephoneNumber={telephoneNumber} />
+                        <MuskanGroupHq address={address} mapSrc={mapSrc} telephoneNumber={telephoneNumber} />
                     </Container>
                 </Box>
                 <FooterSection />

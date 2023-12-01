@@ -10,7 +10,7 @@ export default function AboutTab() {
     return (
         <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
             <Typography variant='h2' sx={{ mt: theme.spacing(4), mb: theme.spacing(2) }}>
-                About Muskaan
+                About Muskan
             </Typography>
             <Box sx={{ mb: theme.spacing(6) }}>
                 <AboutDescription body=' Muskan Container Lines Pvt. Ltd. stands as a prominent Shipping Agency, Liner Container operator, and Logistics solutions provider across the Indian Sub-continent. Our comprehensive Pan-India presence is dedicated to delivering top-notch solutions for Shipping, Logistics, and Transportation needs. We are committed to continuous improvement and ensuring excellence for our Clients, Vendors, Employees, and Stakeholders. Our representation spans multiple container agencies within ISC, M/E, SEA corridors, and our logistics operations span globally through a widespread network of agents.' />

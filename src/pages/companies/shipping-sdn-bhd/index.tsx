@@ -27,8 +27,10 @@ export default function Home() {
     return (
         <CompaniesLayout
             image={shippingBg}
-            title={'Muskaan Shipping SDN\nBHD'}
-            mapSrc={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.2665006882808!2d101.46583722797837!3d3.0515958014528834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc533c31d06c2d%3A0xc1ad8304f5dad6f8!2sCENTRO+MALL!5e0!3m2!1sen!2sin!4v1558955895296!5m2!1sen!2sin"}
+            title={'Muskan Shipping SDN\nBHD'}
+            mapSrc={
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.2665006882808!2d101.46583722797837!3d3.0515958014528834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc533c31d06c2d%3A0xc1ad8304f5dad6f8!2sCENTRO+MALL!5e0!3m2!1sen!2sin!4v1558955895296!5m2!1sen!2sin'
+            }
             address='Centro Business CentreSuite #16-02, level 16,No.8 Jalan Batu Tiga Lama,Klang 41200 Selangor, Malaysia'
             telephoneNumber='+603-33418460/61'
         >
@@ -39,16 +41,16 @@ export default function Home() {
                     </Typography>
                     <Grid container spacing={2} alignItems='center'>
                         <Grid item xs={12} sm={6}>
-                            <CustomText text="Muskaan Shipping Sdn. Bhd., established in 2008, began its presence at Peninsular Malaysian ports with regular vessel calls. Originally, the Muskaan Group operated through an agency network, delegating responsibilities to appointed agencies in the region. However, as the business expanded in tandem with Malaysia's robust economic growth and political stability, the need for a more focused approach became apparent." />
-                            <CustomText text='In response to this challenge, Muskaan Shipping Sdn. Bhd. formed a joint venture partnership with local interests in 2010. Headquartered in Port Kelang and with branch offices at key base ports in Port Kelang, Penang, and Pasir Gudang, supported by a network of sub-agents in India, the Gulf, and Europe, Muskaan Shipping Sdn. Bhd. secured exclusive coverage of the Malaysian market for Muskaan Line.' />
+                            <CustomText text="Muskan Shipping Sdn. Bhd., established in 2008, began its presence at Peninsular Malaysian ports with regular vessel calls. Originally, the Muskan Group operated through an agency network, delegating responsibilities to appointed agencies in the region. However, as the business expanded in tandem with Malaysia's robust economic growth and political stability, the need for a more focused approach became apparent." />
+                            <CustomText text='In response to this challenge, Muskan Shipping Sdn. Bhd. formed a joint venture partnership with local interests in 2010. Headquartered in Port Kelang and with branch offices at key base ports in Port Kelang, Penang, and Pasir Gudang, supported by a network of sub-agents in India, the Gulf, and Europe, Muskan Shipping Sdn. Bhd. secured exclusive coverage of the Malaysian market for Muskan Line.' />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <Image src={titleImg} alt='' style={{ width: '100%', height: 'auto' }} />
                         </Grid>
                     </Grid>
-                    <CustomText text='Today, Muskaan Shipping Sdn. Bhd. boasts a dedicated team of 10 professionals across Peninsular Malaysia. To bolster its core Container and Car Carrier traffic services, the office automation networking system was enhanced to meet the growing demands of valued customers.' />
+                    <CustomText text='Today, Muskan Shipping Sdn. Bhd. boasts a dedicated team of 10 professionals across Peninsular Malaysia. To bolster its core Container and Car Carrier traffic services, the office automation networking system was enhanced to meet the growing demands of valued customers.' />
                     <CustomText
-                        text={`Complementing its container services, Muskaan Line Own Container Fleet maintains an inventory of over 1000 units of various container types, easily recognizable as "Muskaan Box" on both roads and vessels. Regional Trade Management Offices in Malaysia provide comprehensive support for 'Muskaan' Line operations, optimizing efficiency through a global network that seamlessly coordinates day-to-day shipping requirements. In line with 'Muskaan' Line's philosophy and established global network, Muskaan Shipping Sdn. Bhd. stands fully prepared to meet the rising expectations of excellence from its valued customers.`}
+                        text={`Complementing its container services, Muskan Line Own Container Fleet maintains an inventory of over 1000 units of various container types, easily recognizable as "Muskan Box" on both roads and vessels. Regional Trade Management Offices in Malaysia provide comprehensive support for 'Muskan' Line operations, optimizing efficiency through a global network that seamlessly coordinates day-to-day shipping requirements. In line with 'Muskan' Line's philosophy and established global network, Muskan Shipping Sdn. Bhd. stands fully prepared to meet the rising expectations of excellence from its valued customers.`}
                     />
                     <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '1rem', color: '#1B1B1F' }}>
                         Statistics
@@ -145,17 +147,17 @@ export default function Home() {
                         Our Services
                     </Typography>
                     <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb: '0.5rem', color: '#1B1B1F' }}>
-                        Core business of Muskaan Line:
+                        Core business of Muskan Line:
                     </Typography>
                     <CustomText
-                        text={`Our container shipping services play a pivotal role in transporting a wide array of products essential to people's daily lives, ranging from general consumer goods to crucial parts and raw materials. These services span the globe, with a strong presence in four key hubs: Japan, Asia, Europe, and North America, representing a central facet of "Muskaan" Line's core operations.`}
+                        text={`Our container shipping services play a pivotal role in transporting a wide array of products essential to people's daily lives, ranging from general consumer goods to crucial parts and raw materials. These services span the globe, with a strong presence in four key hubs: Japan, Asia, Europe, and North America, representing a central facet of "Muskan" Line's core operations.`}
                     />
                     <CustomText text='We have forged robust international alliances with esteemed shipping companies hailing from Japan, Germany, and Taiwan. These collaborations enable us to operate major East-West routes, connecting Asia with North America, Asia with Europe, and Europe with North America. Furthermore, we extend our services to encompass intra-Asian routes that encompass the Middle East and the Indian subcontinent, as well as the South-North route that links South America, Australia, and Africa with various regions in Asia.' />
                     <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb: '0.5rem', color: '#1B1B1F' }}>
                         Elevating Customer Satisfaction through Exceptional Service Quality:
                     </Typography>
                     <CustomText
-                        text={`Muskaan Line's container shipping services stand out for their consistent, frequent schedules and top-notch service quality. Our unwavering commitment to addressing diverse customer requirements has earned us a strong global reputation, with several leading companies recognizing us as Carrier of the Year. Additionally, "Muskaan" Line distinguishes itself through its integrated infrastructure, which includes container terminals in India, the U.S., and the Gulf, as well as specialized double-stack trains in India, enhancing our offerings in marine and land-based transportation.`}
+                        text={`Muskan Line's container shipping services stand out for their consistent, frequent schedules and top-notch service quality. Our unwavering commitment to addressing diverse customer requirements has earned us a strong global reputation, with several leading companies recognizing us as Carrier of the Year. Additionally, "Muskan" Line distinguishes itself through its integrated infrastructure, which includes container terminals in India, the U.S., and the Gulf, as well as specialized double-stack trains in India, enhancing our offerings in marine and land-based transportation.`}
                     />
                     <Typography variant='h5' sx={{ textAlign: 'start', mt: '2rem', mb: '0.5rem', color: '#1B1B1F' }}>
                         Navigational Safety and Environmental Responsibility:
@@ -171,7 +173,7 @@ export default function Home() {
                             <ServicesCardMobile
                                 image={customBrokerageImg}
                                 title='Custom Brokerage'
-                                desc='Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                desc='Muskan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
                             />
                             <ServicesCardMobile
                                 image={logImg}
@@ -198,8 +200,8 @@ export default function Home() {
                                     title='Custom Brokerage'
                                     desc={
                                         customMobileMode
-                                            ? 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
-                                            : 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                            ? 'Muskan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
+                                            : 'Muskan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
                                     }
                                 />
                             </Grid>

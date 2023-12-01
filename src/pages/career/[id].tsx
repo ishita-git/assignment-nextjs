@@ -114,12 +114,7 @@ export default function JobDetail() {
     const jobData = careerData?.[jobId]
 
     return (
-        <Layout
-            image={careerBackground}
-            title='Join Muskaan'
-            subtitle={mobileMode ? '' : 'Unlock a World of Career Possibilities'}
-            withTabs
-        >
+        <Layout image={careerBackground} title='Join Muskan' subtitle={mobileMode ? '' : 'Unlock a World of Career Possibilities'} withTabs>
             <Box sx={{ px: { xs: theme.spacing(mobileMode ? 0 : 2), sm: theme.spacing(4), md: theme.spacing(12) } }}>
                 <Container maxWidth='xl'>
                     <Typography variant='h2' sx={{ mb: '1rem' }}>

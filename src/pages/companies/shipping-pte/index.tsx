@@ -24,8 +24,10 @@ export default function Home() {
     return (
         <CompaniesLayout
             image={shippingBg}
-            title={'Muskaan Shipping PTE\nLtd.'}
-            mapSrc={"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7904395318737!2d103.84937046162658!3d1.300594082477757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19bc8a475c4b%3A0xc5fcc9a2a95e65e0!2sParklane!5e0!3m2!1sen!2sin!4v1558940174967!5m2!1sen!2sin"}
+            title={'Muskan Shipping PTE\nLtd.'}
+            mapSrc={
+                'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7904395318737!2d103.84937046162658!3d1.300594082477757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19bc8a475c4b%3A0xc5fcc9a2a95e65e0!2sParklane!5e0!3m2!1sen!2sin!4v1558940174967!5m2!1sen!2sin'
+            }
             address='60 Kaki Bukit Place #02-13Suites 3 Eunos Techpark,Singapore 415979'
             telephoneNumber='+65 64921136'
         >
@@ -36,15 +38,15 @@ export default function Home() {
                     </Typography>
                     <Grid container spacing={2}>
                         <Grid item xs={12} sm={6}>
-                            <CustomText text='Muskaan Shipping (PTE) Ltd, headquartered in Singapore since its establishment in 2010, has emerged as a prominent player in the logistics and freight forwarding industry. Our dedicated network of freight forwarding services extends across a vast expanse, encompassing key ports within the Indian Subcontinent (India and Bangladesh) and South East Asia (Indonesia, Malaysia, Thailand, Cambodia, Myanmar, Vietnam, and the Philippines). ' />
-                            <CustomText text='With a presence in over 30 locations across more than 10 countries in this region, we are committed to providing a dependable schedule, robust connectivity with Main Line Operator (MLO) sailings, efficient fleet deployment, excellent customer service, and competitive pricing. Muskaan Shipping (Pte) Ltd has expanded its operations to include services to major hub ports worldwide.' />
+                            <CustomText text='Muskan Shipping (PTE) Ltd, headquartered in Singapore since its establishment in 2010, has emerged as a prominent player in the logistics and freight forwarding industry. Our dedicated network of freight forwarding services extends across a vast expanse, encompassing key ports within the Indian Subcontinent (India and Bangladesh) and South East Asia (Indonesia, Malaysia, Thailand, Cambodia, Myanmar, Vietnam, and the Philippines). ' />
+                            <CustomText text='With a presence in over 30 locations across more than 10 countries in this region, we are committed to providing a dependable schedule, robust connectivity with Main Line Operator (MLO) sailings, efficient fleet deployment, excellent customer service, and competitive pricing. Muskan Shipping (Pte) Ltd has expanded its operations to include services to major hub ports worldwide.' />
                         </Grid>
                         <Grid item xs={12} sm={6}>
                             <Image src={titleImg} alt='' style={{ width: '100%', height: 'auto' }} />
                         </Grid>
                     </Grid>
-                    <CustomText text='We continually seek opportunities to enhance our presence in the global container shipping industry and have successfully ventured into main line trades serving the Gulf and India Subcontinent regions. Additionally, our extensive network of container liner services spans across the Far East to Europe, the Black Sea, Gulf, the Indian sub-continent, the Red Sea/Gulf, Africa, Oceania, Latin America, and the West Coast of the USA. Muskaan Shipping (Pte) Ltd was among the pioneering liners to establish a vital link connecting Asia, the Middle East, and Africa.' />
-                    <CustomText text='Our commitment to providing efficient and reliable logistics solutions has positioned us as a trusted partner for businesses and clients around the world. We are dedicated to facilitating seamless trade connections and delivering cargo to its destination with precision and timeliness. Muskaan Shipping (Pte) Ltd remains at the forefront of the container shipping industry, with a global presence and a vision for continued growth and excellence.' />
+                    <CustomText text='We continually seek opportunities to enhance our presence in the global container shipping industry and have successfully ventured into main line trades serving the Gulf and India Subcontinent regions. Additionally, our extensive network of container liner services spans across the Far East to Europe, the Black Sea, Gulf, the Indian sub-continent, the Red Sea/Gulf, Africa, Oceania, Latin America, and the West Coast of the USA. Muskan Shipping (Pte) Ltd was among the pioneering liners to establish a vital link connecting Asia, the Middle East, and Africa.' />
+                    <CustomText text='Our commitment to providing efficient and reliable logistics solutions has positioned us as a trusted partner for businesses and clients around the world. We are dedicated to facilitating seamless trade connections and delivering cargo to its destination with precision and timeliness. Muskan Shipping (Pte) Ltd remains at the forefront of the container shipping industry, with a global presence and a vision for continued growth and excellence.' />
                     <Typography variant='h3' sx={{ textAlign: 'start', mt: theme.spacing(4), color: '#1B1B1F' }}>
                         Statistics
                     </Typography>
@@ -114,10 +116,10 @@ export default function Home() {
                     <Typography variant='h3' sx={{ textAlign: 'start', mt: '6rem', mb: '2rem', color: '#1B1B1F' }}>
                         Our Services
                     </Typography>
-                    <CustomText text='Muskaan Shipping (Pte) Ltd believes in values-driven business growth, serving global customers since its inception. Initially operating as agents for M/s. Muskan Container Lines Pvt Ltd in India from 2008, we established our liner operations in 2010, currently operating a fleet of 400 TEUs with approximately 100 TEUs exported per month. Our container fleet consists of 1000 TEUs built between 1997 to 2014.' />
+                    <CustomText text='Muskan Shipping (Pte) Ltd believes in values-driven business growth, serving global customers since its inception. Initially operating as agents for M/s. Muskan Container Lines Pvt Ltd in India from 2008, we established our liner operations in 2010, currently operating a fleet of 400 TEUs with approximately 100 TEUs exported per month. Our container fleet consists of 1000 TEUs built between 1997 to 2014.' />
                     <CustomText text="We have earned a solid reputation as a reliable shipping line in the Asian and Gulf regions, with a strong presence in the Indian Sub-continent, Middle East, and South East Asian ports. Expanding our reach, we've entered Europe, CIS Destinations, China, and are actively exploring new opportunities in East Africa and Myanmar." />
                     <CustomText text='Our professional establishments across regions are supported by advanced networking technology, ensuring exceptional customer satisfaction, a key driver of our success.' />
-                    <CustomText text='Muskaan Shipping Pte. Ltd. operates as a Non-Vessel Operating Cargo Carrier (NVOCC), serving over 700 destinations worldwide. We specialize in securing competitive volume prices for LCL cargo, offering efficient consolidation services with various shipping lines. Our customers benefit from guaranteed weekly LCL groupage services to major global ports, emphasizing speed, connectivity, safety, and reliability.' />
+                    <CustomText text='Muskan Shipping Pte. Ltd. operates as a Non-Vessel Operating Cargo Carrier (NVOCC), serving over 700 destinations worldwide. We specialize in securing competitive volume prices for LCL cargo, offering efficient consolidation services with various shipping lines. Our customers benefit from guaranteed weekly LCL groupage services to major global ports, emphasizing speed, connectivity, safety, and reliability.' />
                     <CustomText text='Led by professionals with extensive experience in international freight forwarding, NVOCC, and consolidation, we handle diverse cargo types, including hazardous and non-hazardous chemicals, machinery, raw materials, refrigerated goods, and oversized project cargo.' />
                     <CustomText text="Our group's expansion in the Asia Pacific region over recent years positions us on the path to becoming a global international freight forwarding company, dedicated to providing top-tier service to clients worldwide. Our Multi-Modal Transport System, supported by a proactive customer service team and a global agent network, ensures timely door-to-door cargo delivery, consistently meeting customer expectations." />
                     {mobileMode ? (
@@ -130,7 +132,7 @@ export default function Home() {
                             <ServicesCardMobile
                                 image={customBrokerageImg}
                                 title='Custom Brokerage'
-                                desc='Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                desc='Muskan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
                             />
                             <ServicesCardMobile
                                 image={logImg}
@@ -157,8 +159,8 @@ export default function Home() {
                                     title='Custom Brokerage'
                                     desc={
                                         customMobileMode
-                                            ? 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
-                                            : 'Muskaan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
+                                            ? 'Muskan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and efficient Electronic Data Interchange (EDI) with customs.'
+                                            : 'Muskan Shipping PTE LTD provides customs brokerage services for inbound and outbound shipments, including customs clearance and door-to-door delivery coordination. We also offer expert consultancy on import-export regulations and have invested in IT systems for efficient Electronic Data Interchange (EDI) with customs authorities.'
                                     }
                                 />
                             </Grid>
