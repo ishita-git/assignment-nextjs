@@ -123,7 +123,7 @@ const theme = createTheme({
         MuiMenu: {
             styleOverrides: {
                 paper: {
-                    backgroundColor: '#003A9B',
+                    backgroundColor: '#194DA5',
                     borderRadius: '8px',
                 },
             },
@@ -133,6 +133,7 @@ const theme = createTheme({
                 style: {
                     color: '#FFFFFF',
                     fontWeight: 400,
+                    textTransform: 'capitalize',
                 },
             },
         },

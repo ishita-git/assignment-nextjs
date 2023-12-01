@@ -109,7 +109,7 @@ export default function TrackVesselSchedulesCard({ onEmptyPage }: { onEmptyPage?
                         </MenuItem>
                         {portList.map((port) => (
                             <MenuItem key={port.id} value={port.name}>
-                                {port.name}
+                                {port.name.toLowerCase()}
                             </MenuItem>
                         ))}
                     </Select>
@@ -141,7 +141,7 @@ export default function TrackVesselSchedulesCard({ onEmptyPage }: { onEmptyPage?
                         </MenuItem>
                         {portList.map((port) => (
                             <MenuItem key={port.id} value={port.name}>
-                                {port.name}
+                                {port.name.toLowerCase()}
                             </MenuItem>
                         ))}
                     </Select>

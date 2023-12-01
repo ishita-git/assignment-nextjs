@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Box, Container, Slide, Snackbar, Typography, useMediaQuery } from '@mui/material'
+import { Box, Container, Grid, Slide, Snackbar, Typography, useMediaQuery } from '@mui/material'
 import contactbackground from '@/assets/images/contact-background.webp'
 // import contactBgSm from '@/assets/images/contact-bg-sm.png'
 import contactImage from '@/assets/images/contact-img.webp'
@@ -13,11 +13,13 @@ import { useState } from 'react'
 export default function ContactSection() {
     const theme = useTheme()
     const tabletMode = useMediaQuery('(max-width:849px)')
+    const wideMode = useMediaQuery('(min-width:1300px)')
+
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
         email: '',
-        enquiry_type:'General Enquiry',
+        enquiry_type: 'General Enquiry',
         message: '',
     })
 
@@ -48,13 +50,13 @@ export default function ContactSection() {
         try {
             const response = await postDataToApi('api/contact-us/', formData)
             console.log('Form submitted successfully:', response)
-            openSnackbar('Form submitted successfully')
+            openSnackbar('Your message sent successfully')
             // Reset form fields after successful submission
             setFormData({
                 name: '',
                 phone: '',
                 email: '',
-                enquiry_type:'General Enquiry',
+                enquiry_type: 'General Enquiry',
                 message: '',
             })
         } catch (error) {
@@ -82,16 +84,16 @@ export default function ContactSection() {
                     <Typography variant='body2' sx={{ mt: theme.spacing(1), fontSize: '1.25rem' }}>
                         Our team would love to hear from you
                     </Typography>
-                    <Box sx={{ my: theme.spacing(2) }}>
+                    <Box sx={{ my: theme.spacing(1) }}>
                         <SecondaryTextField placeholder='Enter your name' name='name' value={formData.name} onChange={handleInputChange} />
                         <SecondaryTextField
-                            placeholder='Enter your email address'
+                            placeholder='Enter email address'
                             name='email'
                             value={formData.email}
                             onChange={handleInputChange}
                         />
                         <SecondaryTextField
-                            placeholder='Enter your contact number'
+                            placeholder='Enter contact number'
                             name='phone'
                             value={formData.phone}
                             onChange={handleInputChange}
@@ -137,18 +139,41 @@ export default function ContactSection() {
                                 value={formData.name}
                                 onChange={handleInputChange}
                             />
-                            <SecondaryTextField
-                                placeholder='Enter your email address'
-                                name='email'
-                                value={formData.email}
-                                onChange={handleInputChange}
-                            />
-                            <SecondaryTextField
-                                placeholder='Enter your contact number'
-                                name='phone'
-                                value={formData.phone}
-                                onChange={handleInputChange}
-                            />
+                            {wideMode ? (
+                                <Grid container spacing={0.8}>
+                                    <Grid item xs={6}>
+                                        <SecondaryTextField
+                                            placeholder='Enter email address'
+                                            name='email'
+                                            value={formData.email}
+                                            onChange={handleInputChange}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={6}>
+                                        <SecondaryTextField
+                                            placeholder='Enter phone number'
+                                            name='phone'
+                                            value={formData.phone}
+                                            onChange={handleInputChange}
+                                        />
+                                    </Grid>
+                                </Grid>
+                            ) : (
+                                <>
+                                    <SecondaryTextField
+                                        placeholder='Enter your email address'
+                                        name='email'
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                    />
+                                    <SecondaryTextField
+                                        placeholder='Enter your contact number'
+                                        name='phone'
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                    />
+                                </>
+                            )}
                             <SecondaryTextField
                                 placeholder='Enter your message'
                                 multiline={true}

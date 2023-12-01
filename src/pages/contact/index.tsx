@@ -61,7 +61,6 @@ export default function Home() {
         email: '',
         enquiry_type: '',
         message: '',
-        captcha: '',
     })
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -94,7 +93,7 @@ export default function Home() {
         try {
             const response = await postDataToApi('api/contact-us/', formData)
             console.log('Form submitted successfully:', response)
-            openSnackbar('Form submitted successfully')
+            openSnackbar('Your message has been sent successfully')
             // Reset form fields after successful submission
             setFormData({
                 name: '',
@@ -102,7 +101,6 @@ export default function Home() {
                 email: '',
                 enquiry_type: '',
                 message: '',
-                captcha: '',
             })
         } catch (error) {
             console.error('Error submitting the form:', error)
