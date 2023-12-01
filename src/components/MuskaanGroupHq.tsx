@@ -12,7 +12,7 @@ function CompanyInfo({ title, body }: { title: String; body: String }) {
     )
 }
 
-function MuskanGroupHq({ mapSrc, address, telephoneNumber }: { mapSrc?: string; address?: String; telephoneNumber?: String }) {
+function MuskaanGroupHq({ mapSrc, address, telephoneNumber }: { mapSrc?: string; address?: String; telephoneNumber?: String }) {
     const mobileMode = useMediaQuery('(max-width:599px)')
     const tabletMode = useMediaQuery('(max-width:899px)')
     return (
@@ -55,4 +55,4 @@ function MuskanGroupHq({ mapSrc, address, telephoneNumber }: { mapSrc?: string; 
     )
 }
 
-export default MuskanGroupHq
+export default MuskaanGroupHq

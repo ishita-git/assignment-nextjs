@@ -20,7 +20,7 @@ import contactBackground from '@/assets/contact/contact-background.webp'
 import PrimaryTextField from '../../components/PrimaryTextField'
 import reload from '@/assets/icons/loop.png'
 import PrimaryButton from '../../components/PrimaryButton'
-import MuskanGroupHq from '../../components/MuskanGroupHq'
+import MuskaanGroupHq from '../../components/MuskaanGroupHq'
 import phoneIcon from '@/assets/icons/phone_color.svg'
 import { postDataToApi } from '../../api/api'
 import MuiAlert from '@mui/material/Alert'
@@ -113,7 +113,7 @@ export default function Home() {
     return (
         <Layout image={contactBackground} title="Let's Talk" subtitle={mobileMode ? '' : 'We would love to deliver your goods'}>
             <Box sx={{ mx: { xs: 0, sm: '1rem', md: '9rem' }, my: '2rem' }}>
-                <MuskanGroupHq />
+                <MuskaanGroupHq />
 
                 <Typography variant='h3' sx={{ textAlign: 'start', mt: '4rem', mb: '2rem', color: '#1B1B1F' }}>
                     Overseas Branches

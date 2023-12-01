@@ -4,7 +4,7 @@ import HeaderSection from '../../sections/HeaderSection'
 import FooterSection from '../../sections/FooterSection'
 import { AppBar, Box, Container, Typography, useScrollTrigger } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import MuskanGroupHq from '../../components/MuskanGroupHq'
+import MuskaanGroupHq from '../../components/MuskaanGroupHq'
 import Navbar from '../../components/Navbar'
 
 interface Props {
@@ -72,7 +72,7 @@ export default function CompaniesLayout({
                         <Typography variant='h3' sx={{ textAlign: 'start', mb: '1rem', mt: '4rem', color: '#1B1B1F' }}>
                             Contact Us
                         </Typography>
-                        <MuskanGroupHq address={address} mapSrc={mapSrc} telephoneNumber={telephoneNumber} />
+                        <MuskaanGroupHq address={address} mapSrc={mapSrc} telephoneNumber={telephoneNumber} />
                     </Container>
                 </Box>
                 <FooterSection />
