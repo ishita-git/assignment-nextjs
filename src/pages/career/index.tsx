@@ -6,6 +6,7 @@ import { useTheme } from '@mui/material/styles'
 import Layout from '../Layout'
 import careerBackground from '@/assets/career/career-background.webp'
 import careerDefault from '@/assets/career/marketing.png'
+import PrimaryButton from '@/components/PrimaryButton'
 import { fetchDataFromApi } from '../../api/api'
 
 interface Career {
@@ -87,6 +88,11 @@ export default function Home() {
                                             <div dangerouslySetInnerHTML={{ __html: job?.description }} />
                                         </Typography>
                                     </div>
+                                    <Box sx={{ mt: '2rem' }}>
+                                        <Link href={`/career/${job.id - 1}`}>
+                                            <PrimaryButton text='Apply Now' />
+                                        </Link>
+                                    </Box>
                                 </Box>
                             </Link>
                         </Grid>

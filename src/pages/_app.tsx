@@ -19,7 +19,10 @@ function MyApp(props: AppProps) {
                     text='Tariff'
                     href='https://docs.google.com/spreadsheets/d/e/2PACX-1vSS1CuAkXy_EKDk5WFSHoSADJ6p2Fkup2JItUT2K-YETsEeqQc46PstjpvUHoFvnHlWQYQXMmzX90Mt/pubhtml'
                 />
-                <FloatingActionButton text='Detention Tariff' href='' />
+                <FloatingActionButton
+                    text='Detention Tariff'
+                    href='https://docs.google.com/spreadsheets/d/e/2PACX-1vRv4Eesz9DGQfaAoB5FXtcV-fdXGbo64wQ0atFR_izQzeTtU7KC-V2v6S6h6S5ePbb6WbnvY2kliNsJ/pubhtml'
+                />
                 <FloatingActionButton text='Feedback' href='https://forms.gle/Hg6gA1U5MyZ1A6hT7' />
             </Box>
         </ThemeProvider>
