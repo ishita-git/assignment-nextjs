@@ -21,7 +21,7 @@ function MuskaanGroupHq({ mapSrc, address, telephoneNumber }: { mapSrc?: string;
                 <iframe
                     src={
                         mapSrc ||
-                        'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.967840161183!2d77.02405941554592!3d28.600741582430178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3cbd9f22ffd%3A0xf4d3e636afaaf3ea!2sMuskan+Container+Lines+Pvt+Ltd!5e0!3m2!1sen!2sin!4v1559114809982!5m2!1sen!2sin'
+                        'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14010.649568283086!2d77.0323327!3d28.6099033!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d051ab062a7cb%3A0xab32a433b878519!2sMUSKAN%20TOWER!5e0!3m2!1sen!2sin!4v1700825537131!5m2!1sen!2sin'
                     }
                     style={{
                         border: '0.3rem solid white',

@@ -44,7 +44,8 @@ export default function Layout({ image, title, subtitle, withTabs, children, pro
     return (
         <React.Fragment>
             <ElevationScroll {...props}>
-            <AppBar position='fixed' style={{ backgroundColor: trigger ? '#003A9B' : 'transparent' }}>
+                {/* <AppBar position='fixed' style={{ backgroundColor: trigger ? '#003A9B' : 'transparent' }}> */}
+                <AppBar position='fixed' style={{ backgroundColor: '#003A9B' }}>
                     <Navbar />
                 </AppBar>
             </ElevationScroll>

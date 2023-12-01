@@ -48,7 +48,8 @@ export default function LayoutCentered({ image, title, children, props }: Layout
     return (
         <React.Fragment>
             <ElevationScroll {...props}>
-            <AppBar position='fixed' style={{ backgroundColor: trigger ? '#003A9B' : 'transparent' }}>
+                {/* <AppBar position='fixed' style={{ backgroundColor: trigger ? '#003A9B' : 'transparent' }}> */}
+                <AppBar position='fixed' style={{ backgroundColor: '#003A9B' }}>
                     <Navbar />
                 </AppBar>
             </ElevationScroll>
@@ -63,22 +64,12 @@ export default function LayoutCentered({ image, title, children, props }: Layout
                             justifyContent: 'center',
                         }}
                     >
-                        <Image
-                            src={image}
-                            alt='header image'
-                            style={{ width: '100%', height: 'auto', position: 'absolute' }}
-                        />
+                        <Image src={image} alt='header image' style={{ width: '100%', height: 'auto', position: 'absolute' }} />
                         <Box sx={{ px: { xs: theme.spacing(2), sm: theme.spacing(4) } }}>
                             <Typography
                                 variant='h1'
                                 sx={{
-                                    fontSize: ultraMobileMode
-                                        ? '3.8rem'
-                                        : mobileMode
-                                        ? '4.2rem'
-                                        : wideMobileMode
-                                        ? '5rem'
-                                        : '5.4rem',
+                                    fontSize: ultraMobileMode ? '3.8rem' : mobileMode ? '4.2rem' : wideMobileMode ? '5rem' : '5.4rem',
                                     pt: mobileMode ? '3.5rem' : '0rem',
                                     position: 'relative',
                                     zIndex: 1,
