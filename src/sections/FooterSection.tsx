@@ -10,7 +10,6 @@ import address from '@/assets/icons/address.png'
 import email from '@/assets/icons/email.png'
 import phone from '@/assets/icons/phone.png'
 import arrowRight from '@/assets/icons/arrow-right.png'
-import SecondaryTextField from '../components/SecondaryTextField'
 import CircleIcon from '@mui/icons-material/Circle'
 
 export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
@@ -19,7 +18,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
     const mobileMode = useMediaQuery('(max-width:599px)')
 
     return (
-        <Box sx={{ backgroundColor: '#003A9B', mt: noMargin ? 0 : theme.spacing(4) }}>
+        <Box sx={{ backgroundColor: '#000000', mt: noMargin ? 0 : theme.spacing(4) }}>
             {mobileMode ? (
                 <Box sx={{ mx: { xs: theme.spacing(2), sm: theme.spacing(4) }, pt: theme.spacing(4) }}>
                     <Link href='/'>
@@ -30,22 +29,16 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                     </Typography>
 
                     <Box sx={{ mx: 'auto' }}>
-                        <Link href='https://www.facebook.com/muskangroupofcompanies' target='_blank' rel='noopener noreferrer'>
+                        <Link href='https://www.facebook.com' target='_blank' rel='noopener noreferrer'>
                             <Image src={facebook} alt='facebook' style={{ height: '1.5rem', width: 'auto', margin: '1rem' }} />
                         </Link>
-                        <Link href='https://www.linkedin.com/company/muskan-group-of-companies' target='_blank' rel='noopener noreferrer'>
+                        <Link href='https://www.linkedin.com/' target='_blank' rel='noopener noreferrer'>
                             <Image src={linkedIn} alt='linkedin' style={{ height: '1.5rem', width: 'auto', margin: '1rem' }} />
                         </Link>
-                        <Link href='https://twitter.com/MuskanGroup1' target='_blank' rel='noopener noreferrer'>
+                        <Link href='https://twitter.com/' target='_blank' rel='noopener noreferrer'>
                             <Image src={twitter} alt='twitter' style={{ height: '1.5rem', width: 'auto', margin: '1rem' }} />
                         </Link>
-                        {/* <Link href='/' target='_blank' rel='noopener noreferrer'>
-                            <Image
-                                src={instagram}
-                                alt='instagram'
-                                style={{ height: '1.5rem', width: 'auto', margin: '1rem' }}
-                            />
-                        </Link> */}
+                      
                     </Box>
 
                     <Divider sx={{ my: theme.spacing(0.5), borderColor: '#FFFFFF80' }} />
@@ -53,12 +46,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                         Reach Us Out
                     </Typography>
 
-                    <Box sx={{ display: 'flex', alignItems: 'start' }}>
-                        <Image src={address} alt='logo' style={{ height: '1.125rem', width: 'auto', marginRight: '1rem' }} />
-                        <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.9rem' }}>
-                            Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor, NEW DELHI - 110078
-                        </Typography>
-                    </Box>
+                 
 
                     <Box
                         sx={{
@@ -76,7 +64,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: theme.spacing(2) }}>
                         <Image src={email} alt='logo' style={{ height: '1rem', width: 'auto', marginRight: '1rem' }} />
                         <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.9rem' }}>
-                            info@mclpl.co.in
+                            blogs@info.com
                         </Typography>
                     </Box>
                     <Typography variant='h6' sx={{ my: theme.spacing(1) }}>
@@ -92,15 +80,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                         </Box>
                     </Link>
 
-                    <Link href='/career'>
-                        <Box sx={{ display: 'flex', alignItems: 'center', my: theme.spacing(0.5) }}>
-                            <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
-                                Career
-                            </Typography>
-                            <Image src={arrowRight} alt='link' style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }} />
-                        </Box>
-                    </Link>
-
+                  
                     <Link href='/contact'>
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
                             <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
@@ -119,47 +99,17 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                         </Box>
                     </Link>
 
-                    <Link href='/downloads'>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
-                                Useful Downloads
-                            </Typography>
-                            <Image src={arrowRight} alt='link' style={{ height: '0.75rem', width: 'auto', marginLeft: '1rem' }} />
-                        </Box>
-                    </Link>
+                  
                     <Typography variant='h6' sx={{ mt: theme.spacing(2), mb: theme.spacing(0.75) }}>
                         Subscribe Us
                     </Typography>
                     <Typography variant='body2' sx={{ fontSize: '0.9rem', mb: theme.spacing(1) }}>
                         Subscribe to our newsletter and never miss our latest news and promotions.
                     </Typography>
-                    <SecondaryTextField placeholder='Enter your mail id' endButton />
+                
 
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', my: theme.spacing(1) }}>
-                        <Link href='/'>
-                            <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
-                                <CircleIcon sx={{ fontSize: '0.5rem', mr: theme.spacing(0.5) }} />
-                                Privacy Policy
-                            </Typography>
-                        </Link>
-                        <Link href='/sitemap.xml' target='_blank' rel='noopener noreferrer'>
-                            <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
-                                <CircleIcon sx={{ fontSize: '0.5rem', mr: theme.spacing(0.5) }} />
-                                Site Map
-                            </Typography>
-                        </Link>
-                        <Link href='/'>
-                            <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', fontSize: '0.9rem' }}>
-                                <CircleIcon sx={{ fontSize: '0.5rem', mr: theme.spacing(0.5) }} />
-                                Terms & Conditions
-                            </Typography>
-                        </Link>
-                    </Box>
+                   
 
-                    <Divider sx={{ mt: theme.spacing(2), borderColor: '#FFFFFF80' }} />
-                    <Typography variant='body2' textAlign='end' sx={{ py: theme.spacing(2) }}>
-                        © 2023 Copyright: Muskan Group
-                    </Typography>
                 </Box>
             ) : narrowTabletMode ? (
                 <Box sx={{ mx: theme.spacing(4), pt: theme.spacing(4) }}>
@@ -169,7 +119,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                 <Image src={logo} alt='logo' style={{ height: '3rem', width: 'auto', marginRight: 'auto' }} />
                             </Link>
                             <Typography variant='h6' textAlign='center' sx={{ my: theme.spacing(1) }}>
-                                Muskan Group of Companies
+                                Blogsite
                             </Typography>
 
                             <Box sx={{ mx: 'auto' }}>
@@ -210,17 +160,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                         }}
                                     />
                                 </Link>
-                                {/* <Link href='/' target='_blank' rel='noopener noreferrer'>
-                                    <Image
-                                        src={instagram}
-                                        alt='instagram'
-                                        style={{
-                                            height: '1.5rem',
-                                            width: 'auto',
-                                            margin: '1rem',
-                                        }}
-                                    />
-                                </Link> */}
+                               
                             </Box>
                         </Grid>
                         <Grid item sm={6}>
@@ -474,9 +414,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                             <Typography variant='body1' sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}>
                                 Subscribe to our newsletter and never miss our latest news and promotions.
                             </Typography>
-                            <Box sx={{ my: '1rem' }}>
-                                <SecondaryTextField placeholder='Enter your mail id' endButton />
-                            </Box>
+                        
                             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
                                 <Link href='/'>
                                     <Typography
@@ -527,7 +465,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                         }}
                     />
                     <Typography variant='body2' textAlign='end' sx={{ py: theme.spacing(2) }}>
-                        © 2023 Copyright: Muskan-Group of Companies
+                        © 2023 Copyright: Blogsite
                     </Typography>
                 </Box>
             ) : (
@@ -553,7 +491,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                         my: theme.spacing(1),
                                     }}
                                 >
-                                    Muskan Group of Companies
+                                   Blogsite
                                 </Typography>
 
                                 <Box sx={{ mx: 'auto' }}>
@@ -594,17 +532,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                             }}
                                         />
                                     </Link>
-                                    {/* <Link href='/' target='_blank' rel='noopener noreferrer'>
-                                    <Image
-                                        src={instagram}
-                                        alt='instagram'
-                                        style={{
-                                            height: '1.5rem',
-                                            width: 'auto',
-                                            margin: '1rem',
-                                        }}
-                                    />
-                                </Link> */}
+                                   
                                 </Box>
                             </Grid>
 
@@ -632,7 +560,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                             fontSize: '0.75rem',
                                         }}
                                     >
-                                        Muskan Tower, Plot no.83, Old Palam Rd, Shiv Park, kakrola Mor, NEW DELHI - 110078
+                                        ABC,102
                                     </Typography>
                                 </Box>
 
@@ -661,7 +589,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                             fontSize: '0.75rem',
                                         }}
                                     >
-                                        011 41587468/40687469
+                                        011 234576890
                                     </Typography>
                                 </Box>
 
@@ -684,7 +612,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                             fontSize: '0.75rem',
                                         }}
                                     >
-                                        info@mclpl.co.in
+                                        info@blogsite.co.in
                                     </Typography>
                                 </Box>
                             </Grid>
@@ -859,9 +787,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                                 >
                                     Subscribe to our newsletter and never miss our latest news and promotions.
                                 </Typography>
-                                <Box sx={{ my: '1rem' }}>
-                                    <SecondaryTextField placeholder='Enter your mail id' endButton />
-                                </Box>
+                               
                                 <Typography
                                     variant='body1'
                                     sx={{ fontWeight: 300, color: '#FFFFFF', textAlign: 'start', fontSize: '0.75rem' }}
@@ -896,7 +822,7 @@ export default function FooterSection({ noMargin }: { noMargin?: boolean }) {
                             }}
                         />
                         <Typography variant='body2' textAlign='end' sx={{ py: theme.spacing(2) }}>
-                            © 2023 Copyright: Muskan Group of Companies
+                            © 2023 Copyright: Blogsite
                         </Typography>
                     </Container>
                 </Box>

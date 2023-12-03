@@ -1,15 +1,10 @@
 import React from 'react'
-import { useTheme } from '@mui/material/styles'
-import { AppBar, Box, useMediaQuery, useScrollTrigger } from '@mui/material'
-import HeroSection from '../sections/HeroSection'
-import ServicesSection from '../sections/ServicesSection'
-import ShippingSection from '../sections/ShippingSection'
-import BusinessPresenceSection from '../sections/BusinessPresenceSection'
-import ClienteleSection from '../sections/ClienteleSection'
-import ContactSection from '../sections/ContactSection'
+import { AppBar, Box, useScrollTrigger } from '@mui/material'
+
 import FooterSection from '../sections/FooterSection'
 import Navbar from '../components/Navbar'
-import ShipmentTracker from '@/sections/ShipmentTracker'
+
+import ClienteleCard from '@/components/ClienteleCard'
 
 interface Props {
     window?: () => Window
@@ -30,11 +25,7 @@ function ElevationScroll(props: Props) {
 }
 
 export default function ElevateAppBar(props: Props) {
-    const theme = useTheme()
-    const desktopMode = useMediaQuery('(min-width:900px)')
-    const tabletMode = useMediaQuery('(min-width:650px) and (max-width:899px)')
-    const mobileMode = useMediaQuery('(min-width:500px) and (max-width:649px)')
-    const SmallMobileMode = useMediaQuery('(max-width:499px)')
+  
     const trigger = useScrollTrigger({
         disableHysteresis: true,
         threshold: 0,
@@ -48,28 +39,20 @@ export default function ElevateAppBar(props: Props) {
                     <Navbar />
                 </AppBar>
             </ElevationScroll>
-            <Box sx={{ background: '#EFF6FF', width: '100vw' }}>
-                <HeroSection />
-
-                <Box
-                    sx={{
-                        position: 'relative',
-                        top: desktopMode ? '-18vh' : tabletMode ? '-16vh' : mobileMode ? '-12vh' : SmallMobileMode ? '-9vh' : '0vh',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        mx: theme.spacing(2),
-                    }}
-                >
-                    <ShipmentTracker />
-                </Box>
-
-                <ServicesSection />
-                <ShippingSection />
-                <BusinessPresenceSection />
-                <ClienteleSection />
-                <ContactSection />
-                <FooterSection />
+            <Box
+                sx={{ background: 'white', width: '100vw' }}
+                style={{ display: 'grid', gridTemplateColumns: 'auto auto auto auto', gap: '10px', marginTop: '100px' }}
+            >
+                <ClienteleCard cardImage={'blog1.jpeg'} title={'Blog1'} subtitle={'subtitle blog'} />
+                <ClienteleCard cardImage={'blog1.jpeg'} title={'Blog2'} subtitle={'subtitle blog'} />
+                <ClienteleCard cardImage={'blog1.jpeg'} title={'Blog3'} subtitle={'subtitle blog'} />
+                <ClienteleCard cardImage={'blog1.jpeg'} title={'Blog4'} subtitle={'subtitle blog'} />
+                <ClienteleCard cardImage={'blog1.jpeg'} title={'Blog5'} subtitle={'subtitle blog'} />
+                <ClienteleCard cardImage={'blog1.jpeg'} title={'Blog6'} subtitle={'subtitle blog'} />
+                <ClienteleCard cardImage={'blog1.jpeg'} title={'Blog7'} subtitle={'subtitle blog'} />
+                <ClienteleCard cardImage={'blog1.jpeg'} title={'Blog8'} subtitle={'subtitle blog'} />
             </Box>
+            <FooterSection />
         </React.Fragment>
     )
 }
